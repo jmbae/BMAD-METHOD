@@ -1,216 +1,216 @@
-# Working in the Brownfield: A Complete Guide
+# 브라운필드에서 작업하기: 완전한 가이드
 
-> **HIGHLY RECOMMENDED: Use Gemini Web or Gemini CLI for Brownfield Documentation Generation!**
+> **강력히 권장: 브라운필드 문서 생성에 Gemini Web 또는 Gemini CLI를 사용하세요!**
 >
-> Gemini Web's 1M+ token context window or Gemini CLI (when it's working) can analyze your ENTIRE codebase, or critical sections of it, all at once (obviously within reason):
+> Gemini Web의 1M+ 토큰 컨텍스트 윈도우 또는 Gemini CLI(작동 중일 때)는 전체 코드베이스 또는 중요한 섹션을 한 번에 분석할 수 있습니다(물론 합리적인 범위 내에서):
 >
-> - Upload via GitHub URL or use gemini cli in the project folder
-> - If working in the web: use `npx bmad-method flatten` to flatten your project into a single file, then upload that file to your web agent.
+> - GitHub URL을 통해 업로드하거나 프로젝트 폴더에서 gemini cli 사용
+> - 웹에서 작업하는 경우: `npx bmad-method flatten`을 사용하여 프로젝트를 단일 파일로 플래튼한 다음, 해당 파일을 웹 에이전트에 업로드하세요.
 
-## What is Brownfield Development?
+## 브라운필드 개발이란?
 
-Brownfield development refers to adding features, fixing bugs, or modernizing existing software projects. Unlike greenfield (new) projects, brownfield work requires understanding existing code, respecting constraints, and ensuring new changes integrate seamlessly without breaking existing functionality.
+브라운필드 개발은 기존 소프트웨어 프로젝트에 기능을 추가하거나, 버그를 수정하거나, 현대화하는 것을 의미합니다. 그린필드(새로운) 프로젝트와 달리, 브라운필드 작업은 기존 코드를 이해하고, 제약 사항을 존중하며, 기존 기능을 깨지 않고 새로운 변경 사항이 원활하게 통합되도록 하는 것이 필요합니다.
 
-## When to Use BMad for Brownfield
+## 브라운필드에 BMad를 사용할 때
 
-- Add significant new features to existing applications
-- Modernize legacy codebases
-- Integrate new technologies or services
-- Refactor complex systems
-- Fix bugs that require architectural understanding
-- Document undocumented systems
+- 기존 애플리케이션에 중요한 새 기능 추가
+- 레거시 코드베이스 현대화
+- 새로운 기술이나 서비스 통합
+- 복잡한 시스템 리팩토링
+- 아키텍처적 이해가 필요한 버그 수정
+- 문서화되지 않은 시스템 문서화
 
-## When NOT to use a Brownfield Flow
+## 브라운필드 플로우를 사용하지 말아야 할 때
 
-If you have just completed an MVP with BMad, and you want to continue with post-MVP, its easier to just talk to the PM and ask it to work with you to create a new epic to add into the PRD, shard out the epic, update any architecture documents with the architect, and just go from there.
+BMad로 MVP를 막 완료했고 MVP 이후를 계속하고 싶다면, PM과 대화하여 PRD에 추가할 새로운 에픽을 만들어달라고 요청하고, 에픽을 샤딩하고, 아키텍트와 함께 아키텍처 문서를 업데이트한 다음 그곳에서 시작하는 것이 더 쉽습니다.
 
-## The Complete Brownfield Workflow
+## 완전한 브라운필드 워크플로우
 
-1. **Follow the [<ins>User Guide - Installation</ins>](user-guide.md#installation) steps to setup your agent in the web.**
-2. **Generate a 'flattened' single file of your entire codebase** run: `npx bmad-method flatten`
+1. **[사용자 가이드 - 설치](user-guide.md#installation) 단계를 따라 웹에서 에이전트를 설정하세요.**
+2. **전체 코드베이스의 '플래튼된' 단일 파일 생성** 실행: `npx bmad-method flatten`
 
-### Choose Your Approach
+### 접근 방식 선택
 
-#### Approach A: PRD-First (Recommended if adding very large and complex new features, single or multiple epics or massive changes)
+#### 접근 방식 A: PRD 우선 (매우 크고 복잡한 새 기능, 단일 또는 다중 에픽 또는 대규모 변경을 추가하는 경우 권장)
 
-**Best for**: Large codebases, monorepos, or when you know exactly what you want to build
+**최적 용도**: 대규모 코드베이스, 모노레포 또는 정확히 무엇을 구축할지 알고 있을 때
 
-1. **Create PRD First** to define requirements
-2. **Document only relevant areas** based on PRD needs
-3. **More efficient** - avoids documenting unused code
+1. **요구사항을 정의하기 위해 PRD를 먼저 생성**
+2. **PRD 요구사항에 기반해 관련 영역만 문서화**
+3. **더 효율적** - 사용하지 않는 코드 문서화를 피함
 
-#### Approach B: Document-First (Good for Smaller Projects)
+#### 접근 방식 B: 문서 우선 (소규모 프로젝트에 적합)
 
-**Best for**: Smaller codebases, unknown systems, or exploratory changes
+**최적 용도**: 소규모 코드베이스, 알려지지 않은 시스템 또는 탐색적 변경
 
-1. **Document entire system** first
-2. **Create PRD** with full context
-3. **More thorough** - captures everything
+1. **전체 시스템을 먼저 문서화**
+2. **전체 컨텍스트로 PRD 생성**
+3. **더 철저함** - 모든 것을 포착
 
-### Approach A: PRD-First Workflow (Recommended)
+### 접근 방식 A: PRD 우선 워크플로우 (권장)
 
-#### Phase 1: Define Requirements First
+#### 1단계: 요구사항을 먼저 정의
 
-**In Gemini Web (with your flattened-codebase.xml uploaded):**
+**Gemini Web에서 (플래튼된 codebase.xml 업로드 후):**
 
 ```bash
 @pm
 *create-brownfield-prd
 ```
 
-The PM will:
+PM이 수행할 작업:
 
-- **Ask about your enhancement** requirements
-- **Explore the codebase** to understand current state
-- **Identify affected areas** that need documentation
-- **Create focused PRD** with clear scope
+- **향상 요구사항에 대해 질문**
+- **현재 상태를 이해하기 위해 코드베이스 탐색**
+- **문서화가 필요한 영향받는 영역 식별**
+- **명확한 범위로 집중된 PRD 생성**
 
-**Key Advantage**: The PRD identifies which parts of your monorepo/large codebase actually need documentation!
+**핵심 장점**: PRD가 모노레포/대규모 코드베이스의 어떤 부분이 실제로 문서화가 필요한지 식별합니다!
 
-#### Phase 2: Focused Documentation
+#### 2단계: 집중된 문서화
 
-**Still in Gemini Web, now with PRD context:**
+**여전히 Gemini Web에서, 이제 PRD 컨텍스트와 함께:**
 
 ```bash
 @architect
 *document-project
 ```
 
-The architect will:
+아키텍트가 수행할 작업:
 
-- **Ask about your focus** if no PRD was provided
-- **Offer options**: Create PRD, provide requirements, or describe the enhancement
-- **Reference the PRD/description** to understand scope
-- **Focus on relevant modules** identified in PRD or your description
-- **Skip unrelated areas** to keep docs lean
-- **Generate ONE architecture document** for all environments
+- **PRD가 제공되지 않은 경우 초점에 대해 질문**
+- **옵션 제공**: PRD 생성, 요구사항 제공 또는 향상 기능 설명
+- **범위를 이해하기 위해 PRD/설명 참조**
+- **PRD 또는 설명에서 식별된 관련 모듈에 집중**
+- **관련 없는 영역을 건너뛰어** 문서를 간결하게 유지
+- **모든 환경에 대한 하나의 아키텍처 문서 생성**
 
-The architect creates:
+아키텍트가 생성하는 것:
 
-- **One comprehensive architecture document** following fullstack-architecture template
-- **Covers all system aspects** in a single file
-- **Easy to copy and save** as `docs/architecture.md`
-- **Can be sharded later** in IDE if desired
+- **fullstack-architecture 템플릿을 따르는 하나의 포괄적인 아키텍처 문서**
+- **단일 파일에서 모든 시스템 측면 커버**
+- **`docs/architecture.md`로 복사하고 저장하기 쉬움**
+- **원하는 경우 나중에 IDE에서 샤딩 가능**
 
-For example, if you say "Add payment processing to user service":
+예를 들어, "사용자 서비스에 결제 처리 추가"라고 말하면:
 
-- Documents only: user service, API endpoints, database schemas, payment integrations
-- Creates focused source tree showing only payment-related code paths
-- Skips: admin panels, reporting modules, unrelated microservices
+- 다음만 문서화: 사용자 서비스, API 엔드포인트, 데이터베이스 스키마, 결제 통합
+- 결제 관련 코드 경로만 보여주는 집중된 소스 트리 생성
+- 건너뛰는 것: 관리자 패널, 보고 모듈, 관련 없는 마이크로서비스
 
-### Approach B: Document-First Workflow
+### 접근 방식 B: 문서 우선 워크플로우
 
-#### Phase 1: Document the Existing System
+#### 1단계: 기존 시스템 문서화
 
-**Best Approach - Gemini Web with 1M+ Context**:
+**최고 접근법 - 1M+ 컨텍스트를 가진 Gemini Web**:
 
-1. **Go to Gemini Web** (gemini.google.com)
-2. **Upload your project**:
-   - **Option A**: Paste your GitHub repository URL directly
-   - **Option B**: Upload your flattened-codebase.xml file
-3. **Load the architect agent**: Upload `dist/agents/architect.txt`
-4. **Run documentation**: Type `*document-project`
+1. **Gemini Web으로 이동** (gemini.google.com)
+2. **프로젝트 업로드**:
+   - **옵션 A**: GitHub 리포지토리 URL을 직접 붙여넣기
+   - **옵션 B**: flattened-codebase.xml 파일 업로드
+3. **아키텍트 에이전트 로드**: `dist/agents/architect.txt` 업로드
+4. **문서화 실행**: `*document-project` 입력
 
-The architect will generate comprehensive documentation of everything.
+아키텍트가 모든 것에 대한 포괄적인 문서를 생성할 것입니다.
 
-#### Phase 2: Plan Your Enhancement
+#### 2단계: 향상 기능 계획
 
-##### Option A: Full Brownfield Workflow (Recommended for Major Changes)
+##### 옵션 A: 완전한 브라운필드 워크플로우 (주요 변경사항에 권장)
 
-**1. Create Brownfield PRD**:
+**1. 브라운필드 PRD 생성**:
 
 ```bash
 @pm
 *create-brownfield-prd
 ```
 
-The PM agent will:
+PM 에이전트가 수행할 작업:
 
-- **Analyze existing documentation** from Phase 1
-- **Request specific enhancement details** from you
-- **Assess complexity** and recommend approach
-- **Create epic/story structure** for the enhancement
-- **Identify risks and integration points**
+- **1단계의 기존 문서 분석**
+- **당신으로부터 특정 향상 세부사항 요청**
+- **복잡성 평가** 및 접근법 권장
+- **향상을 위한 에픽/스토리 구조 생성**
+- **위험 및 통합 지점 식별**
 
-**How PM Agent Gets Project Context**:
+**PM 에이전트가 프로젝트 컨텍스트를 얻는 방법**:
 
-- In Gemini Web: Already has full project context from Phase 1 documentation
-- In IDE: Will ask "Please provide the path to your existing project documentation"
+- Gemini Web에서: 이미 1단계 문서화에서 전체 프로젝트 컨텍스트 보유
+- IDE에서: "기존 프로젝트 문서의 경로를 제공해주세요"라고 질문할 것
 
-**Key Prompts You'll Encounter**:
+**마주하게 될 주요 프롬프트**:
 
-- "What specific enhancement or feature do you want to add?"
-- "Are there any existing systems or APIs this needs to integrate with?"
-- "What are the critical constraints we must respect?"
-- "What is your timeline and team size?"
+- "어떤 특정 향상이나 기능을 추가하고 싶으신가요?"
+- "이것이 통합해야 할 기존 시스템이나 API가 있나요?"
+- "우리가 존중해야 할 중요한 제약사항은 무엇인가요?"
+- "타임라인과 팀 규모는 어떻게 되나요?"
 
-**2. Create Brownfield Architecture**:
+**2. 브라운필드 아키텍처 생성**:
 
 ```bash
 @architect
 *create-brownfield-architecture
 ```
 
-The architect will:
+아키텍트가 수행할 작업:
 
-- **Review the brownfield PRD**
-- **Design integration strategy**
-- **Plan migration approach** if needed
-- **Identify technical risks**
-- **Define compatibility requirements**
+- **브라운필드 PRD 검토**
+- **통합 전략 설계**
+- **필요시 마이그레이션 접근법 계획**
+- **기술적 위험 식별**
+- **호환성 요구사항 정의**
 
-##### Option B: Quick Enhancement (For Focused Changes)
+##### 옵션 B: 빠른 향상 (집중된 변경을 위한)
 
-**For Single Epic Without Full PRD**:
+**전체 PRD 없이 단일 에픽을 위한**:
 
 ```bash
 @pm
 *create-brownfield-epic
 ```
 
-Use when:
+다음과 같은 경우 사용:
 
-- Enhancement is well-defined and isolated
-- Existing documentation is comprehensive
-- Changes don't impact multiple systems
-- You need quick turnaround
+- 향상이 잘 정의되고 격리되어 있음
+- 기존 문서가 포괄적임
+- 변경이 여러 시스템에 영향을 주지 않음
+- 빠른 처리가 필요함
 
-**For Single Story**:
+**단일 스토리를 위한**:
 
 ```bash
 @pm
 *create-brownfield-story
 ```
 
-Use when:
+다음과 같은 경우 사용:
 
-- Bug fix or tiny feature
-- Very isolated change
-- No architectural impact
-- Clear implementation path
+- 버그 수정이나 작은 기능
+- 매우 격리된 변경
+- 아키텍처적 영향 없음
+- 명확한 구현 경로
 
-### Phase 3: Validate Planning Artifacts
+### 3단계: 계획 산출물 검증
 
 ```bash
 @po
 *execute-checklist-po
 ```
 
-The PO ensures:
+PO가 다음을 보장합니다:
 
-- Compatibility with existing system
-- No breaking changes planned
-- Risk mitigation strategies in place
-- Clear integration approach
+- 기존 시스템과의 호환성
+- 계획된 파괴적 변경사항 없음
+- 위험 완화 전략 마련
+- 명확한 통합 접근법
 
-### Phase 4: Save and Shard Documents
+### 4단계: 문서 저장 및 샤딩
 
-1. Save your PRD and Architecture as:
+1. PRD와 아키텍처를 다음과 같이 저장:
    docs/prd.md
    docs/architecture.md
-   (Note: You can optionally prefix with 'brownfield-' if managing multiple versions)
-2. Shard your docs:
-   In your IDE
+   (참고: 여러 버전을 관리하는 경우 선택적으로 'brownfield-' 접두사 사용 가능)
+2. 문서 샤딩:
+   IDE에서
 
    ```bash
    @po
@@ -222,376 +222,376 @@ The PO ensures:
    shard docs/architecture.md
    ```
 
-### Phase 5: Transition to Development
+### 5단계: 개발로 전환
 
-**Follow the [<ins>Enhanced IDE Development Workflow</ins>](enhanced-ide-development-workflow.md)**
+**[향상된 IDE 개발 워크플로우](enhanced-ide-development-workflow.md)를 따르세요**
 
-## Brownfield Best Practices
+## 브라운필드 모범 사례
 
-### 1. Always Document First
+### 1. 항상 먼저 문서화
 
-Even if you think you know the codebase:
+코드베이스를 안다고 생각하더라도:
 
-- Run `document-project` to capture current state
-- AI agents need this context
-- Discovers undocumented patterns
+- `document-project`를 실행하여 현재 상태 캡처
+- AI 에이전트에게 이 컨텍스트가 필요함
+- 문서화되지 않은 패턴 발견
 
-### 2. Respect Existing Patterns
+### 2. 기존 패턴 존중
 
-The brownfield templates specifically look for:
+브라운필드 템플릿은 특별히 다음을 찾습니다:
 
-- Current coding conventions
-- Existing architectural patterns
-- Technology constraints
-- Team preferences
+- 현재 코딩 관례
+- 기존 아키텍처 패턴
+- 기술적 제약사항
+- 팀 선호도
 
-### 3. Plan for Gradual Rollout
+### 3. 점진적 롤아웃 계획
 
-Brownfield changes should:
+브라운필드 변경은 다음을 해야 합니다:
 
-- Support feature flags
-- Plan rollback strategies
-- Include migration scripts
-- Maintain backwards compatibility
+- 기능 플래그 지원
+- 롤백 전략 계획
+- 마이그레이션 스크립트 포함
+- 하위 호환성 유지
 
-### 4. Test Integration Thoroughly
+### 4. 통합 철저히 테스트
 
-#### Why the Test Architect is Critical for Brownfield
+#### 브라운필드에서 테스트 아키텍트가 중요한 이유
 
-In brownfield projects, the Test Architect (Quinn) becomes your safety net against breaking existing functionality. Unlike greenfield where you're building fresh, brownfield requires careful validation that new changes don't destabilize what already works.
+브라운필드 프로젝트에서 테스트 아키텍트(Quinn)는 기존 기능을 파괴하는 것에 대한 안전망이 됩니다. 새로 구축하는 그린필드와 달리, 브라운필드는 새로운 변경사항이 이미 작동하는 것을 불안정하게 만들지 않도록 신중한 검증이 필요합니다.
 
-#### Brownfield-Specific Testing Challenges
+#### 브라운필드별 테스트 과제
 
-The Test Architect addresses unique brownfield complexities:
+테스트 아키텍트는 고유한 브라운필드 복잡성을 해결합니다:
 
-| **Challenge**               | **How Test Architect Helps**                      | **Command**         |
+| **과제**               | **테스트 아키텍트의 도움**                      | **명령**         |
 | --------------------------- | ------------------------------------------------- | ------------------- |
-| **Regression Risks**        | Identifies which existing features might break    | `*risk`             |
-| **Legacy Dependencies**     | Maps integration points and hidden dependencies   | `*trace`            |
-| **Performance Degradation** | Validates no slowdown in existing flows           | `*nfr`              |
-| **Coverage Gaps**           | Finds untested legacy code that new changes touch | `*design`           |
-| **Breaking Changes**        | Detects API/contract violations                   | `*review`           |
-| **Migration Safety**        | Validates data transformations and rollback plans | `*risk` + `*review` |
+| **회귀 위험**        | 어떤 기존 기능이 깨질 수 있는지 식별    | `*risk`             |
+| **레거시 의존성**     | 통합 지점과 숨겨진 의존성 매핑   | `*trace`            |
+| **성능 저하** | 기존 플로우에서 속도 저하가 없는지 검증           | `*nfr`              |
+| **커버리지 갭**           | 새 변경사항이 건드리는 테스트되지 않은 레거시 코드 찾기 | `*design`           |
+| **파괴적 변경**        | API/계약 위반 감지                   | `*review`           |
+| **마이그레이션 안전성**        | 데이터 변환 및 롤백 계획 검증 | `*risk` + `*review` |
 
-#### Complete Test Architect Workflow for Brownfield
+#### 브라운필드를 위한 완전한 테스트 아키텍트 워크플로우
 
-##### Stage 1: Before Development (Risk & Strategy)
+##### 1단계: 개발 전 (위험 및 전략)
 
-**CRITICAL FOR BROWNFIELD - Run These First:**
+**브라운필드에서 중요 - 이것들을 먼저 실행하세요:**
 
 ```bash
-# 1. RISK ASSESSMENT (Run IMMEDIATELY after story creation)
+# 1. 위험 평가 (스토리 생성 후 즉시 실행)
 @qa *risk {brownfield-story}
-# Identifies: Legacy dependencies, breaking changes, integration points
-# Output: docs/qa/assessments/{epic}.{story}-risk-{YYYYMMDD}.md
-# Brownfield Focus:
-#   - Regression probability scoring
-#   - Affected downstream systems
-#   - Data migration risks
-#   - Rollback complexity
+# 식별: 레거시 의존성, 파괴적 변경, 통합 지점
+# 출력: docs/qa/assessments/{epic}.{story}-risk-{YYYYMMDD}.md
+# 브라운필드 중점:
+#   - 회귀 확률 점수
+#   - 영향받는 다운스트림 시스템
+#   - 데이터 마이그레이션 위험
+#   - 롤백 복잡성
 
-# 2. TEST DESIGN (After risk assessment)
+# 2. 테스트 설계 (위험 평가 후)
 @qa *design {brownfield-story}
-# Creates: Regression test strategy + new feature tests
-# Output: docs/qa/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md
-# Brownfield Focus:
-#   - Existing functionality that needs regression tests
-#   - Integration test requirements
-#   - Performance benchmarks to maintain
-#   - Feature flag test scenarios
+# 생성: 회귀 테스트 전략 + 새 기능 테스트
+# 출력: docs/qa/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md
+# 브라운필드 중점:
+#   - 회귀 테스트가 필요한 기존 기능
+#   - 통합 테스트 요구사항
+#   - 유지해야 할 성능 벤치마크
+#   - 기능 플래그 테스트 시나리오
 ```
 
-##### Stage 2: During Development (Continuous Validation)
+##### 2단계: 개발 중 (지속적 검증)
 
-**Monitor Integration Health While Coding:**
+**코딩하는 동안 통합 상태 모니터링:**
 
 ```bash
-# 3. REQUIREMENTS TRACING (Mid-development checkpoint)
+# 3. 요구사항 추적 (개발 중간 체크포인트)
 @qa *trace {brownfield-story}
-# Maps: New requirements + existing functionality preservation
-# Output: docs/qa/assessments/{epic}.{story}-trace-{YYYYMMDD}.md
-# Brownfield Focus:
-#   - Existing features that must still work
-#   - New/old feature interactions
-#   - API contract preservation
-#   - Missing regression test coverage
+# 매핑: 새 요구사항 + 기존 기능 보존
+# 출력: docs/qa/assessments/{epic}.{story}-trace-{YYYYMMDD}.md
+# 브라운필드 중점:
+#   - 여전히 작동해야 하는 기존 기능
+#   - 새/기존 기능 상호작용
+#   - API 계약 보존
+#   - 누락된 회귀 테스트 커버리지
 
-# 4. NFR VALIDATION (Before considering "done")
+# 4. NFR 검증 ("완료"로 간주하기 전)
 @qa *nfr {brownfield-story}
-# Validates: Performance, security, reliability unchanged
-# Output: docs/qa/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md
-# Brownfield Focus:
-#   - Performance regression detection
-#   - Security implications of integrations
-#   - Backward compatibility validation
-#   - Load/stress on legacy components
+# 검증: 성능, 보안, 신뢰성이 변경되지 않음
+# 출력: docs/qa/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md
+# 브라운필드 중점:
+#   - 성능 회귀 감지
+#   - 통합의 보안 함의
+#   - 하위 호환성 검증
+#   - 레거시 구성요소에 대한 부하/스트레스
 ```
 
-##### Stage 3: Code Review (Deep Integration Analysis)
+##### 3단계: 코드 리뷰 (심층 통합 분석)
 
-**Comprehensive Brownfield Review:**
+**포괄적 브라운필드 리뷰:**
 
 ```bash
-# 5. FULL REVIEW (When development complete)
+# 5. 전체 리뷰 (개발 완료 시)
 @qa *review {brownfield-story}
-# Performs: Deep analysis + active refactoring
-# Outputs:
-#   - QA Results in story file
-#   - Gate file: docs/qa/gates/{epic}.{story}-{slug}.yml
+# 수행: 심층 분석 + 적극적 리팩토링
+# 출력:
+#   - 스토리 파일의 QA 결과
+#   - 게이트 파일: docs/qa/gates/{epic}.{story}-{slug}.yml
 ```
 
-The review specifically analyzes:
+리뷰는 특별히 다음을 분석합니다:
 
-- **API Breaking Changes**: Validates all existing contracts maintained
-- **Data Migration Safety**: Checks transformation logic and rollback procedures
-- **Performance Regression**: Compares against baseline metrics
-- **Integration Points**: Validates all touchpoints with legacy code
-- **Feature Flag Logic**: Ensures proper toggle behavior
-- **Dependency Impacts**: Maps affected downstream systems
+- **API 파괴적 변경**: 모든 기존 계약이 유지되는지 검증
+- **데이터 마이그레이션 안전성**: 변환 로직 및 롤백 절차 확인
+- **성능 회귀**: 기준 메트릭과 비교
+- **통합 지점**: 레거시 코드와의 모든 접점 검증
+- **기능 플래그 로직**: 적절한 토글 동작 보장
+- **의존성 영향**: 영향받는 다운스트림 시스템 매핑
 
-##### Stage 4: Post-Review (Gate Updates)
+##### 4단계: 리뷰 후 (게이트 업데이트)
 
 ```bash
-# 6. GATE STATUS UPDATE (After addressing issues)
+# 6. 게이트 상태 업데이트 (이슈 해결 후)
 @qa *gate {brownfield-story}
-# Updates: Quality gate decision after fixes
-# Output: docs/qa/gates/{epic}.{story}-{slug}.yml
-# Brownfield Considerations:
-#   - May WAIVE certain legacy code issues
-#   - Documents technical debt acceptance
-#   - Tracks migration progress
+# 업데이트: 수정 후 품질 게이트 결정
+# 출력: docs/qa/gates/{epic}.{story}-{slug}.yml
+# 브라운필드 고려사항:
+#   - 특정 레거시 코드 이슈 면제 가능
+#   - 기술 부채 수용 문서화
+#   - 마이그레이션 진행 상황 추적
 ```
 
-#### Brownfield-Specific Risk Scoring
+#### 브라운필드별 위험 점수 매기기
 
-The Test Architect uses enhanced risk scoring for brownfield:
+테스트 아키텍트는 브라운필드를 위한 향상된 위험 점수를 사용합니다:
 
-| **Risk Category**      | **Brownfield Factors**                     | **Impact on Gate**  |
+| **위험 카테고리**      | **브라운필드 요소**                     | **게이트에 미치는 영향**  |
 | ---------------------- | ------------------------------------------ | ------------------- |
-| **Regression Risk**    | Number of integration points × Age of code | Score ≥9 = FAIL     |
-| **Data Risk**          | Migration complexity × Data volume         | Score ≥6 = CONCERNS |
-| **Performance Risk**   | Current load × Added complexity            | Score ≥6 = CONCERNS |
-| **Compatibility Risk** | API consumers × Contract changes           | Score ≥9 = FAIL     |
+| **회귀 위험**    | 통합 지점 수 × 코드 연령 | 점수 ≥9 = 실패     |
+| **데이터 위험**          | 마이그레이션 복잡성 × 데이터 볼륨         | 점수 ≥6 = 우려사항 |
+| **성능 위험**   | 현재 부하 × 추가된 복잡성            | 점수 ≥6 = 우려사항 |
+| **호환성 위험** | API 소비자 수 × 계약 변경사항           | 점수 ≥9 = 실패     |
 
-#### Brownfield Testing Standards
+#### 브라운필드 테스팅 표준
 
-Quinn enforces additional standards for brownfield:
+Quinn은 브라운필드를 위한 추가 표준을 적용합니다:
 
-- **Regression Test Coverage**: Every touched legacy module needs tests
-- **Performance Baselines**: Must maintain or improve current metrics
-- **Rollback Procedures**: Every change needs a rollback plan
-- **Feature Flags**: All risky changes behind toggles
-- **Integration Tests**: Cover all legacy touchpoints
-- **Contract Tests**: Validate API compatibility
-- **Data Validation**: Migration correctness checks
+- **회귀 테스트 커버리지**: 수정된 모든 레거시 모듈에 테스트 필요
+- **성능 기준선**: 현재 메트릭을 유지하거나 개선해야 함
+- **롤백 절차**: 모든 변경사항에 롤백 계획 필요
+- **기능 플래그**: 모든 위험한 변경사항은 토글 뒤에 배치
+- **통합 테스트**: 모든 레거시 접점 커버
+- **계약 테스트**: API 호환성 검증
+- **데이터 검증**: 마이그레이션 정확성 검사
 
-#### Quick Reference: Brownfield Test Commands
+#### 빠른 참조: 브라운필드 테스트 명령
 
-| **Scenario**                      | **Commands to Run**                                  | **Order**  | **Why Critical**              |
+| **시나리오**                      | **실행할 명령**                                  | **순서**  | **중요한 이유**              |
 | --------------------------------- | ---------------------------------------------------- | ---------- | ----------------------------- |
-| **Adding Feature to Legacy Code** | `*risk` → `*design` → `*trace` → `*review`           | Sequential | Map all dependencies first    |
-| **API Modification**              | `*risk` → `*design` → `*nfr` → `*review`             | Sequential | Prevent breaking consumers    |
-| **Performance-Critical Change**   | `*nfr` early and often → `*review`                   | Continuous | Catch degradation immediately |
-| **Data Migration**                | `*risk` → `*design` → `*trace` → `*review` → `*gate` | Full cycle | Ensure data integrity         |
-| **Bug Fix in Complex System**     | `*risk` → `*trace` → `*review`                       | Focused    | Prevent side effects          |
+| **레거시 코드에 기능 추가** | `*risk` → `*design` → `*trace` → `*review`           | 순차적 | 모든 의존성을 먼저 매핑    |
+| **API 수정**              | `*risk` → `*design` → `*nfr` → `*review`             | 순차적 | 소비자 손상 방지    |
+| **성능에 중요한 변경**   | `*nfr` 자주 실행 → `*review`                   | 지속적 | 즉시 성능 저하 감지 |
+| **데이터 마이그레이션**                | `*risk` → `*design` → `*trace` → `*review` → `*gate` | 전체 사이클 | 데이터 무결성 보장         |
+| **복잡한 시스템에서 버그 수정**     | `*risk` → `*trace` → `*review`                       | 집중적 | 부작용 방지          |
 
-#### Integration with Brownfield Scenarios
+#### 브라운필드 시나리오와의 통합
 
-**Scenario-Specific Guidance:**
+**시나리오별 가이드:**
 
-1. **Legacy Code Modernization**
-   - Start with `*risk` to map all dependencies
-   - Use `*design` to plan strangler fig approach
-   - Run `*trace` frequently to ensure nothing breaks
-   - `*review` with focus on gradual migration
+1. **레거시 코드 현대화**
+   - `*risk`로 시작하여 모든 의존성 매핑
+   - `*design`을 사용하여 스트랭글러 피그 접근법 계획
+   - `*trace`를 자주 실행하여 아무것도 깨지지 않도록 보장
+   - 점진적 마이그레이션에 중점을 둔 `*review`
 
-2. **Adding Features to Monolith**
-   - `*risk` identifies integration complexity
-   - `*design` plans isolation strategies
-   - `*nfr` monitors performance impact
-   - `*review` validates no monolith degradation
+2. **모노리스에 기능 추가**
+   - `*risk`가 통합 복잡성 식별
+   - `*design`이 격리 전략 계획
+   - `*nfr`이 성능 영향 모니터링
+   - `*review`가 모노리스 저하 없음 검증
 
-3. **Microservice Extraction**
-   - `*risk` maps service boundaries
-   - `*trace` ensures functionality preservation
-   - `*nfr` validates network overhead acceptable
-   - `*gate` documents accepted trade-offs
+3. **마이크로서비스 추출**
+   - `*risk`가 서비스 경계 매핑
+   - `*trace`가 기능 보존 보장
+   - `*nfr`이 네트워크 오버헤드가 허용 가능한지 검증
+   - `*gate`가 받아들인 트레이드오프 문서화
 
-4. **Database Schema Changes**
-   - `*risk` assesses migration complexity
-   - `*design` plans backward-compatible approach
-   - `*trace` maps all affected queries
-   - `*review` validates migration safety
+4. **데이터베이스 스키마 변경**
+   - `*risk`가 마이그레이션 복잡성 평가
+   - `*design`이 하위 호환성 접근법 계획
+   - `*trace`가 영향받는 모든 쿼리 매핑
+   - `*review`가 마이그레이션 안전성 검증
 
-### 5. Communicate Changes
+### 5. 변경사항 소통
 
-Document:
+다음을 문서화:
 
-- What changed and why
-- Migration instructions
-- New patterns introduced
-- Deprecation notices
+- 무엇이 변경되었고 왜 변경되었는지
+- 마이그레이션 지침
+- 도입된 새로운 패턴
+- 사용 중단 공지
 
-## Common Brownfield Scenarios
+## 일반적인 브라운필드 시나리오
 
-### Scenario 1: Adding a New Feature
+### 시나리오 1: 새로운 기능 추가
 
-1. Document existing system
-2. Create brownfield PRD focusing on integration
-3. **Test Architect Early Involvement**:
-   - Run `@qa *risk` on draft stories to identify integration risks
-   - Use `@qa *design` to plan regression test strategy
-4. Architecture emphasizes compatibility
-5. Stories include integration tasks with test requirements
-6. **During Development**:
-   - Developer runs `@qa *trace` to verify coverage
-   - Use `@qa *nfr` to monitor performance impact
-7. **Review Stage**: `@qa *review` validates integration safety
+1. 기존 시스템 문서화
+2. 통합에 중점을 둔 브라운필드 PRD 생성
+3. **테스트 아키텍트 조기 참여**:
+   - 초안 스토리에서 `@qa *risk`를 실행하여 통합 위험 식별
+   - `@qa *design`을 사용하여 회귀 테스트 전략 계획
+4. 아키텍처는 호환성 강조
+5. 스토리에 테스트 요구사항이 포함된 통합 작업 포함
+6. **개발 중**:
+   - 개발자가 `@qa *trace`를 실행하여 커버리지 검증
+   - `@qa *nfr`을 사용하여 성능 영향 모니터링
+7. **리뷰 단계**: `@qa *review`가 통합 안전성 검증
 
-### Scenario 2: Modernizing Legacy Code
+### 시나리오 2: 레거시 코드 현대화
 
-1. Extensive documentation phase
-2. PRD includes migration strategy
-3. **Test Architect Strategy Planning**:
-   - `@qa *risk` assesses modernization complexity
-   - `@qa *design` plans parallel testing approach
-4. Architecture plans gradual transition (strangler fig pattern)
-5. Stories follow incremental modernization with:
-   - Regression tests for untouched legacy code
-   - Integration tests for new/old boundaries
-   - Performance benchmarks at each stage
-6. **Continuous Validation**: Run `@qa *trace` after each increment
-7. **Gate Management**: Use `@qa *gate` to track technical debt acceptance
+1. 광범위한 문서화 단계
+2. PRD에 마이그레이션 전략 포함
+3. **테스트 아키텍트 전략 계획**:
+   - `@qa *risk`가 현대화 복잡성 평가
+   - `@qa *design`이 병렬 테스팅 접근법 계획
+4. 아키텍처가 점진적 전환 계획 (스트랭글러 피그 패턴)
+5. 스토리는 다음과 함께 점진적 현대화를 따름:
+   - 건드리지 않은 레거시 코드를 위한 회귀 테스트
+   - 새로운/기존 경계를 위한 통합 테스트
+   - 각 단계에서의 성능 벤치마크
+6. **지속적 검증**: 각 증분 후 `@qa *trace` 실행
+7. **게이트 관리**: `@qa *gate`를 사용하여 기술 부채 수용 추적
 
-### Scenario 3: Bug Fix in Complex System
+### 시나리오 3: 복잡한 시스템에서 버그 수정
 
-1. Document relevant subsystems
-2. Use `create-brownfield-story` for focused fix
-3. **Test Architect Risk Assessment**: Run `@qa *risk` to identify side effect potential
-4. Include regression test requirements from `@qa *design` output
-5. **During Fix**: Use `@qa *trace` to map affected functionality
-6. **Before Commit**: Run `@qa *review` for comprehensive validation
-7. Test Architect validates no side effects using:
-   - Risk profiling for side effect analysis (probability × impact scoring)
-   - Trace matrix to ensure fix doesn't break related features
-   - NFR assessment to verify performance/security unchanged
-   - Gate decision documents fix safety
+1. 관련 하위 시스템 문서화
+2. 집중적 수정을 위해 `create-brownfield-story` 사용
+3. **테스트 아키텍트 위험 평가**: `@qa *risk`를 실행하여 부작용 가능성 식별
+4. `@qa *design` 출력에서 회귀 테스트 요구사항 포함
+5. **수정 중**: `@qa *trace`를 사용하여 영향받는 기능 매핑
+6. **커밋 전**: 포괄적 검증을 위해 `@qa *review` 실행
+7. 테스트 아키텍트가 다음을 사용하여 부작용 없음 검증:
+   - 부작용 분석을 위한 위험 프로파일링 (확률 × 영향 점수)
+   - 수정이 관련 기능을 깨지 않도록 보장하는 추적 매트릭스
+   - 성능/보안이 변경되지 않았는지 검증하는 NFR 평가
+   - 수정 안전성을 문서화하는 게이트 결정
 
-### Scenario 4: API Integration
+### 시나리오 4: API 통합
 
-1. Document existing API patterns
-2. PRD defines integration requirements
-3. **Test Architect Contract Analysis**:
-   - `@qa *risk` identifies breaking change potential
-   - `@qa *design` creates contract test strategy
-4. Architecture ensures consistent patterns
-5. **API Testing Focus**:
-   - Contract tests for backward compatibility
-   - Integration tests for new endpoints
-   - Performance tests for added load
-6. Stories include API documentation updates
-7. **Validation Checkpoints**:
-   - `@qa *trace` maps all API consumers
-   - `@qa *nfr` validates response times
-   - `@qa *review` ensures no breaking changes
-8. **Gate Decision**: Document any accepted breaking changes with migration path
+1. 기존 API 패턴 문서화
+2. PRD가 통합 요구사항 정의
+3. **테스트 아키텍트 계약 분석**:
+   - `@qa *risk`가 파괴적 변경 가능성 식별
+   - `@qa *design`이 계약 테스트 전략 생성
+4. 아키텍처가 일관된 패턴 보장
+5. **API 테스팅 중점**:
+   - 하위 호환성을 위한 계약 테스트
+   - 새 엔드포인트를 위한 통합 테스트
+   - 추가 부하를 위한 성능 테스트
+6. 스토리에 API 문서 업데이트 포함
+7. **검증 체크포인트**:
+   - `@qa *trace`가 모든 API 소비자 매핑
+   - `@qa *nfr`이 응답 시간 검증
+   - `@qa *review`가 파괴적 변경 없음 보장
+8. **게이트 결정**: 마이그레이션 경로와 함께 수용된 파괴적 변경사항 문서화
 
-## Troubleshooting
+## 문제 해결
 
-### "The AI doesn't understand my codebase"
+### "AI가 내 코드베이스를 이해하지 못함"
 
-**Solution**: Re-run `document-project` with more specific paths to critical files
+**해결책**: 중요한 파일들에 대한 더 구체적인 경로로 `document-project`를 다시 실행
 
-### "Generated plans don't fit our patterns"
+### "생성된 계획이 우리 패턴에 맞지 않음"
 
-**Solution**: Update generated documentation with your specific conventions before planning phase
+**해결책**: 계획 단계 전에 생성된 문서를 특정 관례로 업데이트
 
-### "Too much boilerplate for small changes"
+### "작은 변경사항에 너무 많은 보일러플레이트"
 
-**Solution**: Use `create-brownfield-story` instead of full workflow
+**해결책**: 전체 워크플로우 대신 `create-brownfield-story` 사용
 
-### "Integration points unclear"
+### "통합 지점이 불명확"
 
-**Solution**: Provide more context during PRD creation, specifically highlighting integration systems
+**해결책**: PRD 생성 중에 통합 시스템을 구체적으로 강조하여 더 많은 컨텍스트 제공
 
-## Quick Reference
+## 빠른 참조
 
-### Brownfield-Specific Commands
+### 브라운필드별 명령
 
 ```bash
-# Document existing project
+# 기존 프로젝트 문서화
 @architect *document-project
 
-# Create enhancement PRD
+# 향상 PRD 생성
 @pm *create-brownfield-prd
 
-# Create architecture with integration focus
+# 통합에 중점을 둔 아키텍처 생성
 @architect *create-brownfield-architecture
 
-# Quick epic creation
+# 빠른 에픽 생성
 @pm *create-brownfield-epic
 
-# Single story creation
+# 단일 스토리 생성
 @pm *create-brownfield-story
 ```
 
-### Test Architect Commands for Brownfield
+### 브라운필드를 위한 테스트 아키텍트 명령
 
-Note: Short forms shown below. Full commands: `*risk-profile`, `*test-design`, `*nfr-assess`, `*trace-requirements`
+참고: 아래는 축약형. 전체 명령: `*risk-profile`, `*test-design`, `*nfr-assess`, `*trace-requirements`
 
 ```bash
-# BEFORE DEVELOPMENT (Planning)
-@qa *risk {story}     # Assess regression & integration risks
-@qa *design {story}   # Plan regression + new feature tests
+# 개발 전 (계획)
+@qa *risk {story}     # 회귀 및 통합 위험 평가
+@qa *design {story}   # 회귀 + 새 기능 테스트 계획
 
-# DURING DEVELOPMENT (Validation)
-@qa *trace {story}    # Verify coverage of old + new
-@qa *nfr {story}      # Check performance degradation
+# 개발 중 (검증)
+@qa *trace {story}    # 기존 + 새로운 것의 커버리지 검증
+@qa *nfr {story}      # 성능 저하 확인
 
-# AFTER DEVELOPMENT (Review)
-@qa *review {story}   # Deep integration analysis
-@qa *gate {story}     # Update quality decision
+# 개발 후 (리뷰)
+@qa *review {story}   # 심층 통합 분석
+@qa *gate {story}     # 품질 결정 업데이트
 ```
 
-### Decision Tree
+### 의사결정 트리
 
 ```text
-Do you have a large codebase or monorepo?
-├─ Yes → PRD-First Approach
-│   └─ Create PRD → Document only affected areas
-└─ No → Is the codebase well-known to you?
-    ├─ Yes → PRD-First Approach
-    └─ No → Document-First Approach
+대규모 코드베이스나 모노레포를 가지고 있나요?
+├─ Yes → PRD 우선 접근법
+│   └─ PRD 생성 → 영향받는 영역만 문서화
+└─ No → 코드베이스를 잘 알고 있나요?
+    ├─ Yes → PRD 우선 접근법
+    └─ No → 문서 우선 접근법
 
-Is this a major enhancement affecting multiple systems?
-├─ Yes → Full Brownfield Workflow
-│   └─ ALWAYS run Test Architect *risk + *design first
-└─ No → Is this more than a simple bug fix?
+이것이 여러 시스템에 영향을 주는 주요 향상인가요?
+├─ Yes → 완전한 브라운필드 워크플로우
+│   └─ 항상 테스트 아키텍트 *risk + *design을 먼저 실행
+└─ No → 이것이 단순한 버그 수정 이상인가요?
     ├─ Yes → *create-brownfield-epic
-    │   └─ Run Test Architect *risk for integration points
+    │   └─ 통합 지점을 위해 테스트 아키텍트 *risk 실행
     └─ No → *create-brownfield-story
-        └─ Still run *risk if touching critical paths
+        └─ 중요한 경로를 건드리는 경우 여전히 *risk 실행
 
-Does the change touch legacy code?
-├─ Yes → Test Architect is MANDATORY
-│   ├─ *risk → Identify regression potential
-│   ├─ *design → Plan test coverage
-│   └─ *review → Validate no breakage
-└─ No → Test Architect is RECOMMENDED
-    └─ *review → Ensure quality standards
+변경사항이 레거시 코드를 건드리나요?
+├─ Yes → 테스트 아키텍트는 필수
+│   ├─ *risk → 회귀 가능성 식별
+│   ├─ *design → 테스트 커버리지 계획
+│   └─ *review → 손상 없음 검증
+└─ No → 테스트 아키텍트는 권장
+    └─ *review → 품질 표준 보장
 ```
 
-## Conclusion
+## 결론
 
-Brownfield development with BMad Method provides structure and safety when modifying existing systems. The Test Architect becomes your critical safety net, using risk assessment, regression testing, and continuous validation to ensure new changes don't destabilize existing functionality.
+BMad Method를 사용한 브라운필드 개발은 기존 시스템을 수정할 때 구조와 안전성을 제공합니다. 테스트 아키텍트는 위험 평가, 회귀 테스팅, 지속적 검증을 사용하여 새로운 변경사항이 기존 기능을 불안정하게 만들지 않도록 보장하는 중요한 안전망이 됩니다.
 
-**The Brownfield Success Formula:**
+**브라운필드 성공 공식:**
 
-1. **Document First** - Understand what exists
-2. **Assess Risk Early** - Use Test Architect `*risk` before coding
-3. **Plan Test Strategy** - Design regression + new feature tests
-4. **Validate Continuously** - Check integration health during development
-5. **Review Comprehensively** - Deep analysis before committing
-6. **Gate Decisively** - Document quality decisions
+1. **먼저 문서화** - 무엇이 존재하는지 이해
+2. **조기 위험 평가** - 코딩 전에 테스트 아키텍트 `*risk` 사용
+3. **테스트 전략 계획** - 회귀 + 새 기능 테스트 설계
+4. **지속적 검증** - 개발 중 통합 상태 확인
+5. **포괄적 리뷰** - 커밋 전 심층 분석
+6. **결정적 게이트** - 품질 결정 문서화
 
-Remember: **In brownfield, the Test Architect isn't optional - it's your insurance policy against breaking production.**
+기억하세요: **브라운필드에서 테스트 아키텍트는 선택 사항이 아닙니다 - 프로덕션 손상에 대한 보험 정책입니다.**

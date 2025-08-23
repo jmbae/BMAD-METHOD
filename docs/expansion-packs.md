@@ -1,280 +1,280 @@
-# The Power of BMad Expansion Packs
+# BMad 확장 팩의 힘
 
-## Overview
+## 개요
 
-BMad Method's expansion packs unlock the framework's true potential by extending its natural language AI orchestration to ANY domain. While the core framework focuses on software development, expansion packs transform BMad into a universal AI agent system.
+BMad Method의 확장 팩은 자연어 AI 오케스트레이션을 모든 도메인으로 확장하여 프레임워크의 진정한 잠재력을 발휘합니다. 핵심 프레임워크가 소프트웨어 개발에 중점을 두는 반면, 확장 팩은 BMad를 범용 AI 에이전트 시스템으로 변화시킵니다.
 
-## Why Expansion Packs?
+## 확장 팩이 필요한 이유는?
 
-### Keep Core Lean
+### 핵심의 단순함 유지
 
-The core BMad framework maintains its focus on software development, ensuring dev agents have maximum context for coding. Expansion packs handle everything else.
+핵심 BMad 프레임워크는 소프트웨어 개발에 중점을 두어 개발 에이전트가 코딩을 위한 최대 컨텍스트를 갖도록 보장합니다. 확장 팩은 나머지 모든 것을 처리합니다.
 
-### Domain Expertise
+### 도메인 전문성
 
-Each expansion pack provides deep, specialized knowledge without bloating the core system. Install only what you need.
+각 확장 팩은 핵심 시스템을 비대하게 만들지 않으면서 깊고 전문적인 지식을 제공합니다. 필요한 것만 설치하세요.
 
-### Community Innovation
+### 커뮤니티 혁신
 
-Anyone can create and share expansion packs, fostering a ecosystem of AI-powered solutions across all industries and interests.
+누구나 확장 팩을 만들고 공유할 수 있어, 모든 산업과 관심사에 걸친 AI 기반 솔루션의 생태계를 조성합니다.
 
-## Technical Expansion Packs
+## 기술적 확장 팩
 
-### Game Development Pack
+### 게임 개발 팩
 
-Transform your AI into a complete game development studio:
+AI를 완전한 게임 개발 스튜디오로 변화시킵니다:
 
-- **Game Designer**: Mechanics, balance, progression systems
-- **Level Designer**: Map layouts, puzzle design, difficulty curves
-- **Narrative Designer**: Story arcs, dialog trees, lore creation
-- **Art Director**: Visual style guides, asset specifications
-- **Sound Designer**: Audio direction, music themes, SFX planning
+- **게임 디자이너**: 메커니즘, 균형, 진행 시스템
+- **레벨 디자이너**: 맵 레이아웃, 퍼즐 설계, 난이도 곡선
+- **내러티브 디자이너**: 스토리 아크, 대화 트리, 로어 생성
+- **아트 디렉터**: 비주얼 스타일 가이드, 에셋 명세
+- **사운드 디자이너**: 오디오 방향성, 음악 테마, SFX 계획
 
-### Mobile Development Pack
+### 모바일 개발 팩
 
-Specialized agents for mobile app creation:
+모바일 앱 생성을 위한 전문 에이전트:
 
-- **iOS Specialist**: Swift/SwiftUI patterns, Apple guidelines
-- **Android Expert**: Kotlin best practices, Material Design
-- **Mobile UX Designer**: Touch interfaces, gesture patterns
-- **App Store Optimizer**: ASO strategies, listing optimization
-- **Performance Tuner**: Battery optimization, network efficiency
+- **iOS 전문가**: Swift/SwiftUI 패턴, Apple 가이드라인
+- **Android 전문가**: Kotlin 모범 사례, Material Design
+- **모바일 UX 디자이너**: 터치 인터페이스, 제스처 패턴
+- **앱 스토어 최적화 전문가**: ASO 전략, 리스팅 최적화
+- **성능 튜너**: 배터리 최적화, 네트워크 효율성
 
-### DevOps/Infrastructure Pack
+### DevOps/인프라스트럭처 팩
 
-Complete infrastructure automation team:
+완전한 인프라스트럭처 자동화 팀:
 
-- **Cloud Architect**: AWS/Azure/GCP design patterns
-- **Security Specialist**: Zero-trust implementation, compliance
-- **SRE Expert**: Monitoring, alerting, incident response
-- **Container Orchestrator**: Kubernetes, Docker optimization
-- **Cost Optimizer**: Cloud spend analysis, resource right-sizing
+- **클라우드 아키텍트**: AWS/Azure/GCP 설계 패턴
+- **보안 전문가**: 제로 트러스트 구현, 컴플라이언스
+- **SRE 전문가**: 모니터링, 알림, 인시던트 대응
+- **컨테이너 오케스트레이터**: Kubernetes, Docker 최적화
+- **비용 최적화 전문가**: 클라우드 비용 분석, 리소스 적정 크기 조정
 
-### Data Science Pack
+### 데이터 사이언스 팩
 
-AI-powered data analysis team:
+AI 기반 데이터 분석 팀:
 
-- **Data Scientist**: Statistical analysis, ML model selection
-- **Data Engineer**: Pipeline design, ETL processes
-- **ML Engineer**: Model deployment, A/B testing
-- **Visualization Expert**: Dashboard design, insight communication
-- **Ethics Advisor**: Bias detection, fairness assessment
+- **데이터 사이언티스트**: 통계 분석, ML 모델 선택
+- **데이터 엔지니어**: 파이프라인 설계, ETL 프로세스
+- **ML 엔지니어**: 모델 배포, A/B 테스팅
+- **시각화 전문가**: 대시보드 설계, 인사이트 커뮤니케이션
+- **윤리 고문**: 편향 감지, 공정성 평가
 
-## Non-Technical Expansion Packs
+## 비기술적 확장 팩
 
-### Business Strategy Pack
+### 비즈니스 전략 팩
 
-Complete business advisory team:
+완전한 비즈니스 자문 팀:
 
-- **Strategy Consultant**: Market positioning, competitive analysis
-- **Financial Analyst**: Projections, unit economics, funding strategies
-- **Operations Manager**: Process optimization, efficiency improvements
-- **Marketing Strategist**: Go-to-market plans, growth hacking
-- **HR Advisor**: Talent strategies, culture building
+- **전략 컨설턴트**: 시장 포지셔닝, 경쟁 분석
+- **재무 분석가**: 프로젝션, 단위 경제학, 자금 조달 전략
+- **운영 관리자**: 프로세스 최적화, 효율성 개선
+- **마케팅 전략가**: 시장 진출 계획, 성장 해킹
+- **HR 고문**: 인재 전략, 문화 구축
 
-### Creative Writing Pack
+### 창작 글쓰기 팩
 
-Your personal writing team:
+개인 작문 팀:
 
-- **Plot Architect**: Three-act structure, story beats, pacing
-- **Character Psychologist**: Deep motivations, authentic dialog
-- **World Builder**: Consistent universes, cultural systems
-- **Editor**: Style consistency, grammar, flow
-- **Beta Reader**: Feedback simulation, plot hole detection
+- **플롯 아키텍트**: 3막 구조, 스토리 비트, 페이싱
+- **캐릭터 심리학자**: 깊은 동기, 진정성 있는 대화
+- **세계관 구축자**: 일관된 우주, 문화 시스템
+- **편집자**: 스타일 일관성, 문법, 흐름
+- **베타 리더**: 피드백 시뮬레이션, 플롯 홀 감지
 
-### Health & Wellness Pack
+### 건강 및 웰니스 팩
 
-Personal wellness coaching system:
+개인 웰니스 코칭 시스템:
 
-- **Fitness Trainer**: Progressive overload, form correction
-- **Nutritionist**: Macro planning, supplement guidance
-- **Sleep Coach**: Circadian optimization, sleep hygiene
-- **Stress Manager**: Coping strategies, work-life balance
-- **Habit Engineer**: Behavior change, accountability systems
+- **피트니스 트레이너**: 점진적 과부하, 폼 교정
+- **영양사**: 매크로 계획, 보충제 가이드
+- **수면 코치**: 일주기 리듬 최적화, 수면 위생
+- **스트레스 관리자**: 대처 전략, 일과 삶의 균형
+- **습관 엔지니어**: 행동 변화, 책임감 시스템
 
-### Education Pack
+### 교육 팩
 
-Complete learning design system:
+완전한 학습 설계 시스템:
 
-- **Curriculum Architect**: Learning objectives, scope & sequence
-- **Instructional Designer**: Engagement strategies, multimedia learning
-- **Assessment Specialist**: Rubrics, formative/summative evaluation
-- **Differentiation Expert**: Adaptive learning, special needs
-- **EdTech Integrator**: Tool selection, digital pedagogy
+- **커리큘럼 아키텍트**: 학습 목표, 범위 및 순서
+- **교육 설계자**: 참여 전략, 멀티미디어 학습
+- **평가 전문가**: 루브릭, 형성/총괄 평가
+- **개별화 전문가**: 적응형 학습, 특수 교육
+- **에드테크 통합자**: 도구 선정, 디지털 교수법
 
 ### Mental Health Support Pack
 
-Therapeutic support system:
+치료적 지원 시스템:
 
-- **CBT Guide**: Cognitive restructuring, thought challenging
-- **Mindfulness Teacher**: Meditation scripts, awareness exercises
-- **Journal Therapist**: Reflective prompts, emotional processing
-- **Crisis Support**: Coping strategies, safety planning
-- **Habit Tracker**: Mood monitoring, trigger identification
+- **CBT 가이드**: 인지 재구성, 사고 도전
+- **마인드풀니스 교사**: 명상 스크립트, 인식 훈련
+- **저널 치료사**: 반영적 질문, 감정 처리
+- **위기 지원**: 대처 전략, 안전 계획
+- **습관 추적기**: 기분 모니터링, 트리거 식별
 
 ### Legal Assistant Pack
 
-Legal document and research support:
+법률 문서 및 리서치 지원:
 
-- **Contract Analyst**: Term review, risk assessment
-- **Legal Researcher**: Case law, precedent analysis
-- **Document Drafter**: Template customization, clause libraries
-- **Compliance Checker**: Regulatory alignment, audit prep
-- **IP Advisor**: Patent strategies, trademark guidance
+- **계약 분석가**: 조건 검토, 위험 평가
+- **법률 연구원**: 판례, 선례 분석
+- **문서 작성자**: 템플릿 커스터마이징, 조항 라이브러리
+- **컴플라이언스 점검자**: 규제 준수, 감사 준비
+- **IP 자문가**: 특허 전략, 상표 가이드
 
 ### Real Estate Pack
 
-Property investment and management:
+부동산 투자 및 관리:
 
-- **Market Analyst**: Comparable analysis, trend prediction
-- **Investment Calculator**: ROI modeling, cash flow analysis
-- **Property Manager**: Tenant screening, maintenance scheduling
-- **Flip Strategist**: Renovation ROI, project planning
-- **Agent Assistant**: Listing optimization, showing prep
+- **시장 분석가**: 비교 분석, 트렌드 예측
+- **투자 계산기**: ROI 모델링, 현금 흐름 분석
+- **자산 관리자**: 임차인 심사, 유지보수 일정 관리
+- **플립 전략가**: 리노베이션 ROI, 프로젝트 계획
+- **에이전트 어시스턴트**: 리스팅 최적화, 매물 준비
 
 ### Personal Development Pack
 
-Complete personal growth system:
+완전한 개인 성장 시스템:
 
-- **Life Coach**: Guides personal growth and transformation
-- **Goal Strategist**: Helps achieve objectives with SMART goals
-- **Habit Builder**: Creates lasting habits with accountability
-- **Mindset Mentor**: Develops positive thinking patterns
+- **라이프 코치**: 개인 성장과 변화 안내
+- **목표 전략가**: SMART 목표로 목표 달성 지원
+- **습관 빌더**: 책임감 있는 지속 습관 형성
+- **마인드셋 멘토**: 긍정적 사고 패턴 개발
 
-Key tasks include:
+주요 작업:
 
-- `goal-setting`: Defines SMART goals with action plans
-- `habit-tracking`: Monitors habit formation progress
-- `reflection-exercise`: Facilitates deep self-reflection
+- `goal-setting`: SMART 목표와 실행 계획 정의
+- `habit-tracking`: 습관 형성 진행 모니터링
+- `reflection-exercise`: 깊은 자기 성찰 촉진
 
 ## Unique & Innovative Packs
 
-### Role-Playing Game Master Pack
+### 롤플레잉 게임 마스터 팩
 
-AI-powered tabletop RPG assistance:
+AI 기반 테이블탑 RPG 지원:
 
-- **World Master**: Dynamic world generation, NPC creation
-- **Combat Referee**: Initiative tracking, rule clarification
-- **Story Weaver**: Plot hooks, side quests, consequences
-- **Character Builder**: Backstory generation, stat optimization
-- **Loot Master**: Treasure generation, magic item creation
+- **월드 마스터**: 동적 세계 생성, NPC 제작
+- **전투 심판**: 이니셔티브 추적, 규칙 명확화
+- **스토리 위버**: 플롯 훅, 사이드 퀘스트, 결과
+- **캐릭터 빌더**: 배경 스토리 생성, 스탯 최적화
+- **루트 마스터**: 보물 생성, 마법 아이템 제작
 
 ### Life Event Planning Pack
 
-Major life event coordination:
+중요한 인생 이벤트 코디네이션:
 
-- **Wedding Planner**: Vendor coordination, timeline creation
-- **Event Designer**: Theme development, decoration plans
-- **Budget Manager**: Cost tracking, vendor negotiation
-- **Guest Coordinator**: RSVP tracking, seating arrangements
-- **Timeline Keeper**: Day-of scheduling, contingency planning
+- **웨딩 플래너**: 벤더 조율, 타임라인 생성
+- **이벤트 디자이너**: 테마 개발, 장식 계획
+- **예산 관리자**: 비용 추적, 벤더 협상
+- **게스트 코디네이터**: RSVP 추적, 좌석 배치
+- **타임라인 키퍼**: 행사 당일 일정, 비상 계획
 
 ### Hobby Mastery Pack
 
-Deep dive into specific hobbies:
+특정 취미에 대한 심층 탐구:
 
-- **Garden Designer**: Plant selection, seasonal planning
-- **Brew Master**: Recipe formulation, process optimization
-- **Maker Assistant**: 3D printing, woodworking, crafts
-- **Collection Curator**: Organization, valuation, trading
-- **Photography Coach**: Composition, lighting, post-processing
+- **가든 디자이너**: 식물 선정, 계절별 계획
+- **브루 마스터**: 레시피 개발, 공정 최적화
+- **메이커 어시스턴트**: 3D 프린팅, 목공, 공예
+- **컬렉션 큐레이터**: 정리, 가치 평가, 거래
+- **사진 코치**: 구도, 조명, 후처리
 
 ### Scientific Research Pack
 
-Research acceleration tools:
+과학 연구 가속화 도구:
 
-- **Literature Reviewer**: Paper summarization, gap analysis
-- **Hypothesis Generator**: Research question formulation
-- **Methodology Designer**: Experiment planning, control design
-- **Statistical Advisor**: Test selection, power analysis
-- **Grant Writer**: Proposal structure, impact statements
+- **문헌 리뷰어**: 논문 요약, 갭 분석
+- **가설 생성기**: 연구 질문 도출
+- **방법론 디자이너**: 실험 계획, 통제 설계
+- **통계 자문가**: 테스트 선정, 파워 분석
+- **그랜트 라이터**: 제안서 구조, 영향 진술
 
 ## Creating Your Own Expansion Pack
 
-### Step 1: Define Your Domain
+### 1단계: 도메인 정의
 
-What expertise are you capturing? What problems will it solve?
+어떤 전문성을 담을 것인가요? 어떤 문제를 해결할 수 있나요?
 
-### Step 2: Design Your Agents
+### 2단계: 에이전트 설계
 
-Each agent should have:
+각 에이전트는 다음을 갖추어야 합니다:
 
-- Clear expertise area
-- Specific personality traits
-- Defined capabilities
-- Knowledge boundaries
+- 명확한 전문 분야
+- 구체적인 성격 특성
+- 정의된 역량
+- 지식의 경계
 
-### Step 3: Create Tasks
+### 3단계: 작업 생성
 
-Tasks should be:
+작업은 다음과 같아야 합니다:
 
-- Step-by-step procedures
-- Reusable across scenarios
-- Clear and actionable
-- Domain-specific
+- 단계별 절차
+- 다양한 시나리오에 재사용 가능
+- 명확하고 실행 가능
+- 도메인 특화
 
-### Step 4: Build Templates
+### 4단계: 템플릿 구축
 
-Templates need:
+템플릿에는 다음이 필요합니다:
 
-- Structured output format
-- Embedded LLM instructions
-- Placeholders for customization
-- Professional formatting
+- 구조화된 출력 형식
+- LLM 지침 내장
+- 커스터마이즈용 플레이스홀더
+- 전문적인 포맷
 
-### Step 5: Test & Iterate
+### 5단계: 테스트 및 반복
 
-- Use with real scenarios
-- Gather user feedback
-- Refine agent responses
-- Improve task clarity
+- 실제 시나리오에서 사용
+- 사용자 피드백 수집
+- 에이전트 응답 개선
+- 작업 명확성 향상
 
-### Step 6: Package & Share
+### 6단계: 패키징 및 공유
 
-- Create clear documentation
-- Include usage examples
-- Add to expansion-packs directory
-- Share with community
+- 명확한 문서 작성
+- 사용 예시 포함
+- expansion-packs 디렉토리에 추가
+- 커뮤니티와 공유
 
 ## The Future of Expansion Packs
 
-### Marketplace Potential
+### 마켓플레이스 가능성
 
-Imagine a future where:
+다음과 같은 미래를 상상해보세요:
 
-- Professional expansion packs are sold
-- Certified packs for regulated industries
-- Community ratings and reviews
-- Automatic updates and improvements
+- 전문 확장 팩 판매
+- 규제 산업용 인증 팩
+- 커뮤니티 평점 및 리뷰
+- 자동 업데이트 및 개선
 
-### AI Agent Ecosystems
+### AI 에이전트 생태계
 
-Expansion packs could enable:
+확장 팩은 다음을 가능하게 할 수 있습니다:
 
-- Cross-pack agent collaboration
-- Industry-standard agent protocols
-- Interoperable AI workflows
-- Universal agent languages
+- 팩 간 에이전트 협업
+- 업계 표준 에이전트 프로토콜
+- 상호운용 가능한 AI 워크플로우
+- 범용 에이전트 언어
 
-### Democratizing Expertise
+### 전문성의 민주화
 
-Every expansion pack:
+모든 확장 팩은:
 
-- Makes expert knowledge accessible
-- Reduces barriers to entry
-- Enables solo entrepreneurs
-- Empowers small teams
+- 전문가 지식 접근성 향상
+- 진입 장벽 감소
+- 1인 창업가 지원
+- 소규모 팀 역량 강화
 
 ## Getting Started
 
-1. **Browse existing packs**: Check `expansion-packs/` directory
-2. **Install what you need**: Use the installer's expansion pack option
-3. **Create your own**: Use the expansion-creator pack
-4. **Share with others**: Submit PRs with new packs
-5. **Build the future**: Help shape AI-assisted work
+1. **기존 팩 탐색**: `expansion-packs/` 디렉토리 확인
+2. **필요한 팩 설치**: 설치 프로그램의 확장 팩 옵션 사용
+3. **직접 만들기**: expansion-creator 팩 활용
+4. **공유하기**: 새 팩을 PR로 제출
+5. **미래 구축**: AI 지원 작업의 미래를 함께 만듦
 
 ## Remember
 
-The BMad Method is more than a development framework - it's a platform for structuring human expertise into AI-accessible formats. Every expansion pack you create makes specialized knowledge more accessible to everyone.
+BMad Method는 단순한 개발 프레임워크를 넘어, 인간 전문성을 AI가 활용할 수 있는 형식으로 구조화하는 플랫폼입니다. 여러분이 만드는 모든 확장 팩은 전문 지식을 모두에게 더 쉽게 전달합니다.
 
-**What expertise will you share with the world?**
+**당신은 어떤 전문성을 세상과 나누시겠습니까?**

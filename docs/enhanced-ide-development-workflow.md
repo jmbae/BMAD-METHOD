@@ -1,248 +1,248 @@
-# Enhanced IDE Development Workflow
+# 향상된 IDE 개발 워크플로우
 
-This is a simple step-by-step guide to help you efficiently manage your development workflow using the BMad Method. The workflow integrates the Test Architect (QA agent) throughout the development lifecycle to ensure quality, prevent regressions, and maintain high standards. Refer to the **[<ins>User Guide</ins>](user-guide.md)** for any scenario that is not covered here.
+이것은 BMad Method를 사용하여 개발 워크플로우를 효율적으로 관리하는 데 도움이 되는 간단한 단계별 가이드입니다. 워크플로우는 품질을 보장하고, 회귀를 방지하며, 높은 표준을 유지하기 위해 개발 라이프사이클 전반에 걸쳐 테스트 아키텍트(QA 에이전트)를 통합합니다. 여기서 다루지 않는 시나리오에 대해서는 **[사용자 가이드](user-guide.md)**를 참조하세요.
 
-## Create New Branch
+## 새 브랜치 생성
 
-1. **Start new branch**
+1. **새 브랜치 시작**
 
-## Story Creation (Scrum Master)
+## 스토리 생성 (스크럼 마스터)
 
-1. **Start new chat/conversation**
-2. **Load SM agent**
-3. **Execute**: `*draft` (runs create-next-story task)
-4. **Review generated story** in `docs/stories/`
-5. **Update status**: Change from "Draft" to "Approved"
+1. **새 채팅/대화 시작**
+2. **SM 에이전트 로드**
+3. **실행**: `*draft` (create-next-story 작업 실행)
+4. **`docs/stories/`에서 생성된 스토리 검토**
+5. **상태 업데이트**: "Draft"에서 "Approved"로 변경
 
-## Story Implementation (Developer)
+## 스토리 구현 (개발자)
 
-1. **Start new chat/conversation**
-2. **Load Dev agent**
-3. **Execute**: `*develop-story {selected-story}` (runs execute-checklist task)
-4. **Review generated report** in `{selected-story}`
+1. **새 채팅/대화 시작**
+2. **Dev 에이전트 로드**
+3. **실행**: `*develop-story {selected-story}` (execute-checklist 작업 실행)
+4. **`{selected-story}`에서 생성된 보고서 검토**
 
-## Test Architect Integration Throughout Workflow
+## 워크플로우 전반에 걸친 테스트 아키텍트 통합
 
-The Test Architect (Quinn) provides comprehensive quality assurance throughout the development lifecycle. Here's how to leverage each capability at the right time.
+테스트 아키텍트(Quinn)는 개발 라이프사이클 전반에 걸쳐 포괄적인 품질 보증을 제공합니다. 적절한 시기에 각 기능을 활용하는 방법은 다음과 같습니다.
 
-**Command Aliases:** Documentation uses short forms (`*risk`, `*design`, `*nfr`, `*trace`) for the full commands (`*risk-profile`, `*test-design`, `*nfr-assess`, `*trace-requirements`).
+**명령 별칭:** 문서는 전체 명령(`*risk-profile`, `*test-design`, `*nfr-assess`, `*trace-requirements`)에 대한 짧은 형태(`*risk`, `*design`, `*nfr`, `*trace`)를 사용합니다.
 
-### Quick Command Reference
+### 빠른 명령 참조
 
-| **Stage**                | **Command** | **Purpose**                             | **Output**                                                      | **Priority**                |
+| **단계**                | **명령** | **목적**                             | **출력**                                                      | **우선순위**                |
 | ------------------------ | ----------- | --------------------------------------- | --------------------------------------------------------------- | --------------------------- |
-| **After Story Approval** | `*risk`     | Identify integration & regression risks | `docs/qa/assessments/{epic}.{story}-risk-{YYYYMMDD}.md`         | High for complex/brownfield |
-|                          | `*design`   | Create test strategy for dev            | `docs/qa/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md`  | High for new features       |
-| **During Development**   | `*trace`    | Verify test coverage                    | `docs/qa/assessments/{epic}.{story}-trace-{YYYYMMDD}.md`        | Medium                      |
-|                          | `*nfr`      | Validate quality attributes             | `docs/qa/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md`          | High for critical features  |
-| **After Development**    | `*review`   | Comprehensive assessment                | QA Results in story + `docs/qa/gates/{epic}.{story}-{slug}.yml` | **Required**                |
-| **Post-Review**          | `*gate`     | Update quality decision                 | Updated `docs/qa/gates/{epic}.{story}-{slug}.yml`               | As needed                   |
+| **스토리 승인 후** | `*risk`     | 통합 및 회귀 위험 식별 | `docs/qa/assessments/{epic}.{story}-risk-{YYYYMMDD}.md`         | 복잡한/브라운필드에서 높음 |
+|                          | `*design`   | 개발을 위한 테스트 전략 생성 | `docs/qa/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md`  | 새 기능에서 높음       |
+| **개발 중**   | `*trace`    | 테스트 커버리지 검증                    | `docs/qa/assessments/{epic}.{story}-trace-{YYYYMMDD}.md`        | 보통                      |
+|                          | `*nfr`      | 품질 속성 검증             | `docs/qa/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md`          | 중요한 기능에서 높음  |
+| **개발 후**    | `*review`   | 포괄적 평가                | 스토리의 QA 결과 + `docs/qa/gates/{epic}.{story}-{slug}.yml` | **필수**                |
+| **리뷰 후**          | `*gate`     | 품질 결정 업데이트                 | 업데이트된 `docs/qa/gates/{epic}.{story}-{slug}.yml`               | 필요에 따라                   |
 
-### Stage 1: After Story Creation (Before Dev Starts)
+### 1단계: 스토리 생성 후 (개발 시작 전)
 
-**RECOMMENDED - Set Developer Up for Success:**
+**권장 - 개발자의 성공을 위한 설정:**
 
 ```bash
-# 1. RISK ASSESSMENT (Run FIRST for complex stories)
+# 1. 위험 평가 (복잡한 스토리에서 먼저 실행)
 @qa *risk {approved-story}
-# Identifies:
-#   - Technical debt impact
-#   - Integration complexity
-#   - Regression potential (1-9 scoring)
-#   - Mitigation strategies
-# Critical for: Brownfield, API changes, data migrations
+# 식별 사항:
+#   - 기술 부채 영향
+#   - 통합 복잡성
+#   - 회귀 가능성 (1-9 점수)
+#   - 완화 전략
+# 중요한 경우: 브라운필드, API 변경, 데이터 마이그레이션
 
-# 2. TEST DESIGN (Run SECOND to guide implementation)
+# 2. 테스트 설계 (구현을 가이드하기 위해 두 번째로 실행)
 @qa *design {approved-story}
-# Provides:
-#   - Test scenarios per acceptance criterion
-#   - Test level recommendations (unit/integration/E2E)
-#   - Risk-based priorities (P0/P1/P2)
-#   - Test data requirements
-# Share with Dev: Include in story comments or attach to ticket
+# 제공 사항:
+#   - 승인 기준별 테스트 시나리오
+#   - 테스트 레벨 권장사항 (unit/integration/E2E)
+#   - 위험 기반 우선순위 (P0/P1/P2)
+#   - 테스트 데이터 요구사항
+# 개발자와 공유: 스토리 댓글에 포함하거나 티켓에 첨부
 ```
 
-### Stage 2: During Development (Mid-Implementation Checkpoints)
+### 2단계: 개발 중 (구현 중간 체크포인트)
 
-**Developer Self-Service Quality Checks:**
+**개발자 셀프 서비스 품질 검사:**
 
 ```bash
-# 3. REQUIREMENTS TRACING (Verify coverage mid-development)
+# 3. 요구사항 추적 (개발 중 커버리지 검증)
 @qa *trace {story-in-progress}
-# Validates:
-#   - All acceptance criteria have tests
-#   - No missing test scenarios
-#   - Appropriate test levels
-#   - Given-When-Then documentation clarity
-# Run when: After writing initial tests
+# 검증 사항:
+#   - 모든 승인 기준에 테스트가 있음
+#   - 누락된 테스트 시나리오 없음
+#   - 적절한 테스트 레벨
+#   - Given-When-Then 문서화 명확성
+# 실행 시기: 초기 테스트 작성 후
 
-# 4. NFR VALIDATION (Check quality attributes)
+# 4. NFR 검증 (품질 속성 확인)
 @qa *nfr {story-in-progress}
-# Assesses:
-#   - Security: Authentication, authorization, data protection
-#   - Performance: Response times, resource usage
-#   - Reliability: Error handling, recovery
-#   - Maintainability: Code quality, documentation
-# Run when: Before marking "Ready for Review"
+# 평가 항목:
+#   - 보안: 인증, 권한 부여, 데이터 보호
+#   - 성능: 응답 시간, 자원 사용량
+#   - 신뢰성: 오류 처리, 복구
+#   - 유지보수성: 코드 품질, 문서화
+# 실행 시점: "리뷰 준비 완료"로 표시하기 전
 ```
 
 ### Stage 3: Story Review (Quality Gate Assessment)
 
-**REQUIRED - Comprehensive Test Architecture Review:**
+**필수 - 포괄적 테스트 아키텍처 리뷰:**
 
-**Prerequisite:** All tests green locally; lint & type checks pass.
+**사전 조건:** 모든 테스트가 로컬에서 통과해야 하며, 린트 및 타입 체크도 완료되어야 합니다.
 
 ```bash
-# 5. FULL REVIEW (Standard review process)
+# 5. 전체 리뷰 (표준 리뷰 프로세스)
 @qa *review {completed-story}
 ```
 
-**What Happens During Review:**
+**리뷰 중 수행되는 작업:**
 
-1. **Deep Code Analysis**
-   - Architecture pattern compliance
-   - Code quality and maintainability
-   - Security vulnerability scanning
-   - Performance bottleneck detection
+1. **심층 코드 분석**
+   - 아키텍처 패턴 준수
+   - 코드 품질 및 유지보수성
+   - 보안 취약점 스캔
+   - 성능 병목 탐지
 
-2. **Active Refactoring**
-   - Improves code directly when safe
-   - Fixes obvious issues immediately
-   - Suggests complex refactoring for dev
+2. **능동적 리팩토링**
+   - 안전할 경우 직접 코드 개선
+   - 명확한 문제 즉시 수정
+   - 복잡한 리팩토링은 개발자에게 제안
 
-3. **Test Validation**
-   - Coverage at all levels (unit/integration/E2E)
-   - Test quality (no flaky tests, proper assertions)
-   - Regression test adequacy
+3. **테스트 검증**
+   - 모든 레벨(단위/통합/E2E) 커버리지
+   - 테스트 품질(불안정 테스트 없음, 적절한 단언문)
+   - 회귀 테스트 적정성
 
-4. **Gate Decision**
-   - Creates: `docs/qa/gates/{epic}.{story}-{slug}.yml`
-   - Adds: QA Results section to story file
-   - Status: PASS/CONCERNS/FAIL/WAIVED
+4. **게이트 결정**
+   - 생성: `docs/qa/gates/{epic}.{story}-{slug}.yml`
+   - 추가: 스토리 파일에 QA 결과 섹션
+   - 상태: PASS/CONCERNS/FAIL/WAIVED
 
 ### Stage 4: Post-Review (After Addressing Issues)
 
-**Update Gate Status After Fixes:**
+**수정 후 게이트 상태 업데이트:**
 
 ```bash
-# 6. GATE UPDATE (Document final decision)
+# 6. 게이트 업데이트 (최종 결정 문서화)
 @qa *gate {reviewed-story}
-# Updates: Quality gate with new status
-# Use when: After addressing review feedback
-# Documents: What was fixed, what was waived
+# 업데이트: 품질 게이트의 새로운 상태
+# 사용 시점: 리뷰 피드백을 반영한 후
+# 문서화: 무엇을 수정했고, 무엇을 면제했는지 기록
 ```
 
 ### Understanding Gate Decisions
 
-| **Status**   | **Meaning**                                  | **Action Required**     | **Can Proceed?** |
+| **상태**      | **의미**                                      | **필요한 조치**           | **진행 가능 여부** |
 | ------------ | -------------------------------------------- | ----------------------- | ---------------- |
-| **PASS**     | All critical requirements met                | None                    | ✅ Yes           |
-| **CONCERNS** | Non-critical issues found                    | Team review recommended | ⚠️ With caution  |
-| **FAIL**     | Critical issues (security, missing P0 tests) | Must fix                | ❌ No            |
-| **WAIVED**   | Issues acknowledged and accepted             | Document reasoning      | ✅ With approval |
+| **PASS**     | 모든 핵심 요구사항 충족                      | 없음                    | ✅ 가능           |
+| **CONCERNS** | 비핵심 문제 발견                             | 팀 리뷰 권장             | ⚠️ 주의 필요      |
+| **FAIL**     | 치명적 문제(보안, P0 테스트 누락 등)          | 반드시 수정              | ❌ 불가           |
+| **WAIVED**   | 문제를 인정하고 수용함                        | 사유 문서화              | ✅ 승인 시 가능    |
 
 ### Risk-Based Testing Strategy
 
-The Test Architect uses risk scoring to prioritize testing:
+테스트 아키텍트는 위험 점수를 활용해 테스트 우선순위를 정합니다:
 
-| **Risk Score** | **Calculation**                | **Testing Priority**      | **Gate Impact**          |
+| **위험 점수**   | **계산 방식**                      | **테스트 우선순위**         | **게이트 영향**           |
 | -------------- | ------------------------------ | ------------------------- | ------------------------ |
-| **9**          | High probability × High impact | P0 - Must test thoroughly | FAIL if untested         |
-| **6**          | Medium-high combinations       | P1 - Should test well     | CONCERNS if gaps         |
-| **4**          | Medium combinations            | P1 - Should test          | CONCERNS if notable gaps |
-| **2-3**        | Low-medium combinations        | P2 - Nice to have         | Note in review           |
-| **1**          | Minimal risk                   | P2 - Minimal              | Note in review           |
+| **9**          | 높은 확률 × 높은 영향             | P0 - 반드시 철저히 테스트   | 미테스트 시 FAIL          |
+| **6**          | 중상 조합                        | P1 - 충분히 테스트해야 함   | 누락 시 CONCERNS          |
+| **4**          | 중간 조합                        | P1 - 테스트 권장           | 눈에 띄는 누락 시 CONCERNS |
+| **2-3**        | 저~중 조합                        | P2 - 있으면 좋음           | 리뷰에 메모                |
+| **1**          | 최소 위험                        | P2 - 최소                  | 리뷰에 메모                |
 
 ### Special Situations & Best Practices
 
-#### High-Risk or Brownfield Stories
+#### 고위험 또는 브라운필드 스토리
 
 ```bash
-# ALWAYS run this sequence:
-@qa *risk {story}    # First - identify dangers
-@qa *design {story}  # Second - plan defense
-# Then during dev:
-@qa *trace {story}   # Verify regression coverage
-@qa *nfr {story}     # Check performance impact
-# Finally:
-@qa *review {story}  # Deep integration analysis
+# 반드시 다음 순서로 실행:
+@qa *risk {story}    # 1. 위험 식별
+@qa *design {story}  # 2. 방어 전략 수립
+# 개발 중:
+@qa *trace {story}   # 회귀 커버리지 검증
+@qa *nfr {story}     # 성능 영향 확인
+# 마지막:
+@qa *review {story}  # 통합 심층 분석
 ```
 
-#### Complex Integrations
+#### 복잡한 통합
 
-- Run `*trace` multiple times during development
-- Focus on integration test coverage
-- Use `*nfr` to validate cross-system performance
-- Review with extra attention to API contracts
+- 개발 중 `*trace`를 여러 번 실행
+- 통합 테스트 커버리지에 집중
+- `*nfr`로 시스템 간 성능 검증
+- API 계약에 특별히 주의하여 리뷰
 
-#### Performance-Critical Features
+#### 성능이 중요한 기능
 
-- Run `*nfr` early and often (not just at review)
-- Establish performance baselines before changes
-- Document acceptable performance degradation
-- Consider load testing requirements in `*design`
+- `*nfr`을 리뷰뿐 아니라 개발 초기에 자주 실행
+- 변경 전 성능 기준을 설정
+- 허용 가능한 성능 저하를 문서화
+- `*design`에서 부하 테스트 요구사항 고려
 
 ### Test Quality Standards Enforced
 
-Quinn ensures all tests meet these standards:
+Quinn은 모든 테스트가 다음 기준을 충족하도록 보장합니다:
 
-- **No Flaky Tests**: Proper async handling, explicit waits
-- **No Hard Waits**: Dynamic strategies only (polling, events)
-- **Stateless**: Tests run independently and in parallel
-- **Self-Cleaning**: Tests manage their own test data
-- **Appropriate Levels**: Unit for logic, integration for interactions, E2E for journeys
-- **Clear Assertions**: Keep assertions in tests, not buried in helpers
+- **불안정 테스트 금지**: 올바른 비동기 처리, 명시적 대기
+- **강제 대기 금지**: 동적 전략만 사용(폴링, 이벤트)
+- **무상태성**: 테스트는 독립적으로, 병렬로 실행
+- **셀프 클린**: 테스트가 자체적으로 테스트 데이터를 관리
+- **적절한 레벨**: 로직은 단위, 상호작용은 통합, 여정은 E2E
+- **명확한 단언문**: 단언문은 테스트 내에, 헬퍼에 숨기지 않음
 
 ### Documentation & Audit Trail
 
-All Test Architect activities create permanent records:
+모든 테스트 아키텍트 활동은 영구 기록으로 남습니다:
 
-- **Assessment Reports**: Timestamped analysis in `docs/qa/assessments/`
-- **Gate Files**: Decision records in `docs/qa/gates/`
-- **Story Updates**: QA Results sections in story files
-- **Traceability**: Requirements to test mapping maintained
+- **평가 보고서**: `docs/qa/assessments/`에 타임스탬프 분석
+- **게이트 파일**: `docs/qa/gates/`에 결정 기록
+- **스토리 업데이트**: 스토리 파일 내 QA 결과 섹션
+- **추적성**: 요구사항-테스트 매핑 유지
 
 ## Commit Changes and Push
 
-1. **Commit changes**
-2. **Push to remote**
+1. **변경사항 커밋**
+2. **원격 저장소로 푸시**
 
 ## Complete Development Cycle Flow
 
-### The Full Workflow with Test Architect
+### 테스트 아키텍트가 포함된 전체 개발 사이클 흐름
 
-1. **SM**: Create next story → Review → Approve
-2. **QA (Optional)**: Risk assessment (`*risk`) → Test design (`*design`)
-3. **Dev**: Implement story → Write tests → Complete
-4. **QA (Optional)**: Mid-dev checks (`*trace`, `*nfr`)
-5. **Dev**: Mark Ready for Review
-6. **QA (Required)**: Review story (`*review`) → Gate decision
-7. **Dev (If needed)**: Address issues
-8. **QA (If needed)**: Update gate (`*gate`)
-9. **Commit**: All changes
-10. **Push**: To remote
-11. **Continue**: Until all features implemented
+1. **SM**: 다음 스토리 생성 → 리뷰 → 승인
+2. **QA(선택)**: 위험 평가(`*risk`) → 테스트 설계(`*design`)
+3. **Dev**: 스토리 구현 → 테스트 작성 → 완료
+4. **QA(선택)**: 개발 중 중간 점검(`*trace`, `*nfr`)
+5. **Dev**: 리뷰 준비 완료 표시
+6. **QA(필수)**: 스토리 리뷰(`*review`) → 게이트 결정
+7. **Dev(필요시)**: 이슈 수정
+8. **QA(필요시)**: 게이트 업데이트(`*gate`)
+9. **커밋**: 모든 변경사항
+10. **푸시**: 원격 저장소로
+11. **계속**: 모든 기능 구현될 때까지
 
 ### Quick Decision Guide
 
-**Should I run Test Architect commands?**
+**테스트 아키텍트 명령을 실행해야 할까요?**
 
-| **Scenario**             | **Before Dev**                  | **During Dev**               | **After Dev**                |
-| ------------------------ | ------------------------------- | ---------------------------- | ---------------------------- |
-| **Simple bug fix**       | Optional                        | Optional                     | Required `*review`           |
-| **New feature**          | Recommended `*risk`, `*design`  | Optional `*trace`            | Required `*review`           |
-| **Brownfield change**    | **Required** `*risk`, `*design` | Recommended `*trace`, `*nfr` | Required `*review`           |
-| **API modification**     | **Required** `*risk`, `*design` | **Required** `*trace`        | Required `*review`           |
-| **Performance-critical** | Recommended `*design`           | **Required** `*nfr`          | Required `*review`           |
-| **Data migration**       | **Required** `*risk`, `*design` | **Required** `*trace`        | Required `*review` + `*gate` |
+| **시나리오**               | **개발 전**                        | **개발 중**                      | **개발 후**                      |
+| ------------------------ | -------------------------------- | ------------------------------- | ------------------------------- |
+| **간단한 버그 수정**        | 선택 사항                           | 선택 사항                         | 필수 `*review`                   |
+| **신규 기능**               | 권장 `*risk`, `*design`             | 선택 `*trace`                     | 필수 `*review`                   |
+| **브라운필드 변경**          | **필수** `*risk`, `*design`         | 권장 `*trace`, `*nfr`             | 필수 `*review`                   |
+| **API 수정**                | **필수** `*risk`, `*design`         | **필수** `*trace`                 | 필수 `*review`                   |
+| **성능 중요 기능**           | 권장 `*design`                      | **필수** `*nfr`                   | 필수 `*review`                   |
+| **데이터 마이그레이션**      | **필수** `*risk`, `*design`         | **필수** `*trace`                 | 필수 `*review` + `*gate`         |
 
 ### Success Metrics
 
-The Test Architect helps achieve:
+테스트 아키텍트는 다음을 달성하는 데 도움을 줍니다:
 
-- **Zero regression defects** in production
-- **100% requirements coverage** with tests
-- **Clear quality gates** for go/no-go decisions
-- **Documented risk acceptance** for technical debt
-- **Consistent test quality** across the team
-- **Shift-left testing** with early risk identification
+- **프로덕션 회귀 결함 0건**
+- **100% 요구사항 테스트 커버리지**
+- **명확한 품질 게이트로 Go/No-Go 결정**
+- **기술 부채에 대한 위험 수용 문서화**
+- **팀 전체의 일관된 테스트 품질**
+- **초기 위험 식별을 통한 시프트-레프트 테스트**

@@ -1,158 +1,158 @@
-# How to Contribute with Pull Requests
+# Pull Request로 기여하는 방법
 
-**New to GitHub and pull requests?** This guide will walk you through the basics step by step.
+**GitHub과 Pull Request가 처음이신가요?** 이 가이드가 기본 사항을 단계별로 안내해드립니다.
 
-## What is a Pull Request?
+## Pull Request란?
 
-A pull request (PR) is how you propose changes to a project on GitHub. Think of it as saying "Here are some changes I'd like to make - please review and consider adding them to the main project."
+Pull Request(PR)는 GitHub의 프로젝트에 변경 사항을 제안하는 방법입니다. "여기 제가 만들고 싶은 변경 사항이 있습니다 - 검토하고 메인 프로젝트에 추가를 고려해주세요"라고 말하는 것으로 생각하세요.
 
-## Before You Start
+## 시작하기 전에
 
-⚠️ **Important**: Please keep your contributions small and focused! We prefer many small, clear changes rather than one massive change.
+⚠️ **중요**: 기여를 작고 집중적으로 유지해주세요! 하나의 거대한 변경보다는 많은 작고 명확한 변경을 선호합니다.
 
-**Required before submitting PRs:**
+**PR 제출 전 필수 사항:**
 
-- **For bug fixes**: Create an issue using the [bug report template](https://github.com/bmadcode/bmad-method/issues/new?template=bug_report.md)
-- **For new features**:
-  1. Discuss in Discord [#general-dev channel](https://discord.gg/gk8jAdXWmj)
-  2. Create an issue using the [feature request template](https://github.com/bmadcode/bmad-method/issues/new?template=feature_request.md)
-- **For large changes**: Always open an issue first to discuss alignment
+- **버그 수정의 경우**: [버그 신고 템플릿](https://github.com/bmadcode/bmad-method/issues/new?template=bug_report.md)을 사용하여 이슈 생성
+- **새로운 기능의 경우**:
+  1. Discord [#general-dev 채널](https://discord.gg/gk8jAdXWmj)에서 토론
+  2. [기능 요청 템플릿](https://github.com/bmadcode/bmad-method/issues/new?template=feature_request.md)을 사용하여 이슈 생성
+- **대규모 변경의 경우**: 항상 먼저 이슈를 열어 일치성을 논의
 
-## Step-by-Step Guide
+## 단계별 가이드
 
-### 1. Fork the Repository
+### 1. 리포지토리 포크하기
 
-1. Go to the [BMad-Method repository](https://github.com/bmadcode/bmad-method)
-2. Click the "Fork" button in the top-right corner
-3. This creates your own copy of the project
+1. [BMad-Method 리포지토리](https://github.com/bmadcode/bmad-method)로 이동
+2. 우측 상단의 "Fork" 버튼 클릭
+3. 이렇게 하면 프로젝트의 자신만의 복사본이 생성됩니다
 
-### 2. Clone Your Fork
+### 2. 포크 복제하기
 
 ```bash
-# Replace YOUR-USERNAME with your actual GitHub username
+# YOUR-USERNAME을 실제 GitHub 사용자명으로 바꿔주세요
 git clone https://github.com/YOUR-USERNAME/bmad-method.git
 cd bmad-method
 ```
 
-### 3. Create a New Branch
+### 3. 새 브랜치 생성
 
-**Never work directly on the `main` branch!** Always create a new branch for your changes:
+**`main` 브랜치에서 직접 작업하지 마세요!** 항상 변경사항을 위한 새 브랜치를 생성하세요:
 
 ```bash
-# Create and switch to a new branch
+# 새 브랜치 생성 및 전환
 git checkout -b fix/typo-in-readme
-# or
+# 또는
 git checkout -b feature/add-new-agent
 ```
 
-**Branch naming tips:**
+**브랜치 명명 팁:**
 
-- `fix/description` - for bug fixes
-- `feature/description` - for new features
-- `docs/description` - for documentation changes
+- `fix/description` - 버그 수정용
+- `feature/description` - 새 기능용
+- `docs/description` - 문서 변경용
 
-### 4. Make Your Changes
+### 4. 변경사항 만들기
 
-- Edit the files you want to change
-- Keep changes small and focused on one thing
-- Test your changes if possible
+- 변경하고 싶은 파일 편집
+- 변경사항을 작고 한 가지에 집중하도록 유지
+- 가능하면 변경사항 테스트
 
-### 5. Commit Your Changes
+### 5. 변경사항 커밋
 
 ```bash
-# Add your changes
+# 변경사항 추가
 git add .
 
-# Commit with a clear message
+# 명확한 메시지로 커밋
 git commit -m "Fix typo in README.md"
 ```
 
-**Good commit messages:**
+**좋은 커밋 메시지:**
 
 - "Fix typo in installation instructions"
 - "Add example for new agent usage"
 - "Update broken link in docs"
 
-**Bad commit messages:**
+**나쁜 커밋 메시지:**
 
 - "stuff"
 - "changes"
 - "update"
 
-### 6. Push to Your Fork
+### 6. 포크에 푸시하기
 
 ```bash
-# Push your branch to your fork
+# 브랜치를 포크에 푸시
 git push origin fix/typo-in-readme
 ```
 
-### 7. Create the Pull Request
+### 7. Pull Request 생성
 
-1. Go to your fork on GitHub
-2. You'll see a green "Compare & pull request" button - click it
-3. Select the correct target branch:
-   - **`next` branch** for most contributions (features, docs, enhancements)
-   - **`main` branch** only for critical fixes
-4. Fill out the PR description using the template in CONTRIBUTING.md:
-   - **What**: 1-2 sentences describing what changed
-   - **Why**: 1-2 sentences explaining why
-   - **How**: 2-3 bullets on implementation
-   - **Testing**: How you tested
-5. Reference the related issue number (e.g., "Fixes #123")
+1. GitHub의 본인 포크로 이동
+2. 녹색 "Compare & pull request" 버튼이 보일 것입니다 - 클릭하세요
+3. 올바른 대상 브랜치 선택:
+   - **`next` 브랜치** - 대부분의 기여 (기능, 문서, 개선사항)
+   - **`main` 브랜치** - 중요한 수정사항에만
+4. CONTRIBUTING.md의 템플릿을 사용하여 PR 설명 작성:
+   - **What**: 무엇이 변경되었는지 1-2문장으로 설명
+   - **Why**: 왜 변경했는지 1-2문장으로 설명
+   - **How**: 구현 방법을 2-3개 항목으로 설명
+   - **Testing**: 어떻게 테스트했는지
+5. 관련 이슈 번호 참조 (예: "Fixes #123")
 
-### 8. Wait for Review
+### 8. 리뷰 대기
 
-- A maintainer will review your PR
-- They might ask for changes
-- Be patient and responsive to feedback
+- 메인테이너가 PR을 리뷰할 것입니다
+- 변경을 요청할 수 있습니다
+- 피드백에 인내심을 갖고 반응하세요
 
-## What Makes a Good Pull Request?
+## 좋은 Pull Request란?
 
-✅ **Good PRs:**
+✅ **좋은 PR:**
 
-- Change one thing at a time
-- Have clear, descriptive titles
-- Explain what and why in the description
-- Include only the files that need to change
+- 한 번에 한 가지만 변경
+- 명확하고 설명적인 제목
+- 설명에서 무엇을, 왜 하는지 설명
+- 변경이 필요한 파일만 포함
 
-❌ **Avoid:**
+❌ **피해야 할 것:**
 
-- Changing formatting of entire files
-- Multiple unrelated changes in one PR
-- Copying your entire project/repo into the PR
-- Changes without explanation
+- 전체 파일의 포맷 변경
+- 하나의 PR에 여러 관련 없는 변경사항
+- 전체 프로젝트/레포를 PR에 복사
+- 설명 없는 변경사항
 
-## Common Mistakes to Avoid
+## 피해야 할 일반적인 실수
 
-1. **Don't reformat entire files** - only change what's necessary
-2. **Don't include unrelated changes** - stick to one fix/feature per PR
-3. **Don't paste code in issues** - create a proper PR instead
-4. **Don't submit your whole project** - contribute specific improvements
+1. **전체 파일을 재포맷하지 마세요** - 필요한 부분만 변경
+2. **관련 없는 변경사항을 포함하지 마세요** - PR당 하나의 수정/기능만
+3. **이슈에 코드를 붙여넣지 마세요** - 대신 적절한 PR을 생성
+4. **전체 프로젝트를 제출하지 마세요** - 구체적인 개선사항만 기여
 
-## Need Help?
+## 도움이 필요하신가요?
 
-- 💬 Join our [Discord Community](https://discord.gg/gk8jAdXWmj) for real-time help:
-  - **#general-dev** - Technical questions and feature discussions
-  - **#bugs-issues** - Get help with bugs before filing issues
-- 💬 Ask questions in [GitHub Discussions](https://github.com/bmadcode/bmad-method/discussions)
-- 🐛 Report bugs using the [bug report template](https://github.com/bmadcode/bmad-method/issues/new?template=bug_report.md)
-- 💡 Suggest features using the [feature request template](https://github.com/bmadcode/bmad-method/issues/new?template=feature_request.md)
-- 📖 Read the full [Contributing Guidelines](../CONTRIBUTING.md)
+- 💬 실시간 도움을 위해 [Discord 커뮤니티](https://discord.gg/gk8jAdXWmj)에 참여하세요:
+  - **#general-dev** - 기술적 질문과 기능 토론
+  - **#bugs-issues** - 이슈 제출 전 버그 관련 도움
+- 💬 [GitHub Discussions](https://github.com/bmadcode/bmad-method/discussions)에서 질문하세요
+- 🐛 [버그 신고 템플릿](https://github.com/bmadcode/bmad-method/issues/new?template=bug_report.md)을 사용하여 버그 신고
+- 💡 [기능 요청 템플릿](https://github.com/bmadcode/bmad-method/issues/new?template=feature_request.md)을 사용하여 기능 제안
+- 📖 전체 [기여 가이드라인](../CONTRIBUTING.md) 읽기
 
-## Example: Good vs Bad PRs
+## 예시: 좋은 PR vs 나쁜 PR
 
-### 😀 Good PR Example
+### 😀 좋은 PR 예시
 
-**Title**: "Fix broken link to installation guide"
-**Changes**: One file, one line changed
-**Description**: "The link in README.md was pointing to the wrong file. Updated to point to correct installation guide."
+**제목**: "설치 가이드 링크 수정"
+**변경사항**: 한 파일, 한 줄만 변경
+**설명**: "README.md의 링크가 잘못된 파일을 가리키고 있어 올바른 설치 가이드로 수정했습니다."
 
-### 😞 Bad PR Example
+### 😞 나쁜 PR 예시
 
-**Title**: "Updates"
-**Changes**: 50 files, entire codebase reformatted
-**Description**: "Made some improvements"
+**제목**: "업데이트"
+**변경사항**: 50개 파일, 전체 코드베이스 재포맷
+**설명**: "몇 가지 개선을 했습니다"
 
 ---
 
-**Remember**: We're here to help! Don't be afraid to ask questions. Every expert was once a beginner.
+**기억하세요**: 우리는 여러분을 돕기 위해 여기 있습니다! 질문하는 것을 두려워하지 마세요. 모든 전문가도 처음엔 초보자였습니다.

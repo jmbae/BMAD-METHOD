@@ -1,54 +1,54 @@
-# BMad Method: Core Architecture
+# BMad Method: 핵심 아키텍처
 
-## 1. Overview
+## 1. 개요
 
-The BMad Method is designed to provide agentic modes, tasks and templates to allow repeatable helpful workflows be it for agile agentic development, or expansion into vastly different domains. The core purpose of the project is to provide a structured yet flexible set of prompts, templates, and workflows that users can employ to guide AI agents (like Gemini, Claude, or ChatGPT) to perform complex tasks, guided discussions, or other meaningful domain specific flows in a predictable, high-quality manner.
+BMad Method는 애자일 에이전트 개발이든 완전히 다른 도메인으로의 확장이든 반복 가능한 유용한 워크플로우를 허용하는 에이전트 모드, 작업 및 템플릿을 제공하도록 설계되었습니다. 이 프로젝트의 핵심 목적은 사용자가 AI 에이전트(Gemini, Claude 또는 ChatGPT와 같은)를 가이드하여 복잡한 작업, 가이드된 토론 또는 기타 의미 있는 도메인별 플로우를 예측 가능하고 고품질 방식으로 수행할 수 있도록 하는 구조화되지만 유연한 프롬프트, 템플릿 및 워크플로우 세트를 제공하는 것입니다.
 
-The systems core module facilitates a full development lifecycle tailored to the challenges of current modern AI Agentic tooling:
+시스템의 핵심 모듈은 현재 현대 AI 에이전트 도구의 과제에 맞춘 전체 개발 라이프사이클을 촉진합니다:
 
-1. **Ideation & Planning**: Brainstorming, market research, and creating project briefs.
-2. **Architecture & Design**: Defining system architecture and UI/UX specifications.
-3. **Development Execution**: A cyclical workflow where a Scrum Master (SM) agent drafts stories with extremely specific context and a Developer (Dev) agent implements them one at a time. This process works for both new (Greenfield) and existing (Brownfield) projects.
+1. **아이디어 및 계획**: 브레인스토밍, 시장 조사 및 프로젝트 브리프 작성.
+2. **아키텍처 및 설계**: 시스템 아키텍처 및 UI/UX 명세 정의.
+3. **개발 실행**: 스크럼 마스터(SM) 에이전트가 매우 구체적인 컨텍스트로 스토리를 작성하고 개발자(Dev) 에이전트가 한 번에 하나씩 구현하는 순환 워크플로우. 이 프로세스는 새로운(그린필드) 및 기존(브라운필드) 프로젝트 모두에서 작동합니다.
 
-## 2. System Architecture Diagram
+## 2. 시스템 아키텍처 다이어그램
 
-The entire BMad-Method ecosystem is designed around the installed `bmad-core` directory, which acts as the brain of the operation. The `tools` directory provides the means to process and package this brain for different environments.
+전체 BMad-Method 생태계는 운영의 두뇌 역할을 하는 설치된 `bmad-core` 디렉토리를 중심으로 설계되었습니다. `tools` 디렉토리는 이 두뇌를 다양한 환경에 맞게 처리하고 패키징하는 수단을 제공합니다.
 
 ```mermaid
 graph TD
-    subgraph BMad Method Project
-        subgraph Core Framework
+    subgraph BMad Method 프로젝트
+        subgraph 핵심 프레임워크
             A["bmad-core"]
-            A --> B["agents"]
-            A --> C["agent-teams"]
-            A --> D["workflows"]
-            A --> E["templates"]
-            A --> F["tasks"]
-            A --> G["checklists"]
-            A --> H["data (KB)"]
+            A --> B["에이전트"]
+            A --> C["에이전트-팀"]
+            A --> D["워크플로우"]
+            A --> E["템플릿"]
+            A --> F["작업"]
+            A --> G["체크리스트"]
+            A --> H["데이터 (지식베이스)"]
         end
 
-        subgraph Tooling
+        subgraph 도구
             I["tools/builders/web-builder.js"]
         end
 
-        subgraph Outputs
+        subgraph 출력물
             J["dist"]
         end
 
-        B -- defines dependencies for --> E
-        B -- defines dependencies for --> F
-        B -- defines dependencies for --> G
-        B -- defines dependencies for --> H
+        B -- 의존성 정의 --> E
+        B -- 의존성 정의 --> F
+        B -- 의존성 정의 --> G
+        B -- 의존성 정의 --> H
 
-        C -- bundles --> B
-        I -- reads from --> A
-        I -- creates --> J
+        C -- 번들링 --> B
+        I -- 읽기 --> A
+        I -- 생성 --> J
     end
 
-    subgraph Target Environments
-        K["IDE (Cursor, VS Code, etc.)"]
-        L["Web UI (Gemini, ChatGPT)"]
+    subgraph 대상 환경
+        K["IDE (Cursor, VS Code 등)"]
+        L["웹 UI (Gemini, ChatGPT)"]
     end
 
     B --> K
@@ -59,115 +59,115 @@ graph TD
     style J fill:#34a853,color:#fff
 ```
 
-## 3. Core Components
+## 3. 핵심 구성 요소
 
-The `bmad-core` directory contains all the definitions and resources that give the agents their capabilities.
+`bmad-core` 디렉토리는 에이전트에게 능력을 부여하는 모든 정의와 리소스를 포함합니다.
 
-### 3.1. Agents (`bmad-core/agents/`)
+### 3.1. 에이전트 (`bmad-core/agents/`)
 
-- **Purpose**: These are the foundational building blocks of the system. Each markdown file (e.g., `bmad-master.md`, `pm.md`, `dev.md`) defines the persona, capabilities, and dependencies of a single AI agent.
-- **Structure**: An agent file contains a YAML header that specifies its role, persona, dependencies, and startup instructions. These dependencies are lists of tasks, templates, checklists, and data files that the agent is allowed to use.
-- **Startup Instructions**: Agents can include startup sequences that load project-specific documentation from the `docs/` folder, such as coding standards, API specifications, or project structure documents. This provides immediate project context upon activation.
-- **Document Integration**: Agents can reference and load documents from the project's `docs/` folder as part of tasks, workflows, or startup sequences. Users can also drag documents directly into chat interfaces to provide additional context.
-- **Example**: The `bmad-master` agent lists its dependencies, which tells the build tool which files to include in a web bundle and informs the agent of its own capabilities.
+- **목적**: 이것들은 시스템의 기본 구성 요소입니다. 각 마크다운 파일(예: `bmad-master.md`, `pm.md`, `dev.md`)은 단일 AI 에이전트의 페르소나, 능력 및 의존성을 정의합니다.
+- **구조**: 에이전트 파일은 역할, 페르소나, 의존성 및 시작 지침을 지정하는 YAML 헤더를 포함합니다. 이러한 의존성은 에이전트가 사용할 수 있는 작업, 템플릿, 체크리스트 및 데이터 파일의 목록입니다.
+- **시작 지침**: 에이전트는 코딩 표준, API 명세 또는 프로젝트 구조 문서와 같은 `docs/` 폴더에서 프로젝트별 문서를 로드하는 시작 시퀀스를 포함할 수 있습니다. 이는 활성화 시 즉시 프로젝트 컨텍스트를 제공합니다.
+- **문서 통합**: 에이전트는 작업, 워크플로우 또는 시작 시퀀스의 일부로 프로젝트의 `docs/` 폴더에서 문서를 참조하고 로드할 수 있습니다. 사용자는 추가 컨텍스트를 제공하기 위해 문서를 채팅 인터페이스로 직접 드래그할 수도 있습니다.
+- **예제**: `bmad-master` 에이전트는 의존성을 나열하며, 이는 빌드 도구에게 웹 번들에 포함할 파일을 알려주고 에이전트에게 자신의 능력을 알려줍니다.
 
-### 3.2. Agent Teams (`bmad-core/agent-teams/`)
+### 3.2. 에이전트 팀 (`bmad-core/agent-teams/`)
 
-- **Purpose**: Team files (e.g., `team-all.yaml`) define collections of agents and workflows that are bundled together for a specific purpose, like "full-stack development" or "backend-only". This creates a larger, pre-packaged context for web UI environments.
-- **Structure**: A team file lists the agents to include. It can use wildcards, such as `"*"` to include all agents. This allows for the creation of comprehensive bundles like `team-all`.
+- **목적**: 팀 파일(예: `team-all.yaml`)은 "풀스택 개발" 또는 "백엔드 전용"과 같은 특정 목적을 위해 함께 번들링되는 에이전트와 워크플로우의 컬렉션을 정의합니다. 이는 웹 UI 환경을 위한 더 크고 사전 패키지된 컨텍스트를 생성합니다.
+- **구조**: 팀 파일은 포함할 에이전트를 나열합니다. 모든 에이전트를 포함하기 위해 `"*"`와 같은 와일드카드를 사용할 수 있습니다. 이를 통해 `team-all`과 같은 포괄적인 번들을 생성할 수 있습니다.
 
-### 3.3. Workflows (`bmad-core/workflows/`)
+### 3.3. 워크플로우 (`bmad-core/workflows/`)
 
-- **Purpose**: Workflows are YAML files (e.g., `greenfield-fullstack.yaml`) that define a prescribed sequence of steps and agent interactions for a specific project type. They act as a strategic guide for the user and the `bmad-orchestrator` agent.
-- **Structure**: A workflow defines sequences for both complex and simple projects, lists the agents involved at each step, the artifacts they create, and the conditions for moving from one step to the next. It often includes a Mermaid diagram for visualization.
+- **목적**: 워크플로우는 특정 프로젝트 유형에 대한 규정된 단계 시퀀스와 에이전트 상호작용을 정의하는 YAML 파일(예: `greenfield-fullstack.yaml`)입니다. 사용자와 `bmad-orchestrator` 에이전트를 위한 전략적 가이드 역할을 합니다.
+- **구조**: 워크플로우는 복잡한 프로젝트와 단순한 프로젝트 모두에 대한 시퀀스를 정의하고, 각 단계에 관련된 에이전트, 그들이 생성하는 산출물, 그리고 한 단계에서 다음 단계로 이동하는 조건을 나열합니다. 시각화를 위해 Mermaid 다이어그램을 포함하는 경우가 많습니다.
 
-### 3.4. Reusable Resources (`templates`, `tasks`, `checklists`, `data`)
+### 3.4. 재사용 가능한 리소스 (`templates`, `tasks`, `checklists`, `data`)
 
-- **Purpose**: These folders house the modular components that are dynamically loaded by agents based on their dependencies.
-  - **`templates/`**: Contains markdown templates for common documents like PRDs, architecture specifications, and user stories.
-  - **`tasks/`**: Defines the instructions for carrying out specific, repeatable actions like "shard-doc" or "create-next-story".
-  - **`checklists/`**: Provides quality assurance checklists for agents like the Product Owner (`po`) or Architect.
-  - **`data/`**: Contains the core knowledge base (`bmad-kb.md`), technical preferences (`technical-preferences.md`), and other key data files.
+- **목적**: 이 폴더들은 에이전트가 의존성에 따라 동적으로 로드하는 모듈식 구성 요소를 보관합니다.
+  - **`templates/`**: PRD, 아키텍처 명세, 사용자 스토리와 같은 공통 문서를 위한 마크다운 템플릿을 포함합니다.
+  - **`tasks/`**: "shard-doc" 또는 "create-next-story"와 같은 특정하고 반복 가능한 작업을 수행하기 위한 지침을 정의합니다.
+  - **`checklists/`**: 제품 소유자(`po`) 또는 아키텍트와 같은 에이전트를 위한 품질 보증 체크리스트를 제공합니다.
+  - **`data/`**: 핵심 지식 베이스(`bmad-kb.md`), 기술적 선호도(`technical-preferences.md`) 및 기타 핵심 데이터 파일을 포함합니다.
 
-#### 3.4.1. Template Processing System
+#### 3.4.1. 템플릿 처리 시스템
 
-A key architectural principle of BMad is that templates are self-contained and interactive - they embed both the desired document output and the LLM instructions needed to work with users. This means that in many cases, no separate task is needed for document creation, as the template itself contains all the processing logic.
+BMad의 핵심 아키텍처 원칙은 템플릿이 자체 포함되고 대화형이라는 것입니다 - 원하는 문서 출력과 사용자와 작업하는 데 필요한 LLM 지침을 모두 포함합니다. 이는 많은 경우 템플릿 자체가 모든 처리 로직을 포함하므로 문서 생성을 위한 별도의 작업이 필요하지 않음을 의미합니다.
 
-The BMad framework employs a sophisticated template processing system orchestrated by three key components:
+BMad 프레임워크는 세 가지 핵심 구성 요소로 조율되는 정교한 템플릿 처리 시스템을 사용합니다:
 
-- **`template-format.md`** (`bmad-core/utils/`): Defines the foundational markup language used throughout all BMad templates. This specification establishes syntax rules for variable substitution (`{{placeholders}}`), AI-only processing directives (`[[LLM: instructions]]`), and conditional logic blocks. Templates follow this format to ensure consistent processing across the system.
+- **`template-format.md`** (`bmad-core/utils/`): 모든 BMad 템플릿에서 사용되는 기본 마크업 언어를 정의합니다. 이 명세는 변수 치환(`{{placeholders}}`), AI 전용 처리 지시문(`[[LLM: instructions]]`) 및 조건부 로직 블록에 대한 구문 규칙을 설정합니다. 템플릿은 시스템 전반에서 일관된 처리를 보장하기 위해 이 형식을 따릅니다.
 
-- **`create-doc.md`** (`bmad-core/tasks/`): Acts as the orchestration engine that manages the entire document generation workflow. This task coordinates template selection, manages user interaction modes (incremental vs. rapid generation), enforces template-format processing rules, and handles validation. It serves as the primary interface between users and the template system.
+- **`create-doc.md`** (`bmad-core/tasks/`): 전체 문서 생성 워크플로우를 관리하는 오케스트레이션 엔진 역할을 합니다. 이 작업은 템플릿 선택을 조정하고, 사용자 상호작용 모드(점진적 vs. 신속 생성)를 관리하며, 템플릿 형식 처리 규칙을 시행하고, 검증을 처리합니다. 사용자와 템플릿 시스템 간의 주요 인터페이스 역할을 합니다.
 
-- **`advanced-elicitation.md`** (`bmad-core/tasks/`): Provides an interactive refinement layer that can be embedded within templates through `[[LLM: instructions]]` blocks. This component offers 10 structured brainstorming actions, section-by-section review capabilities, and iterative improvement workflows to enhance content quality.
+- **`advanced-elicitation.md`** (`bmad-core/tasks/`): 템플릿 내 `[[LLM: instructions]]` 블록을 통해 임베드할 수 있는 대화형 개선 레이어를 제공합니다. 이 컴포넌트는 10가지 구조화된 브레인스토밍 액션, 섹션별 리뷰 기능, 반복적 개선 워크플로우를 통해 콘텐츠 품질을 높입니다.
 
-The system maintains a clean separation of concerns: template markup is processed internally by AI agents but never exposed to users, while providing sophisticated AI processing capabilities through embedded intelligence within the templates themselves.
+시스템은 관심사의 명확한 분리를 유지합니다: 템플릿 마크업은 AI 에이전트에 의해 내부적으로 처리되며 사용자에게 노출되지 않고, 템플릿 내에 내장된 지능을 통해 고도화된 AI 처리 기능을 제공합니다.
 
-#### 3.4.2. Technical Preferences System
+#### 3.4.2. 기술적 선호도 시스템
 
-BMad includes a personalization layer through the `technical-preferences.md` file in `bmad-core/data/`. This file serves as a persistent technical profile that influences agent behavior across all projects.
+BMad는 `bmad-core/data/`의 `technical-preferences.md` 파일을 통해 개인화 레이어를 제공합니다. 이 파일은 모든 프로젝트에서 에이전트의 행동에 영향을 주는 지속적인 기술 프로필 역할을 합니다.
 
-**Purpose and Benefits:**
+**목적 및 장점:**
 
-- **Consistency**: Ensures all agents reference the same technical preferences
-- **Efficiency**: Eliminates the need to repeatedly specify preferred technologies
-- **Personalization**: Agents provide recommendations aligned with user preferences
-- **Learning**: Captures lessons learned and preferences that evolve over time
+- **일관성**: 모든 에이전트가 동일한 기술적 선호도를 참조하도록 보장
+- **효율성**: 선호 기술을 반복적으로 지정할 필요 없음
+- **개인화**: 에이전트가 사용자 선호에 맞는 추천 제공
+- **학습**: 프로젝트에서 얻은 교훈과 진화하는 선호도를 기록
 
-**Content Structure:**
-The file typically includes preferred technology stacks, design patterns, external services, coding standards, and anti-patterns to avoid. Agents automatically reference this file during planning and development to provide contextually appropriate suggestions.
+**내용 구조:**
+이 파일에는 일반적으로 선호 기술 스택, 설계 패턴, 외부 서비스, 코딩 표준, 피해야 할 안티패턴 등이 포함됩니다. 에이전트는 계획 및 개발 중 자동으로 이 파일을 참조하여 상황에 맞는 제안을 제공합니다.
 
-**Integration Points:**
+**통합 포인트:**
 
-- Templates can reference technical preferences during document generation
-- Agents suggest preferred technologies when appropriate for project requirements
-- When preferences don't fit project needs, agents explain alternatives
-- Web bundles can include preferences content for consistent behavior across platforms
+- 템플릿은 문서 생성 중 기술적 선호도를 참조할 수 있음
+- 에이전트는 프로젝트 요구에 맞는 기술을 추천함
+- 선호도가 프로젝트 요구에 맞지 않을 경우, 에이전트가 대안을 설명함
+- 웹 번들은 일관된 동작을 위해 선호도 내용을 포함할 수 있음
 
-**Evolution Over Time:**
-Users are encouraged to continuously update this file with discoveries from projects, adding both positive preferences and technologies to avoid, creating a personalized knowledge base that improves agent recommendations over time.
+**시간에 따른 진화:**
+사용자는 프로젝트에서 얻은 발견을 지속적으로 이 파일에 추가하여, 긍정적 선호도와 피해야 할 기술 모두를 기록함으로써 시간이 지남에 따라 에이전트 추천 품질이 향상되는 개인화된 지식 베이스를 구축할 수 있습니다.
 
 ## 4. The Build & Delivery Process
 
-The framework is designed for two primary environments: local IDEs and web-based AI chat interfaces. The `web-builder.js` script is the key to supporting the latter.
+프레임워크는 두 가지 주요 환경(로컬 IDE와 웹 기반 AI 챗 인터페이스)을 위해 설계되었습니다. `web-builder.js` 스크립트가 웹 환경 지원의 핵심입니다.
 
-### 4.1. Web Builder (`tools/builders/web-builder.js`)
+### 4.1. 웹 빌더 (`tools/builders/web-builder.js`)
 
-- **Purpose**: This Node.js script is responsible for creating the `.txt` bundles found in `dist`.
-- **Process**:
-  1. **Resolves Dependencies**: For a given agent or team, the script reads its definition file.
-  2. It recursively finds all dependent resources (tasks, templates, etc.) that the agent/team needs.
-  3. **Bundles Content**: It reads the content of all these files and concatenates them into a single, large text file, with clear separators indicating the original file path of each section.
-  4. **Outputs Bundle**: The final `.txt` file is saved in the `dist` directory, ready to be uploaded to a web UI.
+- **목적**: 이 Node.js 스크립트는 `dist`에 있는 `.txt` 번들을 생성합니다.
+- **프로세스**:
+    1. **의존성 해석**: 에이전트 또는 팀에 대해 정의 파일을 읽습니다.
+    2. 에이전트/팀이 필요로 하는 모든 의존 리소스(작업, 템플릿 등)를 재귀적으로 찾습니다.
+    3. **콘텐츠 번들링**: 모든 파일의 내용을 읽어, 각 섹션의 원본 파일 경로를 명확히 구분하여 하나의 큰 텍스트 파일로 합칩니다.
+    4. **번들 출력**: 최종 `.txt` 파일을 `dist` 디렉토리에 저장하여 웹 UI에 업로드할 준비를 합니다.
 
-### 4.2. Environment-Specific Usage
+### 4.2. 환경별 사용법
 
-- **For IDEs**: Users interact with the agents directly via their markdown files in `bmad-core/agents/`. The IDE integration (for Cursor, Claude Code, etc.) knows how to call these agents.
-- **For Web UIs**: Users upload a pre-built bundle from `dist`. This single file provides the AI with the context of the entire team and all their required tools and knowledge.
+- **IDE용**: 사용자는 `bmad-core/agents/`의 마크다운 파일을 통해 에이전트와 직접 상호작용합니다. IDE 통합(Cursor, Claude Code 등)은 이 에이전트들을 호출하는 방법을 알고 있습니다.
+- **웹 UI용**: 사용자는 `dist`에서 미리 빌드된 번들을 업로드합니다. 이 단일 파일이 AI에게 전체 팀과 필요한 모든 도구 및 지식의 컨텍스트를 제공합니다.
 
 ## 5. BMad Workflows
 
-### 5.1. The Planning Workflow
+### 5.1. 계획 워크플로우
 
-Before development begins, BMad follows a structured planning workflow that establishes the foundation for successful project execution:
+개발 시작 전에 BMad는 성공적인 프로젝트 실행의 기반을 마련하는 구조화된 계획 워크플로우를 따릅니다:
 
 ```mermaid
 graph TD
-    A["Start: Project Idea"] --> B{"Optional: Analyst Brainstorming"}
-    B -->|Yes| C["Analyst: Market Research & Analysis"]
-    B -->|No| D["Create Project Brief"]
-    C --> D["Analyst: Create Project Brief"]
-    D --> E["PM: Create PRD from Brief"]
-    E --> F["Architect: Create Architecture from PRD"]
-    F --> G["PO: Run Master Checklist"]
-    G --> H{"Documents Aligned?"}
-    H -->|Yes| I["Planning Complete"]
-    H -->|No| J["PO: Update Epics & Stories"]
-    J --> K["Update PRD/Architecture as needed"]
+    A["프로젝트 아이디어 시작"] --> B{"(선택) 분석가 브레인스토밍"}
+    B -->|예| C["분석가: 시장 조사 및 분석"]
+    B -->|아니오| D["프로젝트 브리프 작성"]
+    C --> D["분석가: 프로젝트 브리프 작성"]
+    D --> E["PM: 브리프 기반 PRD 작성"]
+    E --> F["아키텍트: PRD 기반 아키텍처 작성"]
+    F --> G["PO: 마스터 체크리스트 실행"]
+    G --> H{"문서 정렬됨?"}
+    H -->|예| I["계획 완료"]
+    H -->|아니오| J["PO: 에픽 및 스토리 업데이트"]
+    J --> K["필요시 PRD/아키텍처 업데이트"]
     K --> G
-    I --> L["📁 Switch to IDE"]
-    L --> M["PO: Shard Documents"]
-    M --> N["Ready for SM/Dev Cycle"]
+    I --> L["📁 IDE로 전환"]
+    L --> M["PO: 문서 샤딩"]
+    M --> N["SM/Dev 사이클 준비 완료"]
 
     style I fill:#34a853,color:#fff
     style G fill:#f9ab00,color:#fff
@@ -175,45 +175,45 @@ graph TD
     style N fill:#34a853,color:#fff
 ```
 
-**Key Planning Phases:**
+**주요 계획 단계:**
 
-1. **Optional Analysis**: Analyst conducts market research and competitive analysis
-2. **Project Brief**: Foundation document created by Analyst or user
-3. **PRD Creation**: PM transforms brief into comprehensive product requirements
-4. **Architecture Design**: Architect creates technical foundation based on PRD
-5. **Validation & Alignment**: PO ensures all documents are consistent and complete
-6. **Refinement**: Updates to epics, stories, and documents as needed
-7. **Environment Transition**: Critical switch from web UI to IDE for development workflow
-8. **Document Preparation**: PO shards large documents for development consumption
+1. **선택적 분석**: 분석가가 시장 조사 및 경쟁 분석 수행
+2. **프로젝트 브리프**: 분석가 또는 사용자가 작성하는 기반 문서
+3. **PRD 작성**: PM이 브리프를 포괄적 제품 요구사항으로 변환
+4. **아키텍처 설계**: 아키텍트가 PRD 기반 기술적 토대 작성
+5. **검증 및 정렬**: PO가 모든 문서의 일관성과 완성도 확인
+6. **정제**: 필요시 에픽, 스토리, 문서 업데이트
+7. **환경 전환**: 개발 워크플로우를 위해 웹 UI에서 IDE로 전환
+8. **문서 준비**: PO가 대형 문서를 개발용으로 샤딩
 
-**Workflow Orchestration**: The `bmad-orchestrator` agent uses these workflow definitions to guide users through the complete process, ensuring proper transitions between planning (web UI) and development (IDE) phases.
+**워크플로우 오케스트레이션**: `bmad-orchestrator` 에이전트가 이 워크플로우 정의를 사용해 전체 과정을 안내하며, 계획(웹 UI)과 개발(IDE) 단계 간의 적절한 전환을 보장합니다.
 
 ### 5.2. The Core Development Cycle
 
-Once the initial planning and architecture phases are complete, the project moves into a cyclical development workflow, as detailed in the `bmad-kb.md`. This ensures a steady, sequential, and quality-controlled implementation process.
+초기 계획 및 아키텍처 단계가 완료되면, 프로젝트는 `bmad-kb.md`에 상세히 설명된 순환 개발 워크플로우로 이동합니다. 이를 통해 꾸준하고 순차적이며 품질이 관리된 구현 프로세스를 보장합니다.
 
 ```mermaid
 graph TD
-    A["Start: Planning Artifacts Complete"] --> B["PO: Shard Epics"]
-    B --> C["PO: Shard Arch"]
-    C --> D["Development Phase"]
-    D --> E["Scrum Master: Drafts next story from sharded epic"]
-    E --> F{"User Approval"}
-    F -->|Approved| G["Dev: Implement Story"]
-    F -->|Needs Changes| E
-    G --> H["Dev: Complete story Tasks"]
-    H --> I["Dev: Mark Ready for Review"]
-    I --> J{"User Verification"}
-    J -->|Request QA Review| K["QA: Run review-story task"]
-    J -->|Approve Without QA| M["Mark Story as Done"]
-    K --> L{"QA Review Results"}
-    L -->|Needs Work| G
-    L -->|Approved| M["Mark Story as Done"]
-    J -->|Needs Fixes| G
+    A["계획 산출물 완료"] --> B["PO: 에픽 샤딩"]
+    B --> C["PO: 아키텍처 샤딩"]
+    C --> D["개발 단계"]
+    D --> E["스크럼 마스터: 샤딩된 에픽에서 다음 스토리 초안 작성"]
+    E --> F{"사용자 승인"}
+    F -->|승인| G["Dev: 스토리 구현"]
+    F -->|수정 필요| E
+    G --> H["Dev: 스토리 작업 완료"]
+    H --> I["Dev: 리뷰 준비 완료 표시"]
+    I --> J{"사용자 검증"}
+    J -->|QA 리뷰 요청| K["QA: review-story 작업 실행"]
+    J -->|QA 없이 승인| M["스토리 완료로 표시"]
+    K --> L{"QA 리뷰 결과"}
+    L -->|작업 필요| G
+    L -->|승인| M["스토리 완료로 표시"]
+    J -->|수정 필요| G
     M --> E
 
     style M fill:#34a853,color:#fff
     style K fill:#f9ab00,color:#fff
 ```
 
-This cycle continues, with the Scrum Master, Developer, and optionally QA agents working together. The QA agent provides senior developer review capabilities through the `review-story` task, offering code refactoring, quality improvements, and knowledge transfer. This ensures high code quality while maintaining development velocity.
+이 사이클은 스크럼 마스터, 개발자, 그리고 선택적으로 QA 에이전트가 함께 작업하며 계속됩니다. QA 에이전트는 `review-story` 작업을 통해 시니어 개발자 리뷰 기능을 제공하며, 코드 리팩토링, 품질 개선, 지식 이전을 지원합니다. 이를 통해 개발 속도를 유지하면서도 높은 코드 품질을 보장합니다.
