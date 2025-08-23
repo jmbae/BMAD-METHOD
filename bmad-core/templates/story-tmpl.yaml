@@ -1,12 +1,12 @@
 # <!-- Powered by BMAD™ Core -->
 template:
   id: story-template-v2
-  name: Story Document
+  name: 스토리 문서
   version: 2.0
   output:
     format: markdown
     filename: docs/stories/{{epic_num}}.{{story_num}}.{{story_title_short}}.md
-    title: "Story {{epic_num}}.{{story_num}}: {{story_title_short}}"
+    title: "스토리 {{epic_num}}.{{story_num}}: {{story_title_short}}"
 
 workflow:
   mode: interactive
@@ -14,125 +14,125 @@ workflow:
 
 agent_config:
   editable_sections:
-    - Status
-    - Story
-    - Acceptance Criteria
-    - Tasks / Subtasks
-    - Dev Notes
-    - Testing
-    - Change Log
+    - 상태
+    - 스토리
+    - 승인 기준
+    - 작업 / 하위 작업
+    - 개발 노트
+    - 테스팅
+    - 변경 로그
 
 sections:
   - id: status
-    title: Status
+    title: 상태
     type: choice
-    choices: [Draft, Approved, InProgress, Review, Done]
-    instruction: Select the current status of the story
+    choices: [초안, 승인됨, 진행중, 검토, 완료]
+    instruction: 스토리의 현재 상태를 선택하세요
     owner: scrum-master
     editors: [scrum-master, dev-agent]
 
   - id: story
-    title: Story
+    title: 스토리
     type: template-text
     template: |
-      **As a** {{role}},
-      **I want** {{action}},
-      **so that** {{benefit}}
-    instruction: Define the user story using the standard format with role, action, and benefit
+      **사용자로서** {{role}},
+      **나는 원한다** {{action}},
+      **그래서** {{benefit}}
+    instruction: 역할, 행동, 이익을 포함한 표준 형식을 사용하여 사용자 스토리를 정의하세요
     elicit: true
     owner: scrum-master
     editors: [scrum-master]
 
   - id: acceptance-criteria
-    title: Acceptance Criteria
+    title: 승인 기준
     type: numbered-list
-    instruction: Copy the acceptance criteria numbered list from the epic file
+    instruction: 에픽 파일의 승인 기준 번호 목록을 복사하세요
     elicit: true
     owner: scrum-master
     editors: [scrum-master]
 
   - id: tasks-subtasks
-    title: Tasks / Subtasks
+    title: 작업 / 하위 작업
     type: bullet-list
     instruction: |
-      Break down the story into specific tasks and subtasks needed for implementation.
-      Reference applicable acceptance criteria numbers where relevant.
+      스토리를 구현에 필요한 구체적인 작업과 하위 작업으로 분해하세요.
+      관련이 있는 경우 해당 승인 기준 번호를 참조하세요.
     template: |
-      - [ ] Task 1 (AC: # if applicable)
-        - [ ] Subtask1.1...
-      - [ ] Task 2 (AC: # if applicable)
-        - [ ] Subtask 2.1...
-      - [ ] Task 3 (AC: # if applicable)
-        - [ ] Subtask 3.1...
+      - [ ] 작업 1 (AC: # 해당하는 경우)
+        - [ ] 하위작업1.1...
+      - [ ] 작업 2 (AC: # 해당하는 경우)
+        - [ ] 하위작업 2.1...
+      - [ ] 작업 3 (AC: # 해당하는 경우)
+        - [ ] 하위작업 3.1...
     elicit: true
     owner: scrum-master
     editors: [scrum-master, dev-agent]
 
   - id: dev-notes
-    title: Dev Notes
+    title: 개발 노트
     instruction: |
-      Populate relevant information, only what was pulled from actual artifacts from docs folder, relevant to this story:
-      - Do not invent information
-      - If known add Relevant Source Tree info that relates to this story
-      - If there were important notes from previous story that are relevant to this one, include them here
-      - Put enough information in this section so that the dev agent should NEVER need to read the architecture documents, these notes along with the tasks and subtasks must give the Dev Agent the complete context it needs to comprehend with the least amount of overhead the information to complete the story, meeting all AC and completing all tasks+subtasks
+      관련 정보를 채우세요. 이 스토리와 관련된 docs 폴더의 실제 artifacts에서 가져온 것만:
+      - 정보를 만들어내지 마세요
+      - 알려진 경우 이 스토리와 관련된 관련 소스 트리 정보를 추가하세요
+      - 이 스토리와 관련된 이전 스토리의 중요한 노트가 있다면 여기에 포함하세요
+      - 개발 에이전트가 아키텍처 문서를 읽을 필요가 전혀 없도록 이 섹션에 충분한 정보를 넣으세요. 이 노트들과 작업 및 하위 작업이 개발 에이전트가 최소한의 오버헤드로 모든 AC를 충족하고 모든 작업+하위 작업을 완료하여 스토리를 완료하는 데 필요한 정보를 이해할 수 있는 완전한 맥락을 제공해야 합니다
     elicit: true
     owner: scrum-master
     editors: [scrum-master]
     sections:
       - id: testing-standards
-        title: Testing
+        title: 테스팅
         instruction: |
-          List Relevant Testing Standards from Architecture the Developer needs to conform to:
-          - Test file location
-          - Test standards
-          - Testing frameworks and patterns to use
-          - Any specific testing requirements for this story
+          개발자가 준수해야 하는 아키텍처의 관련 테스팅 표준을 나열하세요:
+          - 테스트 파일 위치
+          - 테스트 표준
+          - 사용할 테스팅 프레임워크와 패턴
+          - 이 스토리의 특정 테스팅 요구사항
         elicit: true
         owner: scrum-master
         editors: [scrum-master]
 
   - id: change-log
-    title: Change Log
+    title: 변경 로그
     type: table
-    columns: [Date, Version, Description, Author]
-    instruction: Track changes made to this story document
+    columns: [날짜, 버전, 설명, 작성자]
+    instruction: 이 스토리 문서에 대한 변경 사항 추적
     owner: scrum-master
     editors: [scrum-master, dev-agent, qa-agent]
 
   - id: dev-agent-record
-    title: Dev Agent Record
-    instruction: This section is populated by the development agent during implementation
+    title: 개발 에이전트 기록
+    instruction: 이 섹션은 구현 중에 개발 에이전트가 채웁니다
     owner: dev-agent
     editors: [dev-agent]
     sections:
       - id: agent-model
-        title: Agent Model Used
+        title: 사용된 에이전트 모델
         template: "{{agent_model_name_version}}"
-        instruction: Record the specific AI agent model and version used for development
+        instruction: 개발에 사용된 특정 AI 에이전트 모델과 버전을 기록하세요
         owner: dev-agent
         editors: [dev-agent]
 
       - id: debug-log-references
-        title: Debug Log References
-        instruction: Reference any debug logs or traces generated during development
+        title: 디버그 로그 참조
+        instruction: 개발 중에 생성된 디버그 로그나 트레이스를 참조하세요
         owner: dev-agent
         editors: [dev-agent]
 
       - id: completion-notes
-        title: Completion Notes List
-        instruction: Notes about the completion of tasks and any issues encountered
+        title: 완료 노트 목록
+        instruction: 작업 완료와 발생한 문제에 대한 노트
         owner: dev-agent
         editors: [dev-agent]
 
       - id: file-list
-        title: File List
-        instruction: List all files created, modified, or affected during story implementation
+        title: 파일 목록
+        instruction: 스토리 구현 중에 생성, 수정 또는 영향을 받은 모든 파일을 나열하세요
         owner: dev-agent
         editors: [dev-agent]
 
   - id: qa-results
-    title: QA Results
-    instruction: Results from QA Agent QA review of the completed story implementation
+    title: QA 결과
+    instruction: 완료된 스토리 구현에 대한 QA 에이전트 QA 검토 결과
     owner: qa-agent
     editors: [qa-agent]
