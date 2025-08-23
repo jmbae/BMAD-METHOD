@@ -1,137 +1,137 @@
 <!-- Powered by BMAD™ Core -->
 
-# test-design
+# 테스트 설계
 
-Create comprehensive test scenarios with appropriate test level recommendations for story implementation.
+스토리 구현을 위한 적절한 테스트 레벨 권장사항과 함께 포괄적인 테스트 시나리오를 생성합니다.
 
-## Inputs
+## 입력값
 
 ```yaml
 required:
-  - story_id: '{epic}.{story}' # e.g., "1.3"
-  - story_path: '{devStoryLocation}/{epic}.{story}.*.md' # Path from core-config.yaml
-  - story_title: '{title}' # If missing, derive from story file H1
-  - story_slug: '{slug}' # If missing, derive from title (lowercase, hyphenated)
+  - story_id: '{epic}.{story}' # 예: "1.3"
+  - story_path: '{devStoryLocation}/{epic}.{story}.*.md' # core-config.yaml의 경로
+  - story_title: '{title}' # 누락 시 스토리 파일 H1에서 도출
+  - story_slug: '{slug}' # 누락 시 제목에서 도출(소문자, 하이픈으로 연결)
 ```
 
-## Purpose
+## 목적
 
-Design a complete test strategy that identifies what to test, at which level (unit/integration/e2e), and why. This ensures efficient test coverage without redundancy while maintaining appropriate test boundaries.
+무엇을 테스트할지, 어떤 레벨에서(단위/통합/e2e), 그리고 왜 그런지를 식별하는 완전한 테스트 전략을 설계합니다. 이는 적절한 테스트 경계를 유지하면서 중복 없이 효율적인 테스트 커버리지를 보장합니다.
 
-## Dependencies
+## 종속성
 
 ```yaml
 data:
-  - test-levels-framework.md # Unit/Integration/E2E decision criteria
-  - test-priorities-matrix.md # P0/P1/P2/P3 classification system
+  - test-levels-framework.md # 단위/통합/E2E 결정 기준
+  - test-priorities-matrix.md # P0/P1/P2/P3 분류 시스템
 ```
 
-## Process
+## 프로세스
 
-### 1. Analyze Story Requirements
+### 1. 스토리 요구사항 분석
 
-Break down each acceptance criterion into testable scenarios. For each AC:
+각 승인 기준을 테스트 가능한 시나리오로 세분화합니다. 각 AC에 대해:
 
-- Identify the core functionality to test
-- Determine data variations needed
-- Consider error conditions
-- Note edge cases
+- 테스트할 핵심 기능 식별
+- 필요한 데이터 변형 결정
+- 오류 조건 고려
+- 엣지 케이스 기록
 
-### 2. Apply Test Level Framework
+### 2. 테스트 레벨 프레임워크 적용
 
-**Reference:** Load `test-levels-framework.md` for detailed criteria
+**참조:** 상세 기준은 `test-levels-framework.md` 로드
 
-Quick rules:
+빠른 규칙:
 
-- **Unit**: Pure logic, algorithms, calculations
-- **Integration**: Component interactions, DB operations
-- **E2E**: Critical user journeys, compliance
+- **단위**: 순수 로직, 알고리즘, 계산
+- **통합**: 컴포넌트 상호작용, DB 작업
+- **E2E**: 중요한 사용자 여정, 컴플라이언스
 
-### 3. Assign Priorities
+### 3. 우선순위 할당
 
-**Reference:** Load `test-priorities-matrix.md` for classification
+**참조:** 분류를 위해 `test-priorities-matrix.md` 로드
 
-Quick priority assignment:
+빠른 우선순위 할당:
 
-- **P0**: Revenue-critical, security, compliance
-- **P1**: Core user journeys, frequently used
-- **P2**: Secondary features, admin functions
-- **P3**: Nice-to-have, rarely used
+- **P0**: 수익 중요, 보안, 컴플라이언스
+- **P1**: 핵심 사용자 여정, 자주 사용
+- **P2**: 보조 기능, 관리 기능
+- **P3**: 있으면 좋은, 거의 사용되지 않음
 
-### 4. Design Test Scenarios
+### 4. 테스트 시나리오 설계
 
-For each identified test need, create:
+식별된 각 테스트 요구사항에 대해 생성:
 
 ```yaml
 test_scenario:
   id: '{epic}.{story}-{LEVEL}-{SEQ}'
-  requirement: 'AC reference'
+  requirement: 'AC 참조'
   priority: P0|P1|P2|P3
   level: unit|integration|e2e
-  description: 'What is being tested'
-  justification: 'Why this level was chosen'
-  mitigates_risks: ['RISK-001'] # If risk profile exists
+  description: '테스트되는 내용'
+  justification: '이 레벨을 선택한 이유'
+  mitigates_risks: ['RISK-001'] # 위험 프로필이 있는 경우
 ```
 
-### 5. Validate Coverage
+### 5. 커버리지 검증
 
-Ensure:
+다음을 보장:
 
-- Every AC has at least one test
-- No duplicate coverage across levels
-- Critical paths have multiple levels
-- Risk mitigations are addressed
+- 모든 AC에 최소 하나의 테스트
+- 레벨 간 중복 커버리지 없음
+- 중요 경로에 여러 레벨
+- 위험 완화가 다뤄짐
 
-## Outputs
+## 출력
 
-### Output 1: Test Design Document
+### 출력 1: 테스트 설계 문서
 
-**Save to:** `qa.qaLocation/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md`
+**저장 위치:** `qa.qaLocation/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md`
 
 ```markdown
-# Test Design: Story {epic}.{story}
+# 테스트 설계: 스토리 {epic}.{story}
 
-Date: {date}
-Designer: Quinn (Test Architect)
+날짜: {date}
+설계자: Quinn (테스트 아키텍트)
 
-## Test Strategy Overview
+## 테스트 전략 개요
 
-- Total test scenarios: X
-- Unit tests: Y (A%)
-- Integration tests: Z (B%)
-- E2E tests: W (C%)
-- Priority distribution: P0: X, P1: Y, P2: Z
+- 총 테스트 시나리오: X
+- 단위 테스트: Y (A%)
+- 통합 테스트: Z (B%)
+- E2E 테스트: W (C%)
+- 우선순위 분포: P0: X, P1: Y, P2: Z
 
-## Test Scenarios by Acceptance Criteria
+## 승인 기준별 테스트 시나리오
 
-### AC1: {description}
+### AC1: {설명}
 
-#### Scenarios
+#### 시나리오
 
-| ID           | Level       | Priority | Test                      | Justification            |
+| ID           | 레벨        | 우선순위 | 테스트                    | 근거                     |
 | ------------ | ----------- | -------- | ------------------------- | ------------------------ |
-| 1.3-UNIT-001 | Unit        | P0       | Validate input format     | Pure validation logic    |
-| 1.3-INT-001  | Integration | P0       | Service processes request | Multi-component flow     |
-| 1.3-E2E-001  | E2E         | P1       | User completes journey    | Critical path validation |
+| 1.3-UNIT-001 | 단위        | P0       | 입력 형식 검증            | 순수 검증 로직           |
+| 1.3-INT-001  | 통합        | P0       | 서비스가 요청 처리        | 다중 컴포넌트 플로우     |
+| 1.3-E2E-001  | E2E         | P1       | 사용자가 여정 완료        | 중요 경로 검증           |
 
-[Continue for all ACs...]
+[모든 AC에 대해 계속...]
 
-## Risk Coverage
+## 위험 커버리지
 
-[Map test scenarios to identified risks if risk profile exists]
+[위험 프로필이 있는 경우 테스트 시나리오를 식별된 위험에 매핑]
 
-## Recommended Execution Order
+## 권장 실행 순서
 
-1. P0 Unit tests (fail fast)
-2. P0 Integration tests
-3. P0 E2E tests
-4. P1 tests in order
-5. P2+ as time permits
+1. P0 단위 테스트 (빠른 실패)
+2. P0 통합 테스트
+3. P0 E2E 테스트
+4. P1 테스트 순서대로
+5. 시간이 허락하는 대로 P2+
 ```
 
-### Output 2: Gate YAML Block
+### 출력 2: 게이트 YAML 블록
 
-Generate for inclusion in quality gate:
+품질 게이트에 포함하기 위해 생성:
 
 ```yaml
 test_design:
@@ -144,33 +144,33 @@ test_design:
     p0: A
     p1: B
     p2: C
-  coverage_gaps: [] # List any ACs without tests
+  coverage_gaps: [] # 테스트가 없는 AC 목록
 ```
 
-### Output 3: Trace References
+### 출력 3: 추적 참조
 
-Print for use by trace-requirements task:
+trace-requirements 태스크에서 사용하기 위해 출력:
 
 ```text
-Test design matrix: qa.qaLocation/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md
-P0 tests identified: {count}
+테스트 설계 매트릭스: qa.qaLocation/assessments/{epic}.{story}-test-design-{YYYYMMDD}.md
+P0 테스트 식별: {count}
 ```
 
-## Quality Checklist
+## 품질 체크리스트
 
-Before finalizing, verify:
+확정하기 전에 확인:
 
-- [ ] Every AC has test coverage
-- [ ] Test levels are appropriate (not over-testing)
-- [ ] No duplicate coverage across levels
-- [ ] Priorities align with business risk
-- [ ] Test IDs follow naming convention
-- [ ] Scenarios are atomic and independent
+- [ ] 모든 AC에 테스트 커버리지가 있음
+- [ ] 테스트 레벨이 적절함 (과도한 테스트 아님)
+- [ ] 레벨 간 중복 커버리지 없음
+- [ ] 우선순위가 비즈니스 위험과 일치
+- [ ] 테스트 ID가 명명 규칙을 따름
+- [ ] 시나리오가 원자적이고 독립적임
 
-## Key Principles
+## 핵심 원칙
 
-- **Shift left**: Prefer unit over integration, integration over E2E
-- **Risk-based**: Focus on what could go wrong
-- **Efficient coverage**: Test once at the right level
-- **Maintainability**: Consider long-term test maintenance
-- **Fast feedback**: Quick tests run first
+- **좌측 이동**: 통합보다 단위, E2E보다 통합 선호
+- **위험 기반**: 잘못될 수 있는 것에 집중
+- **효율적 커버리지**: 적절한 레벨에서 한 번 테스트
+- **유지보수성**: 장기 테스트 유지보수 고려
+- **빠른 피드백**: 빠른 테스트 먼저 실행

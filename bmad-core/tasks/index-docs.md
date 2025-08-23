@@ -1,175 +1,175 @@
 <!-- Powered by BMAD™ Core -->
 
-# Index Documentation Task
+# 문서 색인 태스크
 
-## Purpose
+## 목적
 
-This task maintains the integrity and completeness of the `docs/index.md` file by scanning all documentation files and ensuring they are properly indexed with descriptions. It handles both root-level documents and documents within subfolders, organizing them hierarchically.
+이 태스크는 모든 문서 파일을 스캔하고 설명과 함께 적절히 색인화되도록 하여 `docs/index.md` 파일의 무결성과 완전성을 유지합니다. 루트 레벨 문서와 하위 폴더 내 문서를 모두 처리하여 계층적으로 구성합니다.
 
-## Task Instructions
+## 태스크 지침
 
-You are now operating as a Documentation Indexer. Your goal is to ensure all documentation files are properly cataloged in the central index with proper organization for subfolders.
+이제 문서 색인 작성자로 작동합니다. 목표는 모든 문서 파일이 하위 폴더에 대한 적절한 구성으로 중앙 색인에 적절히 분류되도록 하는 것입니다.
 
-### Required Steps
+### 필수 단계
 
-1. First, locate and scan:
-   - The `docs/` directory and all subdirectories
-   - The existing `docs/index.md` file (create if absent)
-   - All markdown (`.md`) and text (`.txt`) files in the documentation structure
-   - Note the folder structure for hierarchical organization
+1. 먼저 다음을 찾고 스캔:
+   - `docs/` 디렉토리와 모든 하위 디렉토리
+   - 기존 `docs/index.md` 파일 (없으면 생성)
+   - 문서 구조의 모든 마크다운(`.md`) 및 텍스트(`.txt`) 파일
+   - 계층적 구성을 위한 폴더 구조 확인
 
-2. For the existing `docs/index.md`:
-   - Parse current entries
-   - Note existing file references and descriptions
-   - Identify any broken links or missing files
-   - Keep track of already-indexed content
-   - Preserve existing folder sections
+2. 기존 `docs/index.md`에 대해:
+   - 현재 항목 파싱
+   - 기존 파일 참조 및 설명 확인
+   - 깨진 링크나 누락된 파일 식별
+   - 이미 색인화된 콘텐츠 추적
+   - 기존 폴더 섹션 보존
 
-3. For each documentation file found:
-   - Extract the title (from first heading or filename)
-   - Generate a brief description by analyzing the content
-   - Create a relative markdown link to the file
-   - Check if it's already in the index
-   - Note which folder it belongs to (if in a subfolder)
-   - If missing or outdated, prepare an update
+3. 발견된 각 문서 파일에 대해:
+   - 제목 추출 (첫 번째 제목 또는 파일명에서)
+   - 콘텐츠를 분석하여 간단한 설명 생성
+   - 파일에 대한 상대 마크다운 링크 생성
+   - 이미 색인에 있는지 확인
+   - 속한 폴더 확인 (하위 폴더에 있는 경우)
+   - 누락되거나 오래된 경우 업데이트 준비
 
-4. For any missing or non-existent files found in index:
-   - Present a list of all entries that reference non-existent files
-   - For each entry:
-     - Show the full entry details (title, path, description)
-     - Ask for explicit confirmation before removal
-     - Provide option to update the path if file was moved
-     - Log the decision (remove/update/keep) for final report
+4. 색인에서 발견된 누락되거나 존재하지 않는 파일에 대해:
+   - 존재하지 않는 파일을 참조하는 모든 항목 목록 제시
+   - 각 항목에 대해:
+     - 전체 항목 세부사항 표시 (제목, 경로, 설명)
+     - 제거 전 명시적 확인 요청
+     - 파일이 이동된 경우 경로 업데이트 옵션 제공
+     - 최종 보고서를 위한 결정 (제거/업데이트/유지) 기록
 
-5. Update `docs/index.md`:
-   - Maintain existing structure and organization
-   - Create level 2 sections (`##`) for each subfolder
-   - List root-level documents first
-   - Add missing entries with descriptions
-   - Update outdated entries
-   - Remove only entries that were confirmed for removal
-   - Ensure consistent formatting throughout
+5. `docs/index.md` 업데이트:
+   - 기존 구조와 구성 유지
+   - 각 하위 폴더에 대한 레벨 2 섹션 (`##`) 생성
+   - 루트 레벨 문서를 먼저 나열
+   - 설명과 함께 누락된 항목 추가
+   - 오래된 항목 업데이트
+   - 제거 확인된 항목만 제거
+   - 일관된 형식을 전체적으로 보장
 
-### Index Structure Format
+### 색인 구조 형식
 
-The index should be organized as follows:
-
-```markdown
-# Documentation Index
-
-## Root Documents
-
-### [Document Title](./document.md)
-
-Brief description of the document's purpose and contents.
-
-### [Another Document](./another.md)
-
-Description here.
-
-## Folder Name
-
-Documents within the `folder-name/` directory:
-
-### [Document in Folder](./folder-name/document.md)
-
-Description of this document.
-
-### [Another in Folder](./folder-name/another.md)
-
-Description here.
-
-## Another Folder
-
-Documents within the `another-folder/` directory:
-
-### [Nested Document](./another-folder/document.md)
-
-Description of nested document.
-```
-
-### Index Entry Format
-
-Each entry should follow this format:
+색인은 다음과 같이 구성되어야 합니다:
 
 ```markdown
-### [Document Title](relative/path/to/file.md)
+# 문서 색인
 
-Brief description of the document's purpose and contents.
+## 루트 문서
+
+### [문서 제목](./document.md)
+
+문서의 목적과 내용에 대한 간단한 설명.
+
+### [다른 문서](./another.md)
+
+여기에 설명.
+
+## 폴더명
+
+`folder-name/` 디렉토리 내 문서:
+
+### [폴더 내 문서](./folder-name/document.md)
+
+이 문서에 대한 설명.
+
+### [폴더 내 다른 문서](./folder-name/another.md)
+
+여기에 설명.
+
+## 다른 폴더
+
+`another-folder/` 디렉토리 내 문서:
+
+### [중첩된 문서](./another-folder/document.md)
+
+중첩된 문서에 대한 설명.
 ```
 
-### Rules of Operation
+### 색인 항목 형식
 
-1. NEVER modify the content of indexed files
-2. Preserve existing descriptions in index.md when they are adequate
-3. Maintain any existing categorization or grouping in the index
-4. Use relative paths for all links (starting with `./`)
-5. Ensure descriptions are concise but informative
-6. NEVER remove entries without explicit confirmation
-7. Report any broken links or inconsistencies found
-8. Allow path updates for moved files before considering removal
-9. Create folder sections using level 2 headings (`##`)
-10. Sort folders alphabetically, with root documents listed first
-11. Within each section, sort documents alphabetically by title
+각 항목은 다음 형식을 따라야 합니다:
 
-### Process Output
+```markdown
+### [문서 제목](relative/path/to/file.md)
 
-The task will provide:
+문서의 목적과 내용에 대한 간단한 설명.
+```
 
-1. A summary of changes made to index.md
-2. List of newly indexed files (organized by folder)
-3. List of updated entries
-4. List of entries presented for removal and their status:
-   - Confirmed removals
-   - Updated paths
-   - Kept despite missing file
-5. Any new folders discovered
-6. Any other issues or inconsistencies found
+### 운영 규칙
 
-### Handling Missing Files
+1. 색인화된 파일의 내용을 절대 수정하지 마세요
+2. 적절한 경우 index.md의 기존 설명을 보존하세요
+3. 색인의 기존 분류나 그룹화를 유지하세요
+4. 모든 링크에 상대 경로를 사용하세요 (`./`로 시작)
+5. 설명이 간결하지만 유익하도록 하세요
+6. 명시적 확인 없이는 절대 항목을 제거하지 마세요
+7. 발견된 깨진 링크나 불일치를 보고하세요
+8. 제거를 고려하기 전에 이동된 파일에 대한 경로 업데이트를 허용하세요
+9. 레벨 2 제목(`##`)을 사용하여 폴더 섹션을 생성하세요
+10. 폴더를 알파벳순으로 정렬하고, 루트 문서를 먼저 나열하세요
+11. 각 섹션 내에서 문서를 제목별로 알파벳순으로 정렬하세요
 
-For each file referenced in the index but not found in the filesystem:
+### 프로세스 출력
 
-1. Present the entry:
+이 태스크는 다음을 제공합니다:
+
+1. index.md에 대한 변경사항 요약
+2. 새로 색인화된 파일 목록 (폴더별로 구성)
+3. 업데이트된 항목 목록
+4. 제거를 위해 제시된 항목과 그 상태 목록:
+   - 확인된 제거
+   - 업데이트된 경로
+   - 누락된 파일임에도 유지
+5. 발견된 새 폴더
+6. 발견된 기타 문제나 불일치
+
+### 누락된 파일 처리
+
+색인에서 참조되지만 파일 시스템에서 찾을 수 없는 각 파일에 대해:
+
+1. 항목 제시:
 
    ```markdown
-   Missing file detected:
-   Title: [Document Title]
-   Path: relative/path/to/file.md
-   Description: Existing description
-   Section: [Root Documents | Folder Name]
+   누락된 파일 감지:
+   제목: [문서 제목]
+   경로: relative/path/to/file.md
+   설명: 기존 설명
+   섹션: [루트 문서 | 폴더명]
 
-   Options:
+   옵션:
 
-   1. Remove this entry
-   2. Update the file path
-   3. Keep entry (mark as temporarily unavailable)
+   1. 이 항목 제거
+   2. 파일 경로 업데이트
+   3. 항목 유지 (일시적으로 사용 불가로 표시)
 
-   Please choose an option (1/2/3):
+   옵션을 선택해 주세요 (1/2/3):
    ```
 
-2. Wait for user confirmation before taking any action
-3. Log the decision for the final report
+2. 조치를 취하기 전에 사용자 확인을 기다리세요
+3. 최종 보고서를 위해 결정을 기록하세요
 
-### Special Cases
+### 특수 경우
 
-1. **Sharded Documents**: If a folder contains an `index.md` file, treat it as a sharded document:
-   - Use the folder's `index.md` title as the section title
-   - List the folder's documents as subsections
-   - Note in the description that this is a multi-part document
+1. **샤드된 문서**: 폴더가 `index.md` 파일을 포함하는 경우, 샤드된 문서로 처리:
+   - 폴더의 `index.md` 제목을 섹션 제목으로 사용
+   - 폴더의 문서를 하위 섹션으로 나열
+   - 설명에서 이것이 다부분 문서임을 명시
 
-2. **README files**: Convert `README.md` to more descriptive titles based on content
+2. **README 파일**: `README.md`를 내용을 기반으로 한 더 설명적인 제목으로 변환
 
-3. **Nested Subfolders**: For deeply nested folders, maintain the hierarchy but limit to 2 levels in the main index. Deeper structures should have their own index files.
+3. **중첩된 하위 폴더**: 깊게 중첩된 폴더의 경우, 계층을 유지하되 메인 색인에서는 2레벨로 제한. 더 깊은 구조는 자체 색인 파일을 가져야 함
 
-## Required Input
+## 필요한 입력
 
-Please provide:
+다음을 제공해 주세요:
 
-1. Location of the `docs/` directory (default: `./docs`)
-2. Confirmation of write access to `docs/index.md`
-3. Any specific categorization preferences
-4. Any files or directories to exclude from indexing (e.g., `.git`, `node_modules`)
-5. Whether to include hidden files/folders (starting with `.`)
+1. `docs/` 디렉토리 위치 (기본값: `./docs`)
+2. `docs/index.md`에 대한 쓰기 권한 확인
+3. 특정 분류 선호사항
+4. 색인화에서 제외할 파일이나 디렉토리 (예: `.git`, `node_modules`)
+5. 숨겨진 파일/폴더(`.`로 시작하는) 포함 여부
 
-Would you like to proceed with documentation indexing? Please provide the required input above.
+문서 색인화를 진행하시겠습니까? 위의 필요한 입력을 제공해 주세요.

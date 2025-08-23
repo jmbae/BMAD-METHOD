@@ -1,227 +1,227 @@
 <!-- Powered by BMAD™ Core -->
 
-# BMAD™ Knowledge Base
+# BMAD™ 지식 베이스
 
-## Overview
+## 개요
 
-BMAD-METHOD™ (Breakthrough Method of Agile AI-driven Development) is a framework that combines AI agents with Agile development methodologies. The v4 system introduces a modular architecture with improved dependency management, bundle optimization, and support for both web and IDE environments.
+BMAD-METHOD™ (Breakthrough Method of Agile AI-driven Development)는 AI 에이전트와 애자일 개발 방법론을 결합한 프레임워크입니다. v4 시스템은 개선된 의존성 관리, 번들 최적화, 웹 및 IDE 환경 모두 지원하는 모듈형 아키텍처를 도입했습니다.
 
-### Key Features
+### 주요 기능
 
-- **Modular Agent System**: Specialized AI agents for each Agile role
-- **Build System**: Automated dependency resolution and optimization
-- **Dual Environment Support**: Optimized for both web UIs and IDEs
-- **Reusable Resources**: Portable templates, tasks, and checklists
-- **Slash Command Integration**: Quick agent switching and control
+- **모듈형 에이전트 시스템**: 각 애자일 역할에 특화된 AI 에이전트
+- **빌드 시스템**: 자동화된 의존성 해결 및 최적화
+- **이중 환경 지원**: 웹 UI와 IDE 모두에 최적화
+- **재사용 가능한 리소스**: 이식 가능한 템플릿, 작업 및 체크리스트
+- **슬래시 명령 통합**: 빠른 에이전트 전환 및 제어
 
-### When to Use BMad
+### BMad 사용 시기
 
-- **New Projects (Greenfield)**: Complete end-to-end development
-- **Existing Projects (Brownfield)**: Feature additions and enhancements
-- **Team Collaboration**: Multiple roles working together
-- **Quality Assurance**: Structured testing and validation
-- **Documentation**: Professional PRDs, architecture docs, user stories
+- **신규 프로젝트 (Greenfield)**: 완전한 end-to-end 개발
+- **기존 프로젝트 (Brownfield)**: 기능 추가 및 개선
+- **팀 협업**: 여러 역할이 함께 작업
+- **품질 보증**: 구조화된 테스팅 및 검증
+- **문서화**: 전문적인 PRD, 아키텍처 문서, 사용자 스토리
 
-## How BMad Works
+## BMad 작동 원리
 
-### The Core Method
+### 핵심 방법론
 
-BMad transforms you into a "Vibe CEO" - directing a team of specialized AI agents through structured workflows. Here's how:
+BMad는 당신을 "바이브 CEO"로 변모시켜 - 구조화된 워크플로를 통해 전문화된 AI 에이전트 팀을 지휘하게 합니다. 작동 방식은 다음과 같습니다:
 
-1. **You Direct, AI Executes**: You provide vision and decisions; agents handle implementation details
-2. **Specialized Agents**: Each agent masters one role (PM, Developer, Architect, etc.)
-3. **Structured Workflows**: Proven patterns guide you from idea to deployed code
-4. **Clean Handoffs**: Fresh context windows ensure agents stay focused and effective
+1. **당신이 지시하고, AI가 실행**: 당신은 비전과 결정을 제공하고; 에이전트들이 구현 세부사항을 처리
+2. **전문화된 에이전트**: 각 에이전트는 하나의 역할을 마스터 (PM, 개발자, 아키텍트 등)
+3. **구조화된 워크플로**: 검증된 패턴이 아이디어에서 배포된 코드까지 안내
+4. **깔끔한 인수인계**: 새로운 컨텍스트 창으로 에이전트들이 집중적이고 효과적으로 유지
 
-### The Two-Phase Approach
+### 2단계 접근법
 
-#### Phase 1: Planning (Web UI - Cost Effective)
+#### 1단계: 계획 (웹 UI - 비용 효율적)
 
-- Use large context windows (Gemini's 1M tokens)
-- Generate comprehensive documents (PRD, Architecture)
-- Leverage multiple agents for brainstorming
-- Create once, use throughout development
+- 대용량 컨텍스트 창 사용 (Gemini의 1M 토큰)
+- 포괄적인 문서 생성 (PRD, 아키텍처)
+- 브레인스토밍을 위한 다중 에이전트 활용
+- 한 번 만들고, 개발 전반에 걸쳐 사용
 
-#### Phase 2: Development (IDE - Implementation)
+#### 2단계: 개발 (IDE - 구현)
 
-- Shard documents into manageable pieces
-- Execute focused SM → Dev cycles
-- One story at a time, sequential progress
-- Real-time file operations and testing
+- 문서를 관리 가능한 조각으로 샤딩
+- 집중된 SM → Dev 사이클 실행
+- 한 번에 하나의 스토리, 순차적 진행
+- 실시간 파일 작업 및 테스팅
 
-### The Development Loop
+### 개발 루프
 
 ```text
-1. SM Agent (New Chat) → Creates next story from sharded docs
-2. You → Review and approve story
-3. Dev Agent (New Chat) → Implements approved story
-4. QA Agent (New Chat) → Reviews and refactors code
-5. You → Verify completion
-6. Repeat until epic complete
+1. SM 에이전트 (새 채팅) → 샤딩된 문서에서 다음 스토리 생성
+2. 당신 → 스토리 검토 및 승인
+3. Dev 에이전트 (새 채팅) → 승인된 스토리 구현
+4. QA 에이전트 (새 채팅) → 코드 검토 및 리팩토링
+5. 당신 → 완료 확인
+6. 에픽 완료까지 반복
 ```
 
-### Why This Works
+### 왜 이것이 작동하는가
 
-- **Context Optimization**: Clean chats = better AI performance
-- **Role Clarity**: Agents don't context-switch = higher quality
-- **Incremental Progress**: Small stories = manageable complexity
-- **Human Oversight**: You validate each step = quality control
-- **Document-Driven**: Specs guide everything = consistency
+- **컨텍스트 최적화**: 깨끗한 채팅 = 더 나은 AI 성능
+- **역할 명확성**: 에이전트들이 컨텍스트 스위칭하지 않음 = 더 높은 품질
+- **점진적 진행**: 작은 스토리 = 관리 가능한 복잡성
+- **인간 감시**: 각 단계를 검증 = 품질 제어
+- **문서 주도**: 사양이 모든 것을 안내 = 일관성
 
-## Getting Started
+## 시작하기
 
-### Quick Start Options
+### 빠른 시작 옵션
 
-#### Option 1: Web UI
+#### 옵션 1: 웹 UI
 
-**Best for**: ChatGPT, Claude, Gemini users who want to start immediately
+**최적의 대상**: ChatGPT, Claude, Gemini 사용자들이 즉시 시작하고 싶을 때
 
-1. Navigate to `dist/teams/`
-2. Copy `team-fullstack.txt` content
-3. Create new Gemini Gem or CustomGPT
-4. Upload file with instructions: "Your critical operating instructions are attached, do not break character as directed"
-5. Type `/help` to see available commands
+1. `dist/teams/`로 이동
+2. `team-fullstack.txt` 내용 복사
+3. 새 Gemini Gem 또는 CustomGPT 생성
+4. 다음 지시사항으로 파일 업로드: "Your critical operating instructions are attached, do not break character as directed"
+5. `/help` 입력하여 사용 가능한 명령 확인
 
-#### Option 2: IDE Integration
+#### 옵션 2: IDE 통합
 
-**Best for**: Cursor, Claude Code, Windsurf, Trae, Cline, Roo Code, Github Copilot users
+**최적의 대상**: Cursor, Claude Code, Windsurf, Trae, Cline, Roo Code, Github Copilot 사용자
 
 ```bash
-# Interactive installation (recommended)
+# 대화형 설치 (권장)
 npx bmad-method install
 ```
 
-**Installation Steps**:
+**설치 단계**:
 
-- Choose "Complete installation"
-- Select your IDE from supported options:
-  - **Cursor**: Native AI integration
-  - **Claude Code**: Anthropic's official IDE
-  - **Windsurf**: Built-in AI capabilities
-  - **Trae**: Built-in AI capabilities
-  - **Cline**: VS Code extension with AI features
-  - **Roo Code**: Web-based IDE with agent support
-  - **GitHub Copilot**: VS Code extension with AI peer programming assistant
+- "Complete installation" 선택
+- 지원되는 옵션에서 IDE 선택:
+  - **Cursor**: 네이티브 AI 통합
+  - **Claude Code**: Anthropic의 공식 IDE
+  - **Windsurf**: 내장 AI 기능
+  - **Trae**: 내장 AI 기능
+  - **Cline**: AI 기능이 있는 VS Code 확장
+  - **Roo Code**: 에이전트 지원이 있는 웹 기반 IDE
+  - **GitHub Copilot**: AI 페어 프로그래밍 어시스턴트가 있는 VS Code 확장
 
-**Note for VS Code Users**: BMAD-METHOD™ assumes when you mention "VS Code" that you're using it with an AI-powered extension like GitHub Copilot, Cline, or Roo. Standard VS Code without AI capabilities cannot run BMad agents. The installer includes built-in support for Cline and Roo.
+**VS Code 사용자 참고**: BMAD-METHOD™는 "VS Code"를 언급할 때 GitHub Copilot, Cline, 또는 Roo 같은 AI 기반 확장과 함께 사용한다고 가정합니다. AI 기능이 없는 표준 VS Code는 BMad 에이전트를 실행할 수 없습니다. 설치 프로그램에는 Cline과 Roo에 대한 내장 지원이 포함되어 있습니다.
 
-**Verify Installation**:
+**설치 확인**:
 
-- `.bmad-core/` folder created with all agents
-- IDE-specific integration files created
-- All agent commands/rules/modes available
+- 모든 에이전트가 포함된 `.bmad-core/` 폴더 생성
+- IDE별 통합 파일 생성
+- 모든 에이전트 명령/규칙/모드 사용 가능
 
-**Remember**: At its core, BMAD-METHOD™ is about mastering and harnessing prompt engineering. Any IDE with AI agent support can use BMad - the framework provides the structured prompts and workflows that make AI development effective
+**기억할 점**: 핵심적으로 BMAD-METHOD™는 프롬프트 엔지니어링을 마스터하고 활용하는 것입니다. AI 에이전트 지원이 있는 모든 IDE는 BMad를 사용할 수 있습니다 - 프레임워크는 AI 개발을 효과적으로 만드는 구조화된 프롬프트와 워크플로를 제공합니다
 
-### Environment Selection Guide
+### 환경 선택 가이드
 
-**Use Web UI for**:
+**웹 UI 사용 시기**:
 
-- Initial planning and documentation (PRD, architecture)
-- Cost-effective document creation (especially with Gemini)
-- Brainstorming and analysis phases
-- Multi-agent consultation and planning
+- 초기 계획 및 문서화 (PRD, 아키텍처)
+- 비용 효율적인 문서 생성 (특히 Gemini와 함께)
+- 브레인스토밍 및 분석 단계
+- 다중 에이전트 상담 및 계획
 
-**Use IDE for**:
+**IDE 사용 시기**:
 
-- Active development and coding
-- File operations and project integration
-- Document sharding and story management
-- Implementation workflow (SM/Dev cycles)
+- 활성 개발 및 코딩
+- 파일 작업 및 프로젝트 통합
+- 문서 샤딩 및 스토리 관리
+- 구현 워크플로 (SM/Dev 사이클)
 
-**Cost-Saving Tip**: Create large documents (PRDs, architecture) in web UI, then copy to `docs/prd.md` and `docs/architecture.md` in your project before switching to IDE for development.
+**비용 절약 팁**: 웹 UI에서 대용량 문서(PRD, 아키텍처)를 생성한 다음, 개발을 위해 IDE로 전환하기 전에 프로젝트의 `docs/prd.md`와 `docs/architecture.md`로 복사하세요.
 
-### IDE-Only Workflow Considerations
+### IDE 전용 워크플로 고려사항
 
-**Can you do everything in IDE?** Yes, but understand the tradeoffs:
+**IDE에서 모든 것을 할 수 있나요?** 예, 하지만 트레이드오프를 이해하세요:
 
-**Pros of IDE-Only**:
+**IDE 전용의 장점**:
 
-- Single environment workflow
-- Direct file operations from start
-- No copy/paste between environments
-- Immediate project integration
+- 단일 환경 워크플로
+- 시작부터 직접 파일 작업
+- 환경 간 복사/붙여넣기 없음
+- 즉각적인 프로젝트 통합
 
-**Cons of IDE-Only**:
+**IDE 전용의 단점**:
 
-- Higher token costs for large document creation
-- Smaller context windows (varies by IDE/model)
-- May hit limits during planning phases
-- Less cost-effective for brainstorming
+- 대용량 문서 생성 시 높은 토큰 비용
+- 더 작은 컨텍스트 창 (IDE/모델에 따라 다름)
+- 계획 단계에서 제한에 도달할 수 있음
+- 브레인스토밍에 비용 효율성 떨어짐
 
-**Using Web Agents in IDE**:
+**IDE에서 웹 에이전트 사용**:
 
-- **NOT RECOMMENDED**: Web agents (PM, Architect) have rich dependencies designed for large contexts
-- **Why it matters**: Dev agents are kept lean to maximize coding context
-- **The principle**: "Dev agents code, planning agents plan" - mixing breaks this optimization
+- **권장하지 않음**: 웹 에이전트 (PM, Architect)는 대용량 컨텍스트를 위해 설계된 풍부한 의존성을 가지고 있습니다
+- **중요한 이유**: Dev 에이전트는 코딩 컨텍스트를 최대화하기 위해 lean하게 유지됩니다
+- **원칙**: "Dev 에이전트는 코딩, 계획 에이전트는 계획" - 혼합하면 이 최적화가 깨집니다
 
-**About bmad-master and bmad-orchestrator**:
+**bmad-master와 bmad-orchestrator에 대해**:
 
-- **bmad-master**: CAN do any task without switching agents, BUT...
-- **Still use specialized agents for planning**: PM, Architect, and UX Expert have tuned personas that produce better results
-- **Why specialization matters**: Each agent's personality and focus creates higher quality outputs
-- **If using bmad-master/orchestrator**: Fine for planning phases, but...
+- **bmad-master**: 에이전트 전환 없이 모든 작업을 할 수 있지만...
+- **계획에는 여전히 전문 에이전트 사용**: PM, Architect, UX Expert는 더 나은 결과를 산출하는 조정된 페르소나를 가지고 있습니다
+- **전문화가 중요한 이유**: 각 에이전트의 개성과 집중이 더 높은 품질의 출력을 만듭니다
+- **bmad-master/orchestrator 사용 시**: 계획 단계에는 괜찮지만...
 
-**CRITICAL RULE for Development**:
+**개발 시 중요 규칙**:
 
-- **ALWAYS use SM agent for story creation** - Never use bmad-master or bmad-orchestrator
-- **ALWAYS use Dev agent for implementation** - Never use bmad-master or bmad-orchestrator
-- **Why this matters**: SM and Dev agents are specifically optimized for the development workflow
-- **No exceptions**: Even if using bmad-master for everything else, switch to SM → Dev for implementation
+- **스토리 생성에는 항상 SM 에이전트 사용** - bmad-master나 bmad-orchestrator를 절대 사용하지 마세요
+- **구현에는 항상 Dev 에이전트 사용** - bmad-master나 bmad-orchestrator를 절대 사용하지 마세요
+- **중요한 이유**: SM과 Dev 에이전트는 개발 워크플로에 특별히 최적화되어 있습니다
+- **예외 없음**: 다른 모든 것에 bmad-master를 사용하더라도, 구현에는 SM → Dev로 전환하세요
 
-**Best Practice for IDE-Only**:
+**IDE 전용 모범 사례**:
 
-1. Use PM/Architect/UX agents for planning (better than bmad-master)
-2. Create documents directly in project
-3. Shard immediately after creation
-4. **MUST switch to SM agent** for story creation
-5. **MUST switch to Dev agent** for implementation
-6. Keep planning and coding in separate chat sessions
+1. 계획에는 PM/Architect/UX 에이전트 사용 (bmad-master보다 좋음)
+2. 프로젝트에 직접 문서 생성
+3. 생성 후 즉시 샤딩
+4. 스토리 생성에는 **반드시 SM 에이전트로 전환**
+5. 구현에는 **반드시 Dev 에이전트로 전환**
+6. 계획과 코딩을 별도의 채팅 세션에서 유지
 
-## Core Configuration (core-config.yaml)
+## 핵심 구성 (core-config.yaml)
 
-**New in V4**: The `bmad-core/core-config.yaml` file is a critical innovation that enables BMad to work seamlessly with any project structure, providing maximum flexibility and backwards compatibility.
+**V4 신기능**: `bmad-core/core-config.yaml` 파일은 BMad가 모든 프로젝트 구조와 원활하게 작동할 수 있게 하는 중요한 혁신으로, 최대한의 유연성과 하위 호환성을 제공합니다.
 
-### What is core-config.yaml?
+### core-config.yaml이란?
 
-This configuration file acts as a map for BMad agents, telling them exactly where to find your project documents and how they're structured. It enables:
+이 구성 파일은 BMad 에이전트들을 위한 지도 역할을 하여, 프로젝트 문서를 정확히 어디에서 찾을지와 어떻게 구조화되어 있는지를 알려줍니다. 이를 통해 다음이 가능합니다:
 
-- **Version Flexibility**: Work with V3, V4, or custom document structures
-- **Custom Locations**: Define where your documents and shards live
-- **Developer Context**: Specify which files the dev agent should always load
-- **Debug Support**: Built-in logging for troubleshooting
+- **버전 유연성**: V3, V4 또는 사용자 정의 문서 구조와 작업
+- **사용자 정의 위치**: 문서와 샤드가 위치할 곳 정의
+- **개발자 컨텍스트**: dev 에이전트가 항상 로드해야 할 파일 지정
+- **디버그 지원**: 문제 해결을 위한 내장 로깅
 
-### Key Configuration Areas
+### 주요 구성 영역
 
-#### PRD Configuration
+#### PRD 구성
 
-- **prdVersion**: Tells agents if PRD follows v3 or v4 conventions
-- **prdSharded**: Whether epics are embedded (false) or in separate files (true)
-- **prdShardedLocation**: Where to find sharded epic files
-- **epicFilePattern**: Pattern for epic filenames (e.g., `epic-{n}*.md`)
+- **prdVersion**: PRD가 v3 또는 v4 규칙을 따르는지 에이전트에게 알림
+- **prdSharded**: 에픽이 포함되어 있는지(false) 또는 별도 파일에 있는지(true)
+- **prdShardedLocation**: 샤딩된 에픽 파일을 찾을 위치
+- **epicFilePattern**: 에픽 파일명 패턴 (예: `epic-{n}*.md`)
 
-#### Architecture Configuration
+#### 아키텍처 구성
 
-- **architectureVersion**: v3 (monolithic) or v4 (sharded)
-- **architectureSharded**: Whether architecture is split into components
-- **architectureShardedLocation**: Where sharded architecture files live
+- **architectureVersion**: v3 (모놀리식) 또는 v4 (샤딩됨)
+- **architectureSharded**: 아키텍처가 컴포넌트로 분할되었는지 여부
+- **architectureShardedLocation**: 샤딩된 아키텍처 파일이 위치한 곳
 
-#### Developer Files
+#### 개발자 파일
 
-- **devLoadAlwaysFiles**: List of files the dev agent loads for every task
-- **devDebugLog**: Where dev agent logs repeated failures
-- **agentCoreDump**: Export location for chat conversations
+- **devLoadAlwaysFiles**: dev 에이전트가 모든 작업에 로드하는 파일 목록
+- **devDebugLog**: dev 에이전트가 반복적인 실패를 로그하는 곳
+- **agentCoreDump**: 채팅 대화의 내보내기 위치
 
-### Why It Matters
+### 중요한 이유
 
-1. **No Forced Migrations**: Keep your existing document structure
-2. **Gradual Adoption**: Start with V3 and migrate to V4 at your pace
-3. **Custom Workflows**: Configure BMad to match your team's process
-4. **Intelligent Agents**: Agents automatically adapt to your configuration
+1. **강제 마이그레이션 없음**: 기존 문서 구조 유지
+2. **점진적 채택**: V3에서 시작하여 원하는 속도로 V4로 마이그레이션
+3. **사용자 정의 워크플로**: 팀의 프로세스에 맞게 BMad 구성
+4. **지능형 에이전트**: 에이전트들이 자동으로 구성에 맞춰 적응
 
-### Common Configurations
+### 일반적인 구성
 
-**Legacy V3 Project**:
+**레거시 V3 프로젝트**:
 
 ```yaml
 prdVersion: v3
@@ -230,7 +230,7 @@ architectureVersion: v3
 architectureSharded: false
 ```
 
-**V4 Optimized Project**:
+**V4 최적화 프로젝트**:
 
 ```yaml
 prdVersion: v4
@@ -241,568 +241,568 @@ architectureSharded: true
 architectureShardedLocation: docs/architecture
 ```
 
-## Core Philosophy
+## 핵심 철학
 
-### Vibe CEO'ing
+### 바이브 CEO잉
 
-You are the "Vibe CEO" - thinking like a CEO with unlimited resources and a singular vision. Your AI agents are your high-powered team, and your role is to:
+당신은 "바이브 CEO"입니다 - 무제한 자원과 단일한 비전을 가진 CEO처럼 생각하세요. 당신의 AI 에이전트들은 고성능 팀이고, 당신의 역할은:
 
-- **Direct**: Provide clear instructions and objectives
-- **Refine**: Iterate on outputs to achieve quality
-- **Oversee**: Maintain strategic alignment across all agents
+- **지시**: 명확한 지침과 목표 제공
+- **개선**: 품질 달성을 위한 결과물 반복
+- **감독**: 모든 에이전트 간의 전략적 정렬 유지
 
-### Core Principles
+### 핵심 원칙
 
-1. **MAXIMIZE_AI_LEVERAGE**: Push the AI to deliver more. Challenge outputs and iterate.
-2. **QUALITY_CONTROL**: You are the ultimate arbiter of quality. Review all outputs.
-3. **STRATEGIC_OVERSIGHT**: Maintain the high-level vision and ensure alignment.
-4. **ITERATIVE_REFINEMENT**: Expect to revisit steps. This is not a linear process.
-5. **CLEAR_INSTRUCTIONS**: Precise requests lead to better outputs.
-6. **DOCUMENTATION_IS_KEY**: Good inputs (briefs, PRDs) lead to good outputs.
-7. **START_SMALL_SCALE_FAST**: Test concepts, then expand.
-8. **EMBRACE_THE_CHAOS**: Adapt and overcome challenges.
+1. **MAXIMIZE_AI_LEVERAGE**: AI가 더 많이 제공하도록 밀어붙이세요. 결과물에 도전하고 반복하세요.
+2. **QUALITY_CONTROL**: 당신이 품질의 최종 중재자입니다. 모든 결과물을 검토하세요.
+3. **STRATEGIC_OVERSIGHT**: 고수준 비전을 유지하고 정렬을 보장하세요.
+4. **ITERATIVE_REFINEMENT**: 단계를 다시 방문할 것을 예상하세요. 이것은 선형 프로세스가 아닙니다.
+5. **CLEAR_INSTRUCTIONS**: 정확한 요청이 더 나은 결과물로 이어집니다.
+6. **DOCUMENTATION_IS_KEY**: 좋은 입력 (브리프, PRD)이 좋은 결과물로 이어집니다.
+7. **START_SMALL_SCALE_FAST**: 개념을 테스트한 다음 확장하세요.
+8. **EMBRACE_THE_CHAOS**: 도전에 적응하고 극복하세요.
 
-### Key Workflow Principles
+### 주요 워크플로 원칙
 
-1. **Agent Specialization**: Each agent has specific expertise and responsibilities
-2. **Clean Handoffs**: Always start fresh when switching between agents
-3. **Status Tracking**: Maintain story statuses (Draft → Approved → InProgress → Done)
-4. **Iterative Development**: Complete one story before starting the next
-5. **Documentation First**: Always start with solid PRD and architecture
+1. **에이전트 전문화**: 각 에이전트는 특정 전문 지식과 책임을 가짐
+2. **깔끔한 인수인계**: 에이전트 간 전환 시 항상 새로 시작
+3. **상태 추적**: 스토리 상태 유지 (Draft → Approved → InProgress → Done)
+4. **반복적 개발**: 다음 스토리를 시작하기 전에 하나의 스토리 완료
+5. **문서 우선**: 항상 견고한 PRD와 아키텍처로 시작
 
-## Agent System
+## 에이전트 시스템
 
-### Core Development Team
+### 핵심 개발 팀
 
-| Agent       | Role               | Primary Functions                       | When to Use                            |
-| ----------- | ------------------ | --------------------------------------- | -------------------------------------- |
-| `analyst`   | Business Analyst   | Market research, requirements gathering | Project planning, competitive analysis |
-| `pm`        | Product Manager    | PRD creation, feature prioritization    | Strategic planning, roadmaps           |
-| `architect` | Solution Architect | System design, technical architecture   | Complex systems, scalability planning  |
-| `dev`       | Developer          | Code implementation, debugging          | All development tasks                  |
-| `qa`        | QA Specialist      | Test planning, quality assurance        | Testing strategies, bug validation     |
-| `ux-expert` | UX Designer        | UI/UX design, prototypes                | User experience, interface design      |
-| `po`        | Product Owner      | Backlog management, story validation    | Story refinement, acceptance criteria  |
-| `sm`        | Scrum Master       | Sprint planning, story creation         | Project management, workflow           |
+| 에이전트    | 역할               | 주요 기능                           | 사용 시기                          |
+| ----------- | ------------------ | ----------------------------------- | ---------------------------------- |
+| `analyst`   | 비즈니스 분석가    | 시장 조사, 요구사항 수집            | 프로젝트 계획, 경쟁사 분석         |
+| `pm`        | 제품 관리자        | PRD 생성, 기능 우선순위 지정        | 전략 계획, 로드맵                  |
+| `architect` | 솔루션 아키텍트    | 시스템 설계, 기술 아키텍처          | 복잡한 시스템, 확장성 계획         |
+| `dev`       | 개발자             | 코드 구현, 디버깅                   | 모든 개발 작업                     |
+| `qa`        | QA 전문가          | 테스트 계획, 품질 보증              | 테스팅 전략, 버그 검증             |
+| `ux-expert` | UX 디자이너        | UI/UX 설계, 프로토타입              | 사용자 경험, 인터페이스 설계       |
+| `po`        | 제품 오너          | 백로그 관리, 스토리 검증            | 스토리 개선, 승인 기준             |
+| `sm`        | 스크럼 마스터      | 스프린트 계획, 스토리 생성          | 프로젝트 관리, 워크플로            |
 
-### Meta Agents
+### 메타 에이전트
 
-| Agent               | Role             | Primary Functions                     | When to Use                       |
-| ------------------- | ---------------- | ------------------------------------- | --------------------------------- |
-| `bmad-orchestrator` | Team Coordinator | Multi-agent workflows, role switching | Complex multi-role tasks          |
-| `bmad-master`       | Universal Expert | All capabilities without switching    | Single-session comprehensive work |
+| 에이전트            | 역할             | 주요 기능                         | 사용 시기                     |
+| ------------------- | ---------------- | --------------------------------- | ----------------------------- |
+| `bmad-orchestrator` | 팀 코디네이터    | 다중 에이전트 워크플로, 역할 전환 | 복잡한 다중 역할 작업         |
+| `bmad-master`       | 범용 전문가      | 전환 없이 모든 기능               | 단일 세션 포괄적 작업         |
 
-### Agent Interaction Commands
+### 에이전트 상호작용 명령
 
-#### IDE-Specific Syntax
+#### IDE별 구문
 
-**Agent Loading by IDE**:
+**IDE별 에이전트 로드**:
 
-- **Claude Code**: `/agent-name` (e.g., `/bmad-master`)
-- **Cursor**: `@agent-name` (e.g., `@bmad-master`)
-- **Windsurf**: `/agent-name` (e.g., `/bmad-master`)
-- **Trae**: `@agent-name` (e.g., `@bmad-master`)
-- **Roo Code**: Select mode from mode selector (e.g., `bmad-master`)
-- **GitHub Copilot**: Open the Chat view (`⌃⌘I` on Mac, `Ctrl+Alt+I` on Windows/Linux) and select **Agent** from the chat mode selector.
+- **Claude Code**: `/agent-name` (예: `/bmad-master`)
+- **Cursor**: `@agent-name` (예: `@bmad-master`)
+- **Windsurf**: `/agent-name` (예: `/bmad-master`)
+- **Trae**: `@agent-name` (예: `@bmad-master`)
+- **Roo Code**: 모드 선택기에서 모드 선택 (예: `bmad-master`)
+- **GitHub Copilot**: 채팅 뷰 열기 (Mac에서 `⌃⌘I`, Windows/Linux에서 `Ctrl+Alt+I`) 후 채팅 모드 선택기에서 **Agent** 선택
 
-**Chat Management Guidelines**:
+**채팅 관리 가이드라인**:
 
-- **Claude Code, Cursor, Windsurf, Trae**: Start new chats when switching agents
-- **Roo Code**: Switch modes within the same conversation
+- **Claude Code, Cursor, Windsurf, Trae**: 에이전트 전환 시 새 채팅 시작
+- **Roo Code**: 같은 대화 내에서 모드 전환
 
-**Common Task Commands**:
+**일반 작업 명령**:
 
-- `*help` - Show available commands
-- `*status` - Show current context/progress
-- `*exit` - Exit the agent mode
-- `*shard-doc docs/prd.md prd` - Shard PRD into manageable pieces
-- `*shard-doc docs/architecture.md architecture` - Shard architecture document
-- `*create` - Run create-next-story task (SM agent)
+- `*help` - 사용 가능한 명령 표시
+- `*status` - 현재 컨텍스트/진행 상황 표시
+- `*exit` - 에이전트 모드 종료
+- `*shard-doc docs/prd.md prd` - PRD를 관리 가능한 조각으로 샤딩
+- `*shard-doc docs/architecture.md architecture` - 아키텍처 문서 샤딩
+- `*create` - create-next-story 작업 실행 (SM 에이전트)
 
-**In Web UI**:
+**웹 UI에서**:
 
 ```text
 /pm create-doc prd
 /architect review system design
 /dev implement story 1.2
-/help - Show available commands
-/switch agent-name - Change active agent (if orchestrator available)
+/help - 사용 가능한 명령 표시
+/switch agent-name - 활성 에이전트 변경 (orchestrator 사용 가능한 경우)
 ```
 
-## Team Configurations
+## 팀 구성
 
-### Pre-Built Teams
+### 사전 구축된 팀
 
 #### Team All
 
-- **Includes**: All 10 agents + orchestrator
-- **Use Case**: Complete projects requiring all roles
-- **Bundle**: `team-all.txt`
+- **포함**: 모든 10개 에이전트 + 오케스트레이터
+- **사용 사례**: 모든 역할이 필요한 완전한 프로젝트
+- **번들**: `team-all.txt`
 
 #### Team Fullstack
 
-- **Includes**: PM, Architect, Developer, QA, UX Expert
-- **Use Case**: End-to-end web/mobile development
-- **Bundle**: `team-fullstack.txt`
+- **포함**: PM, Architect, Developer, QA, UX Expert
+- **사용 사례**: End-to-end 웹/모바일 개발
+- **번들**: `team-fullstack.txt`
 
 #### Team No-UI
 
-- **Includes**: PM, Architect, Developer, QA (no UX Expert)
-- **Use Case**: Backend services, APIs, system development
-- **Bundle**: `team-no-ui.txt`
+- **포함**: PM, Architect, Developer, QA (UX Expert 제외)
+- **사용 사례**: 백엔드 서비스, API, 시스템 개발
+- **번들**: `team-no-ui.txt`
 
-## Core Architecture
+## 핵심 아키텍처
 
-### System Overview
+### 시스템 개요
 
-The BMAD-METHOD™ is built around a modular architecture centered on the `bmad-core` directory, which serves as the brain of the entire system. This design enables the framework to operate effectively in both IDE environments (like Cursor, VS Code) and web-based AI interfaces (like ChatGPT, Gemini).
+BMAD-METHOD™는 전체 시스템의 두뇌 역할을 하는 `bmad-core` 디렉토리를 중심으로 한 모듈형 아키텍처를 기반으로 구축됩니다. 이 설계를 통해 프레임워크는 IDE 환경(Cursor, VS Code 등)과 웹 기반 AI 인터페이스(ChatGPT, Gemini 등) 모두에서 효과적으로 작동할 수 있습니다.
 
-### Key Architectural Components
+### 주요 아키텍처 구성 요소
 
-#### 1. Agents (`bmad-core/agents/`)
+#### 1. 에이전트 (`bmad-core/agents/`)
 
-- **Purpose**: Each markdown file defines a specialized AI agent for a specific Agile role (PM, Dev, Architect, etc.)
-- **Structure**: Contains YAML headers specifying the agent's persona, capabilities, and dependencies
-- **Dependencies**: Lists of tasks, templates, checklists, and data files the agent can use
-- **Startup Instructions**: Can load project-specific documentation for immediate context
+- **목적**: 각 마크다운 파일은 특정 애자일 역할(PM, Dev, Architect 등)에 대한 전문 AI 에이전트를 정의
+- **구조**: 에이전트의 페르소나, 기능 및 의존성을 지정하는 YAML 헤더 포함
+- **의존성**: 에이전트가 사용할 수 있는 작업, 템플릿, 체크리스트 및 데이터 파일 목록
+- **시작 지침**: 즉각적인 컨텍스트를 위해 프로젝트별 문서를 로드할 수 있음
 
-#### 2. Agent Teams (`bmad-core/agent-teams/`)
+#### 2. 에이전트 팀 (`bmad-core/agent-teams/`)
 
-- **Purpose**: Define collections of agents bundled together for specific purposes
-- **Examples**: `team-all.yaml` (comprehensive bundle), `team-fullstack.yaml` (full-stack development)
-- **Usage**: Creates pre-packaged contexts for web UI environments
+- **목적**: 특정 목적을 위해 번들로 묶인 에이전트 컬렉션 정의
+- **예시**: `team-all.yaml` (포괄적 번들), `team-fullstack.yaml` (풀스택 개발)
+- **사용법**: 웹 UI 환경을 위한 사전 패키지 컨텍스트 생성
 
-#### 3. Workflows (`bmad-core/workflows/`)
+#### 3. 워크플로 (`bmad-core/workflows/`)
 
-- **Purpose**: YAML files defining prescribed sequences of steps for specific project types
-- **Types**: Greenfield (new projects) and Brownfield (existing projects) for UI, service, and fullstack development
-- **Structure**: Defines agent interactions, artifacts created, and transition conditions
+- **목적**: 특정 프로젝트 유형에 대한 규정된 단계 시퀀스를 정의하는 YAML 파일
+- **유형**: UI, 서비스 및 풀스택 개발을 위한 Greenfield (신규 프로젝트) 및 Brownfield (기존 프로젝트)
+- **구조**: 에이전트 상호작용, 생성된 아티팩트 및 전환 조건 정의
 
-#### 4. Reusable Resources
+#### 4. 재사용 가능한 리소스
 
-- **Templates** (`bmad-core/templates/`): Markdown templates for PRDs, architecture specs, user stories
-- **Tasks** (`bmad-core/tasks/`): Instructions for specific repeatable actions like "shard-doc" or "create-next-story"
-- **Checklists** (`bmad-core/checklists/`): Quality assurance checklists for validation and review
-- **Data** (`bmad-core/data/`): Core knowledge base and technical preferences
+- **템플릿** (`bmad-core/templates/`): PRD, 아키텍처 사양, 사용자 스토리를 위한 마크다운 템플릿
+- **작업** (`bmad-core/tasks/`): "shard-doc" 또는 "create-next-story"와 같은 특정 반복 가능한 작업에 대한 지침
+- **체크리스트** (`bmad-core/checklists/`): 검증 및 검토를 위한 품질 보증 체크리스트
+- **데이터** (`bmad-core/data/`): 핵심 지식 베이스 및 기술 선호도
 
-### Dual Environment Architecture
+### 이중 환경 아키텍처
 
-#### IDE Environment
+#### IDE 환경
 
-- Users interact directly with agent markdown files
-- Agents can access all dependencies dynamically
-- Supports real-time file operations and project integration
-- Optimized for development workflow execution
+- 사용자가 에이전트 마크다운 파일과 직접 상호작용
+- 에이전트들이 모든 의존성에 동적으로 접근 가능
+- 실시간 파일 작업 및 프로젝트 통합 지원
+- 개발 워크플로 실행에 최적화
 
-#### Web UI Environment
+#### 웹 UI 환경
 
-- Uses pre-built bundles from `dist/teams` for stand alone 1 upload files for all agents and their assets with an orchestrating agent
-- Single text files containing all agent dependencies are in `dist/agents/` - these are unnecessary unless you want to create a web agent that is only a single agent and not a team
-- Created by the web-builder tool for upload to web interfaces
-- Provides complete context in one package
+- 모든 에이전트와 그들의 자산을 포함한 독립형 1업로드 파일을 위해 `dist/teams`의 사전 구축 번들 사용
+- 모든 에이전트 의존성을 포함하는 단일 텍스트 파일이 `dist/agents/`에 있음 - 팀이 아닌 단일 에이전트만 원하는 웹 에이전트를 만들려는 경우가 아니면 불필요
+- 웹 인터페이스 업로드를 위한 web-builder 도구로 생성
+- 하나의 패키지에서 완전한 컨텍스트 제공
 
-### Template Processing System
+### 템플릿 처리 시스템
 
-BMad employs a sophisticated template system with three key components:
+BMad는 세 가지 주요 구성 요소를 가진 정교한 템플릿 시스템을 사용합니다:
 
-1. **Template Format** (`utils/bmad-doc-template.md`): Defines markup language for variable substitution and AI processing directives from yaml templates
-2. **Document Creation** (`tasks/create-doc.md`): Orchestrates template selection and user interaction to transform yaml spec to final markdown output
-3. **Advanced Elicitation** (`tasks/advanced-elicitation.md`): Provides interactive refinement through structured brainstorming
+1. **템플릿 형식** (`utils/bmad-doc-template.md`): yaml 템플릿에서 변수 치환 및 AI 처리 지시어를 위한 마크업 언어 정의
+2. **문서 생성** (`tasks/create-doc.md`): 템플릿 선택과 사용자 상호작용을 조율하여 yaml 사양을 최종 마크다운 출력으로 변환
+3. **고급 도출** (`tasks/advanced-elicitation.md`): 구조화된 브레인스토밍을 통한 대화형 개선 제공
 
-### Technical Preferences Integration
+### 기술 선호도 통합
 
-The `technical-preferences.md` file serves as a persistent technical profile that:
+`technical-preferences.md` 파일은 다음과 같은 지속적인 기술 프로필 역할을 합니다:
 
-- Ensures consistency across all agents and projects
-- Eliminates repetitive technology specification
-- Provides personalized recommendations aligned with user preferences
-- Evolves over time with lessons learned
+- 모든 에이전트와 프로젝트 간의 일관성 보장
+- 반복적인 기술 사양 제거
+- 사용자 선호도에 맞춘 개인화된 권장사항 제공
+- 학습된 교훈과 함께 시간에 따라 진화
 
-### Build and Delivery Process
+### 빌드 및 전달 프로세스
 
-The `web-builder.js` tool creates web-ready bundles by:
+`web-builder.js` 도구는 다음과 같이 웹 준비 번들을 생성합니다:
 
-1. Reading agent or team definition files
-2. Recursively resolving all dependencies
-3. Concatenating content into single text files with clear separators
-4. Outputting ready-to-upload bundles for web AI interfaces
+1. 에이전트 또는 팀 정의 파일 읽기
+2. 모든 의존성을 재귀적으로 해결
+3. 명확한 구분자로 내용을 단일 텍스트 파일에 연결
+4. 웹 AI 인터페이스용 업로드 준비 번들 출력
 
-This architecture enables seamless operation across environments while maintaining the rich, interconnected agent ecosystem that makes BMad powerful.
+이 아키텍처는 BMad를 강력하게 만드는 풍부하고 상호 연결된 에이전트 생태계를 유지하면서 환경 간 원활한 작동을 가능하게 합니다.
 
-## Complete Development Workflow
+## 완전한 개발 워크플로
 
-### Planning Phase (Web UI Recommended - Especially Gemini!)
+### 계획 단계 (웹 UI 권장 - 특히 Gemini!)
 
-**Ideal for cost efficiency with Gemini's massive context:**
+**Gemini의 대용량 컨텍스트로 비용 효율성에 이상적:**
 
-**For Brownfield Projects - Start Here!**:
+**브라운필드 프로젝트 - 여기서 시작!**:
 
-1. **Upload entire project to Gemini Web** (GitHub URL, files, or zip)
-2. **Document existing system**: `/analyst` → `*document-project`
-3. **Creates comprehensive docs** from entire codebase analysis
+1. **전체 프로젝트를 Gemini Web에 업로드** (GitHub URL, 파일 또는 zip)
+2. **기존 시스템 문서화**: `/analyst` → `*document-project`
+3. **전체 코드베이스 분석에서 포괄적인 문서 생성**
 
-**For All Projects**:
+**모든 프로젝트**:
 
-1. **Optional Analysis**: `/analyst` - Market research, competitive analysis
-2. **Project Brief**: Create foundation document (Analyst or user)
-3. **PRD Creation**: `/pm create-doc prd` - Comprehensive product requirements
-4. **Architecture Design**: `/architect create-doc architecture` - Technical foundation
-5. **Validation & Alignment**: `/po` run master checklist to ensure document consistency
-6. **Document Preparation**: Copy final documents to project as `docs/prd.md` and `docs/architecture.md`
+1. **선택적 분석**: `/analyst` - 시장 조사, 경쟁사 분석
+2. **프로젝트 브리프**: 기초 문서 생성 (Analyst 또는 사용자)
+3. **PRD 생성**: `/pm create-doc prd` - 포괄적인 제품 요구사항
+4. **아키텍처 설계**: `/architect create-doc architecture` - 기술 기반
+5. **검증 및 정렬**: `/po` 마스터 체크리스트 실행하여 문서 일관성 보장
+6. **문서 준비**: 최종 문서를 프로젝트에 `docs/prd.md`와 `docs/architecture.md`로 복사
 
-#### Example Planning Prompts
+#### 계획 프롬프트 예시
 
-**For PRD Creation**:
-
-```text
-"I want to build a [type] application that [core purpose].
-Help me brainstorm features and create a comprehensive PRD."
-```
-
-**For Architecture Design**:
+**PRD 생성용**:
 
 ```text
-"Based on this PRD, design a scalable technical architecture
-that can handle [specific requirements]."
+"[유형] 애플리케이션을 구축하고 싶습니다. [핵심 목적]을 위한 것입니다.
+기능을 브레인스토밍하고 포괄적인 PRD를 만들어 주세요."
 ```
 
-### Critical Transition: Web UI to IDE
+**아키텍처 설계용**:
 
-**Once planning is complete, you MUST switch to IDE for development:**
+```text
+"이 PRD를 기반으로 [특정 요구사항]을 처리할 수 있는
+확장 가능한 기술 아키텍처를 설계해주세요."
+```
 
-- **Why**: Development workflow requires file operations, real-time project integration, and document sharding
-- **Cost Benefit**: Web UI is more cost-effective for large document creation; IDE is optimized for development tasks
-- **Required Files**: Ensure `docs/prd.md` and `docs/architecture.md` exist in your project
+### 중요한 전환점: 웹 UI에서 IDE로
 
-### IDE Development Workflow
+**계획이 완료되면 개발을 위해 반드시 IDE로 전환해야 합니다:**
 
-**Prerequisites**: Planning documents must exist in `docs/` folder
+- **이유**: 개발 워크플로는 파일 작업, 실시간 프로젝트 통합, 문서 샤딩이 필요
+- **비용 혜택**: 웹 UI는 대용량 문서 생성에 더 비용 효율적; IDE는 개발 작업에 최적화
+- **필수 파일**: `docs/prd.md`와 `docs/architecture.md`가 프로젝트에 존재해야 함
 
-1. **Document Sharding** (CRITICAL STEP):
-   - Documents created by PM/Architect (in Web or IDE) MUST be sharded for development
-   - Two methods to shard:
-     a) **Manual**: Drag `shard-doc` task + document file into chat
-     b) **Agent**: Ask `@bmad-master` or `@po` to shard documents
-   - Shards `docs/prd.md` → `docs/prd/` folder
-   - Shards `docs/architecture.md` → `docs/architecture/` folder
-   - **WARNING**: Do NOT shard in Web UI - copying many small files is painful!
+### IDE 개발 워크플로
 
-2. **Verify Sharded Content**:
-   - At least one `epic-n.md` file in `docs/prd/` with stories in development order
-   - Source tree document and coding standards for dev agent reference
-   - Sharded docs for SM agent story creation
+**전제 조건**: 계획 문서가 `docs/` 폴더에 존재해야 함
 
-Resulting Folder Structure:
+1. **문서 샤딩** (중요 단계):
+   - PM/Architect가 생성한 문서(웹 또는 IDE에서)는 개발을 위해 반드시 샤딩되어야 함
+   - 샤딩하는 두 가지 방법:
+     a) **수동**: `shard-doc` 작업 + 문서 파일을 채팅으로 드래그
+     b) **에이전트**: `@bmad-master` 또는 `@po`에게 문서 샤딩 요청
+   - `docs/prd.md` → `docs/prd/` 폴더로 샤딩
+   - `docs/architecture.md` → `docs/architecture/` 폴더로 샤딩
+   - **경고**: 웹 UI에서 샤딩하지 마세요 - 많은 작은 파일을 복사하는 것은 고통스럽습니다!
 
-- `docs/prd/` - Broken down PRD sections
-- `docs/architecture/` - Broken down architecture sections
-- `docs/stories/` - Generated user stories
+2. **샤딩된 콘텐츠 확인**:
+   - 개발 순서로 스토리가 있는 `docs/prd/`에 최소 하나의 `epic-n.md` 파일
+   - dev 에이전트 참조를 위한 소스 트리 문서 및 코딩 표준
+   - SM 에이전트 스토리 생성을 위한 샤딩된 문서
 
-1. **Development Cycle** (Sequential, one story at a time):
+결과 폴더 구조:
 
-   **CRITICAL CONTEXT MANAGEMENT**:
-   - **Context windows matter!** Always use fresh, clean context windows
-   - **Model selection matters!** Use most powerful thinking model for SM story creation
-   - **ALWAYS start new chat between SM, Dev, and QA work**
+- `docs/prd/` - 분해된 PRD 섹션
+- `docs/architecture/` - 분해된 아키텍처 섹션
+- `docs/stories/` - 생성된 사용자 스토리
 
-   **Step 1 - Story Creation**:
-   - **NEW CLEAN CHAT** → Select powerful model → `@sm` → `*create`
-   - SM executes create-next-story task
-   - Review generated story in `docs/stories/`
-   - Update status from "Draft" to "Approved"
+1. **개발 사이클** (순차적, 한 번에 하나의 스토리):
 
-   **Step 2 - Story Implementation**:
-   - **NEW CLEAN CHAT** → `@dev`
-   - Agent asks which story to implement
-   - Include story file content to save dev agent lookup time
-   - Dev follows tasks/subtasks, marking completion
-   - Dev maintains File List of all changes
-   - Dev marks story as "Review" when complete with all tests passing
+   **중요한 컨텍스트 관리**:
+   - **컨텍스트 창이 중요합니다!** 항상 신선하고 깨끗한 컨텍스트 창 사용
+   - **모델 선택이 중요합니다!** SM 스토리 생성에는 가장 강력한 사고 모델 사용
+   - **SM, Dev, QA 작업 간에 항상 새 채팅 시작**
 
-   **Step 3 - Senior QA Review**:
-   - **NEW CLEAN CHAT** → `@qa` → execute review-story task
-   - QA performs senior developer code review
-   - QA can refactor and improve code directly
-   - QA appends results to story's QA Results section
-   - If approved: Status → "Done"
-   - If changes needed: Status stays "Review" with unchecked items for dev
+   **1단계 - 스토리 생성**:
+   - **새로운 깨끗한 채팅** → 강력한 모델 선택 → `@sm` → `*create`
+   - SM이 create-next-story 작업 실행
+   - `docs/stories/`에서 생성된 스토리 검토
+   - 상태를 "Draft"에서 "Approved"로 업데이트
 
-   **Step 4 - Repeat**: Continue SM → Dev → QA cycle until all epic stories complete
+   **2단계 - 스토리 구현**:
+   - **새로운 깨끗한 채팅** → `@dev`
+   - 에이전트가 구현할 스토리 문의
+   - dev 에이전트 조회 시간을 절약하기 위해 스토리 파일 내용 포함
+   - Dev가 작업/하위 작업을 따라 완료 표시
+   - Dev가 모든 변경사항의 파일 목록 유지
+   - 모든 테스트가 통과하면 Dev가 스토리를 "Review"로 표시
 
-**Important**: Only 1 story in progress at a time, worked sequentially until all epic stories complete.
+   **3단계 - 시니어 QA 검토**:
+   - **새로운 깨끗한 채팅** → `@qa` → review-story 작업 실행
+   - QA가 시니어 개발자 코드 검토 수행
+   - QA가 코드를 직접 리팩토링하고 개선 가능
+   - QA가 스토리의 QA 결과 섹션에 결과 추가
+   - 승인된 경우: 상태 → "Done"
+   - 변경이 필요한 경우: 상태는 dev를 위한 미확인 항목과 함께 "Review"로 유지
 
-### Status Tracking Workflow
+   **4단계 - 반복**: 모든 에픽 스토리가 완료될 때까지 SM → Dev → QA 사이클 계속
 
-Stories progress through defined statuses:
+**중요**: 한 번에 진행 중인 스토리는 1개만, 모든 에픽 스토리가 완료될 때까지 순차적으로 작업.
+
+### 상태 추적 워크플로
+
+스토리는 정의된 상태를 거쳐 진행됩니다:
 
 - **Draft** → **Approved** → **InProgress** → **Done**
 
-Each status change requires user verification and approval before proceeding.
+각 상태 변경은 진행하기 전에 사용자 확인 및 승인이 필요합니다.
 
-### Workflow Types
+### 워크플로 유형
 
-#### Greenfield Development
+#### 그린필드 개발
 
-- Business analysis and market research
-- Product requirements and feature definition
-- System architecture and design
-- Development execution
-- Testing and deployment
+- 비즈니스 분석 및 시장 조사
+- 제품 요구사항 및 기능 정의
+- 시스템 아키텍처 및 설계
+- 개발 실행
+- 테스팅 및 배포
 
-#### Brownfield Enhancement (Existing Projects)
+#### 브라운필드 개선 (기존 프로젝트)
 
-**Key Concept**: Brownfield development requires comprehensive documentation of your existing project for AI agents to understand context, patterns, and constraints.
+**핵심 개념**: 브라운필드 개발은 AI 에이전트가 컨텍스트, 패턴 및 제약사항을 이해할 수 있도록 기존 프로젝트의 포괄적인 문서화가 필요합니다.
 
-**Complete Brownfield Workflow Options**:
+**완전한 브라운필드 워크플로 옵션**:
 
-**Option 1: PRD-First (Recommended for Large Codebases/Monorepos)**:
+**옵션 1: PRD 우선 (대용량 코드베이스/모노레포에 권장)**:
 
-1. **Upload project to Gemini Web** (GitHub URL, files, or zip)
-2. **Create PRD first**: `@pm` → `*create-doc brownfield-prd`
-3. **Focused documentation**: `@analyst` → `*document-project`
-   - Analyst asks for focus if no PRD provided
-   - Choose "single document" format for Web UI
-   - Uses PRD to document ONLY relevant areas
-   - Creates one comprehensive markdown file
-   - Avoids bloating docs with unused code
+1. **프로젝트를 Gemini Web에 업로드** (GitHub URL, 파일 또는 zip)
+2. **먼저 PRD 생성**: `@pm` → `*create-doc brownfield-prd`
+3. **집중된 문서화**: `@analyst` → `*document-project`
+   - PRD가 제공되지 않으면 Analyst가 초점을 요청
+   - 웹 UI를 위한 "단일 문서" 형식 선택
+   - PRD를 사용하여 관련 영역만 문서화
+   - 하나의 포괄적인 마크다운 파일 생성
+   - 사용하지 않는 코드로 문서를 부풀리는 것을 방지
 
-**Option 2: Document-First (Good for Smaller Projects)**:
+**옵션 2: 문서 우선 (소규모 프로젝트에 좋음)**:
 
-1. **Upload project to Gemini Web**
-2. **Document everything**: `@analyst` → `*document-project`
-3. **Then create PRD**: `@pm` → `*create-doc brownfield-prd`
-   - More thorough but can create excessive documentation
+1. **프로젝트를 Gemini Web에 업로드**
+2. **모든 것 문서화**: `@analyst` → `*document-project`
+3. **그 다음 PRD 생성**: `@pm` → `*create-doc brownfield-prd`
+   - 더 철저하지만 과도한 문서화를 만들 수 있음
 
-4. **Requirements Gathering**:
-   - **Brownfield PRD**: Use PM agent with `brownfield-prd-tmpl`
-   - **Analyzes**: Existing system, constraints, integration points
-   - **Defines**: Enhancement scope, compatibility requirements, risk assessment
-   - **Creates**: Epic and story structure for changes
+4. **요구사항 수집**:
+   - **브라운필드 PRD**: `brownfield-prd-tmpl`과 함께 PM 에이전트 사용
+   - **분석**: 기존 시스템, 제약사항, 통합 포인트
+   - **정의**: 개선 범위, 호환성 요구사항, 위험 평가
+   - **생성**: 변경사항에 대한 에픽 및 스토리 구조
 
-5. **Architecture Planning**:
-   - **Brownfield Architecture**: Use Architect agent with `brownfield-architecture-tmpl`
-   - **Integration Strategy**: How new features integrate with existing system
-   - **Migration Planning**: Gradual rollout and backwards compatibility
-   - **Risk Mitigation**: Addressing potential breaking changes
+5. **아키텍처 계획**:
+   - **브라운필드 아키텍처**: `brownfield-architecture-tmpl`과 함께 Architect 에이전트 사용
+   - **통합 전략**: 새 기능이 기존 시스템과 통합되는 방법
+   - **마이그레이션 계획**: 점진적 롤아웃 및 하위 호환성
+   - **위험 완화**: 잠재적 브레이킹 체인지 해결
 
-**Brownfield-Specific Resources**:
+**브라운필드별 리소스**:
 
-**Templates**:
+**템플릿**:
 
-- `brownfield-prd-tmpl.md`: Comprehensive enhancement planning with existing system analysis
-- `brownfield-architecture-tmpl.md`: Integration-focused architecture for existing systems
+- `brownfield-prd-tmpl.md`: 기존 시스템 분석이 포함된 포괄적인 개선 계획
+- `brownfield-architecture-tmpl.md`: 기존 시스템을 위한 통합 중심 아키텍처
 
-**Tasks**:
+**작업**:
 
-- `document-project`: Generates comprehensive documentation from existing codebase
-- `brownfield-create-epic`: Creates single epic for focused enhancements (when full PRD is overkill)
-- `brownfield-create-story`: Creates individual story for small, isolated changes
+- `document-project`: 기존 코드베이스에서 포괄적인 문서 생성
+- `brownfield-create-epic`: 집중된 개선을 위한 단일 에픽 생성 (전체 PRD가 과할 때)
+- `brownfield-create-story`: 작고 격리된 변경을 위한 개별 스토리 생성
 
-**When to Use Each Approach**:
+**각 접근법을 사용할 시기**:
 
-**Full Brownfield Workflow** (Recommended for):
+**전체 브라운필드 워크플로** (다음에 권장):
 
-- Major feature additions
-- System modernization
-- Complex integrations
-- Multiple related changes
+- 주요 기능 추가
+- 시스템 현대화
+- 복잡한 통합
+- 여러 관련 변경사항
 
-**Quick Epic/Story Creation** (Use when):
+**빠른 에픽/스토리 생성** (다음 시 사용):
 
-- Single, focused enhancement
-- Isolated bug fixes
-- Small feature additions
-- Well-documented existing system
+- 단일, 집중된 개선
+- 격리된 버그 수정
+- 작은 기능 추가
+- 잘 문서화된 기존 시스템
 
-**Critical Success Factors**:
+**중요한 성공 요인**:
 
-1. **Documentation First**: Always run `document-project` if docs are outdated/missing
-2. **Context Matters**: Provide agents access to relevant code sections
-3. **Integration Focus**: Emphasize compatibility and non-breaking changes
-4. **Incremental Approach**: Plan for gradual rollout and testing
+1. **문서 우선**: 문서가 오래되었거나 누락된 경우 항상 `document-project` 실행
+2. **컨텍스트 중요**: 에이전트들에게 관련 코드 섹션에 대한 접근 제공
+3. **통합 초점**: 호환성과 비파괴적 변경 강조
+4. **점진적 접근**: 점진적 롤아웃 및 테스팅 계획
 
-**For detailed guide**: See `docs/working-in-the-brownfield.md`
+**자세한 가이드**: `docs/working-in-the-brownfield.md` 참조
 
-## Document Creation Best Practices
+## 문서 생성 모범 사례
 
-### Required File Naming for Framework Integration
+### 프레임워크 통합을 위한 필수 파일 명명
 
-- `docs/prd.md` - Product Requirements Document
-- `docs/architecture.md` - System Architecture Document
+- `docs/prd.md` - 제품 요구사항 문서
+- `docs/architecture.md` - 시스템 아키텍처 문서
 
-**Why These Names Matter**:
+**이 이름들이 중요한 이유**:
 
-- Agents automatically reference these files during development
-- Sharding tasks expect these specific filenames
-- Workflow automation depends on standard naming
+- 에이전트들이 개발 중에 이 파일들을 자동으로 참조
+- 샤딩 작업은 이 특정 파일명을 기대
+- 워크플로 자동화는 표준 명명에 의존
 
-### Cost-Effective Document Creation Workflow
+### 비용 효율적인 문서 생성 워크플로
 
-**Recommended for Large Documents (PRD, Architecture):**
+**대용량 문서 (PRD, 아키텍처)에 권장:**
 
-1. **Use Web UI**: Create documents in web interface for cost efficiency
-2. **Copy Final Output**: Save complete markdown to your project
-3. **Standard Names**: Save as `docs/prd.md` and `docs/architecture.md`
-4. **Switch to IDE**: Use IDE agents for development and smaller documents
+1. **웹 UI 사용**: 비용 효율성을 위해 웹 인터페이스에서 문서 생성
+2. **최종 출력 복사**: 완전한 마크다운을 프로젝트에 저장
+3. **표준 이름**: `docs/prd.md`와 `docs/architecture.md`로 저장
+4. **IDE로 전환**: 개발 및 소규모 문서를 위해 IDE 에이전트 사용
 
-### Document Sharding
+### 문서 샤딩
 
-Templates with Level 2 headings (`##`) can be automatically sharded:
+레벨 2 헤딩 (`##`)이 있는 템플릿은 자동으로 샤딩될 수 있습니다:
 
-**Original PRD**:
+**원본 PRD**:
 
 ```markdown
-## Goals and Background Context
+## 목표 및 배경 컨텍스트
 
-## Requirements
+## 요구사항
 
-## User Interface Design Goals
+## 사용자 인터페이스 설계 목표
 
-## Success Metrics
+## 성공 메트릭
 ```
 
-**After Sharding**:
+**샤딩 후**:
 
 - `docs/prd/goals-and-background-context.md`
 - `docs/prd/requirements.md`
 - `docs/prd/user-interface-design-goals.md`
 - `docs/prd/success-metrics.md`
 
-Use the `shard-doc` task or `@kayvan/markdown-tree-parser` tool for automatic sharding.
+자동 샤딩을 위해 `shard-doc` 작업 또는 `@kayvan/markdown-tree-parser` 도구를 사용하세요.
 
-## Usage Patterns and Best Practices
+## 사용 패턴 및 모범 사례
 
-### Environment-Specific Usage
+### 환경별 사용법
 
-**Web UI Best For**:
+**웹 UI 최적 사용**:
 
-- Initial planning and documentation phases
-- Cost-effective large document creation
-- Agent consultation and brainstorming
-- Multi-agent workflows with orchestrator
+- 초기 계획 및 문서화 단계
+- 비용 효율적인 대용량 문서 생성
+- 에이전트 상담 및 브레인스토밍
+- 오케스트레이터와 함께하는 다중 에이전트 워크플로
 
-**IDE Best For**:
+**IDE 최적 사용**:
 
-- Active development and implementation
-- File operations and project integration
-- Story management and development cycles
-- Code review and debugging
+- 활성 개발 및 구현
+- 파일 작업 및 프로젝트 통합
+- 스토리 관리 및 개발 사이클
+- 코드 검토 및 디버깅
 
-### Quality Assurance
+### 품질 보증
 
-- Use appropriate agents for specialized tasks
-- Follow Agile ceremonies and review processes
-- Maintain document consistency with PO agent
-- Regular validation with checklists and templates
+- 전문화된 작업에 적절한 에이전트 사용
+- 애자일 의식 및 검토 프로세스 준수
+- PO 에이전트로 문서 일관성 유지
+- 체크리스트와 템플릿으로 정기적 검증
 
-### Performance Optimization
+### 성능 최적화
 
-- Use specific agents vs. `bmad-master` for focused tasks
-- Choose appropriate team size for project needs
-- Leverage technical preferences for consistency
-- Regular context management and cache clearing
+- 집중된 작업에는 `bmad-master` 대신 특정 에이전트 사용
+- 프로젝트 요구에 적절한 팀 크기 선택
+- 일관성을 위한 기술 선호도 활용
+- 정기적인 컨텍스트 관리 및 캐시 정리
 
-## Success Tips
+## 성공 팁
 
-- **Use Gemini for big picture planning** - The team-fullstack bundle provides collaborative expertise
-- **Use bmad-master for document organization** - Sharding creates manageable chunks
-- **Follow the SM → Dev cycle religiously** - This ensures systematic progress
-- **Keep conversations focused** - One agent, one task per conversation
-- **Review everything** - Always review and approve before marking complete
+- **큰 그림 계획에는 Gemini 사용** - team-fullstack 번들이 협력적 전문성을 제공
+- **문서 정리에는 bmad-master 사용** - 샤딩이 관리 가능한 청크를 생성
+- **SM → Dev 사이클을 종교적으로 따르세요** - 이것이 체계적인 진행을 보장
+- **대화를 집중적으로 유지** - 대화당 하나의 에이전트, 하나의 작업
+- **모든 것을 검토하세요** - 완료로 표시하기 전에 항상 검토하고 승인
 
-## Contributing to BMAD-METHOD™
+## BMAD-METHOD™에 기여하기
 
-### Quick Contribution Guidelines
+### 빠른 기여 가이드라인
 
-For full details, see `CONTRIBUTING.md`. Key points:
+전체 세부사항은 `CONTRIBUTING.md`를 참조하세요. 주요 사항:
 
-**Fork Workflow**:
+**포크 워크플로**:
 
-1. Fork the repository
-2. Create feature branches
-3. Submit PRs to `next` branch (default) or `main` for critical fixes only
-4. Keep PRs small: 200-400 lines ideal, 800 lines maximum
-5. One feature/fix per PR
+1. 저장소 포크
+2. 기능 브랜치 생성
+3. `next` 브랜치(기본값) 또는 중요한 수정사항만 `main`에 PR 제출
+4. PR은 작게 유지: 200-400라인이 이상적, 800라인이 최대
+5. PR당 하나의 기능/수정
 
-**PR Requirements**:
+**PR 요구사항**:
 
-- Clear descriptions (max 200 words) with What/Why/How/Testing
-- Use conventional commits (feat:, fix:, docs:)
-- Atomic commits - one logical change per commit
-- Must align with guiding principles
+- 명확한 설명 (최대 200단어)와 무엇/왜/어떻게/테스팅 포함
+- 컨벤셔널 커밋 사용 (feat:, fix:, docs:)
+- 원자적 커밋 - 커밋당 하나의 논리적 변경
+- 가이딩 원칙과 일치해야 함
 
-**Core Principles** (from docs/GUIDING-PRINCIPLES.md):
+**핵심 원칙** (docs/GUIDING-PRINCIPLES.md에서):
 
-- **Dev Agents Must Be Lean**: Minimize dependencies, save context for code
-- **Natural Language First**: Everything in markdown, no code in core
-- **Core vs Expansion Packs**: Core for universal needs, packs for specialized domains
-- **Design Philosophy**: "Dev agents code, planning agents plan"
+- **Dev 에이전트는 Lean해야 함**: 의존성 최소화, 코드를 위한 컨텍스트 절약
+- **자연어 우선**: 모든 것을 마크다운으로, 코어에 코드 없음
+- **코어 vs 확장 팩**: 보편적 요구를 위한 코어, 전문 도메인을 위한 팩
+- **설계 철학**: "Dev 에이전트는 코딩, 계획 에이전트는 계획"
 
-## Expansion Packs
+## 확장 팩
 
-### What Are Expansion Packs?
+### 확장 팩이란?
 
-Expansion packs extend BMAD-METHOD™ beyond traditional software development into ANY domain. They provide specialized agent teams, templates, and workflows while keeping the core framework lean and focused on development.
+확장 팩은 BMAD-METHOD™를 전통적인 소프트웨어 개발을 넘어 어떤 도메인으로든 확장시킵니다. 코어 프레임워크를 lean하고 개발에 집중하도록 유지하면서 전문화된 에이전트 팀, 템플릿 및 워크플로를 제공합니다.
 
-### Why Use Expansion Packs?
+### 확장 팩을 사용하는 이유?
 
-1. **Keep Core Lean**: Dev agents maintain maximum context for coding
-2. **Domain Expertise**: Deep, specialized knowledge without bloating core
-3. **Community Innovation**: Anyone can create and share packs
-4. **Modular Design**: Install only what you need
+1. **코어를 Lean하게 유지**: Dev 에이전트가 코딩을 위한 최대 컨텍스트 유지
+2. **도메인 전문성**: 코어를 부풀리지 않고 깊고 전문화된 지식
+3. **커뮤니티 혁신**: 누구나 팩을 만들고 공유 가능
+4. **모듈형 설계**: 필요한 것만 설치
 
-### Available Expansion Packs
+### 사용 가능한 확장 팩
 
-**Technical Packs**:
+**기술 팩**:
 
-- **Infrastructure/DevOps**: Cloud architects, SRE experts, security specialists
-- **Game Development**: Game designers, level designers, narrative writers
-- **Mobile Development**: iOS/Android specialists, mobile UX experts
-- **Data Science**: ML engineers, data scientists, visualization experts
+- **Infrastructure/DevOps**: 클라우드 아키텍트, SRE 전문가, 보안 전문가
+- **게임 개발**: 게임 디자이너, 레벨 디자이너, 내러티브 작가
+- **모바일 개발**: iOS/Android 전문가, 모바일 UX 전문가
+- **데이터 사이언스**: ML 엔지니어, 데이터 사이언티스트, 시각화 전문가
 
-**Non-Technical Packs**:
+**비기술 팩**:
 
-- **Business Strategy**: Consultants, financial analysts, marketing strategists
-- **Creative Writing**: Plot architects, character developers, world builders
-- **Health & Wellness**: Fitness trainers, nutritionists, habit engineers
-- **Education**: Curriculum designers, assessment specialists
-- **Legal Support**: Contract analysts, compliance checkers
+- **비즈니스 전략**: 컨설턴트, 금융 분석가, 마케팅 전략가
+- **창작 글쓰기**: 플롯 아키텍트, 캐릭터 개발자, 세계관 구축자
+- **건강 & 웰니스**: 피트니스 트레이너, 영양사, 습관 엔지니어
+- **교육**: 커리큘럼 디자이너, 평가 전문가
+- **법률 지원**: 계약 분석가, 컴플라이언스 검사자
 
-**Specialty Packs**:
+**전문 팩**:
 
-- **Expansion Creator**: Tools to build your own expansion packs
-- **RPG Game Master**: Tabletop gaming assistance
-- **Life Event Planning**: Wedding planners, event coordinators
-- **Scientific Research**: Literature reviewers, methodology designers
+- **확장 팩 크리에이터**: 자신만의 확장 팩을 구축하는 도구
+- **RPG 게임 마스터**: 테이블탑 게임 지원
+- **인생 이벤트 계획**: 웨딩 플래너, 이벤트 코디네이터
+- **과학 연구**: 문헌 검토자, 방법론 디자이너
 
-### Using Expansion Packs
+### 확장 팩 사용하기
 
-1. **Browse Available Packs**: Check `expansion-packs/` directory
-2. **Get Inspiration**: See `docs/expansion-packs.md` for detailed examples and ideas
-3. **Install via CLI**:
+1. **사용 가능한 팩 찾아보기**: `expansion-packs/` 디렉토리 확인
+2. **영감 얻기**: 자세한 예시와 아이디어를 위해 `docs/expansion-packs.md` 참조
+3. **CLI를 통한 설치**:
 
    ```bash
    npx bmad-method install
-   # Select "Install expansion pack" option
+   # "Install expansion pack" 옵션 선택
    ```
 
-4. **Use in Your Workflow**: Installed packs integrate seamlessly with existing agents
+4. **워크플로에서 사용**: 설치된 팩은 기존 에이전트와 원활하게 통합
 
-### Creating Custom Expansion Packs
+### 사용자 정의 확장 팩 만들기
 
-Use the **expansion-creator** pack to build your own:
+자신만의 팩을 구축하려면 **expansion-creator** 팩을 사용하세요:
 
-1. **Define Domain**: What expertise are you capturing?
-2. **Design Agents**: Create specialized roles with clear boundaries
-3. **Build Resources**: Tasks, templates, checklists for your domain
-4. **Test & Share**: Validate with real use cases, share with community
+1. **도메인 정의**: 어떤 전문성을 캡처하고 있나요?
+2. **에이전트 설계**: 명확한 경계를 가진 전문 역할 생성
+3. **리소스 구축**: 도메인을 위한 작업, 템플릿, 체크리스트
+4. **테스트 & 공유**: 실제 사용 사례로 검증, 커뮤니티와 공유
 
-**Key Principle**: Expansion packs democratize expertise by making specialized knowledge accessible through AI agents.
+**핵심 원칙**: 확장 팩은 AI 에이전트를 통해 전문 지식에 접근할 수 있게 함으로써 전문성을 민주화합니다.
 
-## Getting Help
+## 도움 받기
 
-- **Commands**: Use `*/*help` in any environment to see available commands
-- **Agent Switching**: Use `*/*switch agent-name` with orchestrator for role changes
-- **Documentation**: Check `docs/` folder for project-specific context
-- **Community**: Discord and GitHub resources available for support
-- **Contributing**: See `CONTRIBUTING.md` for full guidelines
+- **명령**: 모든 환경에서 `*/*help`를 사용하여 사용 가능한 명령 확인
+- **에이전트 전환**: 역할 변경을 위해 오케스트레이터와 함께 `*/*switch agent-name` 사용
+- **문서**: 프로젝트별 컨텍스트를 위해 `docs/` 폴더 확인
+- **커뮤니티**: Discord 및 GitHub 리소스 지원 가능
+- **기여**: 전체 가이드라인을 위해 `CONTRIBUTING.md` 참조

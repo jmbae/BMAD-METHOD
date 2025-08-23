@@ -1,147 +1,147 @@
 <!-- Powered by BMAD™ Core -->
 
-# Test Levels Framework
+# 테스트 레벨 프레임워크
 
-Comprehensive guide for determining appropriate test levels (unit, integration, E2E) for different scenarios.
+다양한 시나리오에 대한 적절한 테스트 레벨(단위, 통합, E2E) 결정을 위한 포괄적 가이드.
 
-## Test Level Decision Matrix
+## 테스트 레벨 결정 매트릭스
 
-### Unit Tests
+### 단위 테스트
 
-**When to use:**
+**사용 시기:**
 
-- Testing pure functions and business logic
-- Algorithm correctness
-- Input validation and data transformation
-- Error handling in isolated components
-- Complex calculations or state machines
+- 순수 함수 및 비즈니스 로직 테스트
+- 알고리즘 정확성
+- 입력 검증 및 데이터 변환
+- 격리된 컴포넌트의 오류 처리
+- 복잡한 계산이나 상태 머신
 
-**Characteristics:**
+**특성:**
 
-- Fast execution (immediate feedback)
-- No external dependencies (DB, API, file system)
-- Highly maintainable and stable
-- Easy to debug failures
+- 빠른 실행 (즉각적인 피드백)
+- 외부 의존성 없음 (DB, API, 파일 시스템)
+- 높은 유지보수성과 안정성
+- 실패 디버깅 용이
 
-**Example scenarios:**
+**예시 시나리오:**
 
 ```yaml
 unit_test:
   component: 'PriceCalculator'
-  scenario: 'Calculate discount with multiple rules'
-  justification: 'Complex business logic with multiple branches'
-  mock_requirements: 'None - pure function'
+  scenario: '여러 규칙이 적용된 할인 계산'
+  justification: '여러 분기가 있는 복잡한 비즈니스 로직'
+  mock_requirements: '없음 - 순수 함수'
 ```
 
-### Integration Tests
+### 통합 테스트
 
-**When to use:**
+**사용 시기:**
 
-- Component interaction verification
-- Database operations and transactions
-- API endpoint contracts
-- Service-to-service communication
-- Middleware and interceptor behavior
+- 컴포넌트 상호작용 검증
+- 데이터베이스 작업 및 트랜잭션
+- API 엔드포인트 계약
+- 서비스 간 통신
+- 미들웨어 및 인터셉터 동작
 
-**Characteristics:**
+**특성:**
 
-- Moderate execution time
-- Tests component boundaries
-- May use test databases or containers
-- Validates system integration points
+- 보통 실행 시간
+- 컴포넌트 경계 테스트
+- 테스트 데이터베이스나 컨테이너 사용 가능
+- 시스템 통합 지점 검증
 
-**Example scenarios:**
+**예시 시나리오:**
 
 ```yaml
 integration_test:
   components: ['UserService', 'AuthRepository']
-  scenario: 'Create user with role assignment'
-  justification: 'Critical data flow between service and persistence'
-  test_environment: 'In-memory database'
+  scenario: '역할 할당과 함께 사용자 생성'
+  justification: '서비스와 영속성 계층 간 중요한 데이터 플로우'
+  test_environment: '인메모리 데이터베이스'
 ```
 
-### End-to-End Tests
+### End-to-End 테스트
 
-**When to use:**
+**사용 시기:**
 
-- Critical user journeys
-- Cross-system workflows
-- Visual regression testing
-- Compliance and regulatory requirements
-- Final validation before release
+- 중요한 사용자 여정
+- 시스템 간 워크플로
+- 시각적 회귀 테스트
+- 컴플라이언스 및 규제 요구사항
+- 릴리스 전 최종 검증
 
-**Characteristics:**
+**특성:**
 
-- Slower execution
-- Tests complete workflows
-- Requires full environment setup
-- Most realistic but most brittle
+- 느린 실행
+- 완전한 워크플로 테스트
+- 전체 환경 설정 필요
+- 가장 현실적이지만 가장 취약
 
-**Example scenarios:**
+**예시 시나리오:**
 
 ```yaml
 e2e_test:
-  journey: 'Complete checkout process'
-  scenario: 'User purchases with saved payment method'
-  justification: 'Revenue-critical path requiring full validation'
-  environment: 'Staging with test payment gateway'
+  journey: '완전한 결제 프로세스'
+  scenario: '저장된 결제 수단으로 사용자 구매'
+  justification: '전체 검증이 필요한 수익 중요 경로'
+  environment: '테스트 결제 게이트웨이가 있는 스테이징'
 ```
 
-## Test Level Selection Rules
+## 테스트 레벨 선택 규칙
 
-### Favor Unit Tests When:
+### 단위 테스트를 선호할 때:
 
-- Logic can be isolated
-- No side effects involved
-- Fast feedback needed
-- High cyclomatic complexity
+- 로직을 격리할 수 있는 경우
+- 부작용이 없는 경우
+- 빠른 피드백이 필요한 경우
+- 순환 복잡도가 높은 경우
 
-### Favor Integration Tests When:
+### 통합 테스트를 선호할 때:
 
-- Testing persistence layer
-- Validating service contracts
-- Testing middleware/interceptors
-- Component boundaries critical
+- 영속성 계층 테스트
+- 서비스 계약 검증
+- 미들웨어/인터셉터 테스트
+- 컴포넌트 경계가 중요한 경우
 
-### Favor E2E Tests When:
+### E2E 테스트를 선호할 때:
 
-- User-facing critical paths
-- Multi-system interactions
-- Regulatory compliance scenarios
-- Visual regression important
+- 사용자 대면 중요 경로
+- 다중 시스템 상호작용
+- 규제 컴플라이언스 시나리오
+- 시각적 회귀가 중요한 경우
 
-## Anti-patterns to Avoid
+## 피해야 할 안티패턴
 
-- E2E testing for business logic validation
-- Unit testing framework behavior
-- Integration testing third-party libraries
-- Duplicate coverage across levels
+- 비즈니스 로직 검증을 위한 E2E 테스트
+- 프레임워크 동작의 단위 테스트
+- 서드파티 라이브러리의 통합 테스트
+- 레벨 간 중복 커버리지
 
-## Duplicate Coverage Guard
+## 중복 커버리지 방지
 
-**Before adding any test, check:**
+**테스트 추가 전 확인사항:**
 
-1. Is this already tested at a lower level?
-2. Can a unit test cover this instead of integration?
-3. Can an integration test cover this instead of E2E?
+1. 이것이 이미 하위 레벨에서 테스트되었는가?
+2. 통합 테스트 대신 단위 테스트로 커버할 수 있는가?
+3. E2E 대신 통합 테스트로 커버할 수 있는가?
 
-**Coverage overlap is only acceptable when:**
+**커버리지 중복이 허용되는 경우:**
 
-- Testing different aspects (unit: logic, integration: interaction, e2e: user experience)
-- Critical paths requiring defense in depth
-- Regression prevention for previously broken functionality
+- 다양한 측면 테스트 (단위: 로직, 통합: 상호작용, e2e: 사용자 경험)
+- 심층 방어가 필요한 중요 경로
+- 이전에 실패했던 기능의 회귀 방지
 
-## Test Naming Conventions
+## 테스트 명명 규칙
 
-- Unit: `test_{component}_{scenario}`
-- Integration: `test_{flow}_{interaction}`
-- E2E: `test_{journey}_{outcome}`
+- 단위: `test_{컴포넌트}_{시나리오}`
+- 통합: `test_{플로우}_{상호작용}`
+- E2E: `test_{여정}_{결과}`
 
-## Test ID Format
+## 테스트 ID 형식
 
 `{EPIC}.{STORY}-{LEVEL}-{SEQ}`
 
-Examples:
+예시:
 
 - `1.3-UNIT-001`
 - `1.3-INT-002`

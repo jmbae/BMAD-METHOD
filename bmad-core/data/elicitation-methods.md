@@ -1,156 +1,156 @@
 <!-- Powered by BMAD™ Core -->
 
-# Elicitation Methods Data
+# 도출 방법 데이터
 
-## Core Reflective Methods
+## 핵심 반성적 방법
 
-**Expand or Contract for Audience**
+**대상에 따른 확장 또는 축약**
 
-- Ask whether to 'expand' (add detail, elaborate) or 'contract' (simplify, clarify)
-- Identify specific target audience if relevant
-- Tailor content complexity and depth accordingly
+- '확장'(세부사항 추가, 상세 설명) 또는 '축약'(단순화, 명확화) 여부 질문
+- 관련 있을 경우 특정 대상 청중 식별
+- 이에 따라 콘텐츠 복잡성과 깊이 조정
 
-**Explain Reasoning (CoT Step-by-Step)**
+**추론 설명 (CoT 단계별)**
 
-- Walk through the step-by-step thinking process
-- Reveal underlying assumptions and decision points
-- Show how conclusions were reached from current role's perspective
+- 단계별 사고 과정을 안내
+- 근본적인 가정과 결정 지점 공개
+- 현재 역할의 관점에서 어떻게 결론에 도달했는지 보여줌
 
-**Critique and Refine**
+**비판 및 개선**
 
-- Review output for flaws, inconsistencies, or improvement areas
-- Identify specific weaknesses from role's expertise
-- Suggest refined version reflecting domain knowledge
+- 결함, 불일치 또는 개선 영역에 대한 출력 검토
+- 역할의 전문성에서 특정 약점 식별
+- 도메인 지식을 반영한 개선된 버전 제안
 
-## Structural Analysis Methods
+## 구조적 분석 방법
 
-**Analyze Logical Flow and Dependencies**
+**논리적 흐름과 의존성 분석**
 
-- Examine content structure for logical progression
-- Check internal consistency and coherence
-- Identify and validate dependencies between elements
-- Confirm effective ordering and sequencing
+- 논리적 진행을 위한 콘텐츠 구조 검토
+- 내부 일관성과 응집성 확인
+- 요소 간 의존성 식별 및 검증
+- 효과적인 순서와 순차성 확인
 
-**Assess Alignment with Overall Goals**
+**전체 목표와의 정렬 평가**
 
-- Evaluate content contribution to stated objectives
-- Identify any misalignments or gaps
-- Interpret alignment from specific role's perspective
-- Suggest adjustments to better serve goals
+- 명시된 목표에 대한 콘텐츠 기여도 평가
+- 정렬 오류나 공백 식별
+- 특정 역할의 관점에서 정렬 해석
+- 목표를 더 잘 달성하기 위한 조정 제안
 
-## Risk and Challenge Methods
+## 위험 및 도전 방법
 
-**Identify Potential Risks and Unforeseen Issues**
+**잠재적 위험과 예상치 못한 문제 식별**
 
-- Brainstorm potential risks from role's expertise
-- Identify overlooked edge cases or scenarios
-- Anticipate unintended consequences
-- Highlight implementation challenges
+- 역할의 전문성에서 잠재적 위험 브레인스토밍
+- 간과된 엣지 케이스나 시나리오 식별
+- 의도하지 않은 결과 예상
+- 구현 과제 강조
 
-**Challenge from Critical Perspective**
+**비판적 관점에서 도전**
 
-- Adopt critical stance on current content
-- Play devil's advocate from specified viewpoint
-- Argue against proposal highlighting weaknesses
-- Apply YAGNI principles when appropriate (scope trimming)
+- 현재 콘텐츠에 대한 비판적 자세 채택
+- 지정된 관점에서 악마의 변호인 역할
+- 약점을 강조하여 제안에 반박
+- 적절한 경우 YAGNI 원칙 적용 (범위 축소)
 
-## Creative Exploration Methods
+## 창의적 탐구 방법
 
-**Tree of Thoughts Deep Dive**
+**생각의 나무 심화 탐구**
 
-- Break problem into discrete "thoughts" or intermediate steps
-- Explore multiple reasoning paths simultaneously
-- Use self-evaluation to classify each path as "sure", "likely", or "impossible"
-- Apply search algorithms (BFS/DFS) to find optimal solution paths
+- 문제를 개별적인 "생각"이나 중간 단계로 분해
+- 여러 추론 경로를 동시에 탐구
+- 자체 평가를 사용하여 각 경로를 "확실", "가능성 있음" 또는 "불가능"으로 분류
+- 최적의 해결책 경로를 찾기 위한 검색 알고리즘(BFS/DFS) 적용
 
-**Hindsight is 20/20: The 'If Only...' Reflection**
+**뒤늦은 깨달음: '만약에...' 반성**
 
-- Imagine retrospective scenario based on current content
-- Identify the one "if only we had known/done X..." insight
-- Describe imagined consequences humorously or dramatically
-- Extract actionable learnings for current context
+- 현재 콘텐츠를 바탕으로 한 회고 시나리오 상상
+- 하나의 "만약에 우리가 X를 알았더라면/했더라면..." 통찰 식별
+- 상상된 결과를 유머러스하거나 극적으로 묘사
+- 현재 상황에 대한 실행 가능한 학습 추출
 
-## Multi-Persona Collaboration Methods
+## 다중 페르소나 협력 방법
 
-**Agile Team Perspective Shift**
+**애자일 팀 관점 전환**
 
-- Rotate through different Scrum team member viewpoints
-- Product Owner: Focus on user value and business impact
-- Scrum Master: Examine process flow and team dynamics
-- Developer: Assess technical implementation and complexity
-- QA: Identify testing scenarios and quality concerns
+- 다양한 스크럼 팀 구성원 관점으로 순환
+- 제품 오너: 사용자 가치와 비즈니스 영향에 집중
+- 스크럼 마스터: 프로세스 흐름과 팀 역학 검토
+- 개발자: 기술적 구현과 복잡성 평가
+- QA: 테스팅 시나리오와 품질 우려 식별
 
-**Stakeholder Round Table**
+**이해관계자 원탁회의**
 
-- Convene virtual meeting with multiple personas
-- Each persona contributes unique perspective on content
-- Identify conflicts and synergies between viewpoints
-- Synthesize insights into actionable recommendations
+- 여러 페르소나와 가상 회의 소집
+- 각 페르소나가 콘텐츠에 대한 고유한 관점 기여
+- 관점 간 갈등과 시너지 식별
+- 통찰을 실행 가능한 권고사항으로 종합
 
-**Meta-Prompting Analysis**
+**메타 프롬프팅 분석**
 
-- Step back to analyze the structure and logic of current approach
-- Question the format and methodology being used
-- Suggest alternative frameworks or mental models
-- Optimize the elicitation process itself
+- 현재 접근법의 구조와 논리를 분석하기 위해 한 발 물러서기
+- 사용 중인 형식과 방법론에 의문 제기
+- 대안적 프레임워크나 정신 모델 제안
+- 도출 과정 자체 최적화
 
-## Advanced 2025 Techniques
+## 2025년 고급 기법
 
-**Self-Consistency Validation**
+**자기 일관성 검증**
 
-- Generate multiple reasoning paths for same problem
-- Compare consistency across different approaches
-- Identify most reliable and robust solution
-- Highlight areas where approaches diverge and why
+- 같은 문제에 대한 여러 추론 경로 생성
+- 다양한 접근법 간 일관성 비교
+- 가장 신뢰할 수 있고 견고한 해결책 식별
+- 접근법이 다른 영역과 그 이유 강조
 
-**ReWOO (Reasoning Without Observation)**
+**ReWOO (관찰 없는 추론)**
 
-- Separate parametric reasoning from tool-based actions
-- Create reasoning plan without external dependencies
-- Identify what can be solved through pure reasoning
-- Optimize for efficiency and reduced token usage
+- 매개변수적 추론을 도구 기반 행동과 분리
+- 외부 의존성 없이 추론 계획 생성
+- 순수한 추론으로 해결할 수 있는 것 식별
+- 효율성과 토큰 사용량 감소 최적화
 
-**Persona-Pattern Hybrid**
+**페르소나-패턴 하이브리드**
 
-- Combine specific role expertise with elicitation pattern
-- Architect + Risk Analysis: Deep technical risk assessment
-- UX Expert + User Journey: End-to-end experience critique
-- PM + Stakeholder Analysis: Multi-perspective impact review
+- 특정 역할 전문성과 도출 패턴 결합
+- 아키텍트 + 위험 분석: 심화 기술적 위험 평가
+- UX 전문가 + 사용자 여정: End-to-end 경험 비판
+- PM + 이해관계자 분석: 다중 관점 영향 검토
 
-**Emergent Collaboration Discovery**
+**창발적 협력 발견**
 
-- Allow multiple perspectives to naturally emerge
-- Identify unexpected insights from persona interactions
-- Explore novel combinations of viewpoints
-- Capture serendipitous discoveries from multi-agent thinking
+- 여러 관점이 자연스럽게 나타나도록 허용
+- 페르소나 상호작용에서 예상치 못한 통찰 식별
+- 새로운 관점 조합 탐구
+- 다중 에이전트 사고에서 우연한 발견 포착
 
-## Game-Based Elicitation Methods
+## 게임 기반 도출 방법
 
-**Red Team vs Blue Team**
+**레드팀 vs 블루팀**
 
-- Red Team: Attack the proposal, find vulnerabilities
-- Blue Team: Defend and strengthen the approach
-- Competitive analysis reveals blind spots
-- Results in more robust, battle-tested solutions
+- 레드팀: 제안을 공격하고 취약점 찾기
+- 블루팀: 접근법을 방어하고 강화
+- 경쟁적 분석이 사각지대 공개
+- 더 견고하고 전투 테스트된 해결책으로 이어짐
 
-**Innovation Tournament**
+**혁신 토너먼트**
 
-- Pit multiple alternative approaches against each other
-- Score each approach across different criteria
-- Crowd-source evaluation from different personas
-- Identify winning combination of features
+- 여러 대안적 접근법을 서로 경쟁시킴
+- 다양한 기준에 따라 각 접근법 점수 매기기
+- 다양한 페르소나로부터 크라우드소싱 평가
+- 기능의 승리 조합 식별
 
-**Escape Room Challenge**
+**방탈출 챌린지**
 
-- Present content as constraints to work within
-- Find creative solutions within tight limitations
-- Identify minimum viable approach
-- Discover innovative workarounds and optimizations
+- 콘텐츠를 작업해야 할 제약으로 제시
+- 엄격한 제한 내에서 창의적 해결책 찾기
+- 최소 실행 가능한 접근법 식별
+- 혁신적인 우회책과 최적화 발견
 
-## Process Control
+## 프로세스 제어
 
-**Proceed / No Further Actions**
+**진행 / 추가 작업 없음**
 
-- Acknowledge choice to finalize current work
-- Accept output as-is or move to next step
-- Prepare to continue without additional elicitation
+- 현재 작업을 완료하는 선택 인정
+- 출력을 있는 그대로 수용하거나 다음 단계로 이동
+- 추가 도출 없이 계속할 준비

@@ -1,162 +1,162 @@
 <!-- Powered by BMAD™ Core -->
 
-# Create Brownfield Epic Task
+# 브라운필드 에픽 생성 태스크
 
-## Purpose
+## 목적
 
-Create a single epic for smaller brownfield enhancements that don't require the full PRD and Architecture documentation process. This task is for isolated features or modifications that can be completed within a focused scope.
+전체 PRD 및 아키텍처 문서화 프로세스가 필요하지 않은 소규모 브라운필드 개선사항을 위한 단일 에픽을 생성합니다. 이 태스크는 집중된 범위 내에서 완료될 수 있는 독립적인 기능이나 수정사항을 위한 것입니다.
 
-## When to Use This Task
+## 이 태스크 사용 시기
 
-**Use this task when:**
+**다음의 경우 이 태스크 사용:**
 
-- The enhancement can be completed in 1-3 stories
-- No significant architectural changes are required
-- The enhancement follows existing project patterns
-- Integration complexity is minimal
-- Risk to existing system is low
+- 개선사항이 1-3개 스토리로 완료 가능
+- 중요한 아키텍처 변경이 필요하지 않음
+- 개선사항이 기존 프로젝트 패턴을 따름
+- 통합 복잡성이 최소임
+- 기존 시스템에 대한 위험이 낮음
 
-**Use the full brownfield PRD/Architecture process when:**
+**다음의 경우 전체 브라운필드 PRD/아키텍처 프로세스 사용:**
 
-- The enhancement requires multiple coordinated stories
-- Architectural planning is needed
-- Significant integration work is required
-- Risk assessment and mitigation planning is necessary
+- 개선사항에 여러 조정된 스토리가 필요
+- 아키텍처 계획이 필요
+- 상당한 통합 작업이 필요
+- 위험 평가 및 완화 계획이 필요
 
-## Instructions
+## 지침
 
-### 1. Project Analysis (Required)
+### 1. 프로젝트 분석 (필수)
 
-Before creating the epic, gather essential information about the existing project:
+에픽 생성 전 기존 프로젝트에 대한 필수 정보 수집:
 
-**Existing Project Context:**
+**기존 프로젝트 컨텍스트:**
 
-- [ ] Project purpose and current functionality understood
-- [ ] Existing technology stack identified
-- [ ] Current architecture patterns noted
-- [ ] Integration points with existing system identified
+- [ ] 프로젝트 목적 및 현재 기능 이해
+- [ ] 기존 기술 스택 식별
+- [ ] 현재 아키텍처 패턴 확인
+- [ ] 기존 시스템과의 통합 지점 식별
 
-**Enhancement Scope:**
+**개선사항 범위:**
 
-- [ ] Enhancement clearly defined and scoped
-- [ ] Impact on existing functionality assessed
-- [ ] Required integration points identified
-- [ ] Success criteria established
+- [ ] 개선사항 명확히 정의 및 범위 설정
+- [ ] 기존 기능에 대한 영향 평가
+- [ ] 필요한 통합 지점 식별
+- [ ] 성공 기준 설정
 
-### 2. Epic Creation
+### 2. 에픽 생성
 
-Create a focused epic following this structure:
+다음 구조를 따라 집중된 에픽 생성:
 
-#### Epic Title
+#### 에픽 제목
 
-{{Enhancement Name}} - Brownfield Enhancement
+{{개선사항 이름}} - 브라운필드 개선사항
 
-#### Epic Goal
+#### 에픽 목표
 
-{{1-2 sentences describing what the epic will accomplish and why it adds value}}
+{{에픽이 달성할 내용과 가치를 추가하는 이유를 1-2문장으로 설명}}
 
-#### Epic Description
+#### 에픽 설명
 
-**Existing System Context:**
+**기존 시스템 컨텍스트:**
 
-- Current relevant functionality: {{brief description}}
-- Technology stack: {{relevant existing technologies}}
-- Integration points: {{where new work connects to existing system}}
+- 현재 관련 기능: {{간단한 설명}}
+- 기술 스택: {{관련 기존 기술들}}
+- 통합 지점: {{새 작업이 기존 시스템과 연결되는 지점}}
 
-**Enhancement Details:**
+**개선사항 세부내용:**
 
-- What's being added/changed: {{clear description}}
-- How it integrates: {{integration approach}}
-- Success criteria: {{measurable outcomes}}
+- 추가/변경되는 것: {{명확한 설명}}
+- 통합 방법: {{통합 접근법}}
+- 성공 기준: {{측정 가능한 결과}}
 
-#### Stories
+#### 스토리
 
-List 1-3 focused stories that complete the epic:
+에픽을 완성하는 1-3개의 집중된 스토리 목록:
 
-1. **Story 1:** {{Story title and brief description}}
-2. **Story 2:** {{Story title and brief description}}
-3. **Story 3:** {{Story title and brief description}}
+1. **스토리 1:** {{스토리 제목 및 간단한 설명}}
+2. **스토리 2:** {{스토리 제목 및 간단한 설명}}
+3. **스토리 3:** {{스토리 제목 및 간단한 설명}}
 
-#### Compatibility Requirements
+#### 호환성 요구사항
 
-- [ ] Existing APIs remain unchanged
-- [ ] Database schema changes are backward compatible
-- [ ] UI changes follow existing patterns
-- [ ] Performance impact is minimal
+- [ ] 기존 API가 변경되지 않음
+- [ ] 데이터베이스 스키마 변경이 하위 호환됨
+- [ ] UI 변경이 기존 패턴을 따름
+- [ ] 성능 영향이 최소임
 
-#### Risk Mitigation
+#### 위험 완화
 
-- **Primary Risk:** {{main risk to existing system}}
-- **Mitigation:** {{how risk will be addressed}}
-- **Rollback Plan:** {{how to undo changes if needed}}
+- **주요 위험:** {{기존 시스템에 대한 주요 위험}}
+- **완화방안:** {{위험이 어떻게 해결될 것인지}}
+- **롤백 계획:** {{필요 시 변경사항을 취소하는 방법}}
 
-#### Definition of Done
+#### 완료 정의
 
-- [ ] All stories completed with acceptance criteria met
-- [ ] Existing functionality verified through testing
-- [ ] Integration points working correctly
-- [ ] Documentation updated appropriately
-- [ ] No regression in existing features
+- [ ] 인수 기준을 만족하여 모든 스토리 완료
+- [ ] 테스트를 통한 기존 기능 검증
+- [ ] 통합 지점이 올바르게 작동
+- [ ] 문서가 적절히 업데이트됨
+- [ ] 기존 기능에 회귀 없음
 
-### 3. Validation Checklist
+### 3. 검증 체크리스트
 
-Before finalizing the epic, ensure:
+에픽을 확정하기 전 확인사항:
 
-**Scope Validation:**
+**범위 검증:**
 
-- [ ] Epic can be completed in 1-3 stories maximum
-- [ ] No architectural documentation is required
-- [ ] Enhancement follows existing patterns
-- [ ] Integration complexity is manageable
+- [ ] 에픽이 최대 1-3개 스토리로 완료 가능
+- [ ] 아키텍처 문서화가 필요하지 않음
+- [ ] 개선사항이 기존 패턴을 따름
+- [ ] 통합 복잡성이 관리 가능함
 
-**Risk Assessment:**
+**위험 평가:**
 
-- [ ] Risk to existing system is low
-- [ ] Rollback plan is feasible
-- [ ] Testing approach covers existing functionality
-- [ ] Team has sufficient knowledge of integration points
+- [ ] 기존 시스템에 대한 위험이 낮음
+- [ ] 롤백 계획이 실행 가능함
+- [ ] 테스트 접근법이 기존 기능을 커버함
+- [ ] 팀이 통합 지점에 대한 충분한 지식을 보유
 
-**Completeness Check:**
+**완전성 확인:**
 
-- [ ] Epic goal is clear and achievable
-- [ ] Stories are properly scoped
-- [ ] Success criteria are measurable
-- [ ] Dependencies are identified
+- [ ] 에픽 목표가 명확하고 달성 가능함
+- [ ] 스토리가 적절히 범위 설정됨
+- [ ] 성공 기준이 측정 가능함
+- [ ] 종속성이 식별됨
 
-### 4. Handoff to Story Manager
+### 4. 스토리 매니저에게 인계
 
-Once the epic is validated, provide this handoff to the Story Manager:
-
----
-
-**Story Manager Handoff:**
-
-"Please develop detailed user stories for this brownfield epic. Key considerations:
-
-- This is an enhancement to an existing system running {{technology stack}}
-- Integration points: {{list key integration points}}
-- Existing patterns to follow: {{relevant existing patterns}}
-- Critical compatibility requirements: {{key requirements}}
-- Each story must include verification that existing functionality remains intact
-
-The epic should maintain system integrity while delivering {{epic goal}}."
+에픽이 검증되면, 스토리 매니저에게 다음 인계사항 제공:
 
 ---
 
-## Success Criteria
+**스토리 매니저 인계:**
 
-The epic creation is successful when:
+"이 브라운필드 에픽에 대한 상세한 사용자 스토리를 개발해 주세요. 주요 고려사항:
 
-1. Enhancement scope is clearly defined and appropriately sized
-2. Integration approach respects existing system architecture
-3. Risk to existing functionality is minimized
-4. Stories are logically sequenced for safe implementation
-5. Compatibility requirements are clearly specified
-6. Rollback plan is feasible and documented
+- 이것은 {{기술 스택}}을 실행하는 기존 시스템에 대한 개선사항입니다
+- 통합 지점: {{주요 통합 지점 나열}}
+- 따라야 할 기존 패턴: {{관련 기존 패턴}}
+- 중요한 호환성 요구사항: {{주요 요구사항}}
+- 각 스토리는 기존 기능이 그대로 유지되는지 검증을 포함해야 합니다
 
-## Important Notes
+에픽은 {{에픽 목표}}를 전달하면서 시스템 무결성을 유지해야 합니다."
 
-- This task is specifically for SMALL brownfield enhancements
-- If the scope grows beyond 3 stories, consider the full brownfield PRD process
-- Always prioritize existing system integrity over new functionality
-- When in doubt about scope or complexity, escalate to full brownfield planning
+---
+
+## 성공 기준
+
+다음의 경우 에픽 생성이 성공적:
+
+1. 개선사항 범위가 명확히 정의되고 적절히 크기 조정됨
+2. 통합 접근법이 기존 시스템 아키텍처를 존중함
+3. 기존 기능에 대한 위험이 최소화됨
+4. 스토리가 안전한 구현을 위해 논리적으로 순서 배치됨
+5. 호환성 요구사항이 명확히 명시됨
+6. 롤백 계획이 실행 가능하고 문서화됨
+
+## 중요 참고사항
+
+- 이 태스크는 특별히 소규모 브라운필드 개선사항을 위한 것
+- 범위가 3개 스토리를 넘어 확장되면 전체 브라운필드 PRD 프로세스 고려
+- 새로운 기능보다 기존 시스템 무결성을 항상 우선시
+- 범위나 복잡성에 대해 의심스러우면 전체 브라운필드 계획으로 에스컬레이션

@@ -1,355 +1,355 @@
 <!-- Powered by BMAD™ Core -->
 
-# risk-profile
+# 위험 프로파일
 
-Generate a comprehensive risk assessment matrix for a story implementation using probability × impact analysis.
+확률 × 영향 분석을 사용하여 스토리 구현에 대한 포괄적인 위험 평가 매트릭스를 생성합니다.
 
-## Inputs
+## 입력값
 
 ```yaml
 required:
-  - story_id: '{epic}.{story}' # e.g., "1.3"
+  - story_id: '{epic}.{story}' # 예: "1.3"
   - story_path: 'docs/stories/{epic}.{story}.*.md'
-  - story_title: '{title}' # If missing, derive from story file H1
-  - story_slug: '{slug}' # If missing, derive from title (lowercase, hyphenated)
+  - story_title: '{title}' # 누락 시 스토리 파일 H1에서 도출
+  - story_slug: '{slug}' # 누락 시 제목에서 도출(소문자, 하이픈으로 연결)
 ```
 
-## Purpose
+## 목적
 
-Identify, assess, and prioritize risks in the story implementation. Provide risk mitigation strategies and testing focus areas based on risk levels.
+스토리 구현의 위험을 식별, 평가 및 우선순위 지정합니다. 위험 수준에 기반한 위험 완화 전략 및 테스트 초점 영역을 제공합니다.
 
-## Risk Assessment Framework
+## 위험 평가 프레임워크
 
-### Risk Categories
+### 위험 카테고리
 
-**Category Prefixes:**
+**카테고리 접두사:**
 
-- `TECH`: Technical Risks
-- `SEC`: Security Risks
-- `PERF`: Performance Risks
-- `DATA`: Data Risks
-- `BUS`: Business Risks
-- `OPS`: Operational Risks
+- `TECH`: 기술적 위험
+- `SEC`: 보안 위험
+- `PERF`: 성능 위험
+- `DATA`: 데이터 위험
+- `BUS`: 비즈니스 위험
+- `OPS`: 운영 위험
 
-1. **Technical Risks (TECH)**
-   - Architecture complexity
-   - Integration challenges
-   - Technical debt
-   - Scalability concerns
-   - System dependencies
+1. **기술적 위험 (TECH)**
+   - 아키텍처 복잡성
+   - 통합 문제
+   - 기술 부채
+   - 확장성 우려
+   - 시스템 종속성
 
-2. **Security Risks (SEC)**
-   - Authentication/authorization flaws
-   - Data exposure vulnerabilities
-   - Injection attacks
-   - Session management issues
-   - Cryptographic weaknesses
+2. **보안 위험 (SEC)**
+   - 인증/권한 부여 결함
+   - 데이터 노출 취약점
+   - 인젝션 공격
+   - 세션 관리 문제
+   - 암호화 약점
 
-3. **Performance Risks (PERF)**
-   - Response time degradation
-   - Throughput bottlenecks
-   - Resource exhaustion
-   - Database query optimization
-   - Caching failures
+3. **성능 위험 (PERF)**
+   - 응답 시간 저하
+   - 처리량 병목
+   - 자원 고갈
+   - 데이터베이스 쿼리 최적화
+   - 캐싱 실패
 
-4. **Data Risks (DATA)**
-   - Data loss potential
-   - Data corruption
-   - Privacy violations
-   - Compliance issues
-   - Backup/recovery gaps
+4. **데이터 위험 (DATA)**
+   - 데이터 손실 가능성
+   - 데이터 손상
+   - 개인정보 침해
+   - 컴플라이언스 문제
+   - 백업/복구 차이
 
-5. **Business Risks (BUS)**
-   - Feature doesn't meet user needs
-   - Revenue impact
-   - Reputation damage
-   - Regulatory non-compliance
-   - Market timing
+5. **비즈니스 위험 (BUS)**
+   - 기능이 사용자 요구를 충족하지 못함
+   - 수익 영향
+   - 평판 손상
+   - 규제 미준수
+   - 시장 타이밍
 
-6. **Operational Risks (OPS)**
-   - Deployment failures
-   - Monitoring gaps
-   - Incident response readiness
-   - Documentation inadequacy
-   - Knowledge transfer issues
+6. **운영 위험 (OPS)**
+   - 배포 실패
+   - 모니터링 차이
+   - 인시던트 대응 준비도
+   - 문서 부족
+   - 지식 전수 문제
 
-## Risk Analysis Process
+## 위험 분석 프로세스
 
-### 1. Risk Identification
+### 1. 위험 식별
 
-For each category, identify specific risks:
+각 카테고리에 대해 구체적인 위험 식별:
 
 ```yaml
 risk:
-  id: 'SEC-001' # Use prefixes: SEC, PERF, DATA, BUS, OPS, TECH
+  id: 'SEC-001' # 접두사 사용: SEC, PERF, DATA, BUS, OPS, TECH
   category: security
-  title: 'Insufficient input validation on user forms'
-  description: 'Form inputs not properly sanitized could lead to XSS attacks'
+  title: '사용자 폼의 불충분한 입력 검증'
+  description: '폼 입력이 적절히 살균되지 않으면 XSS 공격으로 이어질 수 있음'
   affected_components:
     - 'UserRegistrationForm'
     - 'ProfileUpdateForm'
-  detection_method: 'Code review revealed missing validation'
+  detection_method: '코드 검토에서 검증 누락 발견'
 ```
 
-### 2. Risk Assessment
+### 2. 위험 평가
 
-Evaluate each risk using probability × impact:
+확률 × 영향을 사용하여 각 위험 평가:
 
-**Probability Levels:**
+**확률 수준:**
 
-- `High (3)`: Likely to occur (>70% chance)
-- `Medium (2)`: Possible occurrence (30-70% chance)
-- `Low (1)`: Unlikely to occur (<30% chance)
+- `높음 (3)`: 발생 가능성 높음 (>70% 확률)
+- `중간 (2)`: 발생 가능 (30-70% 확률)
+- `낮음 (1)`: 발생 가능성 낮음 (<30% 확률)
 
-**Impact Levels:**
+**영향 수준:**
 
-- `High (3)`: Severe consequences (data breach, system down, major financial loss)
-- `Medium (2)`: Moderate consequences (degraded performance, minor data issues)
-- `Low (1)`: Minor consequences (cosmetic issues, slight inconvenience)
+- `높음 (3)`: 심각한 결과 (데이터 침해, 시스템 다운, 주요 재정 손실)
+- `중간 (2)`: 중간 결과 (성능 저하, 경미한 데이터 문제)
+- `낮음 (1)`: 경미한 결과 (외관상 문제, 약간의 불편)
 
-### Risk Score = Probability × Impact
+### 위험 점수 = 확률 × 영향
 
-- 9: Critical Risk (Red)
-- 6: High Risk (Orange)
-- 4: Medium Risk (Yellow)
-- 2-3: Low Risk (Green)
-- 1: Minimal Risk (Blue)
+- 9: 중요 위험 (빨강)
+- 6: 높은 위험 (주황)
+- 4: 중간 위험 (노랑)
+- 2-3: 낮은 위험 (초록)
+- 1: 최소 위험 (파랑)
 
-### 3. Risk Prioritization
+### 3. 위험 우선순위 지정
 
-Create risk matrix:
+위험 매트릭스 생성:
 
 ```markdown
-## Risk Matrix
+## 위험 매트릭스
 
-| Risk ID  | Description             | Probability | Impact     | Score | Priority |
-| -------- | ----------------------- | ----------- | ---------- | ----- | -------- |
-| SEC-001  | XSS vulnerability       | High (3)    | High (3)   | 9     | Critical |
-| PERF-001 | Slow query on dashboard | Medium (2)  | Medium (2) | 4     | Medium   |
-| DATA-001 | Backup failure          | Low (1)     | High (3)   | 3     | Low      |
+| 위험 ID  | 설명                    | 확률        | 영향       | 점수 | 우선순위 |
+| -------- | ----------------------- | ----------- | ---------- | ---- | -------- |
+| SEC-001  | XSS 취약점              | 높음 (3)    | 높음 (3)   | 9    | 중요     |
+| PERF-001 | 대시보드의 느린 쿼리    | 중간 (2)    | 중간 (2)   | 4    | 중간     |
+| DATA-001 | 백업 실패               | 낮음 (1)    | 높음 (3)   | 3    | 낮음     |
 ```
 
-### 4. Risk Mitigation Strategies
+### 4. 위험 완화 전략
 
-For each identified risk, provide mitigation:
+식별된 각 위험에 대해 완화 방안 제공:
 
 ```yaml
 mitigation:
   risk_id: 'SEC-001'
   strategy: 'preventive' # preventive|detective|corrective
   actions:
-    - 'Implement input validation library (e.g., validator.js)'
-    - 'Add CSP headers to prevent XSS execution'
-    - 'Sanitize all user inputs before storage'
-    - 'Escape all outputs in templates'
+    - '입력 검증 라이브러리 구현 (예: validator.js)'
+    - 'XSS 실행 방지를 위한 CSP 헤더 추가'
+    - '저장 전 모든 사용자 입력 살균'
+    - '템플릿의 모든 출력 이스케이프'
   testing_requirements:
-    - 'Security testing with OWASP ZAP'
-    - 'Manual penetration testing of forms'
-    - 'Unit tests for validation functions'
-  residual_risk: 'Low - Some zero-day vulnerabilities may remain'
+    - 'OWASP ZAP으로 보안 테스트'
+    - '폼의 수동 침투 테스트'
+    - '검증 함수의 단위 테스트'
+  residual_risk: '낮음 - 일부 제로데이 취약점이 남을 수 있음'
   owner: 'dev'
-  timeline: 'Before deployment'
+  timeline: '배포 이전'
 ```
 
-## Outputs
+## 출력
 
-### Output 1: Gate YAML Block
+### 출력 1: 게이트 YAML 블록
 
-Generate for pasting into gate file under `risk_summary`:
+`risk_summary` 아래 게이트 파일에 붙여넣기 위해 생성:
 
-**Output rules:**
+**출력 규칙:**
 
-- Only include assessed risks; do not emit placeholders
-- Sort risks by score (desc) when emitting highest and any tabular lists
-- If no risks: totals all zeros, omit highest, keep recommendations arrays empty
+- 평가된 위험만 포함; 플레이스홀더 생성 금지
+- 최고 위험과 표 형태 목록 생성 시 점수별 내림차순 정렬
+- 위험이 없는 경우: 모든 총계는 0, 최고 위험 생략, 권장사항 배열은 빈 상태 유지
 
 ```yaml
-# risk_summary (paste into gate file):
+# risk_summary (게이트 파일에 붙여넣기):
 risk_summary:
   totals:
-    critical: X # score 9
-    high: Y # score 6
-    medium: Z # score 4
-    low: W # score 2-3
+    critical: X # 점수 9
+    high: Y # 점수 6
+    medium: Z # 점수 4
+    low: W # 점수 2-3
   highest:
     id: SEC-001
     score: 9
-    title: 'XSS on profile form'
+    title: '프로필 폼의 XSS'
   recommendations:
     must_fix:
-      - 'Add input sanitization & CSP'
+      - '입력 살균 및 CSP 추가'
     monitor:
-      - 'Add security alerts for auth endpoints'
+      - '인증 엔드포인트에 보안 알림 추가'
 ```
 
-### Output 2: Markdown Report
+### 출력 2: 마크다운 보고서
 
-**Save to:** `qa.qaLocation/assessments/{epic}.{story}-risk-{YYYYMMDD}.md`
+**저장 위치:** `qa.qaLocation/assessments/{epic}.{story}-risk-{YYYYMMDD}.md`
 
 ```markdown
-# Risk Profile: Story {epic}.{story}
+# 위험 프로필: 스토리 {epic}.{story}
 
-Date: {date}
-Reviewer: Quinn (Test Architect)
+날짜: {date}
+검토자: Quinn (테스트 아키텍트)
 
-## Executive Summary
+## 경영진 요약
 
-- Total Risks Identified: X
-- Critical Risks: Y
-- High Risks: Z
-- Risk Score: XX/100 (calculated)
+- 식별된 총 위험: X
+- 중요 위험: Y
+- 높은 위험: Z
+- 위험 점수: XX/100 (계산됨)
 
-## Critical Risks Requiring Immediate Attention
+## 즉시 주의가 필요한 중요 위험
 
-### 1. [ID]: Risk Title
+### 1. [ID]: 위험 제목
 
-**Score: 9 (Critical)**
-**Probability**: High - Detailed reasoning
-**Impact**: High - Potential consequences
-**Mitigation**:
+**점수: 9 (중요)**
+**확률**: 높음 - 상세한 이유
+**영향**: 높음 - 잠재적 결과
+**완화**:
 
-- Immediate action required
-- Specific steps to take
-  **Testing Focus**: Specific test scenarios needed
+- 즉각적인 조치 필요
+- 취할 구체적 단계
+  **테스트 초점**: 필요한 구체적 테스트 시나리오
 
-## Risk Distribution
+## 위험 분포
 
-### By Category
+### 카테고리별
 
-- Security: X risks (Y critical)
-- Performance: X risks (Y critical)
-- Data: X risks (Y critical)
-- Business: X risks (Y critical)
-- Operational: X risks (Y critical)
+- 보안: X개 위험 (Y개 중요)
+- 성능: X개 위험 (Y개 중요)
+- 데이터: X개 위험 (Y개 중요)
+- 비즈니스: X개 위험 (Y개 중요)
+- 운영: X개 위험 (Y개 중요)
 
-### By Component
+### 컴포넌트별
 
-- Frontend: X risks
-- Backend: X risks
-- Database: X risks
-- Infrastructure: X risks
+- 프론트엔드: X개 위험
+- 백엔드: X개 위험
+- 데이터베이스: X개 위험
+- 인프라: X개 위험
 
-## Detailed Risk Register
+## 상세 위험 등록부
 
-[Full table of all risks with scores and mitigations]
+[점수와 완화 방안이 포함된 모든 위험의 전체 테이블]
 
-## Risk-Based Testing Strategy
+## 위험 기반 테스트 전략
 
-### Priority 1: Critical Risk Tests
+### 우선순위 1: 중요 위험 테스트
 
-- Test scenarios for critical risks
-- Required test types (security, load, chaos)
-- Test data requirements
+- 중요 위험에 대한 테스트 시나리오
+- 필요한 테스트 유형 (보안, 부하, 카오스)
+- 테스트 데이터 요구사항
 
-### Priority 2: High Risk Tests
+### 우선순위 2: 높은 위험 테스트
 
-- Integration test scenarios
-- Edge case coverage
+- 통합 테스트 시나리오
+- 엣지 케이스 커버리지
 
-### Priority 3: Medium/Low Risk Tests
+### 우선순위 3: 중간/낮은 위험 테스트
 
-- Standard functional tests
-- Regression test suite
+- 표준 기능 테스트
+- 회귀 테스트 스위트
 
-## Risk Acceptance Criteria
+## 위험 수용 기준
 
-### Must Fix Before Production
+### 프로덕션 이전 반드시 수정
 
-- All critical risks (score 9)
-- High risks affecting security/data
+- 모든 중요 위험 (점수 9)
+- 보안/데이터에 영향을 주는 높은 위험
 
-### Can Deploy with Mitigation
+### 완화와 함께 배포 가능
 
-- Medium risks with compensating controls
-- Low risks with monitoring in place
+- 보상 통제가 있는 중간 위험
+- 모니터링이 제자리에 있는 낮은 위험
 
-### Accepted Risks
+### 수용된 위험
 
-- Document any risks team accepts
-- Include sign-off from appropriate authority
+- 팀이 수용하는 위험 문서화
+- 적절한 권한의 승인 포함
 
-## Monitoring Requirements
+## 모니터링 요구사항
 
-Post-deployment monitoring for:
+배포 후 모니터링 대상:
 
-- Performance metrics for PERF risks
-- Security alerts for SEC risks
-- Error rates for operational risks
-- Business KPIs for business risks
+- PERF 위험에 대한 성능 메트릭
+- SEC 위험에 대한 보안 알림
+- 운영 위험에 대한 오류율
+- 비즈니스 위험에 대한 비즈니스 KPI
 
-## Risk Review Triggers
+## 위험 검토 트리거
 
-Review and update risk profile when:
+다음의 경우 위험 프로필 검토 및 업데이트:
 
-- Architecture changes significantly
-- New integrations added
-- Security vulnerabilities discovered
-- Performance issues reported
-- Regulatory requirements change
+- 아키텍처가 크게 변경됨
+- 새로운 통합이 추가됨
+- 보안 취약점이 발견됨
+- 성능 문제가 보고됨
+- 규제 요구사항이 변경됨
 ```
 
-## Risk Scoring Algorithm
+## 위험 점수 알고리즘
 
-Calculate overall story risk score:
+전체 스토리 위험 점수 계산:
 
 ```text
-Base Score = 100
-For each risk:
-  - Critical (9): Deduct 20 points
-  - High (6): Deduct 10 points
-  - Medium (4): Deduct 5 points
-  - Low (2-3): Deduct 2 points
+기본 점수 = 100
+각 위험에 대해:
+  - 중요 (9): 20점 차감
+  - 높음 (6): 10점 차감
+  - 중간 (4): 5점 차감
+  - 낮음 (2-3): 2점 차감
 
-Minimum score = 0 (extremely risky)
-Maximum score = 100 (minimal risk)
+최소 점수 = 0 (극도로 위험)
+최대 점수 = 100 (최소 위험)
 ```
 
-## Risk-Based Recommendations
+## 위험 기반 권장사항
 
-Based on risk profile, recommend:
+위험 프로필을 기반으로 권장:
 
-1. **Testing Priority**
-   - Which tests to run first
-   - Additional test types needed
-   - Test environment requirements
+1. **테스트 우선순위**
+   - 먼저 실행할 테스트
+   - 필요한 추가 테스트 유형
+   - 테스트 환경 요구사항
 
-2. **Development Focus**
-   - Code review emphasis areas
-   - Additional validation needed
-   - Security controls to implement
+2. **개발 초점**
+   - 코드 검토 강조 영역
+   - 필요한 추가 검증
+   - 구현할 보안 통제
 
-3. **Deployment Strategy**
-   - Phased rollout for high-risk changes
-   - Feature flags for risky features
-   - Rollback procedures
+3. **배포 전략**
+   - 높은 위험 변경에 대한 단계별 출시
+   - 위험한 기능에 대한 기능 플래그
+   - 롤백 절차
 
-4. **Monitoring Setup**
-   - Metrics to track
-   - Alerts to configure
-   - Dashboard requirements
+4. **모니터링 설정**
+   - 추적할 메트릭
+   - 구성할 알림
+   - 대시보드 요구사항
 
-## Integration with Quality Gates
+## 품질 게이트와의 통합
 
-**Deterministic gate mapping:**
+**결정적 게이트 매핑:**
 
-- Any risk with score ≥ 9 → Gate = FAIL (unless waived)
-- Else if any score ≥ 6 → Gate = CONCERNS
-- Else → Gate = PASS
-- Unmitigated risks → Document in gate
+- 점수 ≥ 9인 위험이 있는 경우 → 게이트 = FAIL (면제되지 않은 경우)
+- 그렇지 않고 점수 ≥ 6인 경우 → 게이트 = CONCERNS
+- 그렇지 않으면 → 게이트 = PASS
+- 완화되지 않은 위험 → 게이트에 문서화
 
-### Output 3: Story Hook Line
+### 출력 3: 스토리 후크 라인
 
-**Print this line for review task to quote:**
+**검토 태스크가 인용할 수 있도록 이 라인 출력:**
 
 ```text
-Risk profile: qa.qaLocation/assessments/{epic}.{story}-risk-{YYYYMMDD}.md
+위험 프로필: qa.qaLocation/assessments/{epic}.{story}-risk-{YYYYMMDD}.md
 ```
 
-## Key Principles
+## 핵심 원칙
 
-- Identify risks early and systematically
-- Use consistent probability × impact scoring
-- Provide actionable mitigation strategies
-- Link risks to specific test requirements
-- Track residual risk after mitigation
-- Update risk profile as story evolves
+- 위험을 조기에 체계적으로 식별
+- 일관된 확률 × 영향 점수 사용
+- 실행 가능한 완화 전략 제공
+- 위험을 구체적 테스트 요구사항에 연결
+- 완화 후 잔여 위험 추적
+- 스토리 진화에 따라 위험 프로필 업데이트

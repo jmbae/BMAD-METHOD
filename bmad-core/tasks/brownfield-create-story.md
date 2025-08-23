@@ -1,149 +1,155 @@
 <!-- Powered by BMAD™ Core -->
 
-# Create Brownfield Story Task
+# 브라운필드 스토리 생성 태스크
 
-## Purpose
+## 목적
 
-Create a single user story for very small brownfield enhancements that can be completed in one focused development session. This task is for minimal additions or bug fixes that require existing system integration awareness.
+하나의 집중된 개발 세션에서 완료될 수 있는 매우 작은 브라운필드 개선사항을 위한 단일 사용자 스토리를 생성합니다. 이 태스크는 기존 시스템 통합 인식이 필요한 최소한의 추가 또는 버그 수정을 위한 것입니다.
 
-## When to Use This Task
+## 이 태스크 사용 시기
 
-**Use this task when:**
+**다음의 경우 이 태스크 사용:**
 
-- The enhancement can be completed in a single story
-- No new architecture or significant design is required
-- The change follows existing patterns exactly
-- Integration is straightforward with minimal risk
-- Change is isolated with clear boundaries
+- 개선사항이 단일 스토리로 완료 가능
+- 새로운 아키텍처나 중요한 설계가 필요하지 않음
+- 변경사항이 기존 패턴을 정확히 따름
+- 통합이 간단하고 위험이 최소임
+- 변경사항이 명확한 경계로 독립적임
 
-**Use brownfield-create-epic when:**
+**다음의 경우 brownfield-create-epic 사용:**
 
-- The enhancement requires 2-3 coordinated stories
-- Some design work is needed
-- Multiple integration points are involved
+- 개선사항에 2-3개의 조정된 스토리가 필요
+- 일부 설계 작업이 필요
+- 여러 통합 지점이 관련됨
 
-**Use the full brownfield PRD/Architecture process when:**
+**다음의 경우 전체 브라운필드 PRD/아키텍처 프로세스 사용:**
 
-- The enhancement requires multiple coordinated stories
-- Architectural planning is needed
-- Significant integration work is required
+- 개선사항에 여러 조정된 스토리가 필요
+- 아키텍처 계획이 필요
+- 상당한 통합 작업이 필요
 
-## Instructions
+## 지침
 
-### 1. Quick Project Assessment
+### 1. 빠른 프로젝트 평가
 
-Gather minimal but essential context about the existing project:
+기존 프로젝트에 대한 최소한이지만 필수적인 컨텍스트 수집:
 
-**Current System Context:**
+**현재 시스템 컨텍스트:**
 
-- [ ] Relevant existing functionality identified
-- [ ] Technology stack for this area noted
-- [ ] Integration point(s) clearly understood
-- [ ] Existing patterns for similar work identified
+- [ ] 관련 기존 기능 식별
+- [ ] 이 영역의 기술 스택 확인
+- [ ] 통합 지점 명확히 이해
+- [ ] 유사 작업의 기존 패턴 식별
 
-**Change Scope:**
+**변경 범위:**
 
-- [ ] Specific change clearly defined
-- [ ] Impact boundaries identified
-- [ ] Success criteria established
+- [ ] 구체적 변경사항 명확히 정의
+- [ ] 영향 경계 식별
+- [ ] 성공 기준 설정
 
-### 2. Story Creation
+### 2. 스토리 생성
 
-Create a single focused story following this structure:
+다음 구조를 따라 단일 집중 스토리 생성:
 
-#### Story Title
+#### 스토리 제목
 
-{{Specific Enhancement}} - Brownfield Addition
+{{구체적 개선사항}} - 브라운필드 추가
 
-#### User Story
+#### 사용자 스토리
 
-As a {{user type}},
-I want {{specific action/capability}},
-So that {{clear benefit/value}}.
+{{사용자 유형}}로서,
+{{구체적 동작/기능}}을 원하며,
+{{명확한 혜택/가치}}를 얻고자 합니다.
 
-#### Story Context
+#### 스토리 컨텍스트
 
-**Existing System Integration:**
+**기존 시스템 통합:**
 
-- Integrates with: {{existing component/system}}
-- Technology: {{relevant tech stack}}
-- Follows pattern: {{existing pattern to follow}}
-- Touch points: {{specific integration points}}
+- 통합 대상: {{기존 컴포넌트/시스템}}
+- 기술: {{관련 기술 스택}}
+- 패턴 준수: {{따라야 할 기존 패턴}}
+- 접촉점: {{구체적 통합 지점}}
 
-#### Acceptance Criteria
+#### 인수 기준
 
-**Functional Requirements:**
+**기능적 요구사항:**
 
-1. {{Primary functional requirement}}
-2. {{Secondary functional requirement (if any)}}
-3. {{Integration requirement}}
+1. {{주요 기능적 요구사항}}
+2. {{보조 기능적 요구사항 (있는 경우)}}
+3. {{통합 요구사항}}
 
-**Integration Requirements:** 4. Existing {{relevant functionality}} continues to work unchanged 5. New functionality follows existing {{pattern}} pattern 6. Integration with {{system/component}} maintains current behavior
+**통합 요구사항:**
+4. 기존 {{관련 기능}}이 변경 없이 계속 작동
+5. 새 기능이 기존 {{패턴}} 패턴을 따름
+6. {{시스템/컴포넌트}}와의 통합이 현재 동작 유지
 
-**Quality Requirements:** 7. Change is covered by appropriate tests 8. Documentation is updated if needed 9. No regression in existing functionality verified
+**품질 요구사항:**
+7. 변경사항이 적절한 테스트로 커버됨
+8. 필요시 문서 업데이트
+9. 기존 기능의 회귀 없음 검증
 
-#### Technical Notes
+#### 기술적 참고사항
 
-- **Integration Approach:** {{how it connects to existing system}}
-- **Existing Pattern Reference:** {{link or description of pattern to follow}}
-- **Key Constraints:** {{any important limitations or requirements}}
+- **통합 접근법:** {{기존 시스템과 연결 방법}}
+- **기존 패턴 참조:** {{따라야 할 패턴의 링크 또는 설명}}
+- **주요 제약사항:** {{중요한 제한사항 또는 요구사항}}
 
-#### Definition of Done
+#### 완료 정의
 
-- [ ] Functional requirements met
-- [ ] Integration requirements verified
-- [ ] Existing functionality regression tested
-- [ ] Code follows existing patterns and standards
-- [ ] Tests pass (existing and new)
-- [ ] Documentation updated if applicable
+- [ ] 기능적 요구사항 충족
+- [ ] 통합 요구사항 검증
+- [ ] 기존 기능 회귀 테스트
+- [ ] 코드가 기존 패턴 및 표준 준수
+- [ ] 테스트 통과 (기존 및 신규)
+- [ ] 해당되는 경우 문서 업데이트
 
-### 3. Risk and Compatibility Check
+### 3. 위험 및 호환성 확인
 
-**Minimal Risk Assessment:**
+**최소 위험 평가:**
 
-- **Primary Risk:** {{main risk to existing system}}
-- **Mitigation:** {{simple mitigation approach}}
-- **Rollback:** {{how to undo if needed}}
+- **주요 위험:** {{기존 시스템에 대한 주요 위험}}
+- **완화방안:** {{간단한 완화 접근법}}
+- **롤백:** {{필요시 취소 방법}}
 
-**Compatibility Verification:**
+**호환성 검증:**
 
-- [ ] No breaking changes to existing APIs
-- [ ] Database changes (if any) are additive only
-- [ ] UI changes follow existing design patterns
-- [ ] Performance impact is negligible
+- [ ] 기존 API에 대한 호환성 파괴 변경 없음
+- [ ] 데이터베이스 변경(있는 경우)이 추가만 가능
+- [ ] UI 변경이 기존 디자인 패턴 준수
+- [ ] 성능 영향이 무시할 수 있을 정도
 
-### 4. Validation Checklist
+### 4. 검증 체크리스트
 
-Before finalizing the story, confirm:
+스토리를 확정하기 전 확인:
 
-**Scope Validation:**
+**범위 검증:**
 
-- [ ] Story can be completed in one development session
-- [ ] Integration approach is straightforward
-- [ ] Follows existing patterns exactly
-- [ ] No design or architecture work required
+- [ ] 스토리가 하나의 개발 세션에서 완료 가능
+- [ ] 통합 접근법이 간단함
+- [ ] 기존 패턴을 정확히 따름
+- [ ] 설계나 아키텍처 작업이 필요하지 않음
 
-**Clarity Check:**
+**명확성 확인:**
 
-- [ ] Story requirements are unambiguous
-- [ ] Integration points are clearly specified
-- [ ] Success criteria are testable
-- [ ] Rollback approach is simple
+- [ ] 스토리 요구사항이 명확함
+- [ ] 통합 지점이 명확히 명시됨
+- [ ] 성공 기준이 테스트 가능함
+- [ ] 롤백 접근법이 간단함
 
-## Success Criteria
+## 성공 기준
 
-The story creation is successful when:
+다음의 경우 스토리 생성이 성공적:
 
-1. Enhancement is clearly defined and appropriately scoped for single session
-2. Integration approach is straightforward and low-risk
-3. Existing system patterns are identified and will be followed
-4. Rollback plan is simple and feasible
-5. Acceptance criteria include existing functionality verification
+1. 개선사항이 명확히 정의되고 단일 세션에 적절히 범위 설정됨
+2. 통합 접근법이 간단하고 위험이 낮음
+3. 기존 시스템 패턴이 식별되고 준수될 예정
+4. 롤백 계획이 간단하고 실행 가능함
+5. 인수 기준에 기존 기능 검증이 포함됨
 
-## Important Notes
+## 중요 참고사항
 
-- This task is for VERY SMALL brownfield changes only
-- If complexity grows during analysis, escalate to brownfield-create-epic
-- Always prioritize existing system integrity
-- When in doubt about integration complexity, use brownfield-create-epic instead
-- Stories should take no more than 4 hours of focused development work
+- 이 태스크는 매우 작은 브라운필드 변경사항만을 위한 것
+- 분석 중 복잡성이 증가하면 brownfield-create-epic으로 에스컬레이션
+- 기존 시스템 무결성을 항상 우선시
+- 통합 복잡성에 대해 의심스러우면 brownfield-create-epic 사용
+- 스토리는 4시간 이하의 집중된 개발 작업이어야 함

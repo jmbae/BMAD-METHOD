@@ -98,17 +98,17 @@ ALWAYS cite source documents: `[Source: architecture/{filename}.md#{section}]`
   - Link tasks to ACs where applicable (e.g., `Task 1 (AC: 1, 3)`)
 - Add notes on project structure alignment or discrepancies found in Step 4
 
-### 6. Story Draft Completion and Review
+### 6. 스토리 초안 완성 및 검토
 
-- Review all sections for completeness and accuracy
-- Verify all source references are included for technical details
-- Ensure tasks align with both epic requirements and architecture constraints
-- Update status to "Draft" and save the story file
-- Execute `{root}/tasks/execute-checklist` `{root}/checklists/story-draft-checklist`
-- Provide summary to user including:
-  - Story created: `{devStoryLocation}/{epicNum}.{storyNum}.story.md`
-  - Status: Draft
-  - Key technical components included from architecture docs
-  - Any deviations or conflicts noted between epic and architecture
-  - Checklist Results
-  - Next steps: For Complex stories, suggest the user carefully review the story draft and also optionally have the PO run the task `{root}/tasks/validate-next-story`
+- 완전성과 정확성을 위한 모든 섹션 검토
+- 기술적 세부사항에 대한 모든 소스 참조가 포함되었는지 확인
+- 태스크가 에픽 요구사항과 아키텍처 제약조건 모두와 일치하는지 확인
+- 상태를 "Draft"로 업데이트하고 스토리 파일 저장
+- `{root}/tasks/execute-checklist` `{root}/checklists/story-draft-checklist` 실행
+- 다음을 포함한 사용자 요약 제공:
+  - 생성된 스토리: `{devStoryLocation}/{epicNum}.{storyNum}.story.md`
+  - 상태: Draft
+  - 아키텍처 문서에서 포함된 주요 기술 구성요소
+  - 에픽과 아키텍처 간 확인된 편차나 충돌
+  - 체크리스트 결과
+  - 다음 단계: 복잡한 스토리의 경우, 사용자가 스토리 초안을 신중히 검토하고 선택적으로 PO가 `{root}/tasks/validate-next-story` 태스크를 실행하도록 제안

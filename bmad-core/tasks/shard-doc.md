@@ -1,187 +1,187 @@
 <!-- Powered by BMAD™ Core -->
 
-# Document Sharding Task
+# 문서 샤딩 태스크
 
-## Purpose
+## 목적
 
-- Split a large document into multiple smaller documents based on level 2 sections
-- Create a folder structure to organize the sharded documents
-- Maintain all content integrity including code blocks, diagrams, and markdown formatting
+- 레벨 2 섹션을 기반으로 큰 문서를 여러 개의 작은 문서로 분할
+- 샤드된 문서를 구성하기 위한 폴더 구조 생성
+- 코드 블록, 다이어그램, 마크다운 형식을 포함한 모든 콘텐츠 무결성 유지
 
-## Primary Method: Automatic with markdown-tree
+## 주요 방법: markdown-tree를 사용한 자동화
 
-[[LLM: First, check if markdownExploder is set to true in {root}/core-config.yaml. If it is, attempt to run the command: `md-tree explode {input file} {output path}`.
+[[LLM: 먼저 {root}/core-config.yaml에서 markdownExploder가 true로 설정되어 있는지 확인하세요. 설정되어 있다면 다음 명령을 실행해 보세요: `md-tree explode {input file} {output path}`.
 
-If the command succeeds, inform the user that the document has been sharded successfully and STOP - do not proceed further.
+명령이 성공하면 사용자에게 문서가 성공적으로 샤드되었음을 알리고 중단하세요 - 더 이상 진행하지 마세요.
 
-If the command fails (especially with an error indicating the command is not found or not available), inform the user: "The markdownExploder setting is enabled but the md-tree command is not available. Please either:
+명령이 실패하면 (특히 명령을 찾을 수 없거나 사용할 수 없다는 오류가 발생하면) 사용자에게 알리세요: "markdownExploder 설정이 활성화되어 있지만 md-tree 명령을 사용할 수 없습니다. 다음 중 하나를 수행하세요:
 
-1. Install @kayvan/markdown-tree-parser globally with: `npm install -g @kayvan/markdown-tree-parser`
-2. Or set markdownExploder to false in {root}/core-config.yaml
+1. `npm install -g @kayvan/markdown-tree-parser`로 @kayvan/markdown-tree-parser를 전역적으로 설치하세요
+2. 또는 {root}/core-config.yaml에서 markdownExploder를 false로 설정하세요
 
-**IMPORTANT: STOP HERE - do not proceed with manual sharding until one of the above actions is taken.**"
+**중요: 여기서 중단하세요 - 위 작업 중 하나가 수행될 때까지 수동 샤딩을 진행하지 마세요.**"
 
-If markdownExploder is set to false, inform the user: "The markdownExploder setting is currently false. For better performance and reliability, you should:
+markdownExploder가 false로 설정되어 있다면 사용자에게 알리세요: "markdownExploder 설정이 현재 false입니다. 더 나은 성능과 신뢰성을 위해 다음을 수행해야 합니다:
 
-1. Set markdownExploder to true in {root}/core-config.yaml
-2. Install @kayvan/markdown-tree-parser globally with: `npm install -g @kayvan/markdown-tree-parser`
+1. {root}/core-config.yaml에서 markdownExploder를 true로 설정하세요
+2. `npm install -g @kayvan/markdown-tree-parser`로 @kayvan/markdown-tree-parser를 전역적으로 설치하세요
 
-I will now proceed with the manual sharding process."
+이제 수동 샤딩 프로세스를 진행하겠습니다."
 
-Then proceed with the manual method below ONLY if markdownExploder is false.]]
+그 다음 markdownExploder가 false인 경우에만 아래의 수동 방법을 진행하세요.]]
 
-### Installation and Usage
+### 설치 및 사용법
 
-1. **Install globally**:
+1. **전역 설치**:
 
    ```bash
    npm install -g @kayvan/markdown-tree-parser
    ```
 
-2. **Use the explode command**:
+2. **explode 명령 사용**:
 
    ```bash
-   # For PRD
+   # PRD의 경우
    md-tree explode docs/prd.md docs/prd
 
-   # For Architecture
+   # 아키텍처의 경우
    md-tree explode docs/architecture.md docs/architecture
 
-   # For any document
-   md-tree explode [source-document] [destination-folder]
+   # 모든 문서의 경우
+   md-tree explode [소스-문서] [대상-폴더]
    ```
 
-3. **What it does**:
-   - Automatically splits the document by level 2 sections
-   - Creates properly named files
-   - Adjusts heading levels appropriately
-   - Handles all edge cases with code blocks and special markdown
+3. **수행 작업**:
+   - 레벨 2 섹션으로 문서를 자동 분할
+   - 적절히 명명된 파일 생성
+   - 제목 레벨을 적절히 조정
+   - 코드 블록과 특수 마크다운의 모든 엣지 케이스 처리
 
-If the user has @kayvan/markdown-tree-parser installed, use it and skip the manual process below.
+사용자가 @kayvan/markdown-tree-parser를 설치한 경우, 이를 사용하고 아래 수동 프로세스는 건너뛰세요.
 
 ---
 
-## Manual Method (if @kayvan/markdown-tree-parser is not available or user indicated manual method)
+## 수동 방법 (@kayvan/markdown-tree-parser를 사용할 수 없거나 사용자가 수동 방법을 지시한 경우)
 
-### Task Instructions
+### 태스크 지침
 
-1. Identify Document and Target Location
+1. 문서 및 대상 위치 식별
 
-- Determine which document to shard (user-provided path)
-- Create a new folder under `docs/` with the same name as the document (without extension)
-- Example: `docs/prd.md` → create folder `docs/prd/`
+- 샤드할 문서 결정 (사용자 제공 경로)
+- 문서와 동일한 이름(확장자 제외)으로 `docs/` 하위에 새 폴더 생성
+- 예시: `docs/prd.md` → `docs/prd/` 폴더 생성
 
-2. Parse and Extract Sections
+2. 섹션 파싱 및 추출
 
-CRITICAL AEGNT SHARDING RULES:
+중요한 에이전트 샤딩 규칙:
 
-1. Read the entire document content
-2. Identify all level 2 sections (## headings)
-3. For each level 2 section:
-   - Extract the section heading and ALL content until the next level 2 section
-   - Include all subsections, code blocks, diagrams, lists, tables, etc.
-   - Be extremely careful with:
-     - Fenced code blocks (```) - ensure you capture the full block including closing backticks and account for potential misleading level 2's that are actually part of a fenced section example
-     - Mermaid diagrams - preserve the complete diagram syntax
-     - Nested markdown elements
-     - Multi-line content that might contain ## inside code blocks
+1. 전체 문서 콘텐츠 읽기
+2. 모든 레벨 2 섹션(## 제목) 식별
+3. 각 레벨 2 섹션에 대해:
+   - 섹션 제목과 다음 레벨 2 섹션까지의 모든 콘텐츠 추출
+   - 모든 하위섹션, 코드 블록, 다이어그램, 목록, 테이블 등 포함
+   - 다음에 매우 주의:
+     - 펜스 코드 블록(```) - 닫는 백틱을 포함한 전체 블록을 캡처하고 펜스된 섹션 예시의 일부인 잠재적으로 오해의 소지가 있는 레벨 2를 고려
+     - Mermaid 다이어그램 - 완전한 다이어그램 구문 보존
+     - 중첩된 마크다운 요소
+     - 코드 블록 내에 ##을 포함할 수 있는 여러 줄 콘텐츠
 
-CRITICAL: Use proper parsing that understands markdown context. A ## inside a code block is NOT a section header.]]
+중요: 마크다운 컨텍스트를 이해하는 적절한 파싱을 사용하세요. 코드 블록 내의 ##는 섹션 헤더가 아닙니다.]]
 
-### 3. Create Individual Files
+### 3. 개별 파일 생성
 
-For each extracted section:
+추출된 각 섹션에 대해:
 
-1. **Generate filename**: Convert the section heading to lowercase-dash-case
-   - Remove special characters
-   - Replace spaces with dashes
-   - Example: "## Tech Stack" → `tech-stack.md`
+1. **파일명 생성**: 섹션 제목을 소문자-대시-케이스로 변환
+   - 특수 문자 제거
+   - 공백을 대시로 교체
+   - 예시: "## Tech Stack" → `tech-stack.md`
 
-2. **Adjust heading levels**:
-   - The level 2 heading becomes level 1 (# instead of ##) in the sharded new document
-   - All subsection levels decrease by 1:
+2. **제목 레벨 조정**:
+   - 레벨 2 제목이 샤드된 새 문서에서 레벨 1(##에서 #로)이 됩니다
+   - 모든 하위섹션 레벨이 1씩 감소:
 
    ```txt
      - ### → ##
      - #### → ###
      - ##### → ####
-     - etc.
+     - 등등
    ```
 
-3. **Write content**: Save the adjusted content to the new file
+3. **콘텐츠 작성**: 조정된 콘텐츠를 새 파일에 저장
 
-### 4. Create Index File
+### 4. 색인 파일 생성
 
-Create an `index.md` file in the sharded folder that:
+샤드된 폴더에 `index.md` 파일 생성:
 
-1. Contains the original level 1 heading and any content before the first level 2 section
-2. Lists all the sharded files with links:
+1. 원본 레벨 1 제목과 첫 번째 레벨 2 섹션 이전의 모든 콘텐츠 포함
+2. 링크와 함께 모든 샤드된 파일 나열:
 
 ```markdown
-# Original Document Title
+# 원본 문서 제목
 
-[Original introduction content if any]
+[있는 경우 원본 소개 콘텐츠]
 
-## Sections
+## 섹션
 
-- [Section Name 1](./section-name-1.md)
-- [Section Name 2](./section-name-2.md)
-- [Section Name 3](./section-name-3.md)
+- [섹션 이름 1](./section-name-1.md)
+- [섹션 이름 2](./section-name-2.md)
+- [섹션 이름 3](./section-name-3.md)
   ...
 ```
 
-### 5. Preserve Special Content
+### 5. 특수 콘텐츠 보존
 
-1. **Code blocks**: Must capture complete blocks including:
+1. **코드 블록**: 다음을 포함한 완전한 블록 캡처 필수:
 
    ```language
    content
    ```
 
-2. **Mermaid diagrams**: Preserve complete syntax:
+2. **Mermaid 다이어그램**: 완전한 구문 보존:
 
    ```mermaid
    graph TD
    ...
    ```
 
-3. **Tables**: Maintain proper markdown table formatting
+3. **테이블**: 적절한 마크다운 테이블 형식 유지
 
-4. **Lists**: Preserve indentation and nesting
+4. **목록**: 들여쓰기와 중첩 보존
 
-5. **Inline code**: Preserve backticks
+5. **인라인 코드**: 백틱 보존
 
-6. **Links and references**: Keep all markdown links intact
+6. **링크와 참조**: 모든 마크다운 링크를 그대로 유지
 
-7. **Template markup**: If documents contain {{placeholders}} ,preserve exactly
+7. **템플릿 마크업**: 문서에 {{플레이스홀더}}가 포함된 경우 정확히 보존
 
-### 6. Validation
+### 6. 검증
 
-After sharding:
+샤딩 후:
 
-1. Verify all sections were extracted
-2. Check that no content was lost
-3. Ensure heading levels were properly adjusted
-4. Confirm all files were created successfully
+1. 모든 섹션이 추출되었는지 확인
+2. 콘텐츠가 손실되지 않았는지 확인
+3. 제목 레벨이 적절히 조정되었는지 확인
+4. 모든 파일이 성공적으로 생성되었는지 확인
 
-### 7. Report Results
+### 7. 결과 보고
 
-Provide a summary:
+요약 제공:
 
 ```text
-Document sharded successfully:
-- Source: [original document path]
-- Destination: docs/[folder-name]/
-- Files created: [count]
-- Sections:
-  - section-name-1.md: "Section Title 1"
-  - section-name-2.md: "Section Title 2"
+문서가 성공적으로 샤드됨:
+- 소스: [원본 문서 경로]
+- 대상: docs/[폴더-이름]/
+- 생성된 파일: [개수]
+- 섹션:
+  - section-name-1.md: "섹션 제목 1"
+  - section-name-2.md: "섹션 제목 2"
   ...
 ```
 
-## Important Notes
+## 중요 참고사항
 
-- Never modify the actual content, only adjust heading levels
-- Preserve ALL formatting, including whitespace where significant
-- Handle edge cases like sections with code blocks containing ## symbols
-- Ensure the sharding is reversible (could reconstruct the original from shards)
+- 실제 콘텐츠는 절대 수정하지 말고, 제목 레벨만 조정
+- 중요한 곳의 공백을 포함하여 모든 형식 보존
+- `##` 기호를 포함하는 코드 블록이 있는 섹션과 같은 엣지 케이스 처리
+- 샤딩이 가역적이도록 보장 (샤드에서 원본을 재구성할 수 있음)

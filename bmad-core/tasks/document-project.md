@@ -98,248 +98,248 @@ CRITICAL: Before generating documentation, conduct extensive analysis of the exi
 - Integration constraints
 - Performance bottlenecks
 
-**Document Structure**:
+**문서 구조**:
 
-# [Project Name] Brownfield Architecture Document
+## [프로젝트 이름] 브라운필드 아키텍처 문서
 
-## Introduction
+### 소개
 
-This document captures the CURRENT STATE of the [Project Name] codebase, including technical debt, workarounds, and real-world patterns. It serves as a reference for AI agents working on enhancements.
+이 문서는 기술 부채, 우회책, 실제 패턴을 포함한 [프로젝트 이름] 코드베이스의 현재 상태를 포착합니다. 개선사항을 작업하는 AI 에이전트를 위한 참조 자료 역할을 합니다.
 
-### Document Scope
+#### 문서 범위
 
-[If PRD provided: "Focused on areas relevant to: {enhancement description}"]
-[If no PRD: "Comprehensive documentation of entire system"]
+[PRD가 제공된 경우: "{개선사항 설명}과 관련된 영역에 집중"]
+[PRD가 없는 경우: "전체 시스템의 포괄적 문서화"]
 
-### Change Log
+#### 변경 로그
 
-| Date   | Version | Description                 | Author    |
-| ------ | ------- | --------------------------- | --------- |
-| [Date] | 1.0     | Initial brownfield analysis | [Analyst] |
+| 날짜   | 버전 | 설명                   | 작성자     |
+| ------ | ---- | ---------------------- | ---------- |
+| [날짜] | 1.0  | 초기 브라운필드 분석   | [분석가]   |
 
-## Quick Reference - Key Files and Entry Points
+### 빠른 참조 - 주요 파일 및 진입점
 
-### Critical Files for Understanding the System
+#### 시스템 이해를 위한 중요 파일
 
-- **Main Entry**: `src/index.js` (or actual entry point)
-- **Configuration**: `config/app.config.js`, `.env.example`
-- **Core Business Logic**: `src/services/`, `src/domain/`
-- **API Definitions**: `src/routes/` or link to OpenAPI spec
-- **Database Models**: `src/models/` or link to schema files
-- **Key Algorithms**: [List specific files with complex logic]
+- **메인 진입점**: `src/index.js` (또는 실제 진입점)
+- **구성**: `config/app.config.js`, `.env.example`
+- **핵심 비즈니스 로직**: `src/services/`, `src/domain/`
+- **API 정의**: `src/routes/` 또는 OpenAPI 스펙 링크
+- **데이터베이스 모델**: `src/models/` 또는 스키마 파일 링크
+- **주요 알고리즘**: [복잡한 로직이 있는 특정 파일 나열]
 
-### If PRD Provided - Enhancement Impact Areas
+#### PRD가 제공된 경우 - 개선사항 영향 영역
 
-[Highlight which files/modules will be affected by the planned enhancement]
+[계획된 개선사항에 의해 영향받을 파일/모듈 강조]
 
-## High Level Architecture
+### 상위 수준 아키텍처
 
-### Technical Summary
+#### 기술적 요약
 
-### Actual Tech Stack (from package.json/requirements.txt)
+#### 실제 기술 스택 (package.json/requirements.txt에서)
 
-| Category  | Technology | Version | Notes                      |
-| --------- | ---------- | ------- | -------------------------- |
-| Runtime   | Node.js    | 16.x    | [Any constraints]          |
-| Framework | Express    | 4.18.2  | [Custom middleware?]       |
-| Database  | PostgreSQL | 13      | [Connection pooling setup] |
+| 카테고리  | 기술       | 버전    | 참고사항               |
+| --------- | ---------- | ------- | ---------------------- |
+| 런타임    | Node.js    | 16.x    | [제약사항]             |
+| 프레임워크| Express    | 4.18.2  | [커스텀 미들웨어?]     |
+| 데이터베이스| PostgreSQL | 13      | [연결 풀링 설정]      |
 
-etc...
+등등...
 
-### Repository Structure Reality Check
+#### 저장소 구조 현실 확인
 
-- Type: [Monorepo/Polyrepo/Hybrid]
-- Package Manager: [npm/yarn/pnpm]
-- Notable: [Any unusual structure decisions]
+- 유형: [모노레포/폴리레포/하이브리드]
+- 패키지 매니저: [npm/yarn/pnpm]
+- 주목할 점: [특이한 구조 결정사항]
 
-## Source Tree and Module Organization
+### 소스 트리 및 모듈 구성
 
-### Project Structure (Actual)
+#### 프로젝트 구조 (실제)
 
 ```text
 project-root/
 ├── src/
-│   ├── controllers/     # HTTP request handlers
-│   ├── services/        # Business logic (NOTE: inconsistent patterns between user and payment services)
-│   ├── models/          # Database models (Sequelize)
-│   ├── utils/           # Mixed bag - needs refactoring
-│   └── legacy/          # DO NOT MODIFY - old payment system still in use
-├── tests/               # Jest tests (60% coverage)
-├── scripts/             # Build and deployment scripts
-└── config/              # Environment configs
+│   ├── controllers/     # HTTP 요청 핸들러
+│   ├── services/        # 비즈니스 로직 (참고: 사용자와 결제 서비스 간 일관성 없는 패턴)
+│   ├── models/          # 데이터베이스 모델 (Sequelize)
+│   ├── utils/           # 혼합 - 리팩토링 필요
+│   └── legacy/          # 수정 금지 - 오래된 결제 시스템이 여전히 사용됨
+├── tests/               # Jest 테스트 (60% 커버리지)
+├── scripts/             # 빌드 및 배포 스크립트
+└── config/              # 환경 구성
 ```
 
-### Key Modules and Their Purpose
+#### 주요 모듈과 목적
 
-- **User Management**: `src/services/userService.js` - Handles all user operations
-- **Authentication**: `src/middleware/auth.js` - JWT-based, custom implementation
-- **Payment Processing**: `src/legacy/payment.js` - CRITICAL: Do not refactor, tightly coupled
-- **[List other key modules with their actual files]**
+- **사용자 관리**: `src/services/userService.js` - 모든 사용자 작업 처리
+- **인증**: `src/middleware/auth.js` - JWT 기반, 커스텀 구현
+- **결제 처리**: `src/legacy/payment.js` - 중요: 리팩토링 금지, 강하게 결합됨
+- **[실제 파일과 함께 다른 주요 모듈 나열]**
 
-## Data Models and APIs
+### 데이터 모델 및 API
 
-### Data Models
+#### 데이터 모델
 
-Instead of duplicating, reference actual model files:
+중복 대신 실제 모델 파일 참조:
 
-- **User Model**: See `src/models/User.js`
-- **Order Model**: See `src/models/Order.js`
-- **Related Types**: TypeScript definitions in `src/types/`
+- **사용자 모델**: `src/models/User.js` 참조
+- **주문 모델**: `src/models/Order.js` 참조
+- **관련 타입**: `src/types/`의 TypeScript 정의
 
-### API Specifications
+#### API 명세
 
-- **OpenAPI Spec**: `docs/api/openapi.yaml` (if exists)
-- **Postman Collection**: `docs/api/postman-collection.json`
-- **Manual Endpoints**: [List any undocumented endpoints discovered]
+- **OpenAPI 스펙**: `docs/api/openapi.yaml` (존재하는 경우)
+- **Postman 컬렉션**: `docs/api/postman-collection.json`
+- **수동 엔드포인트**: [발견된 문서화되지 않은 엔드포인트 나열]
 
-## Technical Debt and Known Issues
+### 기술 부채 및 알려진 문제
 
-### Critical Technical Debt
+#### 중요한 기술 부채
 
-1. **Payment Service**: Legacy code in `src/legacy/payment.js` - tightly coupled, no tests
-2. **User Service**: Different pattern than other services, uses callbacks instead of promises
-3. **Database Migrations**: Manually tracked, no proper migration tool
-4. **[Other significant debt]**
+1. **결제 서비스**: `src/legacy/payment.js`의 레거시 코드 - 강하게 결합됨, 테스트 없음
+2. **사용자 서비스**: 다른 서비스와 다른 패턴, 프로미스 대신 콜백 사용
+3. **데이터베이스 마이그레이션**: 수동 추적, 적절한 마이그레이션 도구 없음
+4. **[기타 중요한 부채]**
 
-### Workarounds and Gotchas
+#### 우회책 및 함정
 
-- **Environment Variables**: Must set `NODE_ENV=production` even for staging (historical reason)
-- **Database Connections**: Connection pool hardcoded to 10, changing breaks payment service
-- **[Other workarounds developers need to know]**
+- **환경 변수**: 스테이징에서도 `NODE_ENV=production` 설정 필요 (역사적 이유)
+- **데이터베이스 연결**: 연결 풀이 10으로 하드코딩됨, 변경 시 결제 서비스 중단
+- **[개발자가 알아야 할 기타 우회책]**
 
-## Integration Points and External Dependencies
+### 통합 지점 및 외부 종속성
 
-### External Services
+#### 외부 서비스
 
-| Service  | Purpose  | Integration Type | Key Files                      |
-| -------- | -------- | ---------------- | ------------------------------ |
-| Stripe   | Payments | REST API         | `src/integrations/stripe/`     |
-| SendGrid | Emails   | SDK              | `src/services/emailService.js` |
+| 서비스   | 목적     | 통합 유형 | 주요 파일                      |
+| -------- | -------- | --------- | ------------------------------ |
+| Stripe   | 결제     | REST API  | `src/integrations/stripe/`     |
+| SendGrid | 이메일   | SDK       | `src/services/emailService.js` |
 
-etc...
+등등...
 
-### Internal Integration Points
+#### 내부 통합 지점
 
-- **Frontend Communication**: REST API on port 3000, expects specific headers
-- **Background Jobs**: Redis queue, see `src/workers/`
-- **[Other integrations]**
+- **프론트엔드 통신**: 포트 3000의 REST API, 특정 헤더 요구
+- **백그라운드 작업**: Redis 큐, `src/workers/` 참조
+- **[기타 통합]**
 
-## Development and Deployment
+### 개발 및 배포
 
-### Local Development Setup
+#### 로컬 개발 설정
 
-1. Actual steps that work (not ideal steps)
-2. Known issues with setup
-3. Required environment variables (see `.env.example`)
+1. 작동하는 실제 단계 (이상적인 단계가 아님)
+2. 설정의 알려진 문제
+3. 필요한 환경 변수 (`.env.example` 참조)
 
-### Build and Deployment Process
+#### 빌드 및 배포 프로세스
 
-- **Build Command**: `npm run build` (webpack config in `webpack.config.js`)
-- **Deployment**: Manual deployment via `scripts/deploy.sh`
-- **Environments**: Dev, Staging, Prod (see `config/environments/`)
+- **빌드 명령**: `npm run build` (`webpack.config.js`의 webpack 구성)
+- **배포**: `scripts/deploy.sh`를 통한 수동 배포
+- **환경**: 개발, 스테이징, 프로덕션 (`config/environments/` 참조)
 
-## Testing Reality
+### 테스트 현실
 
-### Current Test Coverage
+#### 현재 테스트 커버리지
 
-- Unit Tests: 60% coverage (Jest)
-- Integration Tests: Minimal, in `tests/integration/`
-- E2E Tests: None
-- Manual Testing: Primary QA method
+- 단위 테스트: 60% 커버리지 (Jest)
+- 통합 테스트: 최소, `tests/integration/`에 있음
+- E2E 테스트: 없음
+- 수동 테스트: 주요 QA 방법
 
-### Running Tests
+#### 테스트 실행
 
 ```bash
-npm test           # Runs unit tests
-npm run test:integration  # Runs integration tests (requires local DB)
+npm test           # 단위 테스트 실행
+npm run test:integration  # 통합 테스트 실행 (로컬 DB 필요)
 ```
 
-## If Enhancement PRD Provided - Impact Analysis
+### 개선사항 PRD가 제공된 경우 - 영향 분석
 
-### Files That Will Need Modification
+#### 수정이 필요한 파일
 
-Based on the enhancement requirements, these files will be affected:
+개선사항 요구사항을 기반으로 다음 파일들이 영향받을 것입니다:
 
-- `src/services/userService.js` - Add new user fields
-- `src/models/User.js` - Update schema
-- `src/routes/userRoutes.js` - New endpoints
-- [etc...]
+- `src/services/userService.js` - 새 사용자 필드 추가
+- `src/models/User.js` - 스키마 업데이트
+- `src/routes/userRoutes.js` - 새 엔드포인트
+- [등등...]
 
-### New Files/Modules Needed
+#### 필요한 새 파일/모듈
 
-- `src/services/newFeatureService.js` - New business logic
-- `src/models/NewFeature.js` - New data model
-- [etc...]
+- `src/services/newFeatureService.js` - 새 비즈니스 로직
+- `src/models/NewFeature.js` - 새 데이터 모델
+- [등등...]
 
-### Integration Considerations
+#### 통합 고려사항
 
-- Will need to integrate with existing auth middleware
-- Must follow existing response format in `src/utils/responseFormatter.js`
-- [Other integration points]
+- 기존 인증 미들웨어와 통합 필요
+- `src/utils/responseFormatter.js`의 기존 응답 형식 준수 필요
+- [기타 통합 지점]
 
-## Appendix - Useful Commands and Scripts
+### 부록 - 유용한 명령 및 스크립트
 
-### Frequently Used Commands
+#### 자주 사용하는 명령
 
 ```bash
-npm run dev         # Start development server
-npm run build       # Production build
-npm run migrate     # Run database migrations
-npm run seed        # Seed test data
+npm run dev         # 개발 서버 시작
+npm run build       # 프로덕션 빌드
+npm run migrate     # 데이터베이스 마이그레이션 실행
+npm run seed        # 테스트 데이터 시드
 ```
 
-### Debugging and Troubleshooting
+#### 디버깅 및 문제해결
 
-- **Logs**: Check `logs/app.log` for application logs
-- **Debug Mode**: Set `DEBUG=app:*` for verbose logging
-- **Common Issues**: See `docs/troubleshooting.md`]]
+- **로그**: 애플리케이션 로그는 `logs/app.log` 확인
+- **디버그 모드**: 상세 로깅을 위해 `DEBUG=app:*` 설정
+- **일반적인 문제**: `docs/troubleshooting.md` 참조]]
 
-### 4. Document Delivery
+### 4. 문서 전달
 
-1. **In Web UI (Gemini, ChatGPT, Claude)**:
-   - Present the entire document in one response (or multiple if too long)
-   - Tell user to copy and save as `docs/brownfield-architecture.md` or `docs/project-architecture.md`
-   - Mention it can be sharded later in IDE if needed
+1. **웹 UI에서 (Gemini, ChatGPT, Claude)**:
+   - 전체 문서를 하나의 응답으로 제시 (너무 길면 여러 개)
+   - 사용자에게 `docs/brownfield-architecture.md` 또는 `docs/project-architecture.md`로 복사하여 저장하도록 알림
+   - 필요한 경우 나중에 IDE에서 샤드할 수 있다고 언급
 
-2. **In IDE Environment**:
-   - Create the document as `docs/brownfield-architecture.md`
-   - Inform user this single document contains all architectural information
-   - Can be sharded later using PO agent if desired
+2. **IDE 환경에서**:
+   - `docs/brownfield-architecture.md`로 문서 생성
+   - 이 단일 문서가 모든 아키텍처 정보를 포함한다고 사용자에게 알림
+   - 원하는 경우 나중에 PO 에이전트를 사용하여 샤드 가능
 
-The document should be comprehensive enough that future agents can understand:
+문서는 향후 에이전트들이 다음을 이해할 수 있을 만큼 포괄적이어야 합니다:
 
-- The actual state of the system (not idealized)
-- Where to find key files and logic
-- What technical debt exists
-- What constraints must be respected
-- If PRD provided: What needs to change for the enhancement]]
+- 시스템의 실제 상태 (이상화되지 않은)
+- 주요 파일과 로직을 찾을 위치
+- 어떤 기술 부채가 존재하는지
+- 어떤 제약사항을 준수해야 하는지
+- PRD가 제공된 경우: 개선사항을 위해 변경해야 할 것]]
 
-### 5. Quality Assurance
+### 5. 품질 보증
 
-CRITICAL: Before finalizing the document:
+중요: 문서를 확정하기 전:
 
-1. **Accuracy Check**: Verify all technical details match the actual codebase
-2. **Completeness Review**: Ensure all major system components are documented
-3. **Focus Validation**: If user provided scope, verify relevant areas are emphasized
-4. **Clarity Assessment**: Check that explanations are clear for AI agents
-5. **Navigation**: Ensure document has clear section structure for easy reference
+1. **정확성 확인**: 모든 기술적 세부사항이 실제 코드베이스와 일치하는지 확인
+2. **완전성 검토**: 모든 주요 시스템 구성요소가 문서화되었는지 확인
+3. **초점 검증**: 사용자가 범위를 제공한 경우, 관련 영역이 강조되었는지 확인
+4. **명확성 평가**: AI 에이전트를 위한 설명이 명확한지 확인
+5. **탐색**: 문서가 쉬운 참조를 위한 명확한 섹션 구조를 갖는지 확인
 
-Apply the advanced elicitation task after major sections to refine based on user feedback.
+주요 섹션 후에 고급 유도 질문 태스크를 적용하여 사용자 피드백을 기반으로 개선하세요.
 
-## Success Criteria
+## 성공 기준
 
-- Single comprehensive brownfield architecture document created
-- Document reflects REALITY including technical debt and workarounds
-- Key files and modules are referenced with actual paths
-- Models/APIs reference source files rather than duplicating content
-- If PRD provided: Clear impact analysis showing what needs to change
-- Document enables AI agents to navigate and understand the actual codebase
-- Technical constraints and "gotchas" are clearly documented
+- 단일 포괄적 브라운필드 아키텍처 문서 생성
+- 문서가 기술 부채와 우회책을 포함한 현실을 반영
+- 주요 파일과 모듈이 실제 경로와 함께 참조됨
+- 모델/API가 콘텐츠를 중복하는 대신 소스 파일을 참조
+- PRD가 제공된 경우: 변경해야 할 것을 보여주는 명확한 영향 분석
+- 문서가 AI 에이전트가 실제 코드베이스를 탐색하고 이해할 수 있게 함
+- 기술적 제약사항과 "함정"이 명확히 문서화됨
 
-## Notes
+## 참고사항
 
-- This task creates ONE document that captures the TRUE state of the system
-- References actual files rather than duplicating content when possible
-- Documents technical debt, workarounds, and constraints honestly
-- For brownfield projects with PRD: Provides clear enhancement impact analysis
-- The goal is PRACTICAL documentation for AI agents doing real work
+- 이 태스크는 시스템의 참된 상태를 포착하는 하나의 문서를 생성
+- 가능한 경우 콘텐츠를 중복하는 대신 실제 파일을 참조
+- 기술 부채, 우회책, 제약사항을 정직하게 문서화
+- PRD가 있는 브라운필드 프로젝트의 경우: 명확한 개선사항 영향 분석 제공
+- 목표는 실제 작업을 하는 AI 에이전트를 위한 실용적 문서화

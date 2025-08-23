@@ -1,280 +1,280 @@
 <!-- Powered by BMAD™ Core -->
 
-# Create Deep Research Prompt Task
+# 심층 연구 프롬프트 생성 태스크
 
-This task helps create comprehensive research prompts for various types of deep analysis. It can process inputs from brainstorming sessions, project briefs, market research, or specific research questions to generate targeted prompts for deeper investigation.
+이 태스크는 다양한 유형의 심층 분석을 위한 포괄적인 연구 프롬프트를 생성하는 데 도움을 줍니다. 브레인스토밍 세션, 프로젝트 브리프, 시장 조사 또는 특정 연구 질문의 입력을 처리하여 더 깊은 조사를 위한 대상 프롬프트를 생성할 수 있습니다.
 
-## Purpose
+## 목적
 
-Generate well-structured research prompts that:
+다음과 같은 잘 구조화된 연구 프롬프트 생성:
 
-- Define clear research objectives and scope
-- Specify appropriate research methodologies
-- Outline expected deliverables and formats
-- Guide systematic investigation of complex topics
-- Ensure actionable insights are captured
+- 명확한 연구 목표와 범위 정의
+- 적절한 연구 방법론 명시
+- 예상 결과물과 형식 개요
+- 복잡한 주제의 체계적 조사 안내
+- 실행 가능한 통찰 확보 보장
 
-## Research Type Selection
+## 연구 유형 선택
 
-CRITICAL: First, help the user select the most appropriate research focus based on their needs and any input documents they've provided.
+중요: 먼저 사용자의 요구사항과 제공한 입력 문서를 기반으로 가장 적절한 연구 초점을 선택하도록 도와주세요.
 
-### 1. Research Focus Options
+### 1. 연구 초점 옵션
 
-Present these numbered options to the user:
+사용자에게 다음 번호가 매겨진 옵션을 제시하세요:
 
-1. **Product Validation Research**
-   - Validate product hypotheses and market fit
-   - Test assumptions about user needs and solutions
-   - Assess technical and business feasibility
-   - Identify risks and mitigation strategies
+1. **제품 검증 연구**
+   - 제품 가설과 시장 적합성 검증
+   - 사용자 요구와 솔루션에 대한 가정 테스트
+   - 기술적 및 비즈니스 실행가능성 평가
+   - 위험 식별 및 완화 전략
 
-2. **Market Opportunity Research**
-   - Analyze market size and growth potential
-   - Identify market segments and dynamics
-   - Assess market entry strategies
-   - Evaluate timing and market readiness
+2. **시장 기회 연구**
+   - 시장 규모와 성장 잠재력 분석
+   - 시장 세그먼트와 동역학 식별
+   - 시장 진입 전략 평가
+   - 타이밍과 시장 준비도 평가
 
-3. **User & Customer Research**
-   - Deep dive into user personas and behaviors
-   - Understand jobs-to-be-done and pain points
-   - Map customer journeys and touchpoints
-   - Analyze willingness to pay and value perception
+3. **사용자 및 고객 연구**
+   - 사용자 페르소나와 행동 심층 분석
+   - 해결해야 할 과업과 고충점 이해
+   - 고객 여정과 접촉점 매핑
+   - 지불 의사와 가치 인식 분석
 
-4. **Competitive Intelligence Research**
-   - Detailed competitor analysis and positioning
-   - Feature and capability comparisons
-   - Business model and strategy analysis
-   - Identify competitive advantages and gaps
+4. **경쟁 인텔리전스 연구**
+   - 상세한 경쟁사 분석 및 포지셔닝
+   - 기능 및 역량 비교
+   - 비즈니스 모델 및 전략 분석
+   - 경쟁 우위와 격차 식별
 
-5. **Technology & Innovation Research**
-   - Assess technology trends and possibilities
-   - Evaluate technical approaches and architectures
-   - Identify emerging technologies and disruptions
-   - Analyze build vs. buy vs. partner options
+5. **기술 및 혁신 연구**
+   - 기술 트렌드와 가능성 평가
+   - 기술적 접근법과 아키텍처 평가
+   - 신흥 기술과 파괴적 기술 식별
+   - 자체 개발 vs. 구매 vs. 파트너십 옵션 분석
 
-6. **Industry & Ecosystem Research**
-   - Map industry value chains and dynamics
-   - Identify key players and relationships
-   - Analyze regulatory and compliance factors
-   - Understand partnership opportunities
+6. **산업 및 생태계 연구**
+   - 산업 가치 사슬과 동역학 매핑
+   - 주요 플레이어와 관계 식별
+   - 규제 및 컴플라이언스 요인 분석
+   - 파트너십 기회 이해
 
-7. **Strategic Options Research**
-   - Evaluate different strategic directions
-   - Assess business model alternatives
-   - Analyze go-to-market strategies
-   - Consider expansion and scaling paths
+7. **전략적 옵션 연구**
+   - 다양한 전략적 방향 평가
+   - 비즈니스 모델 대안 평가
+   - 시장 진출 전략 분석
+   - 확장 및 스케일링 경로 고려
 
-8. **Risk & Feasibility Research**
-   - Identify and assess various risk factors
-   - Evaluate implementation challenges
-   - Analyze resource requirements
-   - Consider regulatory and legal implications
+8. **위험 및 실행가능성 연구**
+   - 다양한 위험 요인 식별 및 평가
+   - 구현 과제 평가
+   - 자원 요구사항 분석
+   - 규제 및 법적 영향 고려
 
-9. **Custom Research Focus**
-   - User-defined research objectives
-   - Specialized domain investigation
-   - Cross-functional research needs
+9. **맞춤형 연구 초점**
+   - 사용자 정의 연구 목표
+   - 전문 도메인 조사
+   - 다기능 연구 요구사항
 
-### 2. Input Processing
+### 2. 입력 처리
 
-**If Project Brief provided:**
+**프로젝트 브리프가 제공된 경우:**
 
-- Extract key product concepts and goals
-- Identify target users and use cases
-- Note technical constraints and preferences
-- Highlight uncertainties and assumptions
+- 핵심 제품 개념과 목표 추출
+- 대상 사용자와 사용 사례 식별
+- 기술적 제약과 선호사항 기록
+- 불확실성과 가정 강조
 
-**If Brainstorming Results provided:**
+**브레인스토밍 결과가 제공된 경우:**
 
-- Synthesize main ideas and themes
-- Identify areas needing validation
-- Extract hypotheses to test
-- Note creative directions to explore
+- 주요 아이디어와 테마 종합
+- 검증이 필요한 영역 식별
+- 테스트할 가설 추출
+- 탐색할 창의적 방향 기록
 
-**If Market Research provided:**
+**시장 조사가 제공된 경우:**
 
-- Build on identified opportunities
-- Deepen specific market insights
-- Validate initial findings
-- Explore adjacent possibilities
+- 식별된 기회를 기반으로 구축
+- 특정 시장 통찰 심화
+- 초기 발견사항 검증
+- 인접한 가능성 탐색
 
-**If Starting Fresh:**
+**새로 시작하는 경우:**
 
-- Gather essential context through questions
-- Define the problem space
-- Clarify research objectives
-- Establish success criteria
+- 질문을 통해 필수 맥락 수집
+- 문제 공간 정의
+- 연구 목표 명확화
+- 성공 기준 설정
 
-## Process
+## 프로세스
 
-### 3. Research Prompt Structure
+### 3. 연구 프롬프트 구조
 
-CRITICAL: collaboratively develop a comprehensive research prompt with these components.
+중요: 다음 구성 요소들을 포함한 포괄적인 연구 프롬프트를 협력적으로 개발하세요.
 
-#### A. Research Objectives
+#### A. 연구 목표
 
-CRITICAL: collaborate with the user to articulate clear, specific objectives for the research.
+중요: 사용자와 협력하여 연구의 명확하고 구체적인 목표를 명시하세요.
 
-- Primary research goal and purpose
-- Key decisions the research will inform
-- Success criteria for the research
-- Constraints and boundaries
+- 주요 연구 목표와 목적
+- 연구가 정보를 제공할 핵심 의사결정
+- 연구의 성공 기준
+- 제약사항과 경계
 
-#### B. Research Questions
+#### B. 연구 질문
 
-CRITICAL: collaborate with the user to develop specific, actionable research questions organized by theme.
+중요: 사용자와 협력하여 테마별로 구성된 구체적이고 실행 가능한 연구 질문을 개발하세요.
 
-**Core Questions:**
+**핵심 질문:**
 
-- Central questions that must be answered
-- Priority ranking of questions
-- Dependencies between questions
+- 반드시 답변해야 할 중심 질문
+- 질문의 우선순위 순위
+- 질문 간의 종속성
 
-**Supporting Questions:**
+**지원 질문:**
 
-- Additional context-building questions
-- Nice-to-have insights
-- Future-looking considerations
+- 추가적인 맥락 구축 질문
+- 있으면 좋은 통찰
+- 미래 지향적 고려사항
 
-#### C. Research Methodology
+#### C. 연구 방법론
 
-**Data Collection Methods:**
+**데이터 수집 방법:**
 
-- Secondary research sources
-- Primary research approaches (if applicable)
-- Data quality requirements
-- Source credibility criteria
+- 2차 연구 소스
+- 1차 연구 접근법 (해당하는 경우)
+- 데이터 품질 요구사항
+- 소스 신뢰성 기준
 
-**Analysis Frameworks:**
+**분석 프레임워크:**
 
-- Specific frameworks to apply
-- Comparison criteria
-- Evaluation methodologies
-- Synthesis approaches
+- 적용할 구체적 프레임워크
+- 비교 기준
+- 평가 방법론
+- 종합 접근법
 
-#### D. Output Requirements
+#### D. 산출물 요구사항
 
-**Format Specifications:**
+**형식 사양:**
 
-- Executive summary requirements
-- Detailed findings structure
-- Visual/tabular presentations
-- Supporting documentation
+- 경영진 요약 요구사항
+- 상세 발견사항 구조
+- 시각적/표 형태 프레젠테이션
+- 지원 문서
 
-**Key Deliverables:**
+**주요 결과물:**
 
-- Must-have sections and insights
-- Decision-support elements
-- Action-oriented recommendations
-- Risk and uncertainty documentation
+- 필수 섹션과 통찰
+- 의사결정 지원 요소
+- 행동 지향적 권고사항
+- 위험과 불확실성 문서화
 
-### 4. Prompt Generation
+### 4. 프롬프트 생성
 
-**Research Prompt Template:**
+**연구 프롬프트 템플릿:**
 
 ```markdown
-## Research Objective
+## 연구 목표
 
-[Clear statement of what this research aims to achieve]
+[이 연구가 달성하고자 하는 것에 대한 명확한 설명]
 
-## Background Context
+## 배경 맥락
 
-[Relevant information from project brief, brainstorming, or other inputs]
+[프로젝트 브리프, 브레인스토밍 또는 기타 입력으로부터의 관련 정보]
 
-## Research Questions
+## 연구 질문
 
-### Primary Questions (Must Answer)
+### 주요 질문 (반드시 답변)
 
-1. [Specific, actionable question]
-2. [Specific, actionable question]
+1. [구체적이고 실행 가능한 질문]
+2. [구체적이고 실행 가능한 질문]
    ...
 
-### Secondary Questions (Nice to Have)
+### 보조 질문 (있으면 좋음)
 
-1. [Supporting question]
-2. [Supporting question]
+1. [지원 질문]
+2. [지원 질문]
    ...
 
-## Research Methodology
+## 연구 방법론
 
-### Information Sources
+### 정보 소스
 
-- [Specific source types and priorities]
+- [구체적 소스 유형과 우선순위]
 
-### Analysis Frameworks
+### 분석 프레임워크
 
-- [Specific frameworks to apply]
+- [적용할 구체적 프레임워크]
 
-### Data Requirements
+### 데이터 요구사항
 
-- [Quality, recency, credibility needs]
+- [품질, 최신성, 신뢰성 요구사항]
 
-## Expected Deliverables
+## 예상 결과물
 
-### Executive Summary
+### 경영진 요약
 
-- Key findings and insights
-- Critical implications
-- Recommended actions
+- 주요 발견사항과 통찰
+- 중요한 함의
+- 권장 행동
 
-### Detailed Analysis
+### 상세 분석
 
-[Specific sections needed based on research type]
+[연구 유형에 기반한 필요한 구체적 섹션]
 
-### Supporting Materials
+### 지원 자료
 
-- Data tables
-- Comparison matrices
-- Source documentation
+- 데이터 표
+- 비교 매트릭스
+- 소스 문서
 
-## Success Criteria
+## 성공 기준
 
-[How to evaluate if research achieved its objectives]
+[연구가 목표를 달성했는지 평가하는 방법]
 
-## Timeline and Priority
+## 일정과 우선순위
 
-[If applicable, any time constraints or phasing]
+[해당하는 경우, 시간 제약이나 단계]
 ```
 
-### 5. Review and Refinement
+### 5. 검토 및 개선
 
-1. **Present Complete Prompt**
-   - Show the full research prompt
-   - Explain key elements and rationale
-   - Highlight any assumptions made
+1. **완전한 프롬프트 제시**
+   - 전체 연구 프롬프트 표시
+   - 주요 요소와 근거 설명
+   - 만들어진 가정 강조
 
-2. **Gather Feedback**
-   - Are the objectives clear and correct?
-   - Do the questions address all concerns?
-   - Is the scope appropriate?
-   - Are output requirements sufficient?
+2. **피드백 수집**
+   - 목표가 명확하고 정확한가?
+   - 질문들이 모든 우려사항을 다루는가?
+   - 범위가 적절한가?
+   - 산출물 요구사항이 충분한가?
 
-3. **Refine as Needed**
-   - Incorporate user feedback
-   - Adjust scope or focus
-   - Add missing elements
-   - Clarify ambiguities
+3. **필요에 따라 개선**
+   - 사용자 피드백 반영
+   - 범위나 초점 조정
+   - 누락된 요소 추가
+   - 모호함 명확화
 
-### 6. Next Steps Guidance
+### 6. 다음 단계 안내
 
-**Execution Options:**
+**실행 옵션:**
 
-1. **Use with AI Research Assistant**: Provide this prompt to an AI model with research capabilities
-2. **Guide Human Research**: Use as a framework for manual research efforts
-3. **Hybrid Approach**: Combine AI and human research using this structure
+1. **AI 연구 어시스턴트와 사용**: 연구 기능을 갖춘 AI 모델에 이 프롬프트 제공
+2. **인간 연구 안내**: 수동 연구 노력을 위한 프레임워크로 사용
+3. **하이브리드 접근**: 이 구조를 사용하여 AI와 인간 연구 결합
 
-**Integration Points:**
+**통합 지점:**
 
-- How findings will feed into next phases
-- Which team members should review results
-- How to validate findings
-- When to revisit or expand research
+- 발견사항이 다음 단계에 어떻게 반영될지
+- 어떤 팀원이 결과를 검토해야 하는지
+- 발견사항을 검증하는 방법
+- 언제 연구를 재검토하거나 확장할지
 
-## Important Notes
+## 중요 참고사항
 
-- The quality of the research prompt directly impacts the quality of insights gathered
-- Be specific rather than general in research questions
-- Consider both current state and future implications
-- Balance comprehensiveness with focus
-- Document assumptions and limitations clearly
-- Plan for iterative refinement based on initial findings
+- 연구 프롬프트의 품질이 수집되는 통찰의 품질에 직접적으로 영향을 미침
+- 연구 질문에서 일반적이기보다는 구체적으로 작성
+- 현재 상태와 미래 함의를 모두 고려
+- 포괄성과 초점 사이의 균형 유지
+- 가정과 한계를 명확하게 문서화
+- 초기 발견사항을 기반으로 한 반복적 개선 계획

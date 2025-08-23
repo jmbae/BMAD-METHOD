@@ -1,119 +1,119 @@
 <!-- Powered by BMAD™ Core -->
 
-# Advanced Elicitation Task
+# 고급 유도 질문 태스크
 
-## Purpose
+## 목적
 
-- Provide optional reflective and brainstorming actions to enhance content quality
-- Enable deeper exploration of ideas through structured elicitation techniques
-- Support iterative refinement through multiple analytical perspectives
-- Usable during template-driven document creation or any chat conversation
+- 콘텐츠 품질 향상을 위한 선택적 성찰 및 브레인스토밍 작업 제공
+- 구조화된 유도 질문 기법을 통한 아이디어의 깊이 있는 탐색 활성화
+- 다양한 분석적 관점을 통한 반복적 개선 지원
+- 템플릿 기반 문서 작성 또는 모든 채팅 대화에서 사용 가능
 
-## Usage Scenarios
+## 사용 시나리오
 
-### Scenario 1: Template Document Creation
+### 시나리오 1: 템플릿 문서 작성
 
-After outputting a section during document creation:
+문서 작성 중 섹션 출력 후:
 
-1. **Section Review**: Ask user to review the drafted section
-2. **Offer Elicitation**: Present 9 carefully selected elicitation methods
-3. **Simple Selection**: User types a number (0-8) to engage method, or 9 to proceed
-4. **Execute & Loop**: Apply selected method, then re-offer choices until user proceeds
+1. **섹션 검토**: 사용자에게 작성된 섹션 검토 요청
+2. **유도 질문 제공**: 신중히 선택된 9가지 유도 질문 방법 제시
+3. **간단한 선택**: 사용자가 숫자(0-8)를 입력하여 방법 선택, 또는 9를 입력하여 진행
+4. **실행 및 반복**: 선택된 방법 적용 후, 사용자가 진행할 때까지 선택 재제공
 
-### Scenario 2: General Chat Elicitation
+### 시나리오 2: 일반 채팅 유도 질문
 
-User can request advanced elicitation on any agent output:
+사용자가 모든 에이전트 출력에 대해 고급 유도 질문 요청 가능:
 
-- User says "do advanced elicitation" or similar
-- Agent selects 9 relevant methods for the context
-- Same simple 0-9 selection process
+- 사용자가 "고급 유도 질문 해줘" 또는 유사한 요청
+- 에이전트가 컨텍스트에 맞는 9가지 관련 방법 선택
+- 동일한 0-9 선택 프로세스
 
-## Task Instructions
+## 태스크 지침
 
-### 1. Intelligent Method Selection
+### 1. 지능적 방법 선택
 
-**Context Analysis**: Before presenting options, analyze:
+**컨텍스트 분석**: 옵션 제시 전 분석 사항:
 
-- **Content Type**: Technical specs, user stories, architecture, requirements, etc.
-- **Complexity Level**: Simple, moderate, or complex content
-- **Stakeholder Needs**: Who will use this information
-- **Risk Level**: High-impact decisions vs routine items
-- **Creative Potential**: Opportunities for innovation or alternatives
+- **콘텐츠 유형**: 기술 명세, 사용자 스토리, 아키텍처, 요구사항 등
+- **복잡성 수준**: 단순, 보통, 또는 복잡한 콘텐츠
+- **이해관계자 요구**: 이 정보를 사용할 사람들
+- **위험 수준**: 고영향 의사결정 vs 일상적 항목
+- **창의적 잠재력**: 혁신이나 대안을 위한 기회
 
-**Method Selection Strategy**:
+**방법 선택 전략**:
 
-1. **Always Include Core Methods** (choose 3-4):
-   - Expand or Contract for Audience
-   - Critique and Refine
-   - Identify Potential Risks
-   - Assess Alignment with Goals
+1. **핵심 방법 항상 포함** (3-4개 선택):
+   - 대상 청중에 따른 확장 또는 축약
+   - 비평 및 개선
+   - 잠재적 위험 식별
+   - 목표와의 일치성 평가
 
-2. **Context-Specific Methods** (choose 4-5):
-   - **Technical Content**: Tree of Thoughts, ReWOO, Meta-Prompting
-   - **User-Facing Content**: Agile Team Perspective, Stakeholder Roundtable
-   - **Creative Content**: Innovation Tournament, Escape Room Challenge
-   - **Strategic Content**: Red Team vs Blue Team, Hindsight Reflection
+2. **컨텍스트별 방법** (4-5개 선택):
+   - **기술적 콘텐츠**: 사고의 나무, ReWOO, 메타 프롬프팅
+   - **사용자 대상 콘텐츠**: 애자일 팀 관점, 이해관계자 원탁회의
+   - **창의적 콘텐츠**: 혁신 토너먼트, 방탈출 챌린지
+   - **전략적 콘텐츠**: 레드팀 vs 블루팀, 사후 성찰
 
-3. **Always Include**: "Proceed / No Further Actions" as option 9
+3. **항상 포함**: "진행 / 추가 조치 없음"을 9번 옵션으로
 
-### 2. Section Context and Review
+### 2. 섹션 컨텍스트 및 검토
 
-When invoked after outputting a section:
+섹션 출력 후 호출 시:
 
-1. **Provide Context Summary**: Give a brief 1-2 sentence summary of what the user should look for in the section just presented
+1. **컨텍스트 요약 제공**: 방금 제시된 섹션에서 사용자가 확인해야 할 사항에 대한 간단한 1-2문장 요약
 
-2. **Explain Visual Elements**: If the section contains diagrams, explain them briefly before offering elicitation options
+2. **시각적 요소 설명**: 섹션에 다이어그램이 포함된 경우, 유도 질문 옵션 제공 전에 간략히 설명
 
-3. **Clarify Scope Options**: If the section contains multiple distinct items, inform the user they can apply elicitation actions to:
-   - The entire section as a whole
-   - Individual items within the section (specify which item when selecting an action)
+3. **범위 옵션 명확화**: 섹션에 여러 개별 항목이 포함된 경우, 사용자가 유도 질문 작업을 다음에 적용할 수 있음을 알림:
+   - 전체 섹션 전체
+   - 섹션 내 개별 항목들 (작업 선택 시 어떤 항목인지 명시)
 
-### 3. Present Elicitation Options
+### 3. 유도 질문 옵션 제시
 
-**Review Request Process:**
+**검토 요청 프로세스:**
 
-- Ask the user to review the drafted section
-- In the SAME message, inform them they can suggest direct changes OR select an elicitation method
-- Present 9 intelligently selected methods (0-8) plus "Proceed" (9)
-- Keep descriptions short - just the method name
-- Await simple numeric selection
+- 사용자에게 작성된 섹션 검토 요청
+- 동일한 메시지에서 직접적인 변경 제안 또는 유도 질문 방법 선택 가능함을 알림
+- 지능적으로 선택된 9가지 방법(0-8)과 "진행"(9) 제시
+- 설명은 간단하게 - 방법 이름만
+- 간단한 숫자 선택 대기
 
-**Action List Presentation Format:**
+**작업 목록 제시 형식:**
 
 ```text
-**Advanced Elicitation Options**
-Choose a number (0-8) or 9 to proceed:
+**고급 유도 질문 옵션**
+숫자를 선택하세요 (0-8) 또는 9를 선택하여 진행:
 
-0. [Method Name]
-1. [Method Name]
-2. [Method Name]
-3. [Method Name]
-4. [Method Name]
-5. [Method Name]
-6. [Method Name]
-7. [Method Name]
-8. [Method Name]
-9. Proceed / No Further Actions
+0. [방법 이름]
+1. [방법 이름]
+2. [방법 이름]
+3. [방법 이름]
+4. [방법 이름]
+5. [방법 이름]
+6. [방법 이름]
+7. [방법 이름]
+8. [방법 이름]
+9. 진행 / 추가 조치 없음
 ```
 
-**Response Handling:**
+**응답 처리:**
 
-- **Numbers 0-8**: Execute the selected method, then re-offer the choice
-- **Number 9**: Proceed to next section or continue conversation
-- **Direct Feedback**: Apply user's suggested changes and continue
+- **숫자 0-8**: 선택된 방법 실행 후 선택 재제공
+- **숫자 9**: 다음 섹션으로 진행 또는 대화 계속
+- **직접 피드백**: 사용자의 제안된 변경사항 적용 후 계속
 
-### 4. Method Execution Framework
+### 4. 방법 실행 프레임워크
 
-**Execution Process:**
+**실행 프로세스:**
 
-1. **Retrieve Method**: Access the specific elicitation method from the elicitation-methods data file
-2. **Apply Context**: Execute the method from your current role's perspective
-3. **Provide Results**: Deliver insights, critiques, or alternatives relevant to the content
-4. **Re-offer Choice**: Present the same 9 options again until user selects 9 or gives direct feedback
+1. **방법 검색**: 유도 질문 방법 데이터 파일에서 특정 유도 질문 방법 접근
+2. **컨텍스트 적용**: 현재 역할의 관점에서 방법 실행
+3. **결과 제공**: 콘텐츠와 관련된 통찰, 비평 또는 대안 전달
+4. **선택 재제공**: 사용자가 9를 선택하거나 직접 피드백을 제공할 때까지 동일한 9가지 옵션 재제시
 
-**Execution Guidelines:**
+**실행 지침:**
 
-- **Be Concise**: Focus on actionable insights, not lengthy explanations
-- **Stay Relevant**: Tie all elicitation back to the specific content being analyzed
-- **Identify Personas**: For multi-persona methods, clearly identify which viewpoint is speaking
-- **Maintain Flow**: Keep the process moving efficiently
+- **간결성**: 실행 가능한 통찰에 집중, 장황한 설명 피함
+- **관련성 유지**: 모든 유도 질문을 분석 중인 특정 콘텐츠와 연결
+- **페르소나 식별**: 다중 페르소나 방법의 경우, 어떤 관점이 말하고 있는지 명확히 식별
+- **흐름 유지**: 프로세스를 효율적으로 진행

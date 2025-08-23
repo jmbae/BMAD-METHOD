@@ -1,5 +1,5 @@
 <!-- Powered by BMAD™ Core -->
 
-# User-Defined Preferred Patterns and Preferences
+# 사용자 정의 선호 패턴 및 설정
 
-None Listed
+없음

@@ -1,38 +1,38 @@
 <!-- Powered by BMAD™ Core -->
 
-# Brainstorming Techniques Data
+# 브레인스토밍 기법 데이터
 
-## Creative Expansion
+## 창의적 확장
 
-1. **What If Scenarios**: Ask one provocative question, get their response, then ask another
-2. **Analogical Thinking**: Give one example analogy, ask them to find 2-3 more
-3. **Reversal/Inversion**: Pose the reverse question, let them work through it
-4. **First Principles Thinking**: Ask "What are the fundamentals?" and guide them to break it down
+1. **가정 시나리오**: 도발적인 질문 하나를 던지고, 응답을 받은 후, 또 다른 질문 제기
+2. **유추적 사고**: 예시 유추 하나를 제시하고, 2-3개 더 찾아보도록 요청
+3. **역전/반전**: 반대 질문을 제기하고, 그들이 풀어나가도록 함
+4. **제1원칙 사고**: "기본 원리는 무엇인가?"를 묻고 분해하도록 안내
 
-## Structured Frameworks
+## 구조화된 프레임워크
 
-5. **SCAMPER Method**: Go through one letter at a time, wait for their ideas before moving to next
-6. **Six Thinking Hats**: Present one hat, ask for their thoughts, then move to next hat
-7. **Mind Mapping**: Start with central concept, ask them to suggest branches
+5. **SCAMPER 방법**: 한 번에 한 글자씩 진행하고, 다음으로 넘어가기 전에 아이디어를 기다림
+6. **여섯 개의 사고 모자**: 하나의 모자를 제시하고 생각을 묻고, 다음 모자로 이동
+7. **마인드 매핑**: 중심 개념으로 시작하여, 가지를 제안하도록 요청
 
-## Collaborative Techniques
+## 협력 기법
 
-8. **"Yes, And..." Building**: They give idea, you "yes and" it, they "yes and" back - alternate
-9. **Brainwriting/Round Robin**: They suggest idea, you build on it, ask them to build on yours
-10. **Random Stimulation**: Give one random prompt/word, ask them to make connections
+8. **"네, 그리고..." 확장**: 그들이 아이디어를 제시하면, 당신이 "네, 그리고"로 확장하고, 그들이 다시 "네, 그리고"로 응답 - 교대로 진행
+9. **브레인라이팅/라운드 로빈**: 그들이 아이디어를 제안하면, 당신이 발전시키고, 당신의 것을 발전시키도록 요청
+10. **무작위 자극**: 하나의 무작위 프롬프트/단어를 제시하고, 연결점을 찾도록 요청
 
-## Deep Exploration
+## 심화 탐구
 
-11. **Five Whys**: Ask "why" and wait for their answer before asking next "why"
-12. **Morphological Analysis**: Ask them to list parameters first, then explore combinations together
-13. **Provocation Technique (PO)**: Give one provocative statement, ask them to extract useful ideas
+11. **다섯 번의 왜**: "왜"를 묻고 다음 "왜"를 묻기 전에 답변을 기다림
+12. **형태학적 분석**: 먼저 매개변수를 나열하도록 요청한 다음, 함께 조합을 탐구
+13. **도발 기법 (PO)**: 도발적인 진술 하나를 제시하고, 유용한 아이디어를 추출하도록 요청
 
-## Advanced Techniques
+## 고급 기법
 
-14. **Forced Relationships**: Connect two unrelated concepts and ask them to find the bridge
-15. **Assumption Reversal**: Challenge their core assumptions and ask them to build from there
-16. **Role Playing**: Ask them to brainstorm from different stakeholder perspectives
-17. **Time Shifting**: "How would you solve this in 1995? 2030?"
-18. **Resource Constraints**: "What if you had only $10 and 1 hour?"
-19. **Metaphor Mapping**: Use extended metaphors to explore solutions
-20. **Question Storming**: Generate questions instead of answers first
+14. **강제 관계**: 관련 없는 두 개념을 연결하고 연결고리를 찾도록 요청
+15. **가정 역전**: 핵심 가정에 도전하고 거기서부터 구축하도록 요청
+16. **역할 연기**: 다양한 이해관계자 관점에서 브레인스토밍하도록 요청
+17. **시간 이동**: "1995년에는 이것을 어떻게 해결했을까? 2030년에는?"
+18. **자원 제약**: "10달러와 1시간만 있다면 어떻게 할까?"
+19. **은유 매핑**: 확장된 은유를 사용하여 해결책 탐구
+20. **질문 폭풍**: 먼저 답변 대신 질문을 생성

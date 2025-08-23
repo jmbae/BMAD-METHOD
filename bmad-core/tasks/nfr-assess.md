@@ -1,329 +1,329 @@
 <!-- Powered by BMAD™ Core -->
 
-# nfr-assess
+# NFR 평가
 
-Quick NFR validation focused on the core four: security, performance, reliability, maintainability.
+핵심 4가지에 집중한 빠른 NFR 검증: 보안, 성능, 신뢰성, 유지보수성.
 
-## Inputs
+## 입력값
 
 ```yaml
 required:
-  - story_id: '{epic}.{story}' # e.g., "1.3"
-  - story_path: `bmad-core/core-config.yaml` for the `devStoryLocation`
+  - story_id: '{epic}.{story}' # 예: "1.3"
+  - story_path: `devStoryLocation`을 위한 `bmad-core/core-config.yaml`
 
 optional:
-  - architecture_refs: `bmad-core/core-config.yaml` for the `architecture.architectureFile`
-  - technical_preferences: `bmad-core/core-config.yaml` for the `technicalPreferences`
-  - acceptance_criteria: From story file
+  - architecture_refs: `architecture.architectureFile`을 위한 `bmad-core/core-config.yaml`
+  - technical_preferences: `technicalPreferences`를 위한 `bmad-core/core-config.yaml`
+  - acceptance_criteria: 스토리 파일에서
 ```
 
-## Purpose
+## 목적
 
-Assess non-functional requirements for a story and generate:
+스토리에 대한 비기능적 요구사항을 평가하고 다음을 생성:
 
-1. YAML block for the gate file's `nfr_validation` section
-2. Brief markdown assessment saved to `qa.qaLocation/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md`
+1. 게이트 파일의 `nfr_validation` 섹션용 YAML 블록
+2. `qa.qaLocation/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md`에 저장되는 간단한 마크다운 평가
 
-## Process
+## 프로세스
 
-### 0. Fail-safe for Missing Inputs
+### 0. 누락된 입력에 대한 안전장치
 
-If story_path or story file can't be found:
+story_path나 스토리 파일을 찾을 수 없는 경우:
 
-- Still create assessment file with note: "Source story not found"
-- Set all selected NFRs to CONCERNS with notes: "Target unknown / evidence missing"
-- Continue with assessment to provide value
+- "소스 스토리를 찾을 수 없음" 메모와 함께 평가 파일을 여전히 생성
+- 선택된 모든 NFR을 "대상 알 수 없음 / 증거 누락" 메모와 함께 CONCERNS로 설정
+- 가치를 제공하기 위해 평가를 계속 진행
 
-### 1. Elicit Scope
+### 1. 범위 도출
 
-**Interactive mode:** Ask which NFRs to assess
-**Non-interactive mode:** Default to core four (security, performance, reliability, maintainability)
+**상호작용 모드:** 평가할 NFR을 묻기
+**비상호작용 모드:** 핵심 4가지로 기본 설정 (보안, 성능, 신뢰성, 유지보수성)
 
 ```text
-Which NFRs should I assess? (Enter numbers or press Enter for default)
-[1] Security (default)
-[2] Performance (default)
-[3] Reliability (default)
-[4] Maintainability (default)
-[5] Usability
-[6] Compatibility
-[7] Portability
+어떤 NFR을 평가해야 할까요? (숫자를 입력하거나 기본값을 위해 엔터를 누르세요)
+[1] 보안 (기본값)
+[2] 성능 (기본값)
+[3] 신뢰성 (기본값)
+[4] 유지보수성 (기본값)
+[5] 사용성
+[6] 호환성
+[7] 이식성
 [8] Functional Suitability
 
 > [Enter for 1-4]
 ```
 
-### 2. Check for Thresholds
+### 2. 임계값 확인
 
-Look for NFR requirements in:
+다음에서 NFR 요구사항 찾기:
 
-- Story acceptance criteria
-- `docs/architecture/*.md` files
+- 스토리 승인 기준
+- `docs/architecture/*.md` 파일
 - `docs/technical-preferences.md`
 
-**Interactive mode:** Ask for missing thresholds
-**Non-interactive mode:** Mark as CONCERNS with "Target unknown"
+**상호작용 모드:** 누락된 임계값 질문
+**비상호작용 모드:** "대상 알 수 없음"으로 CONCERNS 표시
 
 ```text
-No performance requirements found. What's your target response time?
-> 200ms for API calls
+성능 요구사항을 찾을 수 없습니다. 목표 응답 시간은 무엇입니까?
+> API 호출의 경우 200ms
 
-No security requirements found. Required auth method?
-> JWT with refresh tokens
+보안 요구사항을 찾을 수 없습니다. 필요한 인증 방법은?
+> 리프레시 토큰이 있는 JWT
 ```
 
-**Unknown targets policy:** If a target is missing and not provided, mark status as CONCERNS with notes: "Target unknown"
+**알 수 없는 대상 정책:** 대상이 누락되고 제공되지 않는 경우, "대상 알 수 없음" 메모와 함께 상태를 CONCERNS로 표시
 
-### 3. Quick Assessment
+### 3. 빠른 평가
 
-For each selected NFR, check:
+선택된 각 NFR에 대해 확인:
 
-- Is there evidence it's implemented?
-- Can we validate it?
-- Are there obvious gaps?
+- 구현되었다는 증거가 있는가?
+- 검증할 수 있는가?
+- 명백한 차이가 있는가?
 
-### 4. Generate Outputs
+### 4. 출력 생성
 
-## Output 1: Gate YAML Block
+## 출력 1: 게이트 YAML 블록
 
-Generate ONLY for NFRs actually assessed (no placeholders):
+실제로 평가된 NFR만 생성 (플레이스홀더 없음):
 
 ```yaml
-# Gate YAML (copy/paste):
+# 게이트 YAML (복사/붙여넣기):
 nfr_validation:
   _assessed: [security, performance, reliability, maintainability]
   security:
     status: CONCERNS
-    notes: 'No rate limiting on auth endpoints'
+    notes: '인증 엔드포인트에 속도 제한 없음'
   performance:
     status: PASS
-    notes: 'Response times < 200ms verified'
+    notes: '응답 시간 < 200ms 확인됨'
   reliability:
     status: PASS
-    notes: 'Error handling and retries implemented'
+    notes: '오류 처리 및 재시도 구현됨'
   maintainability:
     status: CONCERNS
-    notes: 'Test coverage at 65%, target is 80%'
+    notes: '테스트 커버리지 65%, 목표는 80%'
 ```
 
-## Deterministic Status Rules
+## 결정적 상태 규칙
 
-- **FAIL**: Any selected NFR has critical gap or target clearly not met
-- **CONCERNS**: No FAILs, but any NFR is unknown/partial/missing evidence
-- **PASS**: All selected NFRs meet targets with evidence
+- **FAIL**: 선택된 NFR에 중요한 차이가 있거나 대상이 명백히 충족되지 않음
+- **CONCERNS**: FAIL은 없지만 NFR이 알 수 없음/부분적/증거 누락
+- **PASS**: 선택된 모든 NFR이 증거와 함께 대상을 충족
 
-## Quality Score Calculation
+## 품질 점수 계산
 
 ```
 quality_score = 100
-- 20 for each FAIL attribute
-- 10 for each CONCERNS attribute
-Floor at 0, ceiling at 100
+- 각 FAIL 속성당 20점 감소
+- 각 CONCERNS 속성당 10점 감소
+최소 0, 최대 100
 ```
 
-If `technical-preferences.md` defines custom weights, use those instead.
+`technical-preferences.md`가 커스텀 가중치를 정의하는 경우, 대신 그것을 사용합니다.
 
-## Output 2: Brief Assessment Report
+## 출력 2: 간단한 평가 보고서
 
-**ALWAYS save to:** `qa.qaLocation/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md`
+**항상 저장:** `qa.qaLocation/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md`
 
 ```markdown
-# NFR Assessment: {epic}.{story}
+# NFR 평가: {epic}.{story}
 
-Date: {date}
-Reviewer: Quinn
+날짜: {date}
+검토자: Quinn
 
-<!-- Note: Source story not found (if applicable) -->
+<!-- 참고: 소스 스토리를 찾을 수 없음 (해당하는 경우) -->
 
-## Summary
+## 요약
 
-- Security: CONCERNS - Missing rate limiting
-- Performance: PASS - Meets <200ms requirement
-- Reliability: PASS - Proper error handling
-- Maintainability: CONCERNS - Test coverage below target
+- 보안: CONCERNS - 속도 제한 누락
+- 성능: PASS - <200ms 요구사항 충족
+- 신뢰성: PASS - 적절한 오류 처리
+- 유지보수성: CONCERNS - 테스트 커버리지가 목표 미달
 
-## Critical Issues
+## 중요한 문제
 
-1. **No rate limiting** (Security)
-   - Risk: Brute force attacks possible
-   - Fix: Add rate limiting middleware to auth endpoints
+1. **속도 제한 없음** (보안)
+   - 위험: 무차별 대입 공격 가능
+   - 수정: 인증 엔드포인트에 속도 제한 미들웨어 추가
 
-2. **Test coverage 65%** (Maintainability)
-   - Risk: Untested code paths
-   - Fix: Add tests for uncovered branches
+2. **테스트 커버리지 65%** (유지보수성)
+   - 위험: 테스트되지 않은 코드 경로
+   - 수정: 커버되지 않은 분기에 테스트 추가
 
-## Quick Wins
+## 빠른 개선
 
-- Add rate limiting: ~2 hours
-- Increase test coverage: ~4 hours
-- Add performance monitoring: ~1 hour
+- 속도 제한 추가: ~2시간
+- 테스트 커버리지 증가: ~4시간
+- 성능 모니터링 추가: ~1시간
 ```
 
-## Output 3: Story Update Line
+## 출력 3: 스토리 업데이트 라인
 
-**End with this line for the review task to quote:**
-
-```
-NFR assessment: qa.qaLocation/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md
-```
-
-## Output 4: Gate Integration Line
-
-**Always print at the end:**
+**검토 태스크가 인용할 수 있도록 이 라인으로 끝내기:**
 
 ```
-Gate NFR block ready → paste into qa.qaLocation/gates/{epic}.{story}-{slug}.yml under nfr_validation
+NFR 평가: qa.qaLocation/assessments/{epic}.{story}-nfr-{YYYYMMDD}.md
 ```
 
-## Assessment Criteria
+## 출력 4: 게이트 통합 라인
 
-### Security
+**끝에 항상 출력:**
 
-**PASS if:**
+```
+게이트 NFR 블록 준비 완료 → qa.qaLocation/gates/{epic}.{story}-{slug}.yml의 nfr_validation 아래에 붙여넣기
+```
 
-- Authentication implemented
-- Authorization enforced
-- Input validation present
-- No hardcoded secrets
+## 평가 기준
 
-**CONCERNS if:**
+### 보안
 
-- Missing rate limiting
-- Weak encryption
-- Incomplete authorization
+**PASS 조건:**
 
-**FAIL if:**
+- 인증 구현됨
+- 권한 부여 강제됨
+- 입력 검증 존재
+- 하드코딩된 비밀 없음
 
-- No authentication
-- Hardcoded credentials
-- SQL injection vulnerabilities
+**CONCERNS 조건:**
 
-### Performance
+- 속도 제한 누락
+- 약한 암호화
+- 불완전한 권한 부여
 
-**PASS if:**
+**FAIL 조건:**
 
-- Meets response time targets
-- No obvious bottlenecks
-- Reasonable resource usage
+- 인증 없음
+- 하드코딩된 자격 증명
+- SQL 인젝션 취약점
 
-**CONCERNS if:**
+### 성능
 
-- Close to limits
-- Missing indexes
-- No caching strategy
+**PASS 조건:**
 
-**FAIL if:**
+- 응답 시간 목표 충족
+- 명백한 병목 현상 없음
+- 합리적인 자원 사용
 
-- Exceeds response time limits
-- Memory leaks
-- Unoptimized queries
+**CONCERNS 조건:**
 
-### Reliability
+- 한계에 근접
+- 인덱스 누락
+- 캐싱 전략 없음
 
-**PASS if:**
+**FAIL 조건:**
 
-- Error handling present
-- Graceful degradation
-- Retry logic where needed
+- 응답 시간 한계 초과
+- 메모리 누수
+- 최적화되지 않은 쿼리
 
-**CONCERNS if:**
+### 신뢰성
 
-- Some error cases unhandled
-- No circuit breakers
-- Missing health checks
+**PASS 조건:**
 
-**FAIL if:**
+- 오류 처리 존재
+- 우아한 성능 저하
+- 필요한 곳에 재시도 로직
 
-- No error handling
-- Crashes on errors
-- No recovery mechanisms
+**CONCERNS 조건:**
 
-### Maintainability
+- 일부 오류 케이스 처리되지 않음
+- 서킷 브레이커 없음
+- 상태 확인 누락
 
-**PASS if:**
+**FAIL 조건:**
 
-- Test coverage meets target
-- Code well-structured
-- Documentation present
+- 오류 처리 없음
+- 오류 시 크래시
+- 복구 메커니즘 없음
 
-**CONCERNS if:**
+### 유지보수성
 
-- Test coverage below target
-- Some code duplication
-- Missing documentation
+**PASS 조건:**
 
-**FAIL if:**
+- 테스트 커버리지가 목표 충족
+- 코드 잘 구조화됨
+- 문서 존재
 
-- No tests
-- Highly coupled code
-- No documentation
+**CONCERNS 조건:**
 
-## Quick Reference
+- 테스트 커버리지가 목표 미달
+- 일부 코드 중복
+- 문서 누락
 
-### What to Check
+**FAIL 조건:**
+
+- 테스트 없음
+- 높은 결합도 코드
+- 문서 없음
+
+## 빠른 참조
+
+### 확인할 항목
 
 ```yaml
 security:
-  - Authentication mechanism
-  - Authorization checks
-  - Input validation
-  - Secret management
-  - Rate limiting
+  - 인증 메커니즘
+  - 권한 부여 확인
+  - 입력 검증
+  - 비밀 관리
+  - 속도 제한
 
 performance:
-  - Response times
-  - Database queries
-  - Caching usage
-  - Resource consumption
+  - 응답 시간
+  - 데이터베이스 쿼리
+  - 캐싱 사용
+  - 자원 소비
 
 reliability:
-  - Error handling
-  - Retry logic
-  - Circuit breakers
-  - Health checks
-  - Logging
+  - 오류 처리
+  - 재시도 로직
+  - 서킷 브레이커
+  - 상태 확인
+  - 로깅
 
 maintainability:
-  - Test coverage
-  - Code structure
-  - Documentation
-  - Dependencies
+  - 테스트 커버리지
+  - 코드 구조
+  - 문서
+  - 종속성
 ```
 
-## Key Principles
+## 핵심 원칙
 
-- Focus on the core four NFRs by default
-- Quick assessment, not deep analysis
-- Gate-ready output format
-- Brief, actionable findings
-- Skip what doesn't apply
-- Deterministic status rules for consistency
-- Unknown targets → CONCERNS, not guesses
+- 기본적으로 핵심 4개 NFR에 집중
+- 심층 분석이 아닌 빠른 평가
+- 게이트 준비 출력 형식
+- 간단하고 실행 가능한 발견사항
+- 적용되지 않는 것은 건너뛰기
+- 일관성을 위한 결정적 상태 규칙
+- 알 수 없는 대상 → 추측이 아닌 CONCERNS
 
 ---
 
-## Appendix: ISO 25010 Reference
+## 부록: ISO 25010 참조
 
 <details>
-<summary>Full ISO 25010 Quality Model (click to expand)</summary>
+<summary>전체 ISO 25010 품질 모델 (클릭하여 확장)</summary>
 
-### All 8 Quality Characteristics
+### 8가지 품질 특성
 
-1. **Functional Suitability**: Completeness, correctness, appropriateness
-2. **Performance Efficiency**: Time behavior, resource use, capacity
-3. **Compatibility**: Co-existence, interoperability
-4. **Usability**: Learnability, operability, accessibility
-5. **Reliability**: Maturity, availability, fault tolerance
-6. **Security**: Confidentiality, integrity, authenticity
-7. **Maintainability**: Modularity, reusability, testability
-8. **Portability**: Adaptability, installability
+1. **기능적 적합성**: 완전성, 정확성, 적절성
+2. **성능 효율성**: 시간 동작, 자원 사용, 용량
+3. **호환성**: 공존, 상호 운용성
+4. **사용성**: 학습 가능성, 조작 가능성, 접근성
+5. **신뢰성**: 성숙도, 가용성, 내결함성
+6. **보안**: 기밀성, 무결성, 진정성
+7. **유지보수성**: 모듈성, 재사용성, 테스트 가능성
+8. **이식성**: 적응성, 설치 가능성
 
-Use these when assessing beyond the core four.
+핵심 4개 이외의 평가 시 이를 사용하세요.
 
 </details>
 
 <details>
-<summary>Example: Deep Performance Analysis (click to expand)</summary>
+<summary>예시: 심층 성능 분석 (클릭하여 확장)</summary>
 
 ```yaml
 performance_deep_dive:
@@ -336,7 +336,7 @@ performance_deep_dive:
     missing_indexes: ['users.email', 'orders.user_id']
   caching:
     hit_rate: 0%
-    recommendation: 'Add Redis for session data'
+    recommendation: '세션 데이터를 위한 Redis 추가'
   load_test:
     max_rps: 150
     breaking_point: 200 rps
