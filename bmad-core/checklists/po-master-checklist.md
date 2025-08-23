@@ -1,52 +1,52 @@
 <!-- Powered by BMAD™ Core -->
 
-# Product Owner (PO) Master Validation Checklist
+# 제품 오너 (PO) 마스터 검증 체크리스트
 
-This checklist serves as a comprehensive framework for the Product Owner to validate project plans before development execution. It adapts intelligently based on project type (greenfield vs brownfield) and includes UI/UX considerations when applicable.
+이 체크리스트는 제품 오너가 개발 실행 전에 프로젝트 계획을 검증하는 포괄적인 프레임워크 역할을 합니다. 프로젝트 유형(그린필드 vs 브라운필드)에 따라 지능적으로 적응하며 해당하는 경우 UI/UX 고려사항을 포함합니다.
 
-[[LLM: INITIALIZATION INSTRUCTIONS - PO MASTER CHECKLIST
+[[LLM: 초기화 지시사항 - PO 마스터 체크리스트
 
-PROJECT TYPE DETECTION:
-First, determine the project type by checking:
+프로젝트 유형 감지:
+먼저 다음을 확인하여 프로젝트 유형을 결정하세요:
 
-1. Is this a GREENFIELD project (new from scratch)?
-   - Look for: New project initialization, no existing codebase references
-   - Check for: prd.md, architecture.md, new project setup stories
+1. 이것이 그린필드 프로젝트(처음부터 새로 시작)인가요?
+   - 찾을 것: 새 프로젝트 초기화, 기존 코드베이스 참조 없음
+   - 확인할 것: prd.md, architecture.md, 새 프로젝트 설정 스토리
 
-2. Is this a BROWNFIELD project (enhancing existing system)?
-   - Look for: References to existing codebase, enhancement/modification language
-   - Check for: brownfield-prd.md, brownfield-architecture.md, existing system analysis
+2. 이것이 브라운필드 프로젝트(기존 시스템 개선)인가요?
+   - 찾을 것: 기존 코드베이스 참조, 개선/수정 언어
+   - 확인할 것: brownfield-prd.md, brownfield-architecture.md, 기존 시스템 분석
 
-3. Does the project include UI/UX components?
-   - Check for: frontend-architecture.md, UI/UX specifications, design files
-   - Look for: Frontend stories, component specifications, user interface mentions
+3. 프로젝트에 UI/UX 구성 요소가 포함되어 있나요?
+   - 확인할 것: frontend-architecture.md, UI/UX 사양, 디자인 파일
+   - 찾을 것: 프론트엔드 스토리, 컴포넌트 사양, 사용자 인터페이스 언급
 
-DOCUMENT REQUIREMENTS:
-Based on project type, ensure you have access to:
+문서 요구사항:
+프로젝트 유형에 따라 다음에 대한 접근 권한이 있는지 확인하세요:
 
-For GREENFIELD projects:
+그린필드 프로젝트의 경우:
 
-- prd.md - The Product Requirements Document
-- architecture.md - The system architecture
-- frontend-architecture.md - If UI/UX is involved
-- All epic and story definitions
+- prd.md - 제품 요구사항 문서
+- architecture.md - 시스템 아키텍처
+- frontend-architecture.md - UI/UX가 관련된 경우
+- 모든 에픽 및 스토리 정의
 
-For BROWNFIELD projects:
+브라운필드 프로젝트의 경우:
 
-- brownfield-prd.md - The brownfield enhancement requirements
-- brownfield-architecture.md - The enhancement architecture
-- Existing project codebase access (CRITICAL - cannot proceed without this)
-- Current deployment configuration and infrastructure details
-- Database schemas, API documentation, monitoring setup
+- brownfield-prd.md - 브라운필드 개선 요구사항
+- brownfield-architecture.md - 개선 아키텍처
+- 기존 프로젝트 코드베이스 접근 (중요 - 이것 없이는 진행 불가)
+- 현재 배포 구성 및 인프라 세부사항
+- 데이터베이스 스키마, API 문서, 모니터링 설정
 
-SKIP INSTRUCTIONS:
+건너뛰기 지시사항:
 
-- Skip sections marked [[BROWNFIELD ONLY]] for greenfield projects
-- Skip sections marked [[GREENFIELD ONLY]] for brownfield projects
-- Skip sections marked [[UI/UX ONLY]] for backend-only projects
-- Note all skipped sections in your final report
+- 그린필드 프로젝트의 경우 [[BROWNFIELD ONLY]]로 표시된 섹션 건너뛰기
+- 브라운필드 프로젝트의 경우 [[GREENFIELD ONLY]]로 표시된 섹션 건너뛰기
+- 백엔드 전용 프로젝트의 경우 [[UI/UX ONLY]]로 표시된 섹션 건너뛰기
+- 최종 보고서에서 건너뛴 모든 섹션 기록
 
-VALIDATION APPROACH:
+검증 접근 방식:
 
 1. Deep Analysis - Thoroughly analyze each item against documentation
 2. Evidence-Based - Cite specific sections or code when validating
@@ -95,340 +95,340 @@ Ask the user if they want to work through the checklist:
 - [ ] Dependency conflicts or special requirements are noted
 - [ ] [[BROWNFIELD ONLY]] Version compatibility with existing stack verified
 
-## 2. INFRASTRUCTURE & DEPLOYMENT
+## 2. 인프라 & 배포
 
-[[LLM: Infrastructure must exist before use. For brownfield, must integrate with existing infrastructure without breaking it.]]
+[[LLM: 인프라는 사용 전에 존재해야 합니다. 브라운필드의 경우, 기존 시스템을 손상시키지 않고 기존 인프라와 통합해야 합니다.]]
 
-### 2.1 Database & Data Store Setup
+### 2.1 데이터베이스 & 데이터 저장소 설정
 
-- [ ] Database selection/setup occurs before any operations
-- [ ] Schema definitions are created before data operations
-- [ ] Migration strategies are defined if applicable
-- [ ] Seed data or initial data setup is included if needed
-- [ ] [[BROWNFIELD ONLY]] Database migration risks identified and mitigated
-- [ ] [[BROWNFIELD ONLY]] Backward compatibility ensured
+- [ ] 데이터 작업 전에 데이터베이스 선택/설정 발생
+- [ ] 데이터 작업 전에 스키마 정의 생성
+- [ ] 해당하는 경우 마이그레이션 전략 정의
+- [ ] 필요한 경우 시드 데이터 또는 초기 데이터 설정 포함
+- [ ] [[BROWNFIELD ONLY]] 데이터베이스 마이그레이션 위험 식별 및 완화
+- [ ] [[BROWNFIELD ONLY]] 역방향 호환성 보장
 
-### 2.2 API & Service Configuration
+### 2.2 API & 서비스 구성
 
-- [ ] API frameworks are set up before implementing endpoints
-- [ ] Service architecture is established before implementing services
-- [ ] Authentication framework is set up before protected routes
-- [ ] Middleware and common utilities are created before use
-- [ ] [[BROWNFIELD ONLY]] API compatibility with existing system maintained
-- [ ] [[BROWNFIELD ONLY]] Integration with existing authentication preserved
+- [ ] 엔드포인트 구현 전에 API 프레임워크 설정
+- [ ] 서비스 구현 전에 서비스 아키텍처 수립
+- [ ] 보호된 라우트 전에 인증 프레임워크 설정
+- [ ] 사용 전에 미들웨어 및 공통 유틸리티 생성
+- [ ] [[BROWNFIELD ONLY]] 기존 시스템과의 API 호환성 유지
+- [ ] [[BROWNFIELD ONLY]] 기존 인증과의 통합 보존
 
-### 2.3 Deployment Pipeline
+### 2.3 배포 파이프라인
 
-- [ ] CI/CD pipeline is established before deployment actions
-- [ ] Infrastructure as Code (IaC) is set up before use
-- [ ] Environment configurations are defined early
-- [ ] Deployment strategies are defined before implementation
-- [ ] [[BROWNFIELD ONLY]] Deployment minimizes downtime
-- [ ] [[BROWNFIELD ONLY]] Blue-green or canary deployment implemented
+- [ ] 배포 작업 전에 CI/CD 파이프라인 수립
+- [ ] 사용 전에 Infrastructure as Code (IaC) 설정
+- [ ] 초기에 환경 구성 정의
+- [ ] 구현 전에 배포 전략 정의
+- [ ] [[BROWNFIELD ONLY]] 배포 시 다운타임 최소화
+- [ ] [[BROWNFIELD ONLY]] 블루-그린 또는 카나리 배포 구현
 
-### 2.4 Testing Infrastructure
+### 2.4 테스팅 인프라
 
-- [ ] Testing frameworks are installed before writing tests
-- [ ] Test environment setup precedes test implementation
-- [ ] Mock services or data are defined before testing
-- [ ] [[BROWNFIELD ONLY]] Regression testing covers existing functionality
-- [ ] [[BROWNFIELD ONLY]] Integration testing validates new-to-existing connections
+- [ ] 테스트 작성 전에 테스팅 프레임워크 설치
+- [ ] 테스트 구현 전에 테스트 환경 설정
+- [ ] 테스팅 전에 모의 서비스 또는 데이터 정의
+- [ ] [[BROWNFIELD ONLY]] 회귀 테스팅이 기존 기능을 커버
+- [ ] [[BROWNFIELD ONLY]] 통합 테스팅이 신규-기존 연결을 검증
 
-## 3. EXTERNAL DEPENDENCIES & INTEGRATIONS
+## 3. 외부 종속성 & 통합
 
-[[LLM: External dependencies often block progress. For brownfield, ensure new dependencies don't conflict with existing ones.]]
+[[LLM: 외부 종속성은 종종 진행을 차단합니다. 브라운필드의 경우, 새로운 종속성이 기존 것들과 충돌하지 않는지 확인하세요.]]
 
-### 3.1 Third-Party Services
+### 3.1 서드파티 서비스
 
-- [ ] Account creation steps are identified for required services
-- [ ] API key acquisition processes are defined
-- [ ] Steps for securely storing credentials are included
-- [ ] Fallback or offline development options are considered
-- [ ] [[BROWNFIELD ONLY]] Compatibility with existing services verified
-- [ ] [[BROWNFIELD ONLY]] Impact on existing integrations assessed
+- [ ] 필요한 서비스에 대한 계정 생성 단계 식별
+- [ ] API 키 획득 프로세스 정의
+- [ ] 자격 증명을 안전하게 저장하는 단계 포함
+- [ ] 폴백 또는 오프라인 개발 옵션 고려
+- [ ] [[BROWNFIELD ONLY]] 기존 서비스와의 호환성 확인
+- [ ] [[BROWNFIELD ONLY]] 기존 통합에 대한 영향 평가
 
-### 3.2 External APIs
+### 3.2 외부 API
 
-- [ ] Integration points with external APIs are clearly identified
-- [ ] Authentication with external services is properly sequenced
-- [ ] API limits or constraints are acknowledged
-- [ ] Backup strategies for API failures are considered
-- [ ] [[BROWNFIELD ONLY]] Existing API dependencies maintained
+- [ ] 외부 API와의 통합 지점 명확히 식별
+- [ ] 외부 서비스와의 인증이 적절히 순서화됨
+- [ ] API 제한 또는 제약사항 인정
+- [ ] API 실패에 대한 백업 전략 고려
+- [ ] [[BROWNFIELD ONLY]] 기존 API 종속성 유지
 
-### 3.3 Infrastructure Services
+### 3.3 인프라 서비스
 
-- [ ] Cloud resource provisioning is properly sequenced
-- [ ] DNS or domain registration needs are identified
-- [ ] Email or messaging service setup is included if needed
-- [ ] CDN or static asset hosting setup precedes their use
-- [ ] [[BROWNFIELD ONLY]] Existing infrastructure services preserved
+- [ ] 클라우드 리소스 프로비저닝이 적절히 순서화됨
+- [ ] DNS 또는 도메인 등록 니즈 식별
+- [ ] 필요한 경우 이메일 또는 메시징 서비스 설정 포함
+- [ ] CDN 또는 정적 자산 호스팅 설정이 사용 전에 수행됨
+- [ ] [[BROWNFIELD ONLY]] 기존 인프라 서비스 보존
 
-## 4. UI/UX CONSIDERATIONS [[UI/UX ONLY]]
+## 4. UI/UX 고려사항 [[UI/UX ONLY]]
 
-[[LLM: Only evaluate this section if the project includes user interface components. Skip entirely for backend-only projects.]]
+[[LLM: 프로젝트에 사용자 인터페이스 구성 요소가 포함된 경우에만 이 섹션을 평가하세요. 백엔드 전용 프로젝트의 경우 완전히 건너뛰세요.]]
 
-### 4.1 Design System Setup
+### 4.1 디자인 시스템 설정
 
-- [ ] UI framework and libraries are selected and installed early
-- [ ] Design system or component library is established
-- [ ] Styling approach (CSS modules, styled-components, etc.) is defined
-- [ ] Responsive design strategy is established
-- [ ] Accessibility requirements are defined upfront
+- [ ] UI 프레임워크와 라이브러리가 초기에 선택되고 설치됨
+- [ ] 디자인 시스템 또는 컴포넌트 라이브러리 수립
+- [ ] 스타일링 접근법 (CSS 모듈, styled-components 등) 정의
+- [ ] 반응형 디자인 전략 수립
+- [ ] 접근성 요구사항이 사전에 정의됨
 
-### 4.2 Frontend Infrastructure
+### 4.2 프론트엔드 인프라
 
-- [ ] Frontend build pipeline is configured before development
-- [ ] Asset optimization strategy is defined
-- [ ] Frontend testing framework is set up
-- [ ] Component development workflow is established
-- [ ] [[BROWNFIELD ONLY]] UI consistency with existing system maintained
+- [ ] 개발 전에 프론트엔드 빌드 파이프라인 구성
+- [ ] 자산 최적화 전략 정의
+- [ ] 프론트엔드 테스팅 프레임워크 설정
+- [ ] 컴포넌트 개발 워크플로우 수립
+- [ ] [[BROWNFIELD ONLY]] 기존 시스템과의 UI 일관성 유지
 
-### 4.3 User Experience Flow
+### 4.3 사용자 경험 플로우
 
-- [ ] User journeys are mapped before implementation
-- [ ] Navigation patterns are defined early
-- [ ] Error states and loading states are planned
-- [ ] Form validation patterns are established
-- [ ] [[BROWNFIELD ONLY]] Existing user workflows preserved or migrated
+- [ ] 구현 전에 사용자 여정 매핑
+- [ ] 초기에 내비게이션 패턴 정의
+- [ ] 오류 상태와 로딩 상태 계획
+- [ ] 폼 유효성 검사 패턴 수립
+- [ ] [[BROWNFIELD ONLY]] 기존 사용자 워크플로우 보존 또는 마이그레이션
 
-## 5. USER/AGENT RESPONSIBILITY
+## 5. 사용자/에이전트 책임
 
-[[LLM: Clear ownership prevents confusion. Ensure tasks are assigned appropriately based on what only humans can do.]]
+[[LLM: 명확한 소유권은 혼란을 방지합니다. 인간만이 할 수 있는 작업을 기반으로 작업이 적절히 할당되었는지 확인하세요.]]
 
-### 5.1 User Actions
+### 5.1 사용자 행동
 
-- [ ] User responsibilities limited to human-only tasks
-- [ ] Account creation on external services assigned to users
-- [ ] Purchasing or payment actions assigned to users
-- [ ] Credential provision appropriately assigned to users
+- [ ] 사용자 책임이 인간만의 작업으로 제한됨
+- [ ] 외부 서비스의 계정 생성이 사용자에게 할당됨
+- [ ] 구매 또는 결제 행동이 사용자에게 할당됨
+- [ ] 자격 증명 제공이 사용자에게 적절히 할당됨
 
-### 5.2 Developer Agent Actions
+### 5.2 개발자 에이전트 행동
 
-- [ ] All code-related tasks assigned to developer agents
-- [ ] Automated processes identified as agent responsibilities
-- [ ] Configuration management properly assigned
-- [ ] Testing and validation assigned to appropriate agents
+- [ ] 모든 코드 관련 작업이 개발자 에이전트에게 할당됨
+- [ ] 자동화된 프로세스가 에이전트 책임으로 식별됨
+- [ ] 구성 관리가 적절히 할당됨
+- [ ] 테스팅과 검증이 적절한 에이전트에게 할당됨
 
-## 6. FEATURE SEQUENCING & DEPENDENCIES
+## 6. 기능 순서 & 종속성
 
-[[LLM: Dependencies create the critical path. For brownfield, ensure new features don't break existing ones.]]
+[[LLM: 종속성은 중요 경로를 생성합니다. 브라운필드의 경우, 새로운 기능이 기존 기능을 손상시키지 않는지 확인하세요.]]
 
-### 6.1 Functional Dependencies
+### 6.1 기능적 종속성
 
-- [ ] Features depending on others are sequenced correctly
-- [ ] Shared components are built before their use
-- [ ] User flows follow logical progression
-- [ ] Authentication features precede protected features
-- [ ] [[BROWNFIELD ONLY]] Existing functionality preserved throughout
+- [ ] 다른 기능에 의존하는 기능이 올바르게 순서화됨
+- [ ] 공유 컴포넌트가 사용 전에 구축됨
+- [ ] 사용자 플로우가 논리적 진행을 따름
+- [ ] 인증 기능이 보호된 기능보다 앞섬
+- [ ] [[BROWNFIELD ONLY]] 기존 기능이 전체적으로 보존됨
 
-### 6.2 Technical Dependencies
+### 6.2 기술적 종속성
 
-- [ ] Lower-level services built before higher-level ones
-- [ ] Libraries and utilities created before their use
-- [ ] Data models defined before operations on them
-- [ ] API endpoints defined before client consumption
-- [ ] [[BROWNFIELD ONLY]] Integration points tested at each step
+- [ ] 하위 수준 서비스가 상위 수준보다 먼저 구축됨
+- [ ] 라이브러리와 유틸리티가 사용 전에 생성됨
+- [ ] 데이터 모델이 작업 전에 정의됨
+- [ ] API 엔드포인트가 클라이언트 사용 전에 정의됨
+- [ ] [[BROWNFIELD ONLY]] 통합 지점이 각 단계에서 테스트됨
 
-### 6.3 Cross-Epic Dependencies
+### 6.3 교차 에픽 종속성
 
-- [ ] Later epics build upon earlier epic functionality
-- [ ] No epic requires functionality from later epics
-- [ ] Infrastructure from early epics utilized consistently
-- [ ] Incremental value delivery maintained
-- [ ] [[BROWNFIELD ONLY]] Each epic maintains system integrity
+- [ ] 나중 에픽이 이전 에픽 기능을 기반으로 구축됨
+- [ ] 어떤 에픽도 나중 에픽의 기능을 요구하지 않음
+- [ ] 초기 에픽의 인프라가 일관되게 활용됨
+- [ ] 점진적 가치 전달 유지
+- [ ] [[BROWNFIELD ONLY]] 각 에픽이 시스템 무결성 유지
 
-## 7. RISK MANAGEMENT [[BROWNFIELD ONLY]]
+## 7. 위험 관리 [[BROWNFIELD ONLY]]
 
-[[LLM: This section is CRITICAL for brownfield projects. Think pessimistically about what could break.]]
+[[LLM: 이 섹션은 브라운필드 프로젝트에 매우 중요합니다. 무엇이 깨질 수 있는지에 대해 비관적으로 생각하세요.]]
 
-### 7.1 Breaking Change Risks
+### 7.1 파괴적 변경 위험
 
-- [ ] Risk of breaking existing functionality assessed
-- [ ] Database migration risks identified and mitigated
-- [ ] API breaking change risks evaluated
-- [ ] Performance degradation risks identified
-- [ ] Security vulnerability risks evaluated
+- [ ] 기존 기능을 손상시킬 위험 평가
+- [ ] 데이터베이스 마이그레이션 위험 식별 및 완화
+- [ ] API 파괴적 변경 위험 평가
+- [ ] 성능 저하 위험 식별
+- [ ] 보안 취약점 위험 평가
 
-### 7.2 Rollback Strategy
+### 7.2 롤백 전략
 
-- [ ] Rollback procedures clearly defined per story
-- [ ] Feature flag strategy implemented
-- [ ] Backup and recovery procedures updated
-- [ ] Monitoring enhanced for new components
-- [ ] Rollback triggers and thresholds defined
+- [ ] 스토리별로 롤백 절차 명확히 정의
+- [ ] 기능 플래그 전략 구현
+- [ ] 백업 및 복구 절차 업데이트
+- [ ] 새 컴포넌트에 대한 모니터링 강화
+- [ ] 롤백 트리거와 임계값 정의
 
-### 7.3 User Impact Mitigation
+### 7.3 사용자 영향 완화
 
-- [ ] Existing user workflows analyzed for impact
-- [ ] User communication plan developed
-- [ ] Training materials updated
-- [ ] Support documentation comprehensive
-- [ ] Migration path for user data validated
+- [ ] 기존 사용자 워크플로우의 영향 분석
+- [ ] 사용자 소통 계획 개발
+- [ ] 교육 자료 업데이트
+- [ ] 지원 문서 포괄적 작성
+- [ ] 사용자 데이터 마이그레이션 경로 검증
 
-## 8. MVP SCOPE ALIGNMENT
+## 8. MVP 범위 정렬
 
-[[LLM: MVP means MINIMUM viable product. For brownfield, ensure enhancements are truly necessary.]]
+[[LLM: MVP는 최소한의 실행 가능한 제품을 의미합니다. 브라운필드의 경우, 개선사항이 진정으로 필요한지 확인하세요.]]
 
-### 8.1 Core Goals Alignment
+### 8.1 핵심 목표 정렬
 
-- [ ] All core goals from PRD are addressed
-- [ ] Features directly support MVP goals
-- [ ] No extraneous features beyond MVP scope
-- [ ] Critical features prioritized appropriately
-- [ ] [[BROWNFIELD ONLY]] Enhancement complexity justified
+- [ ] PRD의 모든 핵심 목표가 다뤄짐
+- [ ] 기능이 MVP 목표를 직접 지원함
+- [ ] MVP 범위를 넘어서는 불필요한 기능 없음
+- [ ] 중요 기능이 적절히 우선순위화됨
+- [ ] [[BROWNFIELD ONLY]] 개선 복잡성이 정당화됨
 
-### 8.2 User Journey Completeness
+### 8.2 사용자 여정 완전성
 
-- [ ] All critical user journeys fully implemented
-- [ ] Edge cases and error scenarios addressed
-- [ ] User experience considerations included
-- [ ] [[UI/UX ONLY]] Accessibility requirements incorporated
-- [ ] [[BROWNFIELD ONLY]] Existing workflows preserved or improved
+- [ ] 모든 중요 사용자 여정이 완전히 구현됨
+- [ ] 엣지 케이스와 오류 시나리오가 다뤄짐
+- [ ] 사용자 경험 고려사항 포함
+- [ ] [[UI/UX ONLY]] 접근성 요구사항 통합
+- [ ] [[BROWNFIELD ONLY]] 기존 워크플로우 보존 또는 개선
 
-### 8.3 Technical Requirements
+### 8.3 기술적 요구사항
 
-- [ ] All technical constraints from PRD addressed
-- [ ] Non-functional requirements incorporated
-- [ ] Architecture decisions align with constraints
-- [ ] Performance considerations addressed
-- [ ] [[BROWNFIELD ONLY]] Compatibility requirements met
+- [ ] PRD의 모든 기술적 제약사항 다뤄짐
+- [ ] 비기능 요구사항 통합
+- [ ] 아키텍처 결정이 제약사항과 정렬됨
+- [ ] 성능 고려사항 다뤄짐
+- [ ] [[BROWNFIELD ONLY]] 호환성 요구사항 충족
 
-## 9. DOCUMENTATION & HANDOFF
+## 9. 문서화 & 인수인계
 
-[[LLM: Good documentation enables smooth development. For brownfield, documentation of integration points is critical.]]
+[[LLM: 좋은 문서화는 원활한 개발을 가능하게 합니다. 브라운필드의 경우, 통합 지점의 문서화가 중요합니다.]]
 
-### 9.1 Developer Documentation
+### 9.1 개발자 문서화
 
-- [ ] API documentation created alongside implementation
-- [ ] Setup instructions are comprehensive
-- [ ] Architecture decisions documented
-- [ ] Patterns and conventions documented
-- [ ] [[BROWNFIELD ONLY]] Integration points documented in detail
+- [ ] API 문서가 구현과 함께 생성됨
+- [ ] 설정 지침이 포괄적임
+- [ ] 아키텍처 결정이 문서화됨
+- [ ] 패턴과 관례가 문서화됨
+- [ ] [[BROWNFIELD ONLY]] 통합 지점이 상세히 문서화됨
 
-### 9.2 User Documentation
+### 9.2 사용자 문서화
 
-- [ ] User guides or help documentation included if required
-- [ ] Error messages and user feedback considered
-- [ ] Onboarding flows fully specified
-- [ ] [[BROWNFIELD ONLY]] Changes to existing features documented
+- [ ] 필요한 경우 사용자 가이드 또는 도움말 문서 포함
+- [ ] 오류 메시지와 사용자 피드백 고려
+- [ ] 온보딩 플로우가 완전히 명시됨
+- [ ] [[BROWNFIELD ONLY]] 기존 기능에 대한 변경사항 문서화
 
-### 9.3 Knowledge Transfer
+### 9.3 지식 전수
 
-- [ ] [[BROWNFIELD ONLY]] Existing system knowledge captured
-- [ ] [[BROWNFIELD ONLY]] Integration knowledge documented
-- [ ] Code review knowledge sharing planned
-- [ ] Deployment knowledge transferred to operations
-- [ ] Historical context preserved
+- [ ] [[BROWNFIELD ONLY]] 기존 시스템 지식 캡처
+- [ ] [[BROWNFIELD ONLY]] 통합 지식 문서화
+- [ ] 코드 리뷰 지식 공유 계획
+- [ ] 운영팀에 배포 지식 전수
+- [ ] 역사적 컨텍스트 보존
 
-## 10. POST-MVP CONSIDERATIONS
+## 10. MVP 이후 고려사항
 
-[[LLM: Planning for success prevents technical debt. For brownfield, ensure enhancements don't limit future growth.]]
+[[LLM: 성공을 위한 계획은 기술 부채를 방지합니다. 브라운필드의 경우, 개선사항이 미래 성장을 제한하지 않는지 확인하세요.]]
 
-### 10.1 Future Enhancements
+### 10.1 향후 개선사항
 
-- [ ] Clear separation between MVP and future features
-- [ ] Architecture supports planned enhancements
-- [ ] Technical debt considerations documented
-- [ ] Extensibility points identified
-- [ ] [[BROWNFIELD ONLY]] Integration patterns reusable
+- [ ] MVP와 향후 기능 간의 명확한 분리
+- [ ] 아키텍처가 계획된 개선사항을 지원함
+- [ ] 기술 부채 고려사항 문서화
+- [ ] 확장성 지점 식별
+- [ ] [[BROWNFIELD ONLY]] 통합 패턴의 재사용 가능성
 
-### 10.2 Monitoring & Feedback
+### 10.2 모니터링 & 피드백
 
-- [ ] Analytics or usage tracking included if required
-- [ ] User feedback collection considered
-- [ ] Monitoring and alerting addressed
-- [ ] Performance measurement incorporated
-- [ ] [[BROWNFIELD ONLY]] Existing monitoring preserved/enhanced
+- [ ] 필요한 경우 분석 또는 사용 추적 포함
+- [ ] 사용자 피드백 수집 고려
+- [ ] 모니터링과 알림 다뤄짐
+- [ ] 성능 측정 통합
+- [ ] [[BROWNFIELD ONLY]] 기존 모니터링 보존/강화
 
-## VALIDATION SUMMARY
+## 검증 요약
 
-[[LLM: FINAL PO VALIDATION REPORT GENERATION
+[[LLM: 최종 PO 검증 보고서 생성
 
-Generate a comprehensive validation report that adapts to project type:
+프로젝트 유형에 적응하는 포괄적인 검증 보고서 생성:
 
-1. Executive Summary
-   - Project type: [Greenfield/Brownfield] with [UI/No UI]
-   - Overall readiness (percentage)
-   - Go/No-Go recommendation
-   - Critical blocking issues count
-   - Sections skipped due to project type
+1. 요약 보고서
+   - 프로젝트 유형: [그린필드/브라운필드] with [UI/No UI]
+   - 전반적인 준비도 (퍼센트)
+   - Go/No-Go 권장사항
+   - 중요 차단 이슈 수
+   - 프로젝트 유형으로 인해 건너뛴 섹션
 
-2. Project-Specific Analysis
+2. 프로젝트별 분석
 
-   FOR GREENFIELD:
-   - Setup completeness
-   - Dependency sequencing
-   - MVP scope appropriateness
-   - Development timeline feasibility
+   그린필드의 경우:
+   - 설정 완성도
+   - 종속성 순서화
+   - MVP 범위 적절성
+   - 개발 타임라인 실현 가능성
 
-   FOR BROWNFIELD:
-   - Integration risk level (High/Medium/Low)
-   - Existing system impact assessment
-   - Rollback readiness
-   - User disruption potential
+   브라운필드의 경우:
+   - 통합 위험 수준 (높음/중간/낮음)
+   - 기존 시스템 영향 평가
+   - 롤백 준비도
+   - 사용자 중단 가능성
 
-3. Risk Assessment
-   - Top 5 risks by severity
-   - Mitigation recommendations
-   - Timeline impact of addressing issues
-   - [BROWNFIELD] Specific integration risks
+3. 위험 평가
+   - 심각도별 상위 5개 위험
+   - 완화 권장사항
+   - 이슈 해결의 타임라인 영향
+   - [브라운필드] 특정 통합 위험
 
-4. MVP Completeness
-   - Core features coverage
-   - Missing essential functionality
-   - Scope creep identified
-   - True MVP vs over-engineering
+4. MVP 완성도
+   - 핵심 기능 커버리지
+   - 빠진 필수 기능
+   - 범위 크리프 식별
+   - 진정한 MVP vs 과도한 엔지니어링
 
-5. Implementation Readiness
-   - Developer clarity score (1-10)
-   - Ambiguous requirements count
-   - Missing technical details
-   - [BROWNFIELD] Integration point clarity
+5. 구현 준비도
+   - 개발자 명확성 점수 (1-10)
+   - 모호한 요구사항 수
+   - 빠진 기술적 세부사항
+   - [브라운필드] 통합 지점 명확성
 
-6. Recommendations
-   - Must-fix before development
-   - Should-fix for quality
-   - Consider for improvement
-   - Post-MVP deferrals
+6. 권장사항
+   - 개발 전 반드시 수정
+   - 품질을 위해 수정해야 함
+   - 개선을 위해 고려
+   - MVP 이후 연기
 
-7. [BROWNFIELD ONLY] Integration Confidence
-   - Confidence in preserving existing functionality
-   - Rollback procedure completeness
-   - Monitoring coverage for integration points
-   - Support team readiness
+7. [브라운필드 전용] 통합 신뢰도
+   - 기존 기능 보존에 대한 신뢰도
+   - 롤백 절차 완성도
+   - 통합 지점에 대한 모니터링 커버리지
+   - 지원팀 준비도
 
-After presenting the report, ask if the user wants:
+보고서 제시 후, 사용자에게 다음을 원하는지 물어보세요:
 
-- Detailed analysis of any failed sections
-- Specific story reordering suggestions
-- Risk mitigation strategies
-- [BROWNFIELD] Integration risk deep-dive]]
+- 실패한 섹션의 상세 분석
+- 특정 스토리 재정렬 제안
+- 위험 완화 전략
+- [브라운필드] 통합 위험 심층 분석]]
 
-### Category Statuses
+### 카테고리 상태
 
-| Category                                | Status | Critical Issues |
-| --------------------------------------- | ------ | --------------- |
-| 1. Project Setup & Initialization       | _TBD_  |                 |
-| 2. Infrastructure & Deployment          | _TBD_  |                 |
-| 3. External Dependencies & Integrations | _TBD_  |                 |
-| 4. UI/UX Considerations                 | _TBD_  |                 |
-| 5. User/Agent Responsibility            | _TBD_  |                 |
-| 6. Feature Sequencing & Dependencies    | _TBD_  |                 |
-| 7. Risk Management (Brownfield)         | _TBD_  |                 |
-| 8. MVP Scope Alignment                  | _TBD_  |                 |
-| 9. Documentation & Handoff              | _TBD_  |                 |
-| 10. Post-MVP Considerations             | _TBD_  |                 |
+| 카테고리                    | 상태  | 중요 이슈 |
+| --------------------------- | ----- | --------- |
+| 1. 프로젝트 설정 & 초기화   | _TBD_ |           |
+| 2. 인프라 & 배포            | _TBD_ |           |
+| 3. 외부 종속성 & 통합       | _TBD_ |           |
+| 4. UI/UX 고려사항           | _TBD_ |           |
+| 5. 사용자/에이전트 책임     | _TBD_ |           |
+| 6. 기능 순서 & 종속성       | _TBD_ |           |
+| 7. 위험 관리 (브라운필드)   | _TBD_ |           |
+| 8. MVP 범위 정렬            | _TBD_ |           |
+| 9. 문서화 & 인수인계        | _TBD_ |           |
+| 10. MVP 이후 고려사항       | _TBD_ |           |
 
-### Critical Deficiencies
+### 중요 결함
 
-(To be populated during validation)
+(검증 중에 채워질 예정)
 
-### Recommendations
+### 권장사항
 
-(To be populated during validation)
+(검증 중에 채워질 예정)
 
-### Final Decision
+### 최종 결정
 
-- **APPROVED**: The plan is comprehensive, properly sequenced, and ready for implementation.
-- **CONDITIONAL**: The plan requires specific adjustments before proceeding.
-- **REJECTED**: The plan requires significant revision to address critical deficiencies.
+- **승인됨**: 계획이 포괄적이고 적절히 순서화되어 구현 준비가 완료됨.
+- **조건부**: 계획이 진행하기 전에 특정 조정이 필요함.
+- **거부됨**: 계획이 중요한 결함을 해결하기 위한 상당한 수정이 필요함.

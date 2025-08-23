@@ -1,440 +1,441 @@
 <!-- Powered by BMAD™ Core -->
 
-# Architect Solution Validation Checklist
+# 아키텍트 솔루션 검증 체크리스트
 
-This checklist serves as a comprehensive framework for the Architect to validate the technical design and architecture before development execution. The Architect should systematically work through each item, ensuring the architecture is robust, scalable, secure, and aligned with the product requirements.
+이 체크리스트는 아키텍트가 개발 실행 전에 기술 설계와 아키텍처를 검증하기 위한 포괄적인 프레임워크 역할을 합니다. 아키텍트는 각 항목을 체계적으로 검토하여 아키텍처가 견고하고, 확장 가능하며, 안전하고, 제품 요구사항과 일치하는지 확인해야 합니다.
 
-[[LLM: INITIALIZATION INSTRUCTIONS - REQUIRED ARTIFACTS
+[[LLM: 초기화 지시사항 - 필수 아티팩트
 
-Before proceeding with this checklist, ensure you have access to:
+이 체크리스트를 진행하기 전에 다음에 대한 접근 권한이 있는지 확인하세요:
 
-1. architecture.md - The primary architecture document (check docs/architecture.md)
-2. prd.md - Product Requirements Document for requirements alignment (check docs/prd.md)
-3. frontend-architecture.md or fe-architecture.md - If this is a UI project (check docs/frontend-architecture.md)
-4. Any system diagrams referenced in the architecture
-5. API documentation if available
-6. Technology stack details and version specifications
+1. architecture.md - 주요 아키텍처 문서 (docs/architecture.md 확인)
+2. prd.md - 요구사항 정렬을 위한 제품 요구사항 문서 (docs/prd.md 확인)
+3. frontend-architecture.md 또는 fe-architecture.md - UI 프로젝트인 경우 (docs/frontend-architecture.md 확인)
+4. 아키텍처에서 참조되는 모든 시스템 다이어그램
+5. 사용 가능한 경우 API 문서
+6. 기술 스택 세부사항 및 버전 사양
 
-IMPORTANT: If any required documents are missing or inaccessible, immediately ask the user for their location or content before proceeding.
+중요: 필요한 문서가 누락되거나 접근할 수 없는 경우, 진행하기 전에 즉시 사용자에게 해당 위치나 내용을 요청하세요.
 
-PROJECT TYPE DETECTION:
-First, determine the project type by checking:
+프로젝트 유형 감지:
+먼저 다음을 확인하여 프로젝트 유형을 결정하세요:
 
-- Does the architecture include a frontend/UI component?
-- Is there a frontend-architecture.md document?
-- Does the PRD mention user interfaces or frontend requirements?
+- 아키텍처에 프론트엔드/UI 구성 요소가 포함되어 있나요?
+- frontend-architecture.md 문서가 있나요?
+- PRD에서 사용자 인터페이스나 프론트엔드 요구사항을 언급하나요?
 
-If this is a backend-only or service-only project:
+백엔드 전용 또는 서비스 전용 프로젝트인 경우:
 
-- Skip sections marked with [[FRONTEND ONLY]]
-- Focus extra attention on API design, service architecture, and integration patterns
-- Note in your final report that frontend sections were skipped due to project type
+- [[FRONTEND ONLY]]로 표시된 섹션을 건너뛰세요
+- API 설계, 서비스 아키텍처, 통합 패턴에 특별한 주의를 기울이세요
+- 최종 보고서에서 프로젝트 유형으로 인해 프론트엔드 섹션을 건너뛰었다고 기록하세요
 
-VALIDATION APPROACH:
-For each section, you must:
+검증 접근 방식:
+각 섹션에 대해 다음을 수행해야 합니다:
 
-1. Deep Analysis - Don't just check boxes, thoroughly analyze each item against the provided documentation
-2. Evidence-Based - Cite specific sections or quotes from the documents when validating
-3. Critical Thinking - Question assumptions and identify gaps, not just confirm what's present
-4. Risk Assessment - Consider what could go wrong with each architectural decision
+1. 심층 분석 - 단순히 체크박스를 확인하지 말고, 제공된 문서와 대조하여 각 항목을 철저히 분석하세요
+2. 증거 기반 - 검증할 때 문서의 특정 섹션이나 인용문을 인용하세요
+3. 비판적 사고 - 가정에 의문을 제기하고 단순히 현재 있는 것을 확인하는 것이 아니라 격차를 식별하세요
+4. 위험 평가 - 각 아키텍처 결정에서 무엇이 잘못될 수 있는지 고려하세요
 
-EXECUTION MODE:
-Ask the user if they want to work through the checklist:
+실행 모드:
+사용자에게 체크리스트를 다음과 같이 진행할지 물어보세요:
 
-- Section by section (interactive mode) - Review each section, present findings, get confirmation before proceeding
-- All at once (comprehensive mode) - Complete full analysis and present comprehensive report at end]]
+- 섹션별 (인터랙티브 모드) - 각 섹션을 검토하고, 결과를 제시하고, 진행하기 전에 확인을 받으세요
+- 한 번에 모두 (포괄적 모드) - 전체 분석을 완료하고 마지막에 포괄적인 보고서를 제시하세요]]
 
-## 1. REQUIREMENTS ALIGNMENT
+## 1. 요구사항 정렬
 
-[[LLM: Before evaluating this section, take a moment to fully understand the product's purpose and goals from the PRD. What is the core problem being solved? Who are the users? What are the critical success factors? Keep these in mind as you validate alignment. For each item, don't just check if it's mentioned - verify that the architecture provides a concrete technical solution.]]
+[[LLM: 이 섹션을 평가하기 전에 PRD에서 제품의 목적과 목표를 완전히 이해하는 시간을 가지세요. 해결되는 핵심 문제는 무엇인가요? 사용자는 누구인가요? 중요한 성공 요인은 무엇인가요? 정렬을 검증할 때 이를 염두에 두세요. 각 항목에 대해 단순히 언급되었는지 확인하지 말고 아키텍처가 구체적인 기술 솔루션을 제공하는지 확인하세요.]]
 
-### 1.1 Functional Requirements Coverage
+### 1.1 기능 요구사항 커버리지
 
-- [ ] Architecture supports all functional requirements in the PRD
-- [ ] Technical approaches for all epics and stories are addressed
-- [ ] Edge cases and performance scenarios are considered
-- [ ] All required integrations are accounted for
-- [ ] User journeys are supported by the technical architecture
+- [ ] 아키텍처가 PRD의 모든 기능 요구사항을 지원함
+- [ ] 모든 에픽과 스토리에 대한 기술적 접근 방식이 다뤄짐
+- [ ] 엣지 케이스와 성능 시나리오가 고려됨
+- [ ] 모든 필요한 통합이 고려됨
+- [ ] 사용자 여정이 기술 아키텍처에 의해 지원됨
 
-### 1.2 Non-Functional Requirements Alignment
+### 1.2 비기능 요구사항 정렬
 
-- [ ] Performance requirements are addressed with specific solutions
-- [ ] Scalability considerations are documented with approach
-- [ ] Security requirements have corresponding technical controls
-- [ ] Reliability and resilience approaches are defined
-- [ ] Compliance requirements have technical implementations
+- [ ] 성능 요구사항이 특정 솔루션으로 다뤄짐
+- [ ] 확장성 고려사항이 접근 방식과 함께 문서화됨
+- [ ] 보안 요구사항에 해당하는 기술적 제어가 있음
+- [ ] 신뢰성과 회복력 접근 방식이 정의됨
+- [ ] 컴플라이언스 요구사항에 기술적 구현이 있음
 
-### 1.3 Technical Constraints Adherence
+### 1.3 기술적 제약 준수
 
-- [ ] All technical constraints from PRD are satisfied
-- [ ] Platform/language requirements are followed
-- [ ] Infrastructure constraints are accommodated
-- [ ] Third-party service constraints are addressed
-- [ ] Organizational technical standards are followed
+- [ ] PRD의 모든 기술적 제약이 만족됨
+- [ ] 플랫폼/언어 요구사항이 준수됨
+- [ ] 인프라 제약이 수용됨
+- [ ] 서드파티 서비스 제약이 다뤄짐
+- [ ] 조직의 기술 표준이 준수됨
 
-## 2. ARCHITECTURE FUNDAMENTALS
+## 2. 아키텍처 기본사항
 
-[[LLM: Architecture clarity is crucial for successful implementation. As you review this section, visualize the system as if you were explaining it to a new developer. Are there any ambiguities that could lead to misinterpretation? Would an AI agent be able to implement this architecture without confusion? Look for specific diagrams, component definitions, and clear interaction patterns.]]
+[[LLM: 아키텍처 명확성은 성공적인 구현에 중요합니다. 이 섹션을 검토할 때, 새로운 개발자에게 설명하는 것처럼 시스템을 시각화하세요. 잘못된 해석을 초래할 수 있는 모호함이 있나요? AI 에이전트가 혼란 없이 이 아키텍처를 구현할 수 있을까요? 특정 다이어그램, 구성 요소 정의, 명확한 상호작용 패턴을 찾으세요.]]
 
-### 2.1 Architecture Clarity
+### 2.1 아키텍처 명확성
 
-- [ ] Architecture is documented with clear diagrams
-- [ ] Major components and their responsibilities are defined
-- [ ] Component interactions and dependencies are mapped
-- [ ] Data flows are clearly illustrated
-- [ ] Technology choices for each component are specified
+- [ ] 아키텍처가 명확한 다이어그램으로 문서화됨
+- [ ] 주요 구성 요소와 그 책임이 정의됨
+- [ ] 구성 요소 상호작용과 종속성이 매핑됨
+- [ ] 데이터 흐름이 명확히 설명됨
+- [ ] 각 구성 요소의 기술 선택이 명시됨
 
-### 2.2 Separation of Concerns
+### 2.2 관심사 분리
 
-- [ ] Clear boundaries between UI, business logic, and data layers
-- [ ] Responsibilities are cleanly divided between components
-- [ ] Interfaces between components are well-defined
-- [ ] Components adhere to single responsibility principle
-- [ ] Cross-cutting concerns (logging, auth, etc.) are properly addressed
+- [ ] UI, 비즈니스 로직, 데이터 계층 간의 명확한 경계
+- [ ] 구성 요소 간 책임이 깔끔하게 분할됨
+- [ ] 구성 요소 간 인터페이스가 잘 정의됨
+- [ ] 구성 요소가 단일 책임 원칙을 준수함
+- [ ] 횡단 관심사(로깅, 인증 등)가 적절히 다뤄짐
 
-### 2.3 Design Patterns & Best Practices
+### 2.3 디자인 패턴 & 모범 사례
 
-- [ ] Appropriate design patterns are employed
-- [ ] Industry best practices are followed
-- [ ] Anti-patterns are avoided
-- [ ] Consistent architectural style throughout
-- [ ] Pattern usage is documented and explained
+- [ ] 적절한 디자인 패턴이 사용됨
+- [ ] 업계 모범 사례가 준수됨
+- [ ] 안티 패턴이 피해짐
+- [ ] 전체적으로 일관된 아키텍처 스타일
+- [ ] 패턴 사용이 문서화되고 설명됨
 
-### 2.4 Modularity & Maintainability
+### 2.4 모듈성 & 유지보수성
 
-- [ ] System is divided into cohesive, loosely-coupled modules
-- [ ] Components can be developed and tested independently
-- [ ] Changes can be localized to specific components
-- [ ] Code organization promotes discoverability
-- [ ] Architecture specifically designed for AI agent implementation
+- [ ] 시스템이 응집력 있고 느슨하게 결합된 모듈로 분할됨
+- [ ] 구성 요소가 독립적으로 개발되고 테스트될 수 있음
+- [ ] 변경사항이 특정 구성 요소로 국한될 수 있음
+- [ ] 코드 조직이 발견가능성을 촉진함
+- [ ] AI 에이전트 구현을 위해 특별히 설계된 아키텍처
 
-## 3. TECHNICAL STACK & DECISIONS
+## 3. 기술 스택 & 결정사항
 
-[[LLM: Technology choices have long-term implications. For each technology decision, consider: Is this the simplest solution that could work? Are we over-engineering? Will this scale? What are the maintenance implications? Are there security vulnerabilities in the chosen versions? Verify that specific versions are defined, not ranges.]]
+[[LLM: 기술 선택은 장기적인 영향을 미칩니다. 각 기술 결정에 대해 고려하세요: 이것이 작동할 수 있는 가장 간단한 솔루션인가요? 과도하게 엔지니어링하고 있나요? 이것이 확장될까요? 유지보수 영향은 무엇인가요? 선택된 버전에 보안 취약점이 있나요? 범위가 아닌 특정 버전이 정의되었는지 확인하세요.]]
 
-### 3.1 Technology Selection
+### 3.1 기술 선택
 
-- [ ] Selected technologies meet all requirements
-- [ ] Technology versions are specifically defined (not ranges)
-- [ ] Technology choices are justified with clear rationale
-- [ ] Alternatives considered are documented with pros/cons
-- [ ] Selected stack components work well together
+- [ ] 선택된 기술이 모든 요구사항을 충족함
+- [ ] 기술 버전이 구체적으로 정의됨 (범위가 아님)
+- [ ] 기술 선택이 명확한 근거로 정당화됨
+- [ ] 고려된 대안이 장단점과 함께 문서화됨
+- [ ] 선택된 스택 구성 요소가 잘 함께 작동함
 
-### 3.2 Frontend Architecture [[FRONTEND ONLY]]
+### 3.2 프론트엔드 아키텍처 [[FRONTEND ONLY]]
 
-[[LLM: Skip this entire section if this is a backend-only or service-only project. Only evaluate if the project includes a user interface.]]
+[[LLM: 백엔드 전용 또는 서비스 전용 프로젝트인 경우 이 전체 섹션을 건너뛰세요. 프로젝트에 사용자 인터페이스가 포함된 경우에만 평가하세요.]]
 
-- [ ] UI framework and libraries are specifically selected
-- [ ] State management approach is defined
-- [ ] Component structure and organization is specified
-- [ ] Responsive/adaptive design approach is outlined
-- [ ] Build and bundling strategy is determined
+- [ ] UI 프레임워크와 라이브러리가 구체적으로 선택됨
+- [ ] 상태 관리 접근 방식이 정의되고 정당화됨
+- [ ] 스타일링 접근 방식이 명확히 설명됨
+- [ ] 프론트엔드 라우팅 전략이 다뤄짐
+- [ ] 빌드와 번들링 프로세스가 정의됨
+- [ ] API와의 통신 패턴이 명시됨
 
-### 3.3 Backend Architecture
+### 3.3 백엔드 아키텍처
 
-- [ ] API design and standards are defined
-- [ ] Service organization and boundaries are clear
-- [ ] Authentication and authorization approach is specified
-- [ ] Error handling strategy is outlined
-- [ ] Backend scaling approach is defined
+- [ ] 서버 프레임워크와 런타임이 선택되고 정당화됨
+- [ ] 데이터베이스 선택이 요구사항과 일치함
+- [ ] API 설계 접근 방식이 명확함 (REST, GraphQL, etc.)
+- [ ] 인증 및 권한 부여 전략이 정의됨
+- [ ] 서버 측 상태 관리 접근 방식이 명시됨
 
-### 3.4 Data Architecture
+### 3.4 인프라 및 배포
 
-- [ ] Data models are fully defined
-- [ ] Database technologies are selected with justification
-- [ ] Data access patterns are documented
-- [ ] Data migration/seeding approach is specified
-- [ ] Data backup and recovery strategies are outlined
+- [ ] 호스팅 플랫폼이 요구사항에 맞게 선택됨
+- [ ] 배포 전략이 정의됨
+- [ ] 환경 관리 접근 방식이 명확함
+- [ ] 확장성 요구사항이 인프라 계획에 반영됨
+- [ ] 재해 복구와 백업 전략이 고려됨
 
-## 4. FRONTEND DESIGN & IMPLEMENTATION [[FRONTEND ONLY]]
+## 4. 프론트엔드 설계 & 구현 [[FRONTEND ONLY]]
 
-[[LLM: This entire section should be skipped for backend-only projects. Only evaluate if the project includes a user interface. When evaluating, ensure alignment between the main architecture document and the frontend-specific architecture document.]]
+[[LLM: 백엔드 전용 프로젝트인 경우 이 전체 섹션을 건너뛰어야 합니다. 프로젝트에 사용자 인터페이스가 포함된 경우에만 평가하세요. 평가할 때, 주요 아키텍처 문서와 프론트엔드 특정 아키텍처 문서 간의 정렬을 보장하세요.]]
 
-### 4.1 Frontend Philosophy & Patterns
+### 4.1 프론트엔드 철학 & 패턴
 
-- [ ] Framework & Core Libraries align with main architecture document
-- [ ] Component Architecture (e.g., Atomic Design) is clearly described
-- [ ] State Management Strategy is appropriate for application complexity
-- [ ] Data Flow patterns are consistent and clear
-- [ ] Styling Approach is defined and tooling specified
+- [ ] 프레임워크 & 핵심 라이브러리가 주요 아키텍처 문서와 일치함
+- [ ] 컴포넌트 아키텍처 (예: Atomic Design)가 명확히 설명됨
+- [ ] 상태 관리 전략이 애플리케이션 복잡성에 적합함
+- [ ] 데이터 흐름 패턴이 일관되고 명확함
+- [ ] 스타일링 접근 방식이 정의되고 툴링이 명시됨
 
-### 4.2 Frontend Structure & Organization
+### 4.2 프론트엔드 구조 & 조직
 
-- [ ] Directory structure is clearly documented with ASCII diagram
-- [ ] Component organization follows stated patterns
-- [ ] File naming conventions are explicit
-- [ ] Structure supports chosen framework's best practices
-- [ ] Clear guidance on where new components should be placed
+- [ ] 디렉토리 구조가 ASCII 다이어그램으로 명확히 문서화됨
+- [ ] 컴포넌트 조직이 명시된 패턴을 따름
+- [ ] 파일 명명 규칙이 명시적임
+- [ ] 구조가 선택된 프레임워크의 모범 사례를 지원함
+- [ ] 새로운 컴포넌트를 어디에 배치해야 하는지에 대한 명확한 가이드
 
-### 4.3 Component Design
+### 4.3 컴포넌트 설계
 
-- [ ] Component template/specification format is defined
-- [ ] Component props, state, and events are well-documented
-- [ ] Shared/foundational components are identified
-- [ ] Component reusability patterns are established
-- [ ] Accessibility requirements are built into component design
+- [ ] 컴포넌트 템플릿/사양 형식이 정의됨
+- [ ] 컴포넌트 props, state, events가 잘 문서화됨
+- [ ] 공유/기초 컴포넌트가 식별됨
+- [ ] 컴포넌트 재사용 패턴이 확립됨
+- [ ] 접근성 요구사항이 컴포넌트 설계에 내장됨
 
-### 4.4 Frontend-Backend Integration
+### 4.4 프론트엔드-백엔드 통합
 
-- [ ] API interaction layer is clearly defined
-- [ ] HTTP client setup and configuration documented
-- [ ] Error handling for API calls is comprehensive
-- [ ] Service definitions follow consistent patterns
-- [ ] Authentication integration with backend is clear
+- [ ] API 상호작용 계층이 명확히 정의됨
+- [ ] HTTP 클라이언트 설정 및 구성이 문서화됨
+- [ ] API 호출에 대한 오류 처리가 포괄적임
+- [ ] 서비스 정의가 일관된 패턴을 따름
+- [ ] 백엔드와의 인증 통합이 명확함
 
-### 4.5 Routing & Navigation
+### 4.5 라우팅 & 내비게이션
 
-- [ ] Routing strategy and library are specified
-- [ ] Route definitions table is comprehensive
-- [ ] Route protection mechanisms are defined
-- [ ] Deep linking considerations addressed
-- [ ] Navigation patterns are consistent
+- [ ] 라우팅 전략과 라이브러리가 명시됨
+- [ ] 라우트 정의 테이블이 포괄적임
+- [ ] 라우트 보호 메커니즘이 정의됨
+- [ ] 딥 링킹 고려사항이 다뤄짐
+- [ ] 내비게이션 패턴이 일관됨
 
-### 4.6 Frontend Performance
+### 4.6 프론트엔드 성능
 
-- [ ] Image optimization strategies defined
-- [ ] Code splitting approach documented
-- [ ] Lazy loading patterns established
-- [ ] Re-render optimization techniques specified
-- [ ] Performance monitoring approach defined
+- [ ] 이미지 최적화 전략이 정의됨
+- [ ] 코드 분할 접근 방식이 문서화됨
+- [ ] 지연 로딩 패턴이 확립됨
+- [ ] 재렌더링 최적화 기법이 명시됨
+- [ ] 성능 모니터링 접근 방식이 정의됨
 
-## 5. RESILIENCE & OPERATIONAL READINESS
+## 5. 복원력 & 운영 준비성
 
-[[LLM: Production systems fail in unexpected ways. As you review this section, think about Murphy's Law - what could go wrong? Consider real-world scenarios: What happens during peak load? How does the system behave when a critical service is down? Can the operations team diagnose issues at 3 AM? Look for specific resilience patterns, not just mentions of "error handling".]]
+[[LLM: 프로덕션 시스템은 예상치 못한 방식으로 실패합니다. 이 섹션을 검토할 때, 머피의 법칙을 생각하세요 - 무엇이 잘못될 수 있나요? 실제 시나리오를 고려하세요: 피크 로드 시에는 어떻게 될까요? 중요한 서비스가 다운될 때 시스템이 어떻게 동작하나요? 운영 팀이 새벽 3시에 문제를 진단할 수 있나요? 단순히 "오류 처리"를 언급하는 것이 아니라 구체적인 복원력 패턴을 찾으세요.]]
 
-### 5.1 Error Handling & Resilience
+### 5.1 오류 처리 & 복원력
 
-- [ ] Error handling strategy is comprehensive
-- [ ] Retry policies are defined where appropriate
-- [ ] Circuit breakers or fallbacks are specified for critical services
-- [ ] Graceful degradation approaches are defined
-- [ ] System can recover from partial failures
+- [ ] 오류 처리 전략이 포괄적임
+- [ ] 재시도 정책이 적절한 곳에서 정의됨
+- [ ] 중요한 서비스에 대해 서킷 브레이커나 폴백이 명시됨
+- [ ] 우아한 성능 저하 접근 방식이 정의됨
+- [ ] 시스템이 부분적 실패로부터 복구할 수 있음
 
-### 5.2 Monitoring & Observability
+### 5.2 모니터링 & 관찰가능성
 
-- [ ] Logging strategy is defined
-- [ ] Monitoring approach is specified
-- [ ] Key metrics for system health are identified
-- [ ] Alerting thresholds and strategies are outlined
-- [ ] Debugging and troubleshooting capabilities are built in
+- [ ] 로깅 전략이 정의됨
+- [ ] 모니터링 접근 방식이 명시됨
+- [ ] 시스템 상태에 대한 주요 메트릭이 식별됨
+- [ ] 경고 임계값과 전략이 개요화됨
+- [ ] 디버깅과 문제 해결 기능이 내장됨
 
-### 5.3 Performance & Scaling
+### 5.3 성능 & 확장성
 
-- [ ] Performance bottlenecks are identified and addressed
-- [ ] Caching strategy is defined where appropriate
-- [ ] Load balancing approach is specified
-- [ ] Horizontal and vertical scaling strategies are outlined
-- [ ] Resource sizing recommendations are provided
+- [ ] 성능 병목 지점이 식별되고 다뤄짐
+- [ ] 캐싱 전략이 적절한 곳에서 정의됨
+- [ ] 로드 밸런싱 접근 방식이 명시됨
+- [ ] 수평 및 수직 확장 전략이 개요화됨
+- [ ] 리소스 크기 조정 권장사항이 제공됨
 
-### 5.4 Deployment & DevOps
+### 5.4 배포 & DevOps
 
-- [ ] Deployment strategy is defined
-- [ ] CI/CD pipeline approach is outlined
-- [ ] Environment strategy (dev, staging, prod) is specified
-- [ ] Infrastructure as Code approach is defined
-- [ ] Rollback and recovery procedures are outlined
+- [ ] 배포 전략이 정의됨
+- [ ] CI/CD 파이프라인 접근 방식이 개요화됨
+- [ ] 환경 전략 (dev, staging, prod)이 명시됨
+- [ ] Infrastructure as Code 접근 방식이 정의됨
+- [ ] 롤백 및 복구 절차가 개요화됨
 
-## 6. SECURITY & COMPLIANCE
+## 4. 보안 & 컴플라이언스
 
-[[LLM: Security is not optional. Review this section with a hacker's mindset - how could someone exploit this system? Also consider compliance: Are there industry-specific regulations that apply? GDPR? HIPAA? PCI? Ensure the architecture addresses these proactively. Look for specific security controls, not just general statements.]]
+[[LLM: 보안은 시나리오와 위협을 구체적으로 식별해야 합니다. 방어 심화 접근 방식을 찾으세요. 컴플라이언스는 특정 요구사항과 구체적인 구현을 포함해야 합니다. 일반적인 보안 문제뿐만 아니라 이 특정 시스템의 데이터 흐름과 사용자 상호작용에 특정한 위험을 고려하세요.]]
 
-### 6.1 Authentication & Authorization
+### 4.1 보안 기본사항
 
-- [ ] Authentication mechanism is clearly defined
-- [ ] Authorization model is specified
-- [ ] Role-based access control is outlined if required
-- [ ] Session management approach is defined
-- [ ] Credential management is addressed
+- [ ] 인증 메커니즘이 명확히 정의되고 구현됨
+- [ ] 권한 부여와 역할 기반 액세스 제어가 다뤄짐
+- [ ] 데이터 암호화 (전송 중 및 저장 중)가 구현됨
+- [ ] 입력 검증과 살균 전략이 정의됨
+- [ ] 보안 헤더와 CORS 정책이 구성됨
 
-### 6.2 Data Security
+### 4.2 위협 모델링
 
-- [ ] Data encryption approach (at rest and in transit) is specified
-- [ ] Sensitive data handling procedures are defined
-- [ ] Data retention and purging policies are outlined
-- [ ] Backup encryption is addressed if required
-- [ ] Data access audit trails are specified if required
+- [ ] 잠재적 보안 위협이 식별되고 평가됨
+- [ ] 공격 벡터가 분석되고 완화됨
+- [ ] 사용자 데이터 처리가 안전하게 설계됨
+- [ ] API 보안 고려사항이 다뤄짐
+- [ ] 서드파티 통합 보안이 평가됨
 
-### 6.3 API & Service Security
+### 4.3 데이터 프라이버시
 
-- [ ] API security controls are defined
-- [ ] Rate limiting and throttling approaches are specified
-- [ ] Input validation strategy is outlined
-- [ ] CSRF/XSS prevention measures are addressed
-- [ ] Secure communication protocols are specified
+- [ ] 데이터 수집 및 저장 관행이 정의됨
+- [ ] 개인 식별 정보(PII) 처리가 적절히 다뤄짐
+- [ ] 데이터 보존 및 삭제 정책이 구현됨
+- [ ] 사용자 동의 메커니즘이 고려됨 (필요한 경우)
+- [ ] 데이터 익명화/가명화 접근 방식이 정의됨
 
-### 6.4 Infrastructure Security
+### 4.4 컴플라이언스 요구사항
 
-- [ ] Network security design is outlined
-- [ ] Firewall and security group configurations are specified
-- [ ] Service isolation approach is defined
-- [ ] Least privilege principle is applied
-- [ ] Security monitoring strategy is outlined
+- [ ] 관련 규정 준수 요구사항이 식별됨 (GDPR, HIPAA, etc.)
+- [ ] 컴플라이언스를 위한 특정 기술적 제어가 구현됨
+- [ ] 감사 및 로깅 요구사항이 다뤄짐
+- [ ] 데이터 지역성 요구사항이 고려됨
+- [ ] 컴플라이언스 모니터링 및 보고가 계획됨
 
-## 7. IMPLEMENTATION GUIDANCE
+## 7. 구현 가이던스
 
-[[LLM: Clear implementation guidance prevents costly mistakes. As you review this section, imagine you're a developer starting on day one. Do they have everything they need to be productive? Are coding standards clear enough to maintain consistency across the team? Look for specific examples and patterns.]]
+[[LLM: 명확한 구현 가이던스는 비용이 많이 드는 실수를 방지합니다. 이 섹션을 검토할 때, 첫날 시작하는 개발자라고 상상해보세요. 생산적이 되기 위해 필요한 모든 것이 있나요? 코딩 표준이 팀 전체에서 일관성을 유지할 수 있을 만큼 명확한가요? 구체적인 예시와 패턴을 찾으세요.]]
 
-### 7.1 Coding Standards & Practices
+### 7.1 코딩 표준 & 관행
 
-- [ ] Coding standards are defined
-- [ ] Documentation requirements are specified
-- [ ] Testing expectations are outlined
-- [ ] Code organization principles are defined
-- [ ] Naming conventions are specified
+- [ ] 코딩 표준이 정의됨
+- [ ] 문서화 요구사항이 명시됨
+- [ ] 테스팅 기대치가 개요화됨
+- [ ] 코드 조직 원칙이 정의됨
+- [ ] 명명 규칙이 명시됨
 
-### 7.2 Testing Strategy
+### 7.2 테스팅 전략
 
-- [ ] Unit testing approach is defined
-- [ ] Integration testing strategy is outlined
-- [ ] E2E testing approach is specified
-- [ ] Performance testing requirements are outlined
-- [ ] Security testing approach is defined
+- [ ] 단위 테스트 접근 방식이 정의됨
+- [ ] 통합 테스트 전략이 개요화됨
+- [ ] E2E 테스트 접근 방식이 명시됨
+- [ ] 성능 테스트 요구사항이 개요화됨
+- [ ] 보안 테스트 접근 방식이 정의됨
 
-### 7.3 Frontend Testing [[FRONTEND ONLY]]
+### 7.3 프론트엔드 테스팅 [[FRONTEND ONLY]]
 
-[[LLM: Skip this subsection for backend-only projects.]]
+[[LLM: 백엔드 전용 프로젝트인 경우 이 하위 섹션을 건너뛰세요.]]
 
-- [ ] Component testing scope and tools defined
-- [ ] UI integration testing approach specified
-- [ ] Visual regression testing considered
-- [ ] Accessibility testing tools identified
-- [ ] Frontend-specific test data management addressed
+- [ ] 컴포넌트 테스트 범위와 도구가 정의됨
+- [ ] UI 통합 테스트 접근 방식이 명시됨
+- [ ] 시각적 회귀 테스트가 고려됨
+- [ ] 접근성 테스트 도구가 식별됨
+- [ ] 프론트엔드 특정 테스트 데이터 관리가 다뤄짐
 
-### 7.4 Development Environment
+### 7.4 개발 환경
 
-- [ ] Local development environment setup is documented
-- [ ] Required tools and configurations are specified
-- [ ] Development workflows are outlined
-- [ ] Source control practices are defined
-- [ ] Dependency management approach is specified
+- [ ] 로컬 개발 환경 설정이 문서화됨
+- [ ] 필요한 도구와 구성이 명시됨
+- [ ] 개발 워크플로우가 개요화됨
+- [ ] 소스 제어 관행이 정의됨
+- [ ] 종속성 관리 접근 방식이 명시됨
 
-### 7.5 Technical Documentation
+### 7.5 기술 문서화
 
-- [ ] API documentation standards are defined
-- [ ] Architecture documentation requirements are specified
-- [ ] Code documentation expectations are outlined
-- [ ] System diagrams and visualizations are included
-- [ ] Decision records for key choices are included
+- [ ] API 문서화 표준이 정의됨
+- [ ] 아키텍처 문서화 요구사항이 명시됨
+- [ ] 코드 문서화 기대치가 개요화됨
+- [ ] 시스템 다이어그램과 시각화가 포함됨
+- [ ] 주요 선택에 대한 의사결정 기록이 포함됨
 
-## 8. DEPENDENCY & INTEGRATION MANAGEMENT
+## 8. 종속성 & 통합 관리
 
-[[LLM: Dependencies are often the source of production issues. For each dependency, consider: What happens if it's unavailable? Is there a newer version with security patches? Are we locked into a vendor? What's our contingency plan? Verify specific versions and fallback strategies.]]
+[[LLM: 종속성은 종종 프로덕션 문제의 원인입니다. 각 종속성에 대해 고려하세요: 사용할 수 없으면 어떻게 될까요? 보안 패치가 있는 새 버전이 있나요? 벤더에 묶여 있나요? 비상 계획은 무엇인가요? 구체적인 버전과 폴백 전략을 확인하세요.]]
 
-### 8.1 External Dependencies
+### 8.1 외부 종속성
 
-- [ ] All external dependencies are identified
-- [ ] Versioning strategy for dependencies is defined
-- [ ] Fallback approaches for critical dependencies are specified
-- [ ] Licensing implications are addressed
-- [ ] Update and patching strategy is outlined
+- [ ] 모든 외부 종속성이 식별됨
+- [ ] 종속성에 대한 버전 관리 전략이 정의됨
+- [ ] 중요한 종속성에 대한 폴백 접근 방식이 명시됨
+- [ ] 라이선싱 영향이 다뤄짐
+- [ ] 업데이트 및 패치 전략이 개요화됨
 
-### 8.2 Internal Dependencies
+### 8.2 내부 종속성
 
-- [ ] Component dependencies are clearly mapped
-- [ ] Build order dependencies are addressed
-- [ ] Shared services and utilities are identified
-- [ ] Circular dependencies are eliminated
-- [ ] Versioning strategy for internal components is defined
+- [ ] 컴포넌트 종속성이 명확히 매핑됨
+- [ ] 빌드 순서 종속성이 다뤄짐
+- [ ] 공유 서비스와 유틸리티가 식별됨
+- [ ] 순환 종속성이 제거됨
+- [ ] 내부 컴포넌트에 대한 버전 관리 전략이 정의됨
 
-### 8.3 Third-Party Integrations
+### 8.3 서드파티 통합
 
-- [ ] All third-party integrations are identified
-- [ ] Integration approaches are defined
-- [ ] Authentication with third parties is addressed
-- [ ] Error handling for integration failures is specified
-- [ ] Rate limits and quotas are considered
+- [ ] 모든 서드파티 통합이 식별됨
+- [ ] 통합 접근 방식이 정의됨
+- [ ] 서드파티와의 인증이 다뤄짐
+- [ ] 통합 실패에 대한 오류 처리가 명시됨
+- [ ] 속도 제한과 할당량이 고려됨
 
-## 9. AI AGENT IMPLEMENTATION SUITABILITY
+## 9. AI 에이전트 구현 적합성
 
-[[LLM: This architecture may be implemented by AI agents. Review with extreme clarity in mind. Are patterns consistent? Is complexity minimized? Would an AI agent make incorrect assumptions? Remember: explicit is better than implicit. Look for clear file structures, naming conventions, and implementation patterns.]]
+[[LLM: 이 아키텍처는 AI 에이전트에 의해 구현될 수 있습니다. 극도의 명확성을 염두에 두고 검토하세요. 패턴이 일관된가요? 복잡성이 최소화되었나요? AI 에이전트가 잘못된 가정을 할까요? 기억하세요: 명시적인 것이 암시적인 것보다 낫습니다. 명확한 파일 구조, 명명 규칙, 구현 패턴을 찾으세요.]]
 
-### 9.1 Modularity for AI Agents
+### 9.1 AI 에이전트를 위한 모듈성
 
-- [ ] Components are sized appropriately for AI agent implementation
-- [ ] Dependencies between components are minimized
-- [ ] Clear interfaces between components are defined
-- [ ] Components have singular, well-defined responsibilities
-- [ ] File and code organization optimized for AI agent understanding
+- [ ] 컴포넌트가 AI 에이전트 구현에 적절한 크기로 설계됨
+- [ ] 컴포넌트 간 종속성이 최소화됨
+- [ ] 컴포넌트 간 명확한 인터페이스가 정의됨
+- [ ] 컴포넌트가 단일하고 잘 정의된 책임을 가짐
+- [ ] 파일과 코드 조직이 AI 에이전트 이해에 최적화됨
 
-### 9.2 Clarity & Predictability
+### 9.2 명확성 & 예측가능성
 
-- [ ] Patterns are consistent and predictable
-- [ ] Complex logic is broken down into simpler steps
-- [ ] Architecture avoids overly clever or obscure approaches
-- [ ] Examples are provided for unfamiliar patterns
-- [ ] Component responsibilities are explicit and clear
+- [ ] 패턴이 일관되고 예측 가능함
+- [ ] 복잡한 로직이 더 간단한 단계로 분해됨
+- [ ] 아키텍처가 지나치게 영리하거나 모호한 접근 방식을 피함
+- [ ] 낯선 패턴에 대한 예시가 제공됨
+- [ ] 컴포넌트 책임이 명시적이고 명확함
 
-### 9.3 Implementation Guidance
+### 9.3 구현 가이던스
 
-- [ ] Detailed implementation guidance is provided
-- [ ] Code structure templates are defined
-- [ ] Specific implementation patterns are documented
-- [ ] Common pitfalls are identified with solutions
-- [ ] References to similar implementations are provided when helpful
+- [ ] 상세한 구현 가이던스가 제공됨
+- [ ] 코드 구조 템플릿이 정의됨
+- [ ] 특정 구현 패턴이 문서화됨
+- [ ] 일반적인 함정이 솔루션과 함께 식별됨
+- [ ] 도움이 될 때 유사한 구현에 대한 참조가 제공됨
 
-### 9.4 Error Prevention & Handling
+### 9.4 오류 방지 & 처리
 
-- [ ] Design reduces opportunities for implementation errors
-- [ ] Validation and error checking approaches are defined
-- [ ] Self-healing mechanisms are incorporated where possible
-- [ ] Testing patterns are clearly defined
-- [ ] Debugging guidance is provided
+- [ ] 설계가 구현 오류 기회를 줄임
+- [ ] 검증 및 오류 체크 접근 방식이 정의됨
+- [ ] 가능한 곳에서 자가 치유 메커니즘이 통합됨
+- [ ] 테스팅 패턴이 명확히 정의됨
+- [ ] 디버깅 가이던스가 제공됨
 
-## 10. ACCESSIBILITY IMPLEMENTATION [[FRONTEND ONLY]]
+## 10. 접근성 구현 [[FRONTEND ONLY]]
 
-[[LLM: Skip this section for backend-only projects. Accessibility is a core requirement for any user interface.]]
+[[LLM: 백엔드 전용 프로젝트인 경우 이 섹션을 건너뛰세요. 접근성은 모든 사용자 인터페이스의 핵심 요구사항입니다.]]
 
-### 10.1 Accessibility Standards
+### 10.1 접근성 표준
 
-- [ ] Semantic HTML usage is emphasized
-- [ ] ARIA implementation guidelines provided
-- [ ] Keyboard navigation requirements defined
-- [ ] Focus management approach specified
-- [ ] Screen reader compatibility addressed
+- [ ] 시맨틱 HTML 사용이 강조됨
+- [ ] ARIA 구현 가이드라인이 제공됨
+- [ ] 키보드 내비게이션 요구사항이 정의됨
+- [ ] 포커스 관리 접근 방식이 명시됨
+- [ ] 스크린 리더 호환성이 다뤄짐
 
-### 10.2 Accessibility Testing
+### 10.2 접근성 테스팅
 
-- [ ] Accessibility testing tools identified
-- [ ] Testing process integrated into workflow
-- [ ] Compliance targets (WCAG level) specified
-- [ ] Manual testing procedures defined
-- [ ] Automated testing approach outlined
+- [ ] 접근성 테스트 도구가 식별됨
+- [ ] 테스트 프로세스가 워크플로우에 통합됨
+- [ ] 컴플라이언스 목표 (WCAG 레벨)가 명시됨
+- [ ] 수동 테스트 절차가 정의됨
+- [ ] 자동화된 테스트 접근 방식이 개요화됨
 
-[[LLM: FINAL VALIDATION REPORT GENERATION
+[[LLM: 최종 검증 보고서 생성
 
-Now that you've completed the checklist, generate a comprehensive validation report that includes:
+체크리스트를 완료했으므로 다음을 포함하는 포괄적인 검증 보고서를 생성하세요:
 
-1. Executive Summary
-   - Overall architecture readiness (High/Medium/Low)
-   - Critical risks identified
-   - Key strengths of the architecture
-   - Project type (Full-stack/Frontend/Backend) and sections evaluated
+1. 요약
+   - 전체 아키텍처 준비성 (높음/중간/낮음)
+   - 식별된 중요한 위험
+   - 아키텍처의 주요 강점
+   - 프로젝트 유형 (풀스택/프론트엔드/백엔드) 및 평가된 섹션
 
-2. Section Analysis
-   - Pass rate for each major section (percentage of items passed)
-   - Most concerning failures or gaps
-   - Sections requiring immediate attention
-   - Note any sections skipped due to project type
+2. 섹션 분석
+   - 각 주요 섹션의 통과율 (통과한 항목의 백분율)
+   - 가장 우려되는 실패나 격차
+   - 즉시 주의가 필요한 섹션
+   - 프로젝트 유형으로 인해 건너뛴 섹션 참고
 
-3. Risk Assessment
-   - Top 5 risks by severity
-   - Mitigation recommendations for each
-   - Timeline impact of addressing issues
+3. 위험 평가
+   - 심각도별 상위 5개 위험
+   - 각각에 대한 완화 권장사항
+   - 문제 해결의 타임라인 영향
 
-4. Recommendations
-   - Must-fix items before development
-   - Should-fix items for better quality
-   - Nice-to-have improvements
+4. 권장사항
+   - 개발 전 필수 수정 항목
+   - 더 나은 품질을 위해 수정해야 할 항목
+   - 개선되면 좋을 사항
 
-5. AI Implementation Readiness
-   - Specific concerns for AI agent implementation
-   - Areas needing additional clarification
-   - Complexity hotspots to address
+5. AI 구현 준비성
+   - AI 에이전트 구현에 대한 구체적인 우려사항
+   - 추가 명확화가 필요한 영역
+   - 다뤄야 할 복잡성 핫스팟
 
-6. Frontend-Specific Assessment (if applicable)
-   - Frontend architecture completeness
-   - Alignment between main and frontend architecture docs
-   - UI/UX specification coverage
-   - Component design clarity
+6. 프론트엔드 특정 평가 (해당하는 경우)
+   - 프론트엔드 아키텍처 완전성
+   - 주요 아키텍처와 프론트엔드 아키텍처 문서 간 정렬
+   - UI/UX 사양 커버리지
+   - 컴포넌트 설계 명확성
 
-After presenting the report, ask the user if they would like detailed analysis of any specific section, especially those with warnings or failures.]]
+보고서를 제시한 후, 특히 경고나 실패가 있는 섹션의 상세 분석을 원하는지 사용자에게 물어보세요.]]

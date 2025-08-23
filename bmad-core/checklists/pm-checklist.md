@@ -1,372 +1,372 @@
 <!-- Powered by BMAD™ Core -->
 
-# Product Manager (PM) Requirements Checklist
+# 제품 관리자 (PM) 요구사항 체크리스트
 
-This checklist serves as a comprehensive framework to ensure the Product Requirements Document (PRD) and Epic definitions are complete, well-structured, and appropriately scoped for MVP development. The PM should systematically work through each item during the product definition process.
+이 체크리스트는 제품 요구사항 문서 (PRD)와 에픽 정의가 완전하고, 잘 구조화되어 있으며, MVP 개발에 적절한 범위로 구성되어 있는지 확인하는 포괄적인 프레임워크 역할을 합니다. PM은 제품 정의 과정에서 각 항목을 체계적으로 진행해야 합니다.
 
-[[LLM: INITIALIZATION INSTRUCTIONS - PM CHECKLIST
+[[LLM: 초기화 지시사항 - PM 체크리스트
 
-Before proceeding with this checklist, ensure you have access to:
+이 체크리스트를 진행하기 전에 다음에 대한 접근 권한이 있는지 확인하세요:
 
-1. prd.md - The Product Requirements Document (check docs/prd.md)
-2. Any user research, market analysis, or competitive analysis documents
-3. Business goals and strategy documents
-4. Any existing epic definitions or user stories
+1. prd.md - 제품 요구사항 문서 (docs/prd.md 확인)
+2. 사용자 연구, 시장 분석 또는 경쟁사 분석 문서
+3. 비즈니스 목표 및 전략 문서
+4. 기존 에픽 정의나 사용자 스토리
 
-IMPORTANT: If the PRD is missing, immediately ask the user for its location or content before proceeding.
+중요: PRD가 누락된 경우, 진행하기 전에 즉시 사용자에게 위치나 내용을 요청하세요.
 
-VALIDATION APPROACH:
+검증 접근 방식:
 
-1. User-Centric - Every requirement should tie back to user value
-2. MVP Focus - Ensure scope is truly minimal while viable
-3. Clarity - Requirements should be unambiguous and testable
-4. Completeness - All aspects of the product vision are covered
-5. Feasibility - Requirements are technically achievable
+1. 사용자 중심 - 모든 요구사항은 사용자 가치와 연결되어야 함
+2. MVP 집중 - 범위가 진정으로 최소한이면서도 실행 가능한지 확인
+3. 명확성 - 요구사항이 명확하고 테스트 가능해야 함
+4. 완전성 - 제품 비전의 모든 측면이 다뤄져야 함
+5. 실행 가능성 - 요구사항이 기술적으로 달성 가능해야 함
 
-EXECUTION MODE:
-Ask the user if they want to work through the checklist:
+실행 모드:
+사용자에게 체크리스트를 어떻게 진행할지 물어보세요:
 
-- Section by section (interactive mode) - Review each section, present findings, get confirmation before proceeding
-- All at once (comprehensive mode) - Complete full analysis and present comprehensive report at end]]
+- 섹션별 (인터랙티브 모드) - 각 섹션을 검토하고, 결과를 제시하고, 진행하기 전에 확인을 받으세요
+- 한 번에 모두 (포괄적 모드) - 전체 분석을 완료하고 마지막에 포괄적인 보고서를 제시하세요]]
 
-## 1. PROBLEM DEFINITION & CONTEXT
+## 1. 문제 정의 & 컨텍스트
 
-[[LLM: The foundation of any product is a clear problem statement. As you review this section:
+[[LLM: 모든 제품의 기초는 명확한 문제 진술입니다. 이 섹션을 검토할 때:
 
-1. Verify the problem is real and worth solving
-2. Check that the target audience is specific, not "everyone"
-3. Ensure success metrics are measurable, not vague aspirations
-4. Look for evidence of user research, not just assumptions
-5. Confirm the problem-solution fit is logical]]
+1. 문제가 실제적이고 해결할 가치가 있는지 확인
+2. 타겟 오디언스가 "모든 사람"이 아닌 구체적인지 확인
+3. 성공 메트릭이 모호한 열망이 아닌 측정 가능한지 확인
+4. 단순한 가정이 아닌 사용자 연구의 증거를 찾기
+5. 문제-솔루션 적합성이 논리적인지 확인]]
 
-### 1.1 Problem Statement
+### 1.1 문제 진술
 
-- [ ] Clear articulation of the problem being solved
-- [ ] Identification of who experiences the problem
-- [ ] Explanation of why solving this problem matters
-- [ ] Quantification of problem impact (if possible)
-- [ ] Differentiation from existing solutions
+- [ ] 해결되는 문제의 명확한 명시
+- [ ] 문제를 경험하는 대상 식별
+- [ ] 이 문제를 해결하는 것이 왜 중요한지 설명
+- [ ] 문제 영향의 정량화 (가능한 경우)
+- [ ] 기존 솔루션과의 차별화
 
-### 1.2 Business Goals & Success Metrics
+### 1.2 비즈니스 목표 & 성공 메트릭
 
-- [ ] Specific, measurable business objectives defined
-- [ ] Clear success metrics and KPIs established
-- [ ] Metrics are tied to user and business value
-- [ ] Baseline measurements identified (if applicable)
-- [ ] Timeframe for achieving goals specified
+- [ ] 구체적이고 측정 가능한 비즈니스 목표 정의
+- [ ] 명확한 성공 메트릭 및 KPI 수립
+- [ ] 메트릭이 사용자 및 비즈니스 가치와 연결됨
+- [ ] 기준 측정값 식별 (해당하는 경우)
+- [ ] 목표 달성 시간 프레임 지정
 
-### 1.3 User Research & Insights
+### 1.3 사용자 연구 & 인사이트
 
-- [ ] Target user personas clearly defined
-- [ ] User needs and pain points documented
-- [ ] User research findings summarized (if available)
-- [ ] Competitive analysis included
-- [ ] Market context provided
+- [ ] 대상 사용자 페르소나 명확하게 정의
+- [ ] 사용자 니즈와 불편사항 문서화
+- [ ] 사용자 연구 결과 요약 (가능한 경우)
+- [ ] 경쟁사 분석 포함
+- [ ] 시장 컨텍스트 제공
 
-## 2. MVP SCOPE DEFINITION
+## 2. MVP 범위 정의
 
-[[LLM: MVP scope is critical - too much and you waste resources, too little and you can't validate. Check:
+[[LLM: MVP 범위는 중요합니다 - 너무 많으면 자원을 낭비하고, 너무 적으면 검증할 수 없습니다. 다음을 확인하세요:
 
-1. Is this truly minimal? Challenge every feature
-2. Does each feature directly address the core problem?
-3. Are "nice-to-haves" clearly separated from "must-haves"?
-4. Is the rationale for inclusion/exclusion documented?
-5. Can you ship this in the target timeframe?]]
+1. 이것이 진정으로 최소한인가? 모든 기능에 대해 도전하세요
+2. 각 기능이 핵심 문제를 직접적으로 해결하는가?
+3. "있으면 좋은 것"이 "반드시 있어야 하는 것"과 명확히 구분되는가?
+4. 포함/제외의 근거가 문서화되어 있는가?
+5. 목표 시간 프레임 내에 이것을 출시할 수 있는가?]]
 
-### 2.1 Core Functionality
+### 2.1 핵심 기능
 
-- [ ] Essential features clearly distinguished from nice-to-haves
-- [ ] Features directly address defined problem statement
-- [ ] Each Epic ties back to specific user needs
-- [ ] Features and Stories are described from user perspective
-- [ ] Minimum requirements for success defined
+- [ ] 필수 기능이 있으면 좋은 기능과 명확히 구분됨
+- [ ] 기능이 정의된 문제 진술을 직접적으로 해결함
+- [ ] 각 에픽이 특정 사용자 니즈와 연결됨
+- [ ] 기능과 스토리가 사용자 관점에서 설명됨
+- [ ] 성공을 위한 최소 요구사항 정의
 
-### 2.2 Scope Boundaries
+### 2.2 범위 경계
 
-- [ ] Clear articulation of what is OUT of scope
-- [ ] Future enhancements section included
-- [ ] Rationale for scope decisions documented
-- [ ] MVP minimizes functionality while maximizing learning
-- [ ] Scope has been reviewed and refined multiple times
+- [ ] 범위에서 제외되는 것의 명확한 설명
+- [ ] 향후 개선사항 섹션 포함
+- [ ] 범위 결정에 대한 근거 문서화
+- [ ] MVP가 학습을 최대화하면서 기능을 최소화함
+- [ ] 범위가 여러 번 검토되고 정제됨
 
-### 2.3 MVP Validation Approach
+### 2.3 MVP 검증 접근법
 
-- [ ] Method for testing MVP success defined
-- [ ] Initial user feedback mechanisms planned
-- [ ] Criteria for moving beyond MVP specified
-- [ ] Learning goals for MVP articulated
-- [ ] Timeline expectations set
+- [ ] MVP 성공 테스트 방법 정의
+- [ ] 초기 사용자 피드백 메커니즘 계획
+- [ ] MVP를 넘어서기 위한 기준 명시
+- [ ] MVP의 학습 목표 명시
+- [ ] 타임라인 기대치 설정
 
-## 3. USER EXPERIENCE REQUIREMENTS
+## 3. 사용자 경험 요구사항
 
-[[LLM: UX requirements bridge user needs and technical implementation. Validate:
+[[LLM: UX 요구사항은 사용자 니즈와 기술적 구현을 연결합니다. 다음을 검증하세요:
 
-1. User flows cover the primary use cases completely
-2. Edge cases are identified (even if deferred)
-3. Accessibility isn't an afterthought
-4. Performance expectations are realistic
-5. Error states and recovery are planned]]
+1. 사용자 플로우가 주요 사용 사례를 완전히 커버하는가
+2. 엣지 케이스가 식별되었는가 (연기되더라도)
+3. 접근성이 뒤늦은 생각이 아닌가
+4. 성능 기대치가 현실적인가
+5. 오류 상태와 복구가 계획되어 있는가]]
 
-### 3.1 User Journeys & Flows
+### 3.1 사용자 여정 & 플로우
 
-- [ ] Primary user flows documented
-- [ ] Entry and exit points for each flow identified
-- [ ] Decision points and branches mapped
-- [ ] Critical path highlighted
-- [ ] Edge cases considered
+- [ ] 주요 사용자 플로우 문서화
+- [ ] 각 플로우의 진입점과 종료점 식별
+- [ ] 의사결정 지점과 분기점 매핑
+- [ ] 중요 경로 강조
+- [ ] 엣지 케이스 고려
 
-### 3.2 Usability Requirements
+### 3.2 사용성 요구사항
 
-- [ ] Accessibility considerations documented
-- [ ] Platform/device compatibility specified
-- [ ] Performance expectations from user perspective defined
-- [ ] Error handling and recovery approaches outlined
-- [ ] User feedback mechanisms identified
+- [ ] 접근성 고려사항 문서화
+- [ ] 플랫폼/기기 호환성 명시
+- [ ] 사용자 관점에서의 성능 기대치 정의
+- [ ] 오류 처리 및 복구 접근법 개요
+- [ ] 사용자 피드백 메커니즘 식별
 
-### 3.3 UI Requirements
+### 3.3 UI 요구사항
 
-- [ ] Information architecture outlined
-- [ ] Critical UI components identified
-- [ ] Visual design guidelines referenced (if applicable)
-- [ ] Content requirements specified
-- [ ] High-level navigation structure defined
+- [ ] 정보 아키텍처 개요
+- [ ] 중요 UI 컴포넌트 식별
+- [ ] 비주얼 디자인 가이드라인 참조 (해당하는 경우)
+- [ ] 콘텐츠 요구사항 명시
+- [ ] 고수준 네비게이션 구조 정의
 
-## 4. FUNCTIONAL REQUIREMENTS
+## 4. 기능 요구사항
 
-[[LLM: Functional requirements must be clear enough for implementation. Check:
+[[LLM: 기능 요구사항은 구현할 수 있을 만큼 명확해야 합니다. 다음을 확인하세요:
 
-1. Requirements focus on WHAT not HOW (no implementation details)
-2. Each requirement is testable (how would QA verify it?)
-3. Dependencies are explicit (what needs to be built first?)
-4. Requirements use consistent terminology
-5. Complex features are broken into manageable pieces]]
+1. 요구사항이 HOW가 아닌 WHAT에 초점을 맞추는가 (구현 세부사항 없음)
+2. 각 요구사항이 테스트 가능한가 (QA가 어떻게 검증할 것인가?)
+3. 종속성이 명시적인가 (무엇을 먼저 구축해야 하는가?)
+4. 요구사항이 일관된 용어를 사용하는가
+5. 복잡한 기능이 관리 가능한 조각으로 분해되어 있는가]]
 
-### 4.1 Feature Completeness
+### 4.1 기능 완전성
 
-- [ ] All required features for MVP documented
-- [ ] Features have clear, user-focused descriptions
-- [ ] Feature priority/criticality indicated
-- [ ] Requirements are testable and verifiable
-- [ ] Dependencies between features identified
+- [ ] MVP를 위한 모든 필수 기능 문서화
+- [ ] 기능이 명확하고 사용자 중심적인 설명을 가짐
+- [ ] 기능 우선순위/중요도 표시
+- [ ] 요구사항이 테스트 가능하고 검증 가능함
+- [ ] 기능 간 종속성 식별
 
-### 4.2 Requirements Quality
+### 4.2 요구사항 품질
 
-- [ ] Requirements are specific and unambiguous
-- [ ] Requirements focus on WHAT not HOW
-- [ ] Requirements use consistent terminology
-- [ ] Complex requirements broken into simpler parts
-- [ ] Technical jargon minimized or explained
+- [ ] 요구사항이 구체적이고 모호하지 않음
+- [ ] 요구사항이 HOW가 아닌 WHAT에 초점을 맞춤
+- [ ] 요구사항이 일관된 용어 사용
+- [ ] 복잡한 요구사항이 더 간단한 부분으로 분해됨
+- [ ] 기술적 전문용어가 최소화되거나 설명됨
 
-### 4.3 User Stories & Acceptance Criteria
+### 4.3 사용자 스토리 & 승인 기준
 
-- [ ] Stories follow consistent format
-- [ ] Acceptance criteria are testable
-- [ ] Stories are sized appropriately (not too large)
-- [ ] Stories are independent where possible
-- [ ] Stories include necessary context
-- [ ] Local testability requirements (e.g., via CLI) defined in ACs for relevant backend/data stories
+- [ ] 스토리가 일관된 형식을 따름
+- [ ] 승인 기준이 테스트 가능함
+- [ ] 스토리가 적절한 크기로 조정됨 (너무 크지 않음)
+- [ ] 스토리가 가능한 한 독립적임
+- [ ] 스토리가 필요한 컨텍스트 포함
+- [ ] 관련 백엔드/데이터 스토리의 AC에 로컬 테스트 가능성 요구사항 (예: CLI를 통한) 정의
 
-## 5. NON-FUNCTIONAL REQUIREMENTS
+## 5. 비기능 요구사항
 
-### 5.1 Performance Requirements
+### 5.1 성능 요구사항
 
-- [ ] Response time expectations defined
-- [ ] Throughput/capacity requirements specified
-- [ ] Scalability needs documented
-- [ ] Resource utilization constraints identified
-- [ ] Load handling expectations set
+- [ ] 응답 시간 기대치 정의
+- [ ] 처리량/용량 요구사항 명시
+- [ ] 확장성 니즈 문서화
+- [ ] 자원 활용 제약 조건 식별
+- [ ] 부하 처리 기대치 설정
 
-### 5.2 Security & Compliance
+### 5.2 보안 & 컴플라이언스
 
-- [ ] Data protection requirements specified
-- [ ] Authentication/authorization needs defined
-- [ ] Compliance requirements documented
-- [ ] Security testing requirements outlined
-- [ ] Privacy considerations addressed
+- [ ] 데이터 보호 요구사항 명시
+- [ ] 인증/권한 부여 니즈 정의
+- [ ] 컴플라이언스 요구사항 문서화
+- [ ] 보안 테스팅 요구사항 개요
+- [ ] 프라이버시 고려사항 다룸
 
-### 5.3 Reliability & Resilience
+### 5.3 신뢰성 & 복원력
 
-- [ ] Availability requirements defined
-- [ ] Backup and recovery needs documented
-- [ ] Fault tolerance expectations set
-- [ ] Error handling requirements specified
-- [ ] Maintenance and support considerations included
+- [ ] 가용성 요구사항 정의
+- [ ] 백업 및 복구 니즈 문서화
+- [ ] 장애 허용 기대치 설정
+- [ ] 오류 처리 요구사항 명시
+- [ ] 유지보수 및 지원 고려사항 포함
 
-### 5.4 Technical Constraints
+### 5.4 기술적 제약사항
 
-- [ ] Platform/technology constraints documented
-- [ ] Integration requirements outlined
-- [ ] Third-party service dependencies identified
-- [ ] Infrastructure requirements specified
-- [ ] Development environment needs identified
+- [ ] 플랫폼/기술 제약사항 문서화
+- [ ] 통합 요구사항 개요
+- [ ] 서드파티 서비스 종속성 식별
+- [ ] 인프라 요구사항 명시
+- [ ] 개발 환경 니즈 식별
 
-## 6. EPIC & STORY STRUCTURE
+## 6. 에픽 & 스토리 구조
 
-### 6.1 Epic Definition
+### 6.1 에픽 정의
 
-- [ ] Epics represent cohesive units of functionality
-- [ ] Epics focus on user/business value delivery
-- [ ] Epic goals clearly articulated
-- [ ] Epics are sized appropriately for incremental delivery
-- [ ] Epic sequence and dependencies identified
+- [ ] 에픽이 응집력 있는 기능 단위를 나타냄
+- [ ] 에픽이 사용자/비즈니스 가치 전달에 초점을 맞춤
+- [ ] 에픽 목표가 명확히 설명됨
+- [ ] 에픽이 점진적 전달에 적절한 크기로 조정됨
+- [ ] 에픽 순서와 종속성 식별
 
-### 6.2 Story Breakdown
+### 6.2 스토리 분해
 
-- [ ] Stories are broken down to appropriate size
-- [ ] Stories have clear, independent value
-- [ ] Stories include appropriate acceptance criteria
-- [ ] Story dependencies and sequence documented
-- [ ] Stories aligned with epic goals
+- [ ] 스토리가 적절한 크기로 분해됨
+- [ ] 스토리가 명확하고 독립적인 가치를 가짐
+- [ ] 스토리가 적절한 승인 기준 포함
+- [ ] 스토리 종속성과 순서 문서화
+- [ ] 스토리가 에픽 목표와 정렬됨
 
-### 6.3 First Epic Completeness
+### 6.3 첫 번째 에픽 완전성
 
-- [ ] First epic includes all necessary setup steps
-- [ ] Project scaffolding and initialization addressed
-- [ ] Core infrastructure setup included
-- [ ] Development environment setup addressed
-- [ ] Local testability established early
+- [ ] 첫 번째 에픽이 모든 필요한 설정 단계 포함
+- [ ] 프로젝트 스캐폴딩과 초기화 다룸
+- [ ] 핵심 인프라 설정 포함
+- [ ] 개발 환경 설정 다룸
+- [ ] 로컬 테스트 가능성이 조기에 수립됨
 
-## 7. TECHNICAL GUIDANCE
+## 7. 기술적 가이던스
 
-### 7.1 Architecture Guidance
+### 7.1 아키텍처 가이던스
 
-- [ ] Initial architecture direction provided
-- [ ] Technical constraints clearly communicated
-- [ ] Integration points identified
-- [ ] Performance considerations highlighted
-- [ ] Security requirements articulated
-- [ ] Known areas of high complexity or technical risk flagged for architectural deep-dive
+- [ ] 초기 아키텍처 방향 제공
+- [ ] 기술적 제약사항 명확히 전달
+- [ ] 통합 지점 식별
+- [ ] 성능 고려사항 강조
+- [ ] 보안 요구사항 설명
+- [ ] 높은 복잡도나 기술적 위험이 알려진 영역은 아키텍처 심층 분석을 위해 플래그 표시
 
-### 7.2 Technical Decision Framework
+### 7.2 기술적 의사결정 프레임워크
 
-- [ ] Decision criteria for technical choices provided
-- [ ] Trade-offs articulated for key decisions
-- [ ] Rationale for selecting primary approach over considered alternatives documented (for key design/feature choices)
-- [ ] Non-negotiable technical requirements highlighted
-- [ ] Areas requiring technical investigation identified
-- [ ] Guidance on technical debt approach provided
+- [ ] 기술적 선택을 위한 의사결정 기준 제공
+- [ ] 핵심 결정에 대한 트레이드오프 설명
+- [ ] 고려된 대안보다 주요 접근법을 선택한 근거 문서화 (핵심 디자인/기능 선택에 대해)
+- [ ] 타협할 수 없는 기술적 요구사항 강조
+- [ ] 기술적 조사가 필요한 영역 식별
+- [ ] 기술 부채 접근법에 대한 가이던스 제공
 
-### 7.3 Implementation Considerations
+### 7.3 구현 고려사항
 
-- [ ] Development approach guidance provided
-- [ ] Testing requirements articulated
-- [ ] Deployment expectations set
-- [ ] Monitoring needs identified
-- [ ] Documentation requirements specified
+- [ ] 개발 접근법 가이던스 제공
+- [ ] 테스팅 요구사항 설명
+- [ ] 배포 기대치 설정
+- [ ] 모니터링 니즈 식별
+- [ ] 문서화 요구사항 명시
 
-## 8. CROSS-FUNCTIONAL REQUIREMENTS
+## 8. 교차 기능 요구사항
 
-### 8.1 Data Requirements
-
-- [ ] Data entities and relationships identified
-- [ ] Data storage requirements specified
-- [ ] Data quality requirements defined
-- [ ] Data retention policies identified
-- [ ] Data migration needs addressed (if applicable)
-- [ ] Schema changes planned iteratively, tied to stories requiring them
+### 8.1 데이터 요구사항
+
+- [ ] 데이터 엔티티와 관계 식별
+- [ ] 데이터 저장 요구사항 명시
+- [ ] 데이터 품질 요구사항 정의
+- [ ] 데이터 보존 정책 식별
+- [ ] 데이터 마이그레이션 니즈 다룸 (해당하는 경우)
+- [ ] 스키마 변경이 점진적으로 계획되어 이를 필요로 하는 스토리와 연결됨
 
-### 8.2 Integration Requirements
+### 8.2 통합 요구사항
 
-- [ ] External system integrations identified
-- [ ] API requirements documented
-- [ ] Authentication for integrations specified
-- [ ] Data exchange formats defined
-- [ ] Integration testing requirements outlined
+- [ ] 외부 시스템 통합 식별
+- [ ] API 요구사항 문서화
+- [ ] 통합을 위한 인증 명시
+- [ ] 데이터 교환 형식 정의
+- [ ] 통합 테스팅 요구사항 개요
 
-### 8.3 Operational Requirements
+### 8.3 운영 요구사항
 
-- [ ] Deployment frequency expectations set
-- [ ] Environment requirements defined
-- [ ] Monitoring and alerting needs identified
-- [ ] Support requirements documented
-- [ ] Performance monitoring approach specified
+- [ ] 배포 빈도 기대치 설정
+- [ ] 환경 요구사항 정의
+- [ ] 모니터링 및 알림 니즈 식별
+- [ ] 지원 요구사항 문서화
+- [ ] 성능 모니터링 접근법 명시
 
-## 9. CLARITY & COMMUNICATION
+## 9. 명확성 & 소통
 
-### 9.1 Documentation Quality
+### 9.1 문서화 품질
 
-- [ ] Documents use clear, consistent language
-- [ ] Documents are well-structured and organized
-- [ ] Technical terms are defined where necessary
-- [ ] Diagrams/visuals included where helpful
-- [ ] Documentation is versioned appropriately
+- [ ] 문서가 명확하고 일관된 언어 사용
+- [ ] 문서가 잘 구조화되고 조직화됨
+- [ ] 기술적 용어가 필요한 곳에서 정의됨
+- [ ] 도움이 되는 다이어그램/시각 자료 포함
+- [ ] 문서가 적절히 버전 관리됨
 
-### 9.2 Stakeholder Alignment
+### 9.2 이해관계자 정렬
 
-- [ ] Key stakeholders identified
-- [ ] Stakeholder input incorporated
-- [ ] Potential areas of disagreement addressed
-- [ ] Communication plan for updates established
-- [ ] Approval process defined
+- [ ] 핵심 이해관계자 식별
+- [ ] 이해관계자 의견 반영
+- [ ] 잠재적 의견 불일치 영역 다룸
+- [ ] 업데이트를 위한 소통 계획 수립
+- [ ] 승인 프로세스 정의
 
-## PRD & EPIC VALIDATION SUMMARY
+## PRD & 에픽 검증 요약
 
-[[LLM: FINAL PM CHECKLIST REPORT GENERATION
+[[LLM: 최종 PM 체크리스트 보고서 생성
 
-Create a comprehensive validation report that includes:
+다음을 포함하는 포괄적인 검증 보고서 작성:
 
-1. Executive Summary
-   - Overall PRD completeness (percentage)
-   - MVP scope appropriateness (Too Large/Just Right/Too Small)
-   - Readiness for architecture phase (Ready/Nearly Ready/Not Ready)
-   - Most critical gaps or concerns
+1. 요약 보고서
+   - 전반적인 PRD 완성도 (퍼센트)
+   - MVP 범위 적절성 (너무 큼/적절함/너무 작음)
+   - 아키텍처 단계 준비도 (준비됨/거의 준비됨/준비 안됨)
+   - 가장 중요한 격차나 우려사항
 
-2. Category Analysis Table
-   Fill in the actual table with:
-   - Status: PASS (90%+ complete), PARTIAL (60-89%), FAIL (<60%)
-   - Critical Issues: Specific problems that block progress
+2. 카테고리 분석 표
+   실제 표를 다음으로 채우기:
+   - 상태: PASS (90%+ 완료), PARTIAL (60-89%), FAIL (<60%)
+   - 중요 이슈: 진행을 막는 구체적인 문제들
 
-3. Top Issues by Priority
-   - BLOCKERS: Must fix before architect can proceed
-   - HIGH: Should fix for quality
-   - MEDIUM: Would improve clarity
-   - LOW: Nice to have
+3. 우선순위별 주요 이슈
+   - BLOCKERS: 아키텍트가 진행하기 전에 반드시 수정해야 함
+   - HIGH: 품질을 위해 수정해야 함
+   - MEDIUM: 명확성을 개선할 것
+   - LOW: 있으면 좋음
 
-4. MVP Scope Assessment
-   - Features that might be cut for true MVP
-   - Missing features that are essential
-   - Complexity concerns
-   - Timeline realism
+4. MVP 범위 평가
+   - 진정한 MVP를 위해 삭제될 수 있는 기능
+   - 필수적이지만 빠진 기능
+   - 복잡성 우려사항
+   - 타임라인 현실성
 
-5. Technical Readiness
-   - Clarity of technical constraints
-   - Identified technical risks
-   - Areas needing architect investigation
+5. 기술적 준비도
+   - 기술적 제약사항의 명확성
+   - 식별된 기술적 위험
+   - 아키텍트 조사가 필요한 영역
 
-6. Recommendations
-   - Specific actions to address each blocker
-   - Suggested improvements
-   - Next steps
+6. 권장사항
+   - 각 차단 요소를 해결하기 위한 구체적인 조치
+   - 개선 제안
+   - 다음 단계
 
-After presenting the report, ask if the user wants:
+보고서 제시 후, 사용자에게 다음을 원하는지 물어보세요:
 
-- Detailed analysis of any failed sections
-- Suggestions for improving specific areas
-- Help with refining MVP scope]]
+- 실패한 섹션의 상세 분석
+- 특정 영역 개선 제안
+- MVP 범위 정제 도움]]
 
-### Category Statuses
+### 카테고리 상태
 
-| Category                         | Status | Critical Issues |
-| -------------------------------- | ------ | --------------- |
-| 1. Problem Definition & Context  | _TBD_  |                 |
-| 2. MVP Scope Definition          | _TBD_  |                 |
-| 3. User Experience Requirements  | _TBD_  |                 |
-| 4. Functional Requirements       | _TBD_  |                 |
-| 5. Non-Functional Requirements   | _TBD_  |                 |
-| 6. Epic & Story Structure        | _TBD_  |                 |
-| 7. Technical Guidance            | _TBD_  |                 |
-| 8. Cross-Functional Requirements | _TBD_  |                 |
-| 9. Clarity & Communication       | _TBD_  |                 |
+| 카테고리                  | 상태  | 중요 이슈 |
+| ------------------------- | ----- | --------- |
+| 1. 문제 정의 & 컨텍스트   | _TBD_ |           |
+| 2. MVP 범위 정의          | _TBD_ |           |
+| 3. 사용자 경험 요구사항   | _TBD_ |           |
+| 4. 기능 요구사항          | _TBD_ |           |
+| 5. 비기능 요구사항        | _TBD_ |           |
+| 6. 에픽 & 스토리 구조     | _TBD_ |           |
+| 7. 기술적 가이던스        | _TBD_ |           |
+| 8. 교차 기능 요구사항     | _TBD_ |           |
+| 9. 명확성 & 소통          | _TBD_ |           |
 
-### Critical Deficiencies
+### 중요 결함
 
-(To be populated during validation)
+(검증 중에 채워질 예정)
 
-### Recommendations
+### 권장사항
 
-(To be populated during validation)
+(검증 중에 채워질 예정)
 
-### Final Decision
+### 최종 결정
 
-- **READY FOR ARCHITECT**: The PRD and epics are comprehensive, properly structured, and ready for architectural design.
-- **NEEDS REFINEMENT**: The requirements documentation requires additional work to address the identified deficiencies.
+- **아키텍트 준비 완료**: PRD와 에픽이 포괄적이고 적절히 구조화되어 아키텍처 설계 준비가 완료됨.
+- **정제 필요**: 요구사항 문서화가 식별된 결함을 해결하기 위한 추가 작업이 필요함.

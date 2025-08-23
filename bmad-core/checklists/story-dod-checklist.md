@@ -1,96 +1,96 @@
 <!-- Powered by BMAD™ Core -->
 
-# Story Definition of Done (DoD) Checklist
+# 스토리 완료 정의 (DoD) 체크리스트
 
-## Instructions for Developer Agent
+## 개발자 에이전트를 위한 지시사항
 
-Before marking a story as 'Review', please go through each item in this checklist. Report the status of each item (e.g., [x] Done, [ ] Not Done, [N/A] Not Applicable) and provide brief comments if necessary.
+스토리를 '검토'로 표시하기 전에 이 체크리스트의 각 항목을 확인하세요. 각 항목의 상태를 보고하고 (예: [x] 완료, [ ] 미완료, [N/A] 해당 없음) 필요한 경우 간단한 코멘트를 제공하세요.
 
-[[LLM: INITIALIZATION INSTRUCTIONS - STORY DOD VALIDATION
+[[LLM: 초기화 지시사항 - 스토리 DOD 검증
 
-This checklist is for DEVELOPER AGENTS to self-validate their work before marking a story complete.
+이 체크리스트는 개발자 에이전트가 스토리를 완료로 표시하기 전에 자신의 작업을 자체 검증하기 위한 것입니다.
 
-IMPORTANT: This is a self-assessment. Be honest about what's actually done vs what should be done. It's better to identify issues now than have them found in review.
+중요: 이것은 자체 평가입니다. 실제로 완료된 것 대비 완료되어야 하는 것에 대해 정직하세요. 검토에서 발견되는 것보다 지금 문제를 식별하는 것이 낫습니다.
 
-EXECUTION APPROACH:
+실행 접근 방식:
 
-1. Go through each section systematically
-2. Mark items as [x] Done, [ ] Not Done, or [N/A] Not Applicable
-3. Add brief comments explaining any [ ] or [N/A] items
-4. Be specific about what was actually implemented
-5. Flag any concerns or technical debt created
+1. 각 섹션을 체계적으로 진행
+2. 항목을 [x] 완료, [ ] 미완료, 또는 [N/A] 해당 없음으로 표시
+3. [ ] 또는 [N/A] 항목에 대한 간단한 설명 코멘트 추가
+4. 실제로 구현된 것에 대해 구체적으로 설명
+5. 우려사항이나 생성된 기술 부채 플래그
 
-The goal is quality delivery, not just checking boxes.]]
+목표는 단순히 체크박스를 확인하는 것이 아니라 품질 있는 전달입니다.]]
 
-## Checklist Items
+## 체크리스트 항목
 
-1. **Requirements Met:**
+1. **요구사항 충족:**
 
-   [[LLM: Be specific - list each requirement and whether it's complete]]
-   - [ ] All functional requirements specified in the story are implemented.
-   - [ ] All acceptance criteria defined in the story are met.
+   [[LLM: 구체적으로 하세요 - 각 요구사항과 완료 여부를 나열하세요]]
+   - [ ] 스토리에 명시된 모든 기능 요구사항이 구현됨.
+   - [ ] 스토리에 정의된 모든 수락 기준이 충족됨.
 
-2. **Coding Standards & Project Structure:**
+2. **코딩 표준 & 프로젝트 구조:**
 
-   [[LLM: Code quality matters for maintainability. Check each item carefully]]
-   - [ ] All new/modified code strictly adheres to `Operational Guidelines`.
-   - [ ] All new/modified code aligns with `Project Structure` (file locations, naming, etc.).
-   - [ ] Adherence to `Tech Stack` for technologies/versions used (if story introduces or modifies tech usage).
-   - [ ] Adherence to `Api Reference` and `Data Models` (if story involves API or data model changes).
-   - [ ] Basic security best practices (e.g., input validation, proper error handling, no hardcoded secrets) applied for new/modified code.
-   - [ ] No new linter errors or warnings introduced.
-   - [ ] Code is well-commented where necessary (clarifying complex logic, not obvious statements).
+   [[LLM: 코드 품질은 유지보수성에 중요합니다. 각 항목을 신중히 확인하세요]]
+   - [ ] 모든 신규/수정된 코드가 `Operational Guidelines`를 엄격히 준수함.
+   - [ ] 모든 신규/수정된 코드가 `Project Structure`와 일치함 (파일 위치, 명명 등).
+   - [ ] 사용된 기술/버전에 대한 `Tech Stack` 준수 (스토리가 기술 사용을 도입하거나 수정하는 경우).
+   - [ ] `Api Reference`와 `Data Models` 준수 (스토리가 API나 데이터 모델 변경을 포함하는 경우).
+   - [ ] 신규/수정된 코드에 기본 보안 모범 사례 (예: 입력 검증, 적절한 오류 처리, 하드코딩된 비밀 없음) 적용.
+   - [ ] 새로운 린터 오류나 경고가 도입되지 않음.
+   - [ ] 필요한 곳에 코드가 잘 주석 처리됨 (복잡한 로직 명확화, 명백한 진술이 아닌).
 
-3. **Testing:**
+3. **테스팅:**
 
-   [[LLM: Testing proves your code works. Be honest about test coverage]]
-   - [ ] All required unit tests as per the story and `Operational Guidelines` Testing Strategy are implemented.
-   - [ ] All required integration tests (if applicable) as per the story and `Operational Guidelines` Testing Strategy are implemented.
-   - [ ] All tests (unit, integration, E2E if applicable) pass successfully.
-   - [ ] Test coverage meets project standards (if defined).
+   [[LLM: 테스팅은 코드가 작동한다는 것을 증명합니다. 테스트 커버리지에 대해 정직하세요]]
+   - [ ] 스토리와 `Operational Guidelines` 테스팅 전략에 따른 모든 필수 단위 테스트가 구현됨.
+   - [ ] 스토리와 `Operational Guidelines` 테스팅 전략에 따른 모든 필수 통합 테스트 (해당하는 경우)가 구현됨.
+   - [ ] 모든 테스트 (단위, 통합, E2E 해당하는 경우)가 성공적으로 통과함.
+   - [ ] 테스트 커버리지가 프로젝트 표준을 충족함 (정의된 경우).
 
-4. **Functionality & Verification:**
+4. **기능 & 검증:**
 
-   [[LLM: Did you actually run and test your code? Be specific about what you tested]]
-   - [ ] Functionality has been manually verified by the developer (e.g., running the app locally, checking UI, testing API endpoints).
-   - [ ] Edge cases and potential error conditions considered and handled gracefully.
+   [[LLM: 실제로 코드를 실행하고 테스트했나요? 테스트한 것에 대해 구체적으로 설명하세요]]
+   - [ ] 개발자가 기능을 수동으로 검증함 (예: 로컬에서 앱 실행, UI 확인, API 엔드포인트 테스트).
+   - [ ] 엣지 케이스와 잠재적 오류 조건이 고려되고 우아하게 처리됨.
 
-5. **Story Administration:**
+5. **스토리 관리:**
 
-   [[LLM: Documentation helps the next developer. What should they know?]]
-   - [ ] All tasks within the story file are marked as complete.
-   - [ ] Any clarifications or decisions made during development are documented in the story file or linked appropriately.
-   - [ ] The story wrap up section has been completed with notes of changes or information relevant to the next story or overall project, the agent model that was primarily used during development, and the changelog of any changes is properly updated.
+   [[LLM: 문서화는 다음 개발자를 돕습니다. 그들이 알아야 할 것은 무엇인가요?]]
+   - [ ] 스토리 파일 내의 모든 작업이 완료로 표시됨.
+   - [ ] 개발 중에 내려진 명확화나 결정이 스토리 파일에 문서화되거나 적절히 연결됨.
+   - [ ] 스토리 마무리 섹션이 다음 스토리나 전체 프로젝트와 관련된 변경사항이나 정보의 노트, 개발 중에 주로 사용된 에이전트 모델, 그리고 모든 변경사항의 변경로그가 적절히 업데이트되어 완료됨.
 
-6. **Dependencies, Build & Configuration:**
+6. **종속성, 빌드 & 구성:**
 
-   [[LLM: Build issues block everyone. Ensure everything compiles and runs cleanly]]
-   - [ ] Project builds successfully without errors.
-   - [ ] Project linting passes
-   - [ ] Any new dependencies added were either pre-approved in the story requirements OR explicitly approved by the user during development (approval documented in story file).
-   - [ ] If new dependencies were added, they are recorded in the appropriate project files (e.g., `package.json`, `requirements.txt`) with justification.
-   - [ ] No known security vulnerabilities introduced by newly added and approved dependencies.
-   - [ ] If new environment variables or configurations were introduced by the story, they are documented and handled securely.
+   [[LLM: 빌드 문제는 모든 사람을 차단합니다. 모든 것이 깔끔하게 컴파일되고 실행되는지 확인하세요]]
+   - [ ] 프로젝트가 오류 없이 성공적으로 빌드됨.
+   - [ ] 프로젝트 린팅이 통과함
+   - [ ] 추가된 새로운 종속성이 스토리 요구사항에서 사전 승인되었거나 개발 중에 사용자에 의해 명시적으로 승인됨 (승인이 스토리 파일에 문서화됨).
+   - [ ] 새로운 종속성이 추가된 경우, 정당화와 함께 적절한 프로젝트 파일 (예: `package.json`, `requirements.txt`)에 기록됨.
+   - [ ] 새로 추가되고 승인된 종속성에 의해 알려진 보안 취약점이 도입되지 않음.
+   - [ ] 스토리에 의해 새로운 환경 변수나 구성이 도입된 경우, 문서화되고 안전하게 처리됨.
 
-7. **Documentation (If Applicable):**
+7. **문서화 (해당하는 경우):**
 
-   [[LLM: Good documentation prevents future confusion. What needs explaining?]]
-   - [ ] Relevant inline code documentation (e.g., JSDoc, TSDoc, Python docstrings) for new public APIs or complex logic is complete.
-   - [ ] User-facing documentation updated, if changes impact users.
-   - [ ] Technical documentation (e.g., READMEs, system diagrams) updated if significant architectural changes were made.
+   [[LLM: 좋은 문서화는 미래의 혼란을 방지합니다. 무엇을 설명해야 하나요?]]
+   - [ ] 새로운 공개 API나 복잡한 로직에 대한 관련 인라인 코드 문서화 (예: JSDoc, TSDoc, Python docstrings)가 완료됨.
+   - [ ] 변경사항이 사용자에게 영향을 미치는 경우 사용자 대상 문서가 업데이트됨.
+   - [ ] 중요한 아키텍처 변경이 이루어진 경우 기술 문서 (예: README, 시스템 다이어그램)가 업데이트됨.
 
-## Final Confirmation
+## 최종 확인
 
-[[LLM: FINAL DOD SUMMARY
+[[LLM: 최종 DOD 요약
 
-After completing the checklist:
+체크리스트 완료 후:
 
-1. Summarize what was accomplished in this story
-2. List any items marked as [ ] Not Done with explanations
-3. Identify any technical debt or follow-up work needed
-4. Note any challenges or learnings for future stories
-5. Confirm whether the story is truly ready for review
+1. 이 스토리에서 달성한 것을 요약
+2. [ ] 미완료로 표시된 항목을 설명과 함께 나열
+3. 필요한 기술 부채나 후속 작업 식별
+4. 미래 스토리를 위한 도전이나 학습 기록
+5. 스토리가 진정으로 검토 준비가 되었는지 확인
 
-Be honest - it's better to flag issues now than have them discovered later.]]
+정직하세요 - 나중에 발견되는 것보다 지금 문제를 플래그하는 것이 낫습니다.]]
 
-- [ ] I, the Developer Agent, confirm that all applicable items above have been addressed.
+- [ ] 나, 개발자 에이전트는 위의 모든 해당 항목이 다뤄졌음을 확인합니다.
