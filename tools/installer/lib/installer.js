@@ -8,6 +8,7 @@ const configLoader = require('./config-loader');
 const ideSetup = require('./ide-setup');
 const { extractYamlFromAgent } = require('../../lib/yaml-utils');
 const resourceLocator = require('./resource-locator');
+const moduleManager = require('./module-manager');
 
 class Installer {
   async getCoreVersion() {
@@ -23,7 +24,7 @@ class Installer {
   }
 
   async install(config) {
-    const spinner = ora('Analyzing installation directory...').start();
+    const spinner = ora('설치 디렉토리 분석 중...').start();
 
     try {
       // Store the original CWD where npx was executed
@@ -41,30 +42,30 @@ class Installer {
 
       // Log resolved path for clarity
       if (!path.isAbsolute(config.directory)) {
-        spinner.text = `Resolving "${config.directory}" to: ${installDir}`;
+        spinner.text = `"${config.directory}"를 다음으로 해결: ${installDir}`;
       }
 
       // Check if directory exists and handle non-existent directories
       if (!(await fileManager.pathExists(installDir))) {
         spinner.stop();
-        console.log(`\nThe directory ${installDir} does not exist.`);
+        console.log(`\n디렉토리 ${installDir}가 존재하지 않습니다.`);
 
         const { action } = await inquirer.prompt([
           {
             type: 'list',
             name: 'action',
-            message: 'What would you like to do?',
+            message: '어떻게 하시겠습니까?',
             choices: [
               {
-                name: 'Create the directory and continue',
+                name: '디렉토리를 생성하고 계속',
                 value: 'create',
               },
               {
-                name: 'Choose a different directory',
+                name: '다른 디렉토리 선택',
                 value: 'change',
               },
               {
-                name: 'Cancel installation',
+                name: '설치 취소',
                 value: 'cancel',
               },
             ],
@@ -73,7 +74,7 @@ class Installer {
 
         switch (action) {
           case 'cancel': {
-            console.log('Installation cancelled.');
+            console.log('설치가 취소되었습니다.');
             process.exit(0);
 
             break;
@@ -83,10 +84,10 @@ class Installer {
               {
                 type: 'input',
                 name: 'newDirectory',
-                message: 'Enter the new directory path:',
+                message: '새 디렉토리 경로를 입력하세요:',
                 validate: (input) => {
                   if (!input.trim()) {
-                    return 'Please enter a valid directory path';
+                    return '유효한 디렉토리 경로를 입력하세요';
                   }
                   return true;
                 },
@@ -99,10 +100,10 @@ class Installer {
           case 'create': {
             try {
               await fileManager.ensureDirectory(installDir);
-              console.log(`✓ Created directory: ${installDir}`);
+              console.log(`✓ 디렉토리 생성: ${installDir}`);
             } catch (error) {
-              console.error(`Failed to create directory: ${error.message}`);
-              console.error('You may need to check permissions or use a different path.');
+              console.error(`디렉토리 생성 실패: ${error.message}`);
+              console.error('권한을 확인하거나 다른 경로를 사용해야 할 수 있습니다.');
               process.exit(1);
             }
 
@@ -111,7 +112,7 @@ class Installer {
           // No default
         }
 
-        spinner.start('Analyzing installation directory...');
+        spinner.start('설치 디렉토리 분석 중...');
       }
 
       // If this is an update request from early detection, handle it directly
@@ -120,8 +121,8 @@ class Installer {
         if (state.type === 'v4_existing') {
           return await this.performUpdate(config, installDir, state.manifest, spinner);
         } else {
-          spinner.fail('No existing v4 installation found to update');
-          throw new Error('No existing v4 installation found');
+          spinner.fail('업데이트할 기존 v4 설치를 찾을 수 없습니다');
+          throw new Error('기존 v4 설치를 찾을 수 없습니다');
         }
       }
 
@@ -221,14 +222,14 @@ class Installer {
   }
 
   async performFreshInstall(config, installDir, spinner, options = {}) {
-    spinner.text = 'Installing BMad Method...';
+    spinner.text = 'BMad Method 설치 중...';
 
     let files = [];
 
     switch (config.installType) {
       case 'full': {
         // Full installation - copy entire .bmad-core folder as a subdirectory
-        spinner.text = 'Copying complete .bmad-core folder...';
+        spinner.text = '완전한 .bmad-core 폴더 복사 중...';
         const sourceDir = resourceLocator.getBmadCorePath();
         const bmadCoreDestDir = path.join(installDir, '.bmad-core');
         await fileManager.copyDirectoryWithRootReplacement(
@@ -257,7 +258,7 @@ class Installer {
       }
       case 'single-agent': {
         // Single agent installation
-        spinner.text = `Installing ${config.agent} agent...`;
+        spinner.text = `${config.agent} 에이전트 설치 중...`;
 
         // Copy agent file with {root} replacement
         const agentPath = configLoader.getAgentPath(config.agent);
@@ -323,7 +324,7 @@ class Installer {
       }
       case 'team': {
         // Team installation
-        spinner.text = `Installing ${config.team} team...`;
+        spinner.text = `${config.team} 팀 설치 중...`;
 
         // Get team dependencies
         const teamDependencies = await configLoader.getTeamDependencies(config.team);
@@ -376,7 +377,7 @@ class Installer {
       case 'expansion-only': {
         // Expansion-only installation - DO NOT create .bmad-core
         // Only install expansion packs
-        spinner.text = 'Installing expansion packs only...';
+        spinner.text = '확장팩만 설치 중...';
 
         break;
       }
@@ -439,14 +440,14 @@ class Installer {
     const newVersion = await this.getCoreVersion();
     const versionCompare = this.compareVersions(currentVersion, newVersion);
 
-    console.log(chalk.yellow('\n🔍 Found existing BMad v4 installation'));
-    console.log(`   Directory: ${installDir}`);
-    console.log(`   Current version: ${currentVersion}`);
-    console.log(`   Available version: ${newVersion}`);
-    console.log(`   Installed: ${new Date(state.manifest.installed_at).toLocaleDateString()}`);
+    console.log(chalk.yellow('\n🔍 기존 BMad v4 설치를 발견했습니다'));
+    console.log(`   디렉토리: ${installDir}`);
+    console.log(`   현재 버전: ${currentVersion}`);
+    console.log(`   사용 가능한 버전: ${newVersion}`);
+    console.log(`   설치된 시기: ${new Date(state.manifest.installed_at).toLocaleDateString()}`);
 
     // Check file integrity
-    spinner.start('Checking installation integrity...');
+    spinner.start('설치 무결성 검사 중...');
     const integrity = await fileManager.checkFileIntegrity(installDir, state.manifest);
     spinner.stop();
 
@@ -455,15 +456,15 @@ class Installer {
     const hasIntegrityIssues = hasMissingFiles || hasModifiedFiles;
 
     if (hasIntegrityIssues) {
-      console.log(chalk.red('\n⚠️  Installation issues detected:'));
+      console.log(chalk.red('\n⚠️  설치 문제가 발견되었습니다:'));
       if (hasMissingFiles) {
-        console.log(chalk.red(`   Missing files: ${integrity.missing.length}`));
+        console.log(chalk.red(`   누락된 파일: ${integrity.missing.length}개`));
         if (integrity.missing.length <= 5) {
           for (const file of integrity.missing) console.log(chalk.dim(`     - ${file}`));
         }
       }
       if (hasModifiedFiles) {
-        console.log(chalk.yellow(`   Modified files: ${integrity.modified.length}`));
+        console.log(chalk.yellow(`   수정된 파일: ${integrity.modified.length}개`));
         if (integrity.modified.length <= 5) {
           for (const file of integrity.modified) console.log(chalk.dim(`     - ${file}`));
         }
@@ -472,12 +473,12 @@ class Installer {
 
     // Show existing expansion packs
     if (Object.keys(state.expansionPacks).length > 0) {
-      console.log(chalk.cyan('\n📦 Installed expansion packs:'));
+      console.log(chalk.cyan('\n📦 설치된 확장팩:'));
       for (const [packId, packInfo] of Object.entries(state.expansionPacks)) {
         if (packInfo.hasManifest && packInfo.manifest) {
-          console.log(`   - ${packId} (v${packInfo.manifest.version || 'unknown'})`);
+          console.log(`   - ${packId} (v${packInfo.manifest.version || '알 수 없음'})`);
         } else {
-          console.log(`   - ${packId} (no manifest)`);
+          console.log(`   - ${packId} (매니페스트 없음)`);
         }
       }
     }
@@ -485,42 +486,42 @@ class Installer {
     let choices = [];
 
     if (versionCompare < 0) {
-      console.log(chalk.cyan('\n⬆️  Upgrade available for BMad core'));
+      console.log(chalk.cyan('\n⬆️  BMad 코어 업그레이드 가능'));
       choices.push({
-        name: `Upgrade BMad core (v${currentVersion} → v${newVersion})`,
+        name: `BMad 코어 업그레이드 (v${currentVersion} → v${newVersion})`,
         value: 'upgrade',
       });
     } else if (versionCompare === 0) {
       if (hasIntegrityIssues) {
         // Offer repair option when files are missing or modified
         choices.push({
-          name: 'Repair installation (restore missing/modified files)',
+          name: '설치 복구 (누락/수정된 파일 복원)',
           value: 'repair',
         });
       }
-      console.log(chalk.yellow('\n⚠️  Same version already installed'));
+      console.log(chalk.yellow('\n⚠️  동일한 버전이 이미 설치되어 있습니다'));
       choices.push({
-        name: `Force reinstall BMad core (v${currentVersion} - reinstall)`,
+        name: `BMad 코어 강제 재설치 (v${currentVersion} - 재설치)`,
         value: 'reinstall',
       });
     } else {
-      console.log(chalk.yellow('\n⬇️  Installed version is newer than available'));
+      console.log(chalk.yellow('\n⬇️  설치된 버전이 사용 가능한 버전보다 더 새로운 버전입니다'));
       choices.push({
-        name: `Downgrade BMad core (v${currentVersion} → v${newVersion})`,
+        name: `BMad 코어 다운그레이드 (v${currentVersion} → v${newVersion})`,
         value: 'reinstall',
       });
     }
 
     choices.push(
-      { name: 'Add/update expansion packs only', value: 'expansions' },
-      { name: 'Cancel', value: 'cancel' },
+      { name: '확장팩만 추가/업데이트', value: 'expansions' },
+      { name: '취소', value: 'cancel' },
     );
 
     const { action } = await inquirer.prompt([
       {
         type: 'list',
         name: 'action',
-        message: 'What would you like to do?',
+        message: '어떻게 하시겠습니까?',
         choices: choices,
       },
     ]);
@@ -581,7 +582,7 @@ class Installer {
         return;
       }
       case 'cancel': {
-        console.log('Installation cancelled.');
+        console.log('설치가 취소되었습니다.');
         return;
       }
     }
@@ -590,25 +591,25 @@ class Installer {
   async handleV3Installation(config, installDir, state, spinner) {
     spinner.stop();
 
-    console.log(chalk.yellow('\n🔍 Found BMad v3 installation (bmad-agent/ directory)'));
-    console.log(`   Directory: ${installDir}`);
+    console.log(chalk.yellow('\n🔍 BMad v3 설치를 발견했습니다 (bmad-agent/ 디렉토리)'));
+    console.log(`   디렉토리: ${installDir}`);
 
     const { action } = await inquirer.prompt([
       {
         type: 'list',
         name: 'action',
-        message: 'What would you like to do?',
+        message: '어떻게 하시겠습니까?',
         choices: [
-          { name: 'Upgrade from v3 to v4 (recommended)', value: 'upgrade' },
-          { name: 'Install v4 alongside v3', value: 'alongside' },
-          { name: 'Cancel', value: 'cancel' },
+          { name: 'v3에서 v4로 업그레이드 (추천)', value: 'upgrade' },
+          { name: 'v3와 함께 v4 설치', value: 'alongside' },
+          { name: '취소', value: 'cancel' },
         ],
       },
     ]);
 
     switch (action) {
       case 'upgrade': {
-        console.log(chalk.cyan('\n📦 Starting v3 to v4 upgrade process...'));
+        console.log(chalk.cyan('\n📦 v3에서 v4로 업그레이드 프로세스 시작...'));
         const V3ToV4Upgrader = require('../../upgraders/v3-to-v4-upgrader');
         const upgrader = new V3ToV4Upgrader();
         return await upgrader.upgrade({
@@ -620,7 +621,7 @@ class Installer {
         return await this.performFreshInstall(config, installDir, spinner);
       }
       case 'cancel': {
-        console.log('Installation cancelled.');
+        console.log('설치가 취소되었습니다.');
         return;
       }
     }
@@ -629,25 +630,25 @@ class Installer {
   async handleUnknownInstallation(config, installDir, state, spinner) {
     spinner.stop();
 
-    console.log(chalk.yellow('\n⚠️  Directory contains existing files'));
-    console.log(`   Directory: ${installDir}`);
+    console.log(chalk.yellow('\n⚠️  디렉토리에 기존 파일이 포함되어 있습니다'));
+    console.log(`   디렉토리: ${installDir}`);
 
     if (state.hasBmadCore) {
-      console.log('   Found: .bmad-core directory (but no manifest)');
+      console.log('   발견: .bmad-core 디렉토리 (매니페스트 없음)');
     }
     if (state.hasOtherFiles) {
-      console.log('   Found: Other files in directory');
+      console.log('   발견: 디렉토리에 다른 파일들');
     }
 
     const { action } = await inquirer.prompt([
       {
         type: 'list',
         name: 'action',
-        message: 'What would you like to do?',
+        message: '어떻게 하시겠습니까?',
         choices: [
-          { name: 'Install anyway (may overwrite files)', value: 'force' },
-          { name: 'Choose different directory', value: 'different' },
-          { name: 'Cancel', value: 'cancel' },
+          { name: '그래도 설치 (파일을 덮어쓸 수 있음)', value: 'force' },
+          { name: '다른 디렉토리 선택', value: 'different' },
+          { name: '취소', value: 'cancel' },
         ],
       },
     ]);
@@ -661,7 +662,7 @@ class Installer {
           {
             type: 'input',
             name: 'newDir',
-            message: 'Enter new installation directory:',
+            message: '새 설치 디렉토리를 입력하세요:',
             default: path.join(path.dirname(installDir), 'bmad-project'),
           },
         ]);
@@ -669,14 +670,14 @@ class Installer {
         return await this.install(config);
       }
       case 'cancel': {
-        console.log('Installation cancelled.');
+        console.log('설치가 취소되었습니다.');
         return;
       }
     }
   }
 
   async performUpdate(newConfig, installDir, manifest, spinner) {
-    spinner.start('Checking for updates...');
+    spinner.start('업데이트 확인 중...');
 
     try {
       // Get current and new versions
@@ -1137,7 +1138,7 @@ class Installer {
                 break;
               }
               case 'cancel': {
-                console.log('Installation cancelled.');
+                console.log('설치가 취소되었습니다.');
                 process.exit(0);
 
                 break;
@@ -1187,7 +1188,7 @@ class Installer {
               spinner.start();
               continue;
             } else if (action === 'cancel') {
-              console.log('Installation cancelled.');
+              console.log('설치가 취소되었습니다.');
               process.exit(0);
             }
           }
@@ -1782,7 +1783,7 @@ class Installer {
 
   async detectExpansionPacks(installDir) {
     const expansionPacks = {};
-    const glob = require('glob');
+    const glob = await moduleManager.getModule('glob');
 
     // Find all dot folders that might be expansion packs
     const dotFolders = glob.sync('.*', {
@@ -1909,7 +1910,7 @@ class Installer {
   }
 
   async cleanupLegacyYmlFiles(installDir, spinner) {
-    const glob = require('glob');
+    const glob = await moduleManager.getModule('glob');
     const fs = require('node:fs').promises;
 
     try {

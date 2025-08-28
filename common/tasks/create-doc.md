@@ -1,103 +1,103 @@
 <!-- Powered by BMAD™ Core -->
 
-# Create Document from Template (YAML Driven)
+# 템플릿에서 문서 생성 (YAML 기반)
 
-## ⚠️ CRITICAL EXECUTION NOTICE ⚠️
+## ⚠️ 중요 실행 공지 ⚠️
 
-**THIS IS AN EXECUTABLE WORKFLOW - NOT REFERENCE MATERIAL**
+**이것은 실행 가능한 워크플로우입니다 - 참고 자료가 아닙니다**
 
-When this task is invoked:
+이 태스크가 호출될 때:
 
-1. **DISABLE ALL EFFICIENCY OPTIMIZATIONS** - This workflow requires full user interaction
-2. **MANDATORY STEP-BY-STEP EXECUTION** - Each section must be processed sequentially with user feedback
-3. **ELICITATION IS REQUIRED** - When `elicit: true`, you MUST use the 1-9 format and wait for user response
-4. **NO SHORTCUTS ALLOWED** - Complete documents cannot be created without following this workflow
+1. **모든 효율성 최적화 비활성화** - 이 워크플로우는 완전한 사용자 상호작용이 필요합니다
+2. **단계별 실행 필수** - 각 섹션은 사용자 피드백과 함께 순차적으로 처리되어야 합니다
+3. **도출 과정 필수** - `elicit: true`일 때, 반드시 1-9 형식을 사용하고 사용자 응답을 기다려야 합니다
+4. **바로가기 금지** - 이 워크플로우를 따르지 않고는 완전한 문서를 생성할 수 없습니다
 
-**VIOLATION INDICATOR:** If you create a complete document without user interaction, you have violated this workflow.
+**위반 지표:** 사용자 상호작용 없이 완전한 문서를 생성한다면, 이 워크플로우를 위반한 것입니다.
 
-## Critical: Template Discovery
+## 중요: 템플릿 발견
 
-If a YAML Template has not been provided, list all templates from .bmad-core/templates or ask the user to provide another.
+YAML 템플릿이 제공되지 않은 경우, .bmad-core/templates의 모든 템플릿을 나열하거나 사용자에게 다른 템플릿을 제공하도록 요청하세요.
 
-## CRITICAL: Mandatory Elicitation Format
+## 중요: 필수 도출 형식
 
-**When `elicit: true`, this is a HARD STOP requiring user interaction:**
+**`elicit: true`일 때, 이것은 사용자 상호작용이 필요한 강제 중단입니다:**
 
-**YOU MUST:**
+**반드시 해야 할 것:**
 
-1. Present section content
-2. Provide detailed rationale (explain trade-offs, assumptions, decisions made)
-3. **STOP and present numbered options 1-9:**
-   - **Option 1:** Always "Proceed to next section"
-   - **Options 2-9:** Select 8 methods from data/elicitation-methods
-   - End with: "Select 1-9 or just type your question/feedback:"
-4. **WAIT FOR USER RESPONSE** - Do not proceed until user selects option or provides feedback
+1. 섹션 내용 제시
+2. 상세한 근거 제공 (절충점, 가정, 내린 결정을 설명)
+3. **중단하고 1-9 번호 옵션 제시:**
+   - **옵션 1:** 항상 "다음 섹션으로 진행"
+   - **옵션 2-9:** data/elicitation-methods에서 8가지 방법 선택
+   - 다음으로 마무리: "1-9를 선택하거나 질문/피드백을 입력하세요:"
+4. **사용자 응답 대기** - 사용자가 옵션을 선택하거나 피드백을 제공할 때까지 진행하지 마세요
 
-**WORKFLOW VIOLATION:** Creating content for elicit=true sections without user interaction violates this task.
+**워크플로우 위반:** 사용자 상호작용 없이 elicit=true 섹션의 내용을 생성하는 것은 이 태스크를 위반하는 것입니다.
 
-**NEVER ask yes/no questions or use any other format.**
+**절대 예/아니오 질문을 하거나 다른 형식을 사용하지 마세요.**
 
-## Processing Flow
+## 처리 흐름
 
-1. **Parse YAML template** - Load template metadata and sections
-2. **Set preferences** - Show current mode (Interactive), confirm output file
-3. **Process each section:**
-   - Skip if condition unmet
-   - Check agent permissions (owner/editors) - note if section is restricted to specific agents
-   - Draft content using section instruction
-   - Present content + detailed rationale
-   - **IF elicit: true** → MANDATORY 1-9 options format
-   - Save to file if possible
-4. **Continue until complete**
+1. **YAML 템플릿 파싱** - 템플릿 메타데이터와 섹션 로드
+2. **환경설정 설정** - 현재 모드(대화형) 표시, 출력 파일 확인
+3. **각 섹션 처리:**
+   - 조건이 맞지 않으면 건너뛰기
+   - 에이전트 권한 확인 (소유자/편집자) - 섹션이 특정 에이전트로 제한되는 경우 주의
+   - 섹션 지침을 사용하여 내용 초안 작성
+   - 내용 + 상세한 근거 제시
+   - **elicit: true인 경우** → 필수 1-9 옵션 형식
+   - 가능하면 파일에 저장
+4. **완료될 때까지 계속**
 
-## Detailed Rationale Requirements
+## 상세한 근거 요구사항
 
-When presenting section content, ALWAYS include rationale that explains:
+섹션 내용을 제시할 때, 다음을 설명하는 근거를 항상 포함하세요:
 
-- Trade-offs and choices made (what was chosen over alternatives and why)
-- Key assumptions made during drafting
-- Interesting or questionable decisions that need user attention
-- Areas that might need validation
+- 절충점과 선택한 것들 (대안보다 무엇을 선택했고 왜 선택했는지)
+- 초안 작성 중 내린 주요 가정들
+- 사용자의 주의가 필요한 흥미롭거나 의문스러운 결정들
+- 검증이 필요할 수 있는 영역들
 
-## Elicitation Results Flow
+## 도출 결과 흐름
 
-After user selects elicitation method (2-9):
+사용자가 도출 방법(2-9)을 선택한 후:
 
-1. Execute method from data/elicitation-methods
-2. Present results with insights
-3. Offer options:
-   - **1. Apply changes and update section**
-   - **2. Return to elicitation menu**
-   - **3. Ask any questions or engage further with this elicitation**
+1. data/elicitation-methods에서 방법 실행
+2. 통찰과 함께 결과 제시
+3. 옵션 제공:
+   - **1. 변경사항 적용하고 섹션 업데이트**
+   - **2. 도출 메뉴로 돌아가기**
+   - **3. 질문하거나 이 도출과 더 참여하기**
 
-## Agent Permissions
+## 에이전트 권한
 
-When processing sections with agent permission fields:
+에이전트 권한 필드가 있는 섹션을 처리할 때:
 
-- **owner**: Note which agent role initially creates/populates the section
-- **editors**: List agent roles allowed to modify the section
-- **readonly**: Mark sections that cannot be modified after creation
+- **owner**: 섹션을 처음 생성/채우는 에이전트 역할 주의
+- **editors**: 섹션을 수정할 수 있는 에이전트 역할 나열
+- **readonly**: 생성 후 수정할 수 없는 섹션 표시
 
-**For sections with restricted access:**
+**접근이 제한된 섹션의 경우:**
 
-- Include a note in the generated document indicating the responsible agent
-- Example: "_(This section is owned by dev-agent and can only be modified by dev-agent)_"
+- 생성된 문서에 담당 에이전트를 나타내는 주석 포함
+- 예시: "_(이 섹션은 dev-agent가 소유하며 dev-agent만 수정할 수 있습니다)_"
 
-## YOLO Mode
+## YOLO 모드
 
-User can type `#yolo` to toggle to YOLO mode (process all sections at once).
+사용자는 `#yolo`를 입력하여 YOLO 모드로 전환할 수 있습니다 (모든 섹션을 한 번에 처리).
 
-## CRITICAL REMINDERS
+## 중요 주의사항
 
-**❌ NEVER:**
+**❌ 절대 하지 말 것:**
 
-- Ask yes/no questions for elicitation
-- Use any format other than 1-9 numbered options
-- Create new elicitation methods
+- 도출을 위해 예/아니오 질문하기
+- 1-9 번호 옵션 외의 다른 형식 사용
+- 새로운 도출 방법 생성
 
-**✅ ALWAYS:**
+**✅ 항상 해야 할 것:**
 
-- Use exact 1-9 format when elicit: true
-- Select options 2-9 from data/elicitation-methods only
-- Provide detailed rationale explaining decisions
-- End with "Select 1-9 or just type your question/feedback:"
+- elicit: true일 때 정확한 1-9 형식 사용
+- data/elicitation-methods에서만 옵션 2-9 선택
+- 결정을 설명하는 상세한 근거 제공
+- "1-9를 선택하거나 질문/피드백을 입력하세요:"로 마무리

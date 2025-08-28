@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const yaml = require('js-yaml');
 const { execSync } = require('node:child_process');
+const moduleManager = require('./installer/lib/module-manager');
 
 // Dynamic import for ES module
 let chalk;
@@ -161,7 +162,7 @@ async function lintYamlFile(filePath) {
 async function main() {
   await initializeModules();
   const arguments_ = process.argv.slice(2);
-  const glob = require('glob');
+  const glob = await moduleManager.getModule('glob');
 
   if (arguments_.length === 0) {
     console.error('Usage: node yaml-format.js <file1> [file2] ...');

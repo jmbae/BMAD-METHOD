@@ -1,6 +1,6 @@
 const fs = require('node:fs').promises;
 const path = require('node:path');
-const { glob } = require('glob');
+const moduleManager = require('../installer/lib/module-manager');
 
 // Dynamic imports for ES modules
 let chalk, ora, inquirer;
@@ -151,6 +151,7 @@ class V3ToV4Upgrader {
   }
 
   async analyzeProject(projectPath) {
+    const glob = await moduleManager.getModule('glob');
     const docsPath = path.join(projectPath, 'docs');
     const bmadAgentPath = path.join(projectPath, 'bmad-agent');
 
@@ -646,7 +647,7 @@ class V3ToV4Upgrader {
 
   async createInstallManifest(projectPath) {
     const fileManager = require('../installer/lib/file-manager');
-    const { glob } = require('glob');
+    const glob = await moduleManager.getModule('glob');
 
     // Get all files in .bmad-core for the manifest
     const bmadCorePath = path.join(projectPath, '.bmad-core');

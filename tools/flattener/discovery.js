@@ -1,7 +1,7 @@
 const path = require('node:path');
 const { execFile } = require('node:child_process');
 const { promisify } = require('node:util');
-const { glob } = require('glob');
+const moduleManager = require('../installer/lib/module-manager');
 const { loadIgnore } = require('./ignoreRules.js');
 
 const pExecFile = promisify(execFile);
@@ -56,6 +56,7 @@ async function discoverFiles(rootDir, options = {}) {
   }
 
   // Glob fallback
+  const glob = await moduleManager.getModule('glob');
   const globbed = await glob('**/*', {
     cwd: rootDir,
     nodir: true,
