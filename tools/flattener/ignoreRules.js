@@ -6,7 +6,7 @@ const ignore = require('ignore');
 // These complement .gitignore and are applied regardless of VCS presence.
 const DEFAULT_PATTERNS = [
   // Project/VCS
-  '**/.bmad-core/**',
+  '**/.bmad-method/**',
   '**/.git/**',
   '**/.svn/**',
   '**/.hg/**',
@@ -154,11 +154,7 @@ async function parseGitignore(gitignorePath) {
 async function loadIgnore(rootDir, extraPatterns = []) {
   const ig = ignore();
   const gitignorePath = path.join(rootDir, '.gitignore');
-  const patterns = [
-    ...(await readIgnoreFile(gitignorePath)),
-    ...DEFAULT_PATTERNS,
-    ...extraPatterns,
-  ];
+  const patterns = [...(await readIgnoreFile(gitignorePath)), ...DEFAULT_PATTERNS, ...extraPatterns];
   // De-duplicate
   const unique = [...new Set(patterns.map(String))];
   ig.add(unique);

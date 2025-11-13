@@ -1,209 +1,268 @@
-# 이 프로젝트에 기여하기
+# Contributing to BMad
 
-이 프로젝트에 기여를 고려해주셔서 감사합니다! 이 문서는 기여 과정과 따라야 할 가이드라인을 설명합니다.
+Thank you for considering contributing to the BMad project! We believe in **Human Amplification, Not Replacement** - bringing out the best thinking in both humans and AI through guided collaboration.
 
-🆕 **GitHub이나 Pull Request가 처음이신가요?** 먼저 [초보자 친화적인 Pull Request 가이드](docs/how-to-contribute-with-pull-requests.md)를 확인해보세요!
+💬 **Discord Community**: Join our [Discord server](https://discord.gg/gk8jAdXWmj) for real-time discussions:
 
-📋 **기여하기 전에**, BMad Method의 핵심 철학과 아키텍처 결정을 이해하기 위해 [가이드 원칙](docs/GUIDING-PRINCIPLES.md)을 읽어주세요.
+- **#general-dev** - Technical discussions, feature ideas, and development questions
+- **#bugs-issues** - Bug reports and issue discussions
 
-또한 잠재적 아이디어, 사용법, 추가사항 및 개선사항을 논의하기 위해 GitHub의 discussions 기능을 사용한다는 점을 참고하세요.
+## Our Philosophy
 
-💬 **Discord 커뮤니티**: 실시간 토론을 위해 [Discord 서버](https://discord.gg/gk8jAdXWmj)에 참여하세요:
+### BMad Core™: Universal Foundation
 
-- **#general-dev** - 기술 토론, 기능 아이디어, 개발 질문
-- **#bugs-issues** - 버그 신고 및 이슈 토론
+BMad Core empowers humans and AI agents working together in true partnership across any domain through our **C.O.R.E. Framework** (Collaboration Optimized Reflection Engine):
 
-## 행동 강령
+- **Collaboration**: Human-AI partnership where both contribute unique strengths
+- **Optimized**: The collaborative process refined for maximum effectiveness
+- **Reflection**: Guided thinking that helps discover better solutions and insights
+- **Engine**: The powerful framework that orchestrates specialized agents and workflows
 
-이 프로젝트에 참여함으로써 행동 강령을 준수하는 데 동의하게 됩니다. 참여하기 전에 이를 읽어주세요.
+### BMad Method™: Agile AI-Driven Development
 
-## 기여 방법
+The BMad Method is the flagship bmad module for agile AI-driven software development. It emphasizes thorough planning and solid architectural foundations to provide detailed context for developer agents, mirroring real-world agile best practices.
 
-### 버그 신고
+### Core Principles
 
-1. **기존 이슈를 먼저 확인**하여 중복을 피해주세요
-2. **새 이슈 생성 시 버그 신고 템플릿을 사용**하세요 - 다음 사항을 제공하도록 안내합니다:
-   - 명확한 버그 설명
-   - 재현 단계
-   - 예상 vs 실제 동작
-   - 모델/IDE/BMad 버전 세부사항
-   - 해당되는 경우 스크린샷이나 링크
-3. **빠른 도움을 위해 Discord에서 토론 고려** (#bugs-issues 채널)
-4. **수정 작업 중인지 표시**하여 중복 노력을 피해주세요
+**Partnership Over Automation** - AI agents act as expert coaches, mentors, and collaborators who amplify human capability rather than replace it.
 
-### 기능 제안
+**Bidirectional Guidance** - Agents guide users through structured workflows while users push agents with advanced prompting. Both sides actively work to extract better information from each other.
 
-1. **Discord에서 먼저 토론** (#general-dev 채널) - 기능 요청 템플릿에서 이를 확인합니다
-2. **기존 이슈와 토론을 확인**하여 중복을 피해주세요
-3. **이슈 생성 시 기능 요청 템플릿을 사용**하세요 - 다음 사항을 안내합니다:
-   - Discord 토론 확인
-   - 해결하는 문제 설명
-   - 솔루션 설명
-   - 고려한 대안 나열
-4. **이 기능이 BMad 커뮤니티에 도움이 되는 이유를 구체적으로** 설명하세요
+**Systems of Workflows** - BMad Core builds comprehensive systems of guided workflows with specialized agent teams for any domain.
 
-### Pull Request 과정
+**Tool-Agnostic Foundation** - BMad Core remains tool-agnostic, providing stable, extensible groundwork that adapts to any domain.
 
-⚠️ **작업 시작 전:**
+## What Makes a Good Contribution?
 
-1. **버그의 경우**: 이슈가 존재하는지 확인 (없으면 버그 템플릿을 사용하여 생성)
-2. **기능의 경우**: Discord (#general-dev)에서 토론했고 기능 요청 이슈를 생성했는지 확인
-3. **대규모 변경의 경우**: 정렬을 논의하기 위해 항상 먼저 이슈를 열어주세요
+Every contribution should strengthen human-AI collaboration. Ask yourself: **"Does this make humans and AI better together?"**
 
-작고 세분화된 커밋만 제안해주세요! 크거나 중요한 변경이라면 discussions 탭에서 토론하고 먼저 이슈를 열어주세요. 정렬되지 않거나 다른 계획된 변경사항과 벗어나서 거부될 수 있는 잠재적으로 매우 큰 PR에 시간을 낭비하지 않기를 바랍니다. 소통하고 이 훌륭한 커뮤니티 프로젝트를 구축하고 개선하기 위해 함께 작업합시다!
+**✅ Contributions that align:**
 
-**중요**: 모든 기여는 [가이드 원칙](docs/GUIDING-PRINCIPLES.md)과 일치해야 합니다. 주요 사항:
+- Enhance universal collaboration patterns
+- Improve agent personas and workflows
+- Strengthen planning and context continuity
+- Increase cross-domain accessibility
+- Add domain-specific modules leveraging BMad Core
 
-- 개발 에이전트를 가볍게 유지 - 문서화가 아닌 코딩을 위한 컨텍스트가 필요
-- 웹/계획 에이전트는 더 복잡한 작업으로 더 클 수 있음
-- 모든 것은 자연어(마크다운) - 핵심 프레임워크에 코드 없음
-- 도메인별 기능을 위해 확장 팩 사용
+**❌ What detracts from our mission:**
 
-#### PR을 위한 브랜치 선택
+- Purely automated solutions that sideline humans
+- Tools that don't improve the partnership
+- Complexity that creates barriers to adoption
+- Features that fragment BMad Core's foundation
 
-**`next` 브랜치에 제출** (대부분의 기여):
+## Before You Contribute
 
-- ✨ 새 기능이나 에이전트
-- 🎨 기존 기능 개선
-- 📚 문서 업데이트
-- ♻️ 코드 리팩토링
-- ⚡ 성능 개선
-- 🧪 새 테스트
-- 🎁 새 확장 팩
+### Reporting Bugs
 
-**`main` 브랜치에 제출** (중요한 것만):
+1. **Check existing issues** first to avoid duplicates
+2. **Consider discussing in Discord** (#bugs-issues channel) for quick help
+3. **Use the bug report template** when creating a new issue - it guides you through providing:
+   - Clear bug description
+   - Steps to reproduce
+   - Expected vs actual behavior
+   - Model/IDE/BMad version details
+   - Screenshots or links if applicable
+4. **Indicate if you're working on a fix** to avoid duplicate efforts
 
-- 🚨 기본 기능을 깨뜨리는 중요한 버그 수정
-- 🔒 보안 패치
-- 📚 위험하게 잘못된 문서 수정
-- 🐛 설치나 기본 사용을 방해하는 버그
+### Suggesting Features or New Modules
 
-**확실하지 않으면 `next`에 제출하세요**. 안정 버전에 도달하기 전에 변경사항을 철저히 테스트하는 것을 선호합니다.
+1. **Discuss first in Discord** (#general-dev channel) - the feature request template asks if you've done this
+2. **Check existing issues and discussions** to avoid duplicates
+3. **Use the feature request template** when creating an issue
+4. **Be specific** about why this feature would benefit the BMad community and strengthen human-AI collaboration
 
-#### PR 크기 가이드라인
+### Before Starting Work
 
-- **이상적인 PR 크기**: 200-400줄의 코드 변경
-- **최대 PR 크기**: 800줄 (생성된 파일 제외)
-- **PR당 하나의 기능/수정**: 각 PR은 단일 이슈를 다루거나 하나의 기능을 추가해야 함
-- **변경사항이 더 큰 경우**: 독립적으로 리뷰할 수 있는 여러 개의 작은 PR로 나누기
-- **관련 변경사항**: 관련된 변경사항이라도 독립적인 가치를 제공한다면 별도의 PR로 분리
+⚠️ **Required before submitting PRs:**
 
-#### 대규모 PR 분할하기
+1. **For bugs**: Check if an issue exists (create one using the bug template if not)
+2. **For features**: Discuss in Discord (#general-dev) AND create a feature request issue
+3. **For large changes**: Always open an issue first to discuss alignment
 
-변경사항이 800줄을 초과하는 경우 이 체크리스트를 사용하여 분할하세요:
+Please propose small, granular changes! For large or significant changes, discuss in Discord and open an issue first. This prevents wasted effort on PRs that may not align with planned changes.
 
-- [ ] 리팩토링과 기능 구현을 분리할 수 있나요?
-- [ ] 새 API/인터페이스를 한 PR에 도입하고 구현을 다른 PR에 할 수 있나요?
-- [ ] 파일이나 모듈별로 분할할 수 있나요?
-- [ ] 공유 유틸리티로 기본 PR을 먼저 만들 수 있나요?
-- [ ] 테스트 추가를 구현과 분리할 수 있나요?
-- [ ] 변경사항이 관련되어 있더라도 독립적으로 가치를 제공할 수 있나요?
-- [ ] 이러한 변경사항을 순서에 관계없이 병합해도 문제가 없나요?
+## Pull Request Guidelines
 
-예시 분할:
+### Which Branch?
 
-1. PR #1: 유틸리티 함수와 타입 추가 (100줄)
-2. PR #2: 기존 코드를 유틸리티 사용하도록 리팩토링 (200줄)
-3. PR #3: 리팩토링된 코드를 사용하여 새 기능 구현 (300줄)
-4. PR #4: 포괄적인 테스트 추가 (200줄)
+**Submit PR's to `main` branch** (critical only):
 
-**참고**: PR #1과 #4는 독립적인 가치를 제공하고 서로의 병합 순서에 의존하지 않으므로 동시에 제출할 수 있습니다.
+- 🚨 Critical bug fixes that break basic functionality
+- 🔒 Security patches
+- 📚 Fixing dangerously incorrect documentation
+- 🐛 Bugs preventing installation or basic usage
 
-#### Pull Request 단계
+### PR Size Guidelines
 
-1. 리포지토리 포크
-2. 새 브랜치 생성 (`git checkout -b feature/your-feature-name`)
-3. 변경사항 만들기
-4. 품질 보장을 위해 테스트나 린팅 실행
-5. 커밋 메시지 규칙을 따라 명확하고 설명적인 메시지로 변경사항 커밋
-6. 브랜치에 푸시 (`git push origin feature/your-feature-name`)
-7. main 브랜치에 대해 Pull Request 열기
+- **Ideal PR size**: 200-400 lines of code changes
+- **Maximum PR size**: 800 lines (excluding generated files)
+- **One feature/fix per PR**: Each PR should address a single issue or add one feature
+- **If your change is larger**: Break it into multiple smaller PRs that can be reviewed independently
+- **Related changes**: Even related changes should be separate PRs if they deliver independent value
 
-## 이슈 템플릿
+### Breaking Down Large PRs
 
-필요한 모든 정보가 제공되도록 GitHub 이슈 템플릿을 사용합니다:
+If your change exceeds 800 lines, use this checklist to split it:
 
-- **버그 신고**: 재현 단계, 환경 세부사항, 예상 동작 제공을 자동으로 안내
-- **기능 요청**: Discord 토론 확인이 필요하며 문제/솔루션 설명을 요청
+- [ ] Can I separate the refactoring from the feature implementation?
+- [ ] Can I introduce the new API/interface in one PR and implementation in another?
+- [ ] Can I split by file or module?
+- [ ] Can I create a base PR with shared utilities first?
+- [ ] Can I separate test additions from implementation?
+- [ ] Even if changes are related, can they deliver value independently?
+- [ ] Can these changes be merged in any order without breaking things?
 
-이러한 템플릿을 사용하면 메인테이너가 기여를 더 빠르게 이해하고 처리할 수 있습니다.
+Example breakdown:
 
-## Pull Request 설명 가이드라인
+1. PR #1: Add utility functions and types (100 lines)
+2. PR #2: Refactor existing code to use utilities (200 lines)
+3. PR #3: Implement new feature using refactored code (300 lines)
+4. PR #4: Add comprehensive tests (200 lines)
 
-PR 설명을 간결하고 요점에 맞게 작성하되 다음 템플릿을 따르세요:
+**Note**: PRs #1 and #4 could be submitted simultaneously since they deliver independent value.
 
-### PR 설명 템플릿
+### Pull Request Process
 
-PR 설명을 간결하고 집중적으로 작성하세요. 이 템플릿을 사용하세요:
+#### New to Pull Requests?
+
+If you're new to GitHub or pull requests, here's a quick guide:
+
+1. **Fork the repository** - Click the "Fork" button on GitHub to create your own copy
+2. **Clone your fork** - `git clone https://github.com/YOUR-USERNAME/bmad-method.git`
+3. **Create a new branch** - Never work on `main` directly!
+   ```bash
+   git checkout -b fix/description
+   # or
+   git checkout -b feature/description
+   ```
+4. **Make your changes** - Edit files, keeping changes small and focused
+5. **Commit your changes** - Use clear, descriptive commit messages
+   ```bash
+   git add .
+   git commit -m "fix: correct typo in README"
+   ```
+6. **Push to your fork** - `git push origin fix/description`
+7. **Create the Pull Request** - Go to your fork on GitHub and click "Compare & pull request"
+
+### PR Description Template
+
+Keep your PR description concise and focused. Use this template:
 
 ```markdown
 ## What
 
-[무엇이 변경되었는지 1-2문장으로 설명]
+[1-2 sentences describing WHAT changed]
 
 ## Why
 
-[이 변경이 왜 필요한지 1-2문장으로 설명]
-Fixes #[이슈 번호] (해당되는 경우)
+[1-2 sentences explaining WHY this change is needed]
+Fixes #[issue number] (if applicable)
 
 ## How
 
-[어떻게 구현했는지 2-3개 항목으로 나열]
+## [2-3 bullets listing HOW you implemented it]
 
--
 -
 -
 
 ## Testing
 
-[어떻게 테스트했는지 1-2문장]
+[1-2 sentences on how you tested this]
 ```
 
-**최대 PR 설명 길이: 200단어** (필요한 경우 코드 예제 제외)
+**Maximum PR description length: 200 words** (excluding code examples if needed)
 
-### 좋은 vs 나쁜 PR 설명
+### Good vs Bad PR Descriptions
 
-❌ **나쁜 예시:**
+❌ **Bad Example:**
 
-> 이 혁신적인 PR은 첨단 방법론을 활용하여 성능 메트릭을 최적화하고 혁신적 접근을 통해 이해관계자에게 전례 없는 가치를 제공하는 최신 솔루션을 구현함으로써 시스템 아키텍처에 패러다임을 바꾸는 향상을 도입합니다...
+> This revolutionary PR introduces a paradigm-shifting enhancement to the system's architecture by implementing a state-of-the-art solution that leverages cutting-edge methodologies to optimize performance metrics...
 
-✅ **좋은 예시:**
+✅ **Good Example:**
 
-> **What:** 에이전트 의존성 해석을 위한 검증 추가
-> **Why:** 에이전트에 순환 의존성이 있을 때 빌드가 조용히 실패하고 있었음
+> **What:** Added validation for agent dependency resolution
+> **Why:** Build was failing silently when agents had circular dependencies
 > **How:**
 >
-> - dependency-resolver.js에 사이클 감지 추가
-> - 의존성 체인과 함께 명확한 오류 발생
->   **Testing:** 3개 에이전트 간 순환 의존성으로 테스트
+> - Added cycle detection in dependency-resolver.js
+> - Throws clear error with dependency chain
+>   **Testing:** Tested with circular deps between 3 agents
 
-## 커밋 메시지 규칙
+### Commit Message Convention
 
-conventional commits 형식을 사용하세요:
+Use conventional commits format:
 
-- `feat:` 새 기능
-- `fix:` 버그 수정
-- `docs:` 문서만
-- `refactor:` 버그를 수정하거나 기능을 추가하지 않는 코드 변경
-- `test:` 누락된 테스트 추가
-- `chore:` 빌드 프로세스나 보조 도구 변경
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation only
+- `refactor:` Code change that neither fixes a bug nor adds a feature
+- `test:` Adding missing tests
+- `chore:` Changes to build process or auxiliary tools
 
-커밋 메시지는 72자 이하로 유지하세요.
+Keep commit messages under 72 characters.
 
-### 원자적 커밋
+### Atomic Commits
 
-각 커밋은 하나의 논리적 변경을 나타내야 합니다:
+Each commit should represent one logical change:
 
-- **해야 할 것:** 커밋당 하나의 버그 수정
-- **해야 할 것:** 커밋당 하나의 기능 추가
-- **하지 말 것:** 리팩토링과 버그 수정 혼합
-- **하지 말 것:** 관련 없는 변경사항 결합
+- **Do:** One bug fix per commit
+- **Do:** One feature addition per commit
+- **Don't:** Mix refactoring with bug fixes
+- **Don't:** Combine unrelated changes
 
-## 코드 스타일
+## What Makes a Good Pull Request?
 
-- 기존 코드 스타일과 규칙을 따라주세요
-- 복잡한 로직에 명확한 주석을 작성하세요
+✅ **Good PRs:**
 
-## 라이선스
+- Change one thing at a time
+- Have clear, descriptive titles
+- Explain what and why in the description
+- Include only the files that need to change
+- Reference related issue numbers
 
-이 프로젝트에 기여함으로써 기여분이 MIT 라이선스 하에 라이선스될 것에 동의하게 됩니다.
+❌ **Avoid:**
+
+- Changing formatting of entire files
+- Multiple unrelated changes in one PR
+- Copying your entire project/repo into the PR
+- Changes without explanation
+- Working directly on `main` branch
+
+## Common Mistakes to Avoid
+
+1. **Don't reformat entire files** - only change what's necessary
+2. **Don't include unrelated changes** - stick to one fix/feature per PR
+3. **Don't paste code in issues** - create a proper PR instead
+4. **Don't submit your whole project** - contribute specific improvements
+
+## Code Style
+
+- Follow the existing code style and conventions
+- Write clear comments for complex logic
+- Keep dev agents lean - they need context for coding, not documentation
+- Web/planning agents can be larger with more complex tasks
+- Everything is natural language (markdown) - no code in core framework
+- Use bmad modules for domain-specific features
+- Validate YAML schemas with `npm run validate:schemas` before committing
+
+## Code of Conduct
+
+By participating in this project, you agree to abide by our Code of Conduct. We foster a collaborative, respectful environment focused on building better human-AI partnerships.
+
+## Need Help?
+
+- 💬 Join our [Discord Community](https://discord.gg/gk8jAdXWmj):
+  - **#general-dev** - Technical questions and feature discussions
+  - **#bugs-issues** - Get help with bugs before filing issues
+- 🐛 Report bugs using the [bug report template](https://github.com/bmad-code-org/BMAD-METHOD/issues/new?template=bug_report.md)
+- 💡 Suggest features using the [feature request template](https://github.com/bmad-code-org/BMAD-METHOD/issues/new?template=feature_request.md)
+- 📖 Browse the [GitHub Discussions](https://github.com/bmad-code-org/BMAD-METHOD/discussions)
+
+---
+
+**Remember**: We're here to help! Don't be afraid to ask questions. Every expert was once a beginner. Together, we're building a future where humans and AI work better together.
+
+## License
+
+By contributing to this project, you agree that your contributions will be licensed under the same license as the project.
