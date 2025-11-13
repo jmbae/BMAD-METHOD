@@ -6,256 +6,256 @@
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen)](https://nodejs.org)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?logo=discord&logoColor=white)](https://discord.gg/gk8jAdXWmj)
 
-> **🚨 Alpha Version Notice**
+> **🚨 알파 버전 알림**
 >
-> v6-alpha is near-beta quality—stable and vastly improved over v4, but documentation is still being refined. New videos coming soon to the [BMadCode YouTube channel](https://www.youtube.com/@BMadCode)—subscribe for updates!
+> v6-alpha는 거의 베타 품질입니다—안정적이고 v4보다 크게 개선되었지만, 문서는 여전히 개선 중입니다. [BMadCode YouTube 채널](https://www.youtube.com/@BMadCode)에 새로운 비디오가 곧 출시됩니다—업데이트를 위해 구독하세요!
 >
-> **Getting Started:**
+> **시작하기:**
 >
-> - **Install v6 Alpha:** `npx bmad-method@alpha install`
-> - **Install stable v4:** `npx bmad-method install`
-> - **Not sure what to do?** Load any agent and run `*workflow-init` for guided setup
-> - **v4 Users:** [View v4 documentation](https://github.com/bmad-code-org/BMAD-METHOD/tree/V4) or [upgrade guide](./docs/v4-to-v6-upgrade.md)
+> - **v6 Alpha 설치:** `npx bmad-method@alpha install`
+> - **stable v4 설치:** `npx bmad-method install`
+> - **무엇을 해야 할지 모르겠다면?** 아무 에이전트나 로드하고 `*workflow-init`을 실행하여 안내받으세요
+> - **v4 사용자:** [v4 문서 보기](https://github.com/bmad-code-org/BMAD-METHOD/tree/V4) 또는 [업그레이드 가이드](./docs/v4-to-v6-upgrade.md)
 
-## Universal Human-AI Collaboration Platform
+## 범용 인간-AI 협업 플랫폼
 
-**BMad-CORE** (**C**ollaboration **O**ptimized **R**eflection **E**ngine) amplifies human potential through specialized AI agents. Unlike tools that replace thinking, BMad-CORE guides reflective workflows that bring out your best ideas and AI's full capabilities.
+**BMad-CORE** (**C**ollaboration **O**ptimized **R**eflection **E**ngine)는 전문화된 AI 에이전트를 통해 인간의 잠재력을 증폭시킵니다. 사고를 대체하는 도구와 달리, BMad-CORE는 당신의 최고의 아이디어와 AI의 완전한 역량을 끌어내는 성찰적 워크플로우를 안내합니다.
 
-The **BMad-CORE** powers the **BMad Method** (probably why you're here!), but you can also use **BMad Builder** to create custom agents, workflows, and modules for any domain—software development, business strategy, creativity, learning, and more.
+**BMad-CORE**는 **BMad Method**를 구동합니다 (아마도 당신이 여기에 온 이유일 것입니다!), 하지만 **BMad Builder**를 사용하여 모든 도메인—소프트웨어 개발, 비즈니스 전략, 창의성, 학습 등—을 위한 커스텀 에이전트, 워크플로우, 모듈을 만들 수도 있습니다.
 
-**🎯 Human Amplification** • **🎨 Domain Agnostic** • **⚡ Agent-Powered**
+**🎯 인간 증폭** • **🎨 도메인 독립적** • **⚡ 에이전트 기반**
 
-## Table of Contents
+## 목차
 
 - [BMad CORE + BMad Method](#bmad-core--bmad-method)
-  - [Universal Human-AI Collaboration Platform](#universal-human-ai-collaboration-platform)
-  - [Table of Contents](#table-of-contents)
-  - [What is BMad-CORE?](#what-is-bmad-core)
-    - [v6 Core Enhancements](#v6-core-enhancements)
-    - [C.O.R.E. Philosophy](#core-philosophy)
-  - [Modules](#modules)
-    - [BMad Method (BMM) - AI-Driven Agile Development](#bmad-method-bmm---ai-driven-agile-development)
-      - [v6 Highlights](#v6-highlights)
-  - [🚀 Quick Start](#-quick-start)
-    - [BMad Builder (BMB) - Create Custom Solutions](#bmad-builder-bmb---create-custom-solutions)
-    - [Creative Intelligence Suite (CIS) - Innovation \& Creativity](#creative-intelligence-suite-cis---innovation--creativity)
-  - [Installation](#installation)
-  - [🎯 Working with Agents \& Commands](#-working-with-agents--commands)
-    - [Method 1: Agent Menu (Recommended for Beginners)](#method-1-agent-menu-recommended-for-beginners)
-    - [Method 2: Direct Slash Commands](#method-2-direct-slash-commands)
-    - [Method 3: Party Mode Execution](#method-3-party-mode-execution)
-  - [Key Features](#key-features)
-    - [🎨 Update-Safe Customization](#-update-safe-customization)
-    - [🚀 Intelligent Installation](#-intelligent-installation)
-    - [📁 Clean Architecture](#-clean-architecture)
-    - [📄 Document Sharding (Advanced)](#-document-sharding-advanced)
-  - [Documentation](#documentation)
-  - [Community \& Support](#community--support)
-  - [Development \& Quality Checks](#development--quality-checks)
-    - [Testing \& Validation](#testing--validation)
-    - [Code Quality](#code-quality)
-    - [Build \& Development](#build--development)
-  - [Contributing](#contributing)
-  - [License](#license)
+  - [범용 인간-AI 협업 플랫폼](#범용-인간-ai-협업-플랫폼)
+  - [목차](#목차)
+  - [BMad-CORE란 무엇인가?](#bmad-core란-무엇인가)
+    - [v6 핵심 개선사항](#v6-핵심-개선사항)
+    - [C.O.R.E. 철학](#core-철학)
+  - [모듈](#모듈)
+    - [BMad Method (BMM) - AI 주도 애자일 개발](#bmad-method-bmm---ai-주도-애자일-개발)
+      - [v6 하이라이트](#v6-하이라이트)
+  - [🚀 빠른 시작](#-빠른-시작)
+    - [BMad Builder (BMB) - 커스텀 솔루션 생성](#bmad-builder-bmb---커스텀-솔루션-생성)
+    - [Creative Intelligence Suite (CIS) - 혁신 및 창의성](#creative-intelligence-suite-cis---혁신-및-창의성)
+  - [설치](#설치)
+  - [🎯 에이전트 및 명령어 작업](#-에이전트-및-명령어-작업)
+    - [방법 1: 에이전트 메뉴 (초보자에게 권장)](#방법-1-에이전트-메뉴-초보자에게-권장)
+    - [방법 2: 직접 슬래시 명령](#방법-2-직접-슬래시-명령)
+    - [방법 3: 파티 모드 실행](#방법-3-파티-모드-실행)
+  - [주요 기능](#주요-기능)
+    - [🎨 업데이트 안전 커스터마이징](#-업데이트-안전-커스터마이징)
+    - [🚀 지능형 설치](#-지능형-설치)
+    - [📁 깔끔한 아키텍처](#-깔끔한-아키텍처)
+    - [📄 문서 샤딩 (고급)](#-문서-샤딩-고급)
+  - [문서](#문서)
+  - [커뮤니티 및 지원](#커뮤니티-및-지원)
+  - [개발 및 품질 검사](#개발-및-품질-검사)
+    - [테스팅 및 검증](#테스팅-및-검증)
+    - [코드 품질](#코드-품질)
+    - [빌드 및 개발](#빌드-및-개발)
+  - [기여하기](#기여하기)
+  - [라이선스](#라이선스)
 
 ---
 
-## What is BMad-CORE?
+## BMad-CORE란 무엇인가?
 
-Foundation framework powering all BMad modules:
+모든 BMad 모듈을 구동하는 기반 프레임워크:
 
-- **Agent Orchestration** - Specialized AI personas with domain expertise
-- **Workflow Engine** - Guided multi-step processes with built-in best practices
-- **Modular Architecture** - Extend with domain-specific modules (BMM, BMB, CIS, custom)
-- **IDE Integration** - Works with Claude Code, Cursor, Windsurf, VS Code, and more
-- **Update-Safe Customization** - Your configs persist through all updates
+- **에이전트 조율** - 도메인 전문성을 가진 전문화된 AI 페르소나
+- **워크플로우 엔진** - 모범 사례가 내장된 안내식 다단계 프로세스
+- **모듈식 아키텍처** - 도메인별 모듈로 확장 (BMM, BMB, CIS, 커스텀)
+- **IDE 통합** - Claude Code, Cursor, Windsurf, VS Code 등과 작동
+- **업데이트 안전 커스터마이징** - 모든 업데이트를 통해 설정 유지
 
-### v6 Core Enhancements
+### v6 핵심 개선사항
 
-- **🎨 Agent Customization** - Modify names, roles, personalities via `bmad/_cfg/agents/` **[→ Customization Guide](./docs/agent-customization-guide.md)**
-- **🌐 Multi-Language** - Independent language settings for communication and output
-- **👤 Personalization** - Agents adapt to your name, skill level, and preferences
-- **🔄 Persistent Config** - Customizations survive module updates
-- **⚙️ Flexible Settings** - Configure per-module or globally
-- **📦 Web Bundles** - Share agents in Gemini Gems and Custom GPTs **[→ Web Bundles Guide](./docs/web-bundles-gemini-gpt-guide.md)**
+- **🎨 에이전트 커스터마이징** - `bmad/_cfg/agents/`를 통해 이름, 역할, 성격 수정 **[→ 커스터마이징 가이드](./docs/agent-customization-guide.md)**
+- **🌐 다국어 지원** - 커뮤니케이션 및 출력에 대한 독립적인 언어 설정
+- **👤 개인화** - 에이전트가 당신의 이름, 기술 수준, 선호도에 적응
+- **🔄 영구 설정** - 커스터마이징이 모듈 업데이트를 통해 유지
+- **⚙️ 유연한 설정** - 모듈별 또는 전역 구성
+- **📦 웹 번들** - Gemini Gems 및 Custom GPTs에서 에이전트 공유 **[→ 웹 번들 가이드](./docs/web-bundles-gemini-gpt-guide.md)**
 
-### C.O.R.E. Philosophy
+### C.O.R.E. 철학
 
-- **C**ollaboration: Human-AI partnership leveraging complementary strengths
-- **O**ptimized: Battle-tested processes for maximum effectiveness
-- **R**eflection: Strategic questioning that unlocks breakthrough solutions
-- **E**ngine: Framework orchestrating 19+ specialized agents and 50+ workflows
+- **C**ollaboration (협업): 상호 보완적 강점을 활용하는 인간-AI 파트너십
+- **O**ptimized (최적화): 최대 효과를 위한 실전 검증된 프로세스
+- **R**eflection (성찰): 획기적인 솔루션을 여는 전략적 질문
+- **E**ngine (엔진): 19개 이상의 전문 에이전트와 50개 이상의 워크플로우를 조율하는 프레임워크
 
-BMad-CORE doesn't give you answers—it helps you **discover better solutions** through guided reflection.
+BMad-CORE는 답을 제공하지 않습니다—안내된 성찰을 통해 **더 나은 솔루션을 발견**하도록 돕습니다.
 
-## Modules
+## 모듈
 
-### BMad Method (BMM) - AI-Driven Agile Development
+### BMad Method (BMM) - AI 주도 애자일 개발
 
-Revolutionary AI-driven agile framework for software and game development. Automatically adapts from single bug fixes to enterprise-scale systems.
+소프트웨어 및 게임 개발을 위한 혁명적인 AI 주도 애자일 프레임워크. 단일 버그 수정부터 엔터프라이즈 규모 시스템까지 자동으로 적응합니다.
 
-#### v6 Highlights
+#### v6 하이라이트
 
-**🎯 Scale-Adaptive Intelligence (3 Planning Tracks)**
+**🎯 규모 적응형 인텔리전스 (3가지 기획 트랙)**
 
-Automatically adjusts planning depth and documentation based on project needs:
+프로젝트 요구사항에 따라 기획 깊이와 문서를 자동으로 조정합니다:
 
-- **Quick Flow Track:** Fast implementation (tech-spec only) - bug fixes, small features, clear scope
-- **BMad Method Track:** Full planning (PRD + Architecture + UX) - products, platforms, complex features
-- **Enterprise Method Track:** Extended planning (BMad Method + Security/DevOps/Test) - enterprise requirements, compliance
+- **Quick Flow Track:** 빠른 구현 (기술 명세만) - 버그 수정, 작은 기능, 명확한 범위
+- **BMad Method Track:** 완전한 기획 (PRD + 아키텍처 + UX) - 제품, 플랫폼, 복잡한 기능
+- **Enterprise Method Track:** 확장된 기획 (BMad Method + 보안/DevOps/테스트) - 엔터프라이즈 요구사항, 규정 준수
 
-**🏗️ Four-Phase Methodology**
+**🏗️ 4단계 방법론**
 
-1. **Phase 1: Analysis** (Optional) - Brainstorming, research, product briefs
-2. **Phase 2: Planning** (Required) - Scale-adaptive PRD/tech-spec/GDD
-3. **Phase 3: Solutioning** (Track-dependent) - Architecture, (Coming soon: security, DevOps, test strategy)
-4. **Phase 4: Implementation** (Iterative) - Story-centric development with just-in-time context
+1. **1단계: 분석** (선택사항) - 브레인스토밍, 조사, 제품 브리프
+2. **2단계: 기획** (필수) - 규모 적응형 PRD/기술 명세/GDD
+3. **3단계: 솔루셔닝** (트랙 종속) - 아키텍처, (출시 예정: 보안, DevOps, 테스트 전략)
+4. **4단계: 구현** (반복적) - 적시 컨텍스트를 가진 스토리 중심 개발
 
-**🤖 12 Specialized Agents**
+**🤖 12개의 전문 에이전트**
 
 PM • Analyst • Architect • Scrum Master • Developer • Test Architect (TEA) • UX Designer • Technical Writer • Game Designer • Game Developer • Game Architect • BMad Master (Orchestrator)
 
-**📚 Documentation**
+**📚 문서**
 
-- **[Complete Documentation Hub](./src/modules/bmm/docs/README.md)** - Start here for all BMM guides
-- **[Quick Start Guide](./src/modules/bmm/docs/quick-start.md)** - Get building in 15 minutes
-- **[Agents Guide](./src/modules/bmm/docs/agents-guide.md)** - Meet all 12 agents (45 min read)
-- **[34 Workflow Guides](./src/modules/bmm/docs/README.md#-workflow-guides)** - Complete phase-by-phase reference
-- **[BMM Module Overview](./src/modules/bmm/README.md)** - Module structure and quick links
-
----
-
-## 🚀 Quick Start
-
-**After installation** (see [Installation](#installation) below), choose your path:
-
-**Three Planning Tracks:**
-
-1. **⚡ Quick Flow Track** - Bug fixes and small features
-   - 🐛 Bug fixes in minutes
-   - ✨ Small features (2-3 related changes)
-   - 🚀 Rapid prototyping
-   - **[→ Quick Spec Flow Guide](./src/modules/bmm/docs/quick-spec-flow.md)**
-
-2. **📋 BMad Method Track** - Products and platforms
-   - Complete planning (PRD/GDD)
-   - Architecture decisions
-   - Story-centric implementation
-   - **[→ Complete Quick Start Guide](./src/modules/bmm/docs/quick-start.md)**
-
-3. **🏢 Brownfield Projects** - Add to existing codebases
-   - Document existing code first
-   - Then choose Quick Flow or BMad Method
-   - **[→ Brownfield Guide](./src/modules/bmm/docs/brownfield-guide.md)**
-
-**Not sure which path?** Run `*workflow-init` and let BMM analyze your project goal and recommend the right track.
-
-**[📚 Learn More: Scale Adaptive System](./src/modules/bmm/docs/scale-adaptive-system.md)** - How BMM adapts across three planning tracks
+- **[완전한 문서 허브](./src/modules/bmm/docs/README.md)** - 모든 BMM 가이드 시작점
+- **[빠른 시작 가이드](./src/modules/bmm/docs/quick-start.md)** - 15분 안에 구축 시작
+- **[에이전트 가이드](./src/modules/bmm/docs/agents-guide.md)** - 12개 에이전트 소개 (45분 읽기)
+- **[34개 워크플로우 가이드](./src/modules/bmm/docs/README.md#-workflow-guides)** - 단계별 완전한 참조
+- **[BMM 모듈 개요](./src/modules/bmm/README.md)** - 모듈 구조 및 빠른 링크
 
 ---
 
-### BMad Builder (BMB) - Create Custom Solutions
+## 🚀 빠른 시작
 
-Build your own agents, workflows, and modules using the BMad-CORE framework.
+**설치 후** (아래 [설치](#설치) 참조), 경로를 선택하세요:
 
-**What You Can Build:**
+**3가지 기획 트랙:**
 
-- **Custom Agents** - Domain experts with specialized knowledge
-- **Guided Workflows** - Multi-step processes for any task
-- **Complete Modules** - Full solutions for specific domains
-- **Three Agent Types** - Full module, hybrid, or standalone
+1. **⚡ Quick Flow Track** - 버그 수정 및 작은 기능
+   - 🐛 몇 분 안에 버그 수정
+   - ✨ 작은 기능 (2-3개의 관련 변경사항)
+   - 🚀 빠른 프로토타이핑
+   - **[→ Quick Spec Flow 가이드](./src/modules/bmm/docs/quick-spec-flow.md)**
 
-**Perfect For:** Creating domain-specific solutions (legal, medical, finance, education, creative, etc.) or extending BMM with custom development workflows.
+2. **📋 BMad Method Track** - 제품 및 플랫폼
+   - 완전한 기획 (PRD/GDD)
+   - 아키텍처 결정
+   - 스토리 중심 구현
+   - **[→ 완전한 빠른 시작 가이드](./src/modules/bmm/docs/quick-start.md)**
 
-**Documentation:**
+3. **🏢 브라운필드 프로젝트** - 기존 코드베이스에 추가
+   - 먼저 기존 코드 문서화
+   - 그런 다음 Quick Flow 또는 BMad Method 선택
+   - **[→ 브라운필드 가이드](./src/modules/bmm/docs/brownfield-guide.md)**
 
-- **[BMB Module Overview](./src/modules/bmb/README.md)** - Complete reference
-- **[Create Agent Workflow](./src/modules/bmb/workflows/create-agent/README.md)** - Build custom agents
-- **[Create Workflow](./src/modules/bmb/workflows/create-workflow/README.md)** - Design guided processes
-- **[Create Module](./src/modules/bmb/workflows/create-module/README.md)** - Package complete solutions
+**어떤 경로를 선택할지 확실하지 않으신가요?** `*workflow-init`을 실행하면 BMM이 프로젝트 목표를 분석하고 올바른 트랙을 추천합니다.
 
-### Creative Intelligence Suite (CIS) - Innovation & Creativity
-
-AI-powered creative facilitation using proven methodologies and techniques.
-
-**5 Interactive Workflows:**
-
-- **Brainstorming** - Generate and refine ideas with 30+ techniques
-- **Design Thinking** - Human-centered problem solving
-- **Problem Solving** - Systematic breakthrough techniques
-- **Innovation Strategy** - Disruptive business model thinking
-- **Storytelling** - Compelling narrative frameworks
-
-**5 Specialized Agents:** Each with unique facilitation styles and domain expertise
-
-**Shared Resource:** CIS workflows are used by other modules (BMM's `brainstorm-project` uses CIS brainstorming)
-
-**Documentation:**
-
-- **[CIS Module Overview](./src/modules/cis/README.md)** - Complete reference
-- **[CIS Workflows Guide](./src/modules/cis/workflows/README.md)** - All 5 creative workflows
+**[📚 더 알아보기: 규모 적응형 시스템](./src/modules/bmm/docs/scale-adaptive-system.md)** - BMM이 세 가지 기획 트랙에 걸쳐 어떻게 적응하는지
 
 ---
 
-## Installation
+### BMad Builder (BMB) - 커스텀 솔루션 생성
 
-**Prerequisites:** Node.js v20+ ([Download](https://nodejs.org))
+BMad-CORE 프레임워크를 사용하여 자신만의 에이전트, 워크플로우, 모듈을 구축하세요.
+
+**구축할 수 있는 것:**
+
+- **커스텀 에이전트** - 전문 지식을 가진 도메인 전문가
+- **안내 워크플로우** - 모든 작업을 위한 다단계 프로세스
+- **완전한 모듈** - 특정 도메인을 위한 완전한 솔루션
+- **3가지 에이전트 유형** - 전체 모듈, 하이브리드 또는 독립형
+
+**완벽한 대상:** 도메인별 솔루션(법률, 의료, 금융, 교육, 창작 등) 생성 또는 커스텀 개발 워크플로우로 BMM 확장.
+
+**문서:**
+
+- **[BMB 모듈 개요](./src/modules/bmb/README.md)** - 완전한 참조
+- **[에이전트 생성 워크플로우](./src/modules/bmb/workflows/create-agent/README.md)** - 커스텀 에이전트 구축
+- **[워크플로우 생성](./src/modules/bmb/workflows/create-workflow/README.md)** - 안내 프로세스 설계
+- **[모듈 생성](./src/modules/bmb/workflows/create-module/README.md)** - 완전한 솔루션 패키징
+
+### Creative Intelligence Suite (CIS) - 혁신 및 창의성
+
+검증된 방법론과 기법을 사용한 AI 기반 창의적 촉진.
+
+**5가지 대화형 워크플로우:**
+
+- **브레인스토밍** - 30개 이상의 기법으로 아이디어 생성 및 개선
+- **디자인 씽킹** - 인간 중심 문제 해결
+- **문제 해결** - 체계적인 돌파구 기법
+- **혁신 전략** - 파괴적 비즈니스 모델 사고
+- **스토리텔링** - 설득력 있는 내러티브 프레임워크
+
+**5개의 전문 에이전트:** 각각 고유한 촉진 스타일과 도메인 전문성
+
+**공유 리소스:** CIS 워크플로우는 다른 모듈에서 사용됩니다 (BMM의 `brainstorm-project`는 CIS 브레인스토밍 사용)
+
+**문서:**
+
+- **[CIS 모듈 개요](./src/modules/cis/README.md)** - 완전한 참조
+- **[CIS 워크플로우 가이드](./src/modules/cis/workflows/README.md)** - 모든 5가지 창의적 워크플로우
+
+---
+
+## 설치
+
+**필수 조건:** Node.js v20+ ([다운로드](https://nodejs.org))
 
 ```bash
-# v6 Alpha (recommended for new projects)
+# v6 Alpha (새 프로젝트에 권장)
 npx bmad-method@alpha install
 
-# Stable v4 (production)
+# Stable v4 (프로덕션)
 npx bmad-method install
 ```
 
-The installer provides:
+설치 프로그램은 다음을 제공합니다:
 
-1. **Module Selection** - Choose BMM, BMB, CIS (or all)
-2. **Configuration** - Your name, language preferences, game dev options
-3. **IDE Integration** - Automatic setup for your IDE
+1. **모듈 선택** - BMM, BMB, CIS 선택 (또는 모두)
+2. **구성** - 당신의 이름, 언어 선호도, 게임 개발 옵션
+3. **IDE 통합** - IDE에 대한 자동 설정
 
-**Installation creates:**
+**설치 시 생성되는 것:**
 
 ```
 your-project/
 └── bmad/
-    ├── core/         # Core framework + BMad Master agent
-    ├── bmm/          # BMad Method (12 agents, 34 workflows)
-    ├── bmb/          # BMad Builder (1 agent, 7 workflows)
-    ├── cis/          # Creative Intelligence (5 agents, 5 workflows)
-    └── _cfg/         # Your customizations (survives updates)
-        └── agents/   # Agent customization files
+    ├── core/         # 핵심 프레임워크 + BMad Master 에이전트
+    ├── bmm/          # BMad Method (12개 에이전트, 34개 워크플로우)
+    ├── bmb/          # BMad Builder (1개 에이전트, 7개 워크플로우)
+    ├── cis/          # Creative Intelligence (5개 에이전트, 5개 워크플로우)
+    └── _cfg/         # 커스터마이징 (업데이트 시 유지)
+        └── agents/   # 에이전트 커스터마이징 파일
 ```
 
-**Next Steps:**
+**다음 단계:**
 
-1. Load any agent in your IDE
-2. Run `*workflow-init` to set up your project workflow path
-3. Follow the [Quick Start](#-quick-start) guide above to choose your planning track
+1. IDE에서 아무 에이전트나 로드
+2. `*workflow-init`을 실행하여 프로젝트 워크플로우 경로 설정
+3. 위의 [빠른 시작](#-빠른-시작) 가이드를 따라 기획 트랙 선택
 
-**Alternative:** [**Web Bundles**](./docs/USING_WEB_BUNDLES.md) - Use BMAD agents in Claude Projects, ChatGPT, or Gemini without installation
+**대안:** [**웹 번들**](./docs/USING_WEB_BUNDLES.md) - 설치 없이 Claude Projects, ChatGPT 또는 Gemini에서 BMAD 에이전트 사용
 
 ---
 
-## 🎯 Working with Agents & Commands
+## 🎯 에이전트 및 명령어 작업
 
-**Multiple Ways to Execute Workflows:**
+**워크플로우를 실행하는 여러 방법:**
 
-BMad is flexible - you can execute workflows in several ways depending on your preference and IDE:
+BMad는 유연합니다 - 선호도와 IDE에 따라 여러 방법으로 워크플로우를 실행할 수 있습니다:
 
-### Method 1: Agent Menu (Recommended for Beginners)
+### 방법 1: 에이전트 메뉴 (초보자에게 권장)
 
-1. **Load an agent** in your IDE (see [IDE-specific instructions](./docs/ide-info/))
-2. **Wait for the menu** to appear showing available workflows
-3. **Tell the agent** what to run using natural language or shortcuts:
-   - Natural: "Run workflow-init"
-   - Shortcut: `*workflow-init`
-   - Menu number: "Run option 2"
+1. IDE에서 **에이전트 로드** ([IDE별 지침](./docs/ide-info/) 참조)
+2. 사용 가능한 워크플로우를 보여주는 **메뉴가 나타날 때까지 대기**
+3. 자연어 또는 단축키를 사용하여 **에이전트에게 실행할 내용 알림**:
+   - 자연어: "Run workflow-init"
+   - 단축키: `*workflow-init`
+   - 메뉴 번호: "Run option 2"
 
-### Method 2: Direct Slash Commands
+### 방법 2: 직접 슬래시 명령
 
-**Execute workflows directly** using slash commands:
+슬래시 명령을 사용하여 **워크플로우를 직접 실행**:
 
 ```
 /bmad:bmm:workflows:workflow-init
@@ -263,180 +263,180 @@ BMad is flexible - you can execute workflows in several ways depending on your p
 /bmad:bmm:workflows:dev-story
 ```
 
-**Tip:** While you can run these without loading an agent first, **loading an agent is still recommended** - it can make a difference with certain workflows.
+**팁:** 에이전트를 먼저 로드하지 않고도 이를 실행할 수 있지만, **에이전트를 로드하는 것이 여전히 권장됩니다** - 특정 워크플로우에서 차이를 만들 수 있습니다.
 
-**Benefits:**
+**장점:**
 
-- ✅ Mix and match any agent with any workflow
-- ✅ Run workflows not in the loaded agent's menu
-- ✅ Faster access for experienced users who know the command names
+- ✅ 모든 에이전트를 모든 워크플로우와 혼합 및 매치
+- ✅ 로드된 에이전트의 메뉴에 없는 워크플로우 실행
+- ✅ 명령 이름을 아는 숙련된 사용자를 위한 빠른 접근
 
-### Method 3: Party Mode Execution
+### 방법 3: 파티 모드 실행
 
-**Run workflows with multi-agent collaboration:**
+**다중 에이전트 협업으로 워크플로우 실행:**
 
-1. Start party mode: `/bmad:core:workflows:party-mode`
-2. Execute any workflow - **the entire team collaborates on it**
-3. Get diverse perspectives from multiple specialized agents
+1. 파티 모드 시작: `/bmad:core:workflows:party-mode`
+2. 모든 워크플로우 실행 - **전체 팀이 협업합니다**
+3. 여러 전문 에이전트로부터 다양한 관점 얻기
 
-**Perfect for:** Strategic decisions, complex workflows, cross-functional tasks
+**완벽한 대상:** 전략적 결정, 복잡한 워크플로우, 교차 기능 작업
 
 ---
 
-> **📌 IDE-Specific Note:**
+> **📌 IDE별 참고사항:**
 >
-> Slash command format varies by IDE:
+> 슬래시 명령 형식은 IDE마다 다릅니다:
 >
 > - **Claude Code:** `/bmad:bmm:workflows:prd`
-> - **Cursor/Windsurf:** May use different syntax - check your IDE's [documentation](./docs/ide-info/)
-> - **VS Code with Copilot Chat:** Syntax may differ
+> - **Cursor/Windsurf:** 다른 구문을 사용할 수 있음 - IDE의 [문서](./docs/ide-info/) 확인
+> - **VS Code with Copilot Chat:** 구문이 다를 수 있음
 >
-> See **[IDE Integration Guides](./docs/ide-info/)** for your specific IDE's command format.
+> 특정 IDE의 명령 형식은 **[IDE 통합 가이드](./docs/ide-info/)**를 참조하세요.
 
 ---
 
-## Key Features
+## 주요 기능
 
-### 🎨 Update-Safe Customization
+### 🎨 업데이트 안전 커스터마이징
 
-Modify agents without touching core files:
+핵심 파일을 건드리지 않고 에이전트 수정:
 
-- Override agent names, personalities, expertise via `bmad/_cfg/agents/`
-- Customizations persist through all updates
-- Multi-language support (communication + output)
-- Module-level or global configuration
+- `bmad/_cfg/agents/`를 통해 에이전트 이름, 성격, 전문성 재정의
+- 모든 업데이트를 통해 커스터마이징 유지
+- 다국어 지원 (커뮤니케이션 + 출력)
+- 모듈 수준 또는 전역 구성
 
-### 🚀 Intelligent Installation
+### 🚀 지능형 설치
 
-Smart setup that adapts to your environment:
+환경에 적응하는 스마트 설정:
 
-- Auto-detects v4 installations for smooth upgrades
-- Configures IDE integrations (Claude Code, Cursor, Windsurf, VS Code)
-- Resolves cross-module dependencies
-- Generates unified agent/workflow manifests
+- 원활한 업그레이드를 위해 v4 설치 자동 감지
+- IDE 통합 구성 (Claude Code, Cursor, Windsurf, VS Code)
+- 모듈 간 종속성 해결
+- 통합 에이전트/워크플로우 매니페스트 생성
 
-### 📁 Clean Architecture
+### 📁 깔끔한 아키텍처
 
-Everything in one place:
+모든 것이 한 곳에:
 
-- Single `bmad/` folder (no scattered files)
-- Modules live side-by-side (core, bmm, bmb, cis)
-- Your configs in `_cfg/` (survives updates)
-- Easy to version control or exclude
+- 단일 `bmad/` 폴더 (흩어진 파일 없음)
+- 모듈이 나란히 배치 (core, bmm, bmb, cis)
+- `_cfg/`의 설정 (업데이트 시 유지)
+- 버전 관리 또는 제외가 쉬움
 
-### 📄 Document Sharding (Advanced)
+### 📄 문서 샤딩 (고급)
 
-Optional optimization for large projects (BMad Method and Enterprise tracks):
+대규모 프로젝트를 위한 선택적 최적화 (BMad Method 및 Enterprise 트랙):
 
-- **Massive Token Savings** - Phase 4 workflows load only needed sections (90%+ reduction)
-- **Automatic Support** - All workflows handle whole or sharded documents seamlessly
-- **Easy Setup** - Built-in tool splits documents by headings
-- **Smart Discovery** - Workflows auto-detect format
+- **대규모 토큰 절약** - 4단계 워크플로우가 필요한 섹션만 로드 (90% 이상 감소)
+- **자동 지원** - 모든 워크플로우가 전체 또는 샤딩된 문서를 원활하게 처리
+- **쉬운 설정** - 내장 도구가 제목별로 문서 분할
+- **스마트 발견** - 워크플로우가 형식 자동 감지
 
-**[→ Document Sharding Guide](./docs/document-sharding-guide.md)**
-
----
-
-## Documentation
-
-**Module Documentation:**
-
-- **[BMM Complete Documentation Hub](./src/modules/bmm/docs/README.md)** - All BMM guides, FAQs, troubleshooting
-- **[BMB Module Reference](./src/modules/bmb/README.md)** - Build custom agents and workflows
-- **[CIS Workflows Guide](./src/modules/cis/workflows/README.md)** - Creative facilitation workflows
-
-**Customization & Sharing:**
-
-- **[Agent Customization Guide](./docs/agent-customization-guide.md)** - Customize agent names, personas, and behaviors
-- **[Web Bundles for Gemini & GPT](./docs/web-bundles-gemini-gpt-guide.md)** - Use BMad agents in Gemini Gems and Custom GPTs
-
-**Additional Resources:**
-
-- **[Documentation Index](./docs/index.md)** - All project documentation
-- **[v4 to v6 Upgrade Guide](./docs/v4-to-v6-upgrade.md)** - Migration instructions
-- **[CLI Tool Guide](./tools/cli/README.md)** - Installer and build tool reference
-- **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute
+**[→ 문서 샤딩 가이드](./docs/document-sharding-guide.md)**
 
 ---
 
-## Community & Support
+## 문서
 
-- 💬 **[Discord Community](https://discord.gg/gk8jAdXWmj)** - Get help, share projects (#general-dev, #bugs-issues)
-- 🐛 **[GitHub Issues](https://github.com/bmad-code-org/BMAD-METHOD/issues)** - Report bugs, request features
-- 🎥 **[YouTube Channel](https://www.youtube.com/@BMadCode)** - Video tutorials and walkthroughs
-- ⭐ **[Star this repo](https://github.com/bmad-code-org/BMAD-METHOD)** - Stay updated on releases
+**모듈 문서:**
+
+- **[BMM 완전한 문서 허브](./src/modules/bmm/docs/README.md)** - 모든 BMM 가이드, FAQ, 문제 해결
+- **[BMB 모듈 참조](./src/modules/bmb/README.md)** - 커스텀 에이전트 및 워크플로우 구축
+- **[CIS 워크플로우 가이드](./src/modules/cis/workflows/README.md)** - 창의적 촉진 워크플로우
+
+**커스터마이징 및 공유:**
+
+- **[에이전트 커스터마이징 가이드](./docs/agent-customization-guide.md)** - 에이전트 이름, 페르소나, 행동 커스터마이징
+- **[Gemini 및 GPT용 웹 번들](./docs/web-bundles-gemini-gpt-guide.md)** - Gemini Gems 및 Custom GPTs에서 BMad 에이전트 사용
+
+**추가 리소스:**
+
+- **[문서 색인](./docs/index.md)** - 모든 프로젝트 문서
+- **[v4에서 v6 업그레이드 가이드](./docs/v4-to-v6-upgrade.md)** - 마이그레이션 지침
+- **[CLI 도구 가이드](./tools/cli/README.md)** - 설치 프로그램 및 빌드 도구 참조
+- **[기여 가이드](./CONTRIBUTING.md)** - 기여 방법
 
 ---
 
-## Development & Quality Checks
+## 커뮤니티 및 지원
 
-**For contributors working on the BMAD codebase:**
+- 💬 **[Discord 커뮤니티](https://discord.gg/gk8jAdXWmj)** - 도움 받기, 프로젝트 공유 (#general-dev, #bugs-issues)
+- 🐛 **[GitHub Issues](https://github.com/bmad-code-org/BMAD-METHOD/issues)** - 버그 보고, 기능 요청
+- 🎥 **[YouTube 채널](https://www.youtube.com/@BMadCode)** - 비디오 튜토리얼 및 워크스루
+- ⭐ **[이 저장소에 별표](https://github.com/bmad-code-org/BMAD-METHOD)** - 릴리스 업데이트 받기
 
-**Requirements:** Node.js 22+ (see `.nvmrc`). Run `nvm use` to switch to the correct version.
+---
 
-### Testing & Validation
+## 개발 및 품질 검사
+
+**BMAD 코드베이스 작업하는 기여자를 위해:**
+
+**요구사항:** Node.js 22+ (`.nvmrc` 참조). `nvm use`를 실행하여 올바른 버전으로 전환하세요.
+
+### 테스팅 및 검증
 
 ```bash
-# Run all quality checks (comprehensive - use before pushing)
+# 모든 품질 검사 실행 (종합적 - 푸시 전에 사용)
 npm test
 
-# Individual test suites
-npm run test:schemas     # Agent schema validation (fixture-based)
-npm run test:install     # Installation component tests (compilation)
-npm run validate:schemas # YAML schema validation
-npm run validate:bundles # Web bundle integrity
+# 개별 테스트 스위트
+npm run test:schemas     # 에이전트 스키마 검증 (fixture 기반)
+npm run test:install     # 설치 컴포넌트 테스트 (컴파일)
+npm run validate:schemas # YAML 스키마 검증
+npm run validate:bundles # 웹 번들 무결성
 ```
 
-### Code Quality
+### 코드 품질
 
 ```bash
-# Lint check
+# 린트 검사
 npm run lint
 
-# Auto-fix linting issues
+# 린팅 이슈 자동 수정
 npm run lint:fix
 
-# Format check
+# 포맷 검사
 npm run format:check
 
-# Auto-format all files
+# 모든 파일 자동 포맷
 npm run format:fix
 ```
 
-### Build & Development
+### 빌드 및 개발
 
 ```bash
-# Bundle for web deployment
+# 웹 배포용 번들
 npm run bundle
 
-# Test local installation
+# 로컬 설치 테스트
 npm run install:bmad
 ```
 
-**Pre-commit Hook:** Auto-fixes changed files (lint-staged) + validates everything (npm test)
-**CI:** GitHub Actions runs all quality checks in parallel on every PR
+**Pre-commit Hook:** 변경된 파일 자동 수정 (lint-staged) + 모든 것 검증 (npm test)
+**CI:** GitHub Actions가 모든 PR에서 모든 품질 검사를 병렬로 실행
 
 ---
 
-## Contributing
+## 기여하기
 
-We welcome contributions! See **[CONTRIBUTING.md](CONTRIBUTING.md)** for:
+기여를 환영합니다! 다음을 위해 **[CONTRIBUTING.md](CONTRIBUTING.md)**를 참조하세요:
 
-- Code contribution guidelines
-- Documentation improvements
-- Module development
-- Issue reporting
+- 코드 기여 가이드라인
+- 문서 개선
+- 모듈 개발
+- 이슈 보고
 
 ---
 
-## License
+## 라이선스
 
-**MIT License** - See [LICENSE](LICENSE) for details
+**MIT 라이선스** - 자세한 내용은 [LICENSE](LICENSE) 참조
 
-**Trademarks:** BMAD™ and BMAD-METHOD™ are trademarks of BMad Code, LLC.
+**상표:** BMAD™ 및 BMAD-METHOD™는 BMad Code, LLC의 상표입니다.
 
 ---
 
 [![Contributors](https://contrib.rocks/image?repo=bmad-code-org/BMAD-METHOD)](https://github.com/bmad-code-org/BMAD-METHOD/graphs/contributors)
 
-<sub>Built with ❤️ for the human-AI collaboration community</sub>
+<sub>인간-AI 협업 커뮤니티를 위해 ❤️로 제작되었습니다</sub>
