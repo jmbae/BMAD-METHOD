@@ -1,240 +1,240 @@
-# Create Story Quality Validation Checklist
+# 스토리 생성 품질 검증 체크리스트
 
 ```xml
-<critical>This validation runs in a FRESH CONTEXT by an independent validator agent</critical>
-<critical>The validator audits story quality and offers to improve if issues are found</critical>
-<critical>Load only the story file and necessary source documents - do NOT load workflow instructions</critical>
+<critical>이 검증은 독립적인 검증자 에이전트에 의해 신선한 컨텍스트에서 실행됩니다</critical>
+<critical>검증자는 스토리 품질을 감시하고 문제가 발견되면 개선을 제안합니다</critical>
+<critical>스토리 파일과 필요한 소스 문서만 로드하기 - 워크플로우 지침 로드 금지</critical>
 
 <validation-checklist>
 
 <expectations>
-**What create-story workflow should have accomplished:**
+**create-story 워크플로우가 완료해야 할 사항:**
 
-1. **Previous Story Continuity:** If a previous story exists (status: done/review/in-progress), current story should have "Learnings from Previous Story" subsection in Dev Notes that references: new files created, completion notes, architectural decisions, unresolved review items
-2. **Source Document Coverage:** Story should cite tech spec (if exists), epics, PRD, and relevant architecture docs (architecture.md, testing-strategy.md, coding-standards.md, unified-project-structure.md)
-3. **Requirements Traceability:** ACs sourced from tech spec (preferred) or epics, not invented
-4. **Dev Notes Quality:** Specific guidance with citations, not generic advice
-5. **Task-AC Mapping:** Every AC has tasks, every task references AC, testing subtasks present
-6. **Structure:** Status="drafted", proper story statement, Dev Agent Record sections initialized
+1. **이전 스토리 연속성:** 이전 스토리가 존재하면 (상태: done/review/in-progress), 현재 스토리는 개발 메모에 "이전 스토리에서 배운 교훈" 부분섹션을 포함해야 함: 생성된 새 파일, 완료 메모, 아키텍처 결정, 미해결 검토 항목 참조
+2. **소스 문서 범위:** 스토리는 tech spec (있는 경우), 에픽, PRD 및 관련 아키텍처 문서 (architecture.md, testing-strategy.md, coding-standards.md, unified-project-structure.md) 인용해야 함
+3. **요구사항 추적 가능성:** 수용 기준이 tech spec (선호) 또는 에픽에서 출처, 발명되지 않음
+4. **개발 메모 품질:** 일반적인 조언이 아닌 인용이 있는 구체적 지침
+5. **작업-수용 기준 매핑:** 모든 수용 기준에 작업, 모든 작업이 수용 기준 참조, 테스트 부작업 존재
+6. **구조:** Status="drafted", 올바른 스토리 진술, 개발 에이전트 기록 섹션 초기화됨
 </expectations>
 
-## Validation Steps
+## 검증 단계
 
-### 1. Load Story and Extract Metadata
-- [ ] Load story file: {{story_file_path}}
-- [ ] Parse sections: Status, Story, ACs, Tasks, Dev Notes, Dev Agent Record, Change Log
-- [ ] Extract: epic_num, story_num, story_key, story_title
-- [ ] Initialize issue tracker (Critical/Major/Minor)
+### 1. 스토리 로드 및 메타데이터 추출
+- [ ] 스토리 파일 로드: {{story_file_path}}
+- [ ] 섹션 파싱: Status, Story, ACs, Tasks, Dev Notes, Dev Agent Record, Change Log
+- [ ] 추출: epic_num, story_num, story_key, story_title
+- [ ] 문제 추적기 초기화 (Critical/Major/Minor)
 
-### 2. Previous Story Continuity Check
+### 2. 이전 스토리 연속성 확인
 
-**Find previous story:**
-- [ ] Load {output_folder}/sprint-status.yaml
-- [ ] Find current {{story_key}} in development_status
-- [ ] Identify story entry immediately above (previous story)
-- [ ] Check previous story status
+**이전 스토리 찾기:**
+- [ ] {output_folder}/sprint-status.yaml 로드하기
+- [ ] development_status에서 현재 {{story_key}} 찾기
+- [ ] 바로 위의 스토리 항목 식별하기 (이전 스토리)
+- [ ] 이전 스토리 상태 확인하기
 
-**If previous story status is done/review/in-progress:**
-- [ ] Load previous story file: {story_dir}/{{previous_story_key}}.md
-- [ ] Extract: Dev Agent Record (Completion Notes, File List with NEW/MODIFIED)
-- [ ] Extract: Senior Developer Review section if present
-- [ ] Count unchecked [ ] items in Review Action Items
-- [ ] Count unchecked [ ] items in Review Follow-ups (AI)
+**이전 스토리 상태가 done/review/in-progress인 경우:**
+- [ ] 이전 스토리 파일 로드: {story_dir}/{{previous_story_key}}.md
+- [ ] 추출: 개발 에이전트 기록 (완료 메모, NEW/MODIFIED가 있는 파일 목록)
+- [ ] 추출: 수석 개발자 검토 섹션 (있는 경우)
+- [ ] 검토 액션 항목에서 체크되지 않은 [ ] 항목 계산하기
+- [ ] 검토 추가 작업 (AI)에서 체크되지 않은 [ ] 항목 계산하기
 
-**Validate current story captured continuity:**
-- [ ] Check: "Learnings from Previous Story" subsection exists in Dev Notes
-  - If MISSING and previous story has content → **CRITICAL ISSUE**
-- [ ] If subsection exists, verify it includes:
-  - [ ] References to NEW files from previous story → If missing → **MAJOR ISSUE**
-  - [ ] Mentions completion notes/warnings → If missing → **MAJOR ISSUE**
-  - [ ] Calls out unresolved review items (if any exist) → If missing → **CRITICAL ISSUE**
-  - [ ] Cites previous story: [Source: stories/{{previous_story_key}}.md]
+**현재 스토리가 연속성을 캡처했는지 검증하기:**
+- [ ] 확인: "이전 스토리에서 배운 교훈" 부분섹션이 개발 메모에 존재함
+  - 누락되고 이전 스토리가 내용을 가짐 → **중대한 문제**
+- [ ] 부분섹션이 존재하면 다음을 포함하는지 확인:
+  - [ ] 이전 스토리의 새 파일에 대한 참조 → 누락되면 → **주요 문제**
+  - [ ] 완료 메모/경고 언급 → 누락되면 → **주요 문제**
+  - [ ] 미해결 검토 항목 호출 (있는 경우) → 누락되면 → **중대한 문제**
+  - [ ] 이전 스토리 인용: [출처: stories/{{previous_story_key}}.md]
 
-**If previous story status is backlog/drafted:**
-- [ ] No continuity expected (note this)
+**이전 스토리 상태가 backlog/drafted인 경우:**
+- [ ] 연속성 예상하지 않음 (이것을 기록)
 
-**If no previous story exists:**
-- [ ] First story in epic, no continuity expected
+**이전 스토리가 없는 경우:**
+- [ ] 에픽의 첫 스토리, 연속성 예상하지 않음
 
-### 3. Source Document Coverage Check
+### 3. 소스 문서 범위 확인
 
-**Build available docs list:**
-- [ ] Check exists: tech-spec-epic-{{epic_num}}*.md in {tech_spec_search_dir}
-- [ ] Check exists: {output_folder}/epics.md
-- [ ] Check exists: {output_folder}/PRD.md
-- [ ] Check exists in {output_folder}/ or {project-root}/docs/:
+**사용 가능한 문서 목록 빌드:**
+- [ ] 확인: tech-spec-epic-{{epic_num}}*.md이 {tech_spec_search_dir}에 존재함
+- [ ] 확인: {output_folder}/epics.md가 존재함
+- [ ] 확인: {output_folder}/PRD.md가 존재함
+- [ ] {output_folder}/ 또는 {project-root}/docs/에서 확인:
   - architecture.md, testing-strategy.md, coding-standards.md
   - unified-project-structure.md, tech-stack.md
   - backend-architecture.md, frontend-architecture.md, data-models.md
 
-**Validate story references available docs:**
-- [ ] Extract all [Source: ...] citations from story Dev Notes
-- [ ] Tech spec exists but not cited → **CRITICAL ISSUE**
-- [ ] Epics exists but not cited → **CRITICAL ISSUE**
-- [ ] Architecture.md exists → Read for relevance → If relevant but not cited → **MAJOR ISSUE**
-- [ ] Testing-strategy.md exists → Check Dev Notes mentions testing standards → If not → **MAJOR ISSUE**
-- [ ] Testing-strategy.md exists → Check Tasks have testing subtasks → If not → **MAJOR ISSUE**
-- [ ] Coding-standards.md exists → Check Dev Notes references standards → If not → **MAJOR ISSUE**
-- [ ] Unified-project-structure.md exists → Check Dev Notes has "Project Structure Notes" subsection → If not → **MAJOR ISSUE**
+**스토리가 사용 가능한 문서를 참조하는지 검증:**
+- [ ] 스토리 개발 메모에서 모든 [출처: ...] 인용 추출하기
+- [ ] Tech spec이 존재하지만 인용되지 않음 → **중대한 문제**
+- [ ] 에픽이 존재하지만 인용되지 않음 → **중대한 문제**
+- [ ] Architecture.md가 존재 → 관련성 읽기 → 관련이 있지만 인용되지 않음 → **주요 문제**
+- [ ] Testing-strategy.md가 존재 → 개발 메모에서 테스트 표준 언급 확인 → 없으면 → **주요 문제**
+- [ ] Testing-strategy.md가 존재 → 작업에 테스트 부작업 확인 → 없으면 → **주요 문제**
+- [ ] Coding-standards.md가 존재 → 개발 메모에서 표준 참조 확인 → 없으면 → **주요 문제**
+- [ ] Unified-project-structure.md가 존재 → 개발 메모에 "프로젝트 구조 메모" 부분섹션 확인 → 없으면 → **주요 문제**
 
-**Validate citation quality:**
-- [ ] Verify cited file paths are correct and files exist → Bad citations → **MAJOR ISSUE**
-- [ ] Check citations include section names, not just file paths → Vague citations → **MINOR ISSUE**
+**인용 품질 검증:**
+- [ ] 인용된 파일 경로가 올바른지 확인하고 파일 존재 → 잘못된 인용 → **주요 문제**
+- [ ] 인용이 파일 경로뿐만 아니라 섹션 이름을 포함하는지 확인 → 모호한 인용 → **경미한 문제**
 
-### 4. Acceptance Criteria Quality Check
+### 4. 수용 기준 품질 확인
 
-- [ ] Extract Acceptance Criteria from story
-- [ ] Count ACs: {{ac_count}} (if 0 → **CRITICAL ISSUE** and halt)
-- [ ] Check story indicates AC source (tech spec, epics, PRD)
+- [ ] 스토리에서 수용 기준 추출하기
+- [ ] 수용 기준 수 계산: {{ac_count}} (0이면 → **중대한 문제** 및 중단)
+- [ ] 스토리가 수용 기준 출처를 나타내는지 확인 (tech spec, 에픽, PRD)
 
-**If tech spec exists:**
-- [ ] Load tech spec
-- [ ] Search for this story number
-- [ ] Extract tech spec ACs for this story
-- [ ] Compare story ACs vs tech spec ACs → If mismatch → **MAJOR ISSUE**
+**tech spec이 존재하면:**
+- [ ] tech spec 로드하기
+- [ ] 이 스토리 번호 검색하기
+- [ ] 이 스토리에 대한 tech spec 수용 기준 추출하기
+- [ ] 스토리 수용 기준 vs tech spec 수용 기준 비교 → 불일치하면 → **주요 문제**
 
-**If no tech spec but epics.md exists:**
-- [ ] Load epics.md
-- [ ] Search for Epic {{epic_num}}, Story {{story_num}}
-- [ ] Story not found in epics → **CRITICAL ISSUE** (should have halted)
-- [ ] Extract epics ACs
-- [ ] Compare story ACs vs epics ACs → If mismatch without justification → **MAJOR ISSUE**
+**tech spec이 없지만 epics.md가 존재하면:**
+- [ ] epics.md 로드하기
+- [ ] 에픽 {{epic_num}}, 스토리 {{story_num}} 검색하기
+- [ ] 스토리를 에픽에서 찾지 못함 → **중대한 문제** (중단했어야 함)
+- [ ] 에픽 수용 기준 추출하기
+- [ ] 스토리 수용 기준 vs 에픽 수용 기준 비교 → 정당화 없이 불일치하면 → **주요 문제**
 
-**Validate AC quality:**
-- [ ] Each AC is testable (measurable outcome)
-- [ ] Each AC is specific (not vague)
-- [ ] Each AC is atomic (single concern)
-- [ ] Vague ACs found → **MINOR ISSUE**
+**수용 기준 품질 검증:**
+- [ ] 각 수용 기준이 테스트 가능함 (측정 가능한 결과)
+- [ ] 각 수용 기준이 구체적임 (모호하지 않음)
+- [ ] 각 수용 기준이 원자적임 (단일 관심사)
+- [ ] 모호한 수용 기준 발견 → **경미한 문제**
 
-### 5. Task-AC Mapping Check
+### 5. 작업-수용 기준 매핑 확인
 
-- [ ] Extract Tasks/Subtasks from story
-- [ ] For each AC: Search tasks for "(AC: #{{ac_num}})" reference
-  - [ ] AC has no tasks → **MAJOR ISSUE**
-- [ ] For each task: Check if references an AC number
-  - [ ] Tasks without AC refs (and not testing/setup) → **MINOR ISSUE**
-- [ ] Count tasks with testing subtasks
-  - [ ] Testing subtasks < ac_count → **MAJOR ISSUE**
+- [ ] 스토리에서 작업/부작업 추출하기
+- [ ] 각 수용 기준에 대해: "(AC: #{{ac_num}})" 참조에 대한 작업 검색하기
+  - [ ] 수용 기준에 작업 없음 → **주요 문제**
+- [ ] 각 작업에 대해: 수용 기준 번호 참조하는지 확인하기
+  - [ ] 수용 기준 참조 없는 작업 (테스트/설정 제외) → **경미한 문제**
+- [ ] 테스트 부작업이 있는 작업 수 계산하기
+  - [ ] 테스트 부작업 < 수용 기준 수 → **주요 문제**
 
-### 6. Dev Notes Quality Check
+### 6. 개발 메모 품질 확인
 
-**Check required subsections exist:**
-- [ ] Architecture patterns and constraints
-- [ ] References (with citations)
-- [ ] Project Structure Notes (if unified-project-structure.md exists)
-- [ ] Learnings from Previous Story (if previous story has content)
-- [ ] Missing required subsections → **MAJOR ISSUE**
+**필요한 부분섹션이 존재하는지 확인:**
+- [ ] 아키텍처 패턴 및 제약
+- [ ] 참조 (인용 포함)
+- [ ] 프로젝트 구조 메모 (unified-project-structure.md가 존재하면)
+- [ ] 이전 스토리에서 배운 교훈 (이전 스토리가 내용을 가지면)
+- [ ] 필요한 부분섹션 누락 → **주요 문제**
 
-**Validate content quality:**
-- [ ] Architecture guidance is specific (not generic "follow architecture docs") → If generic → **MAJOR ISSUE**
-- [ ] Count citations in References subsection
-  - [ ] No citations → **MAJOR ISSUE**
-  - [ ] < 3 citations and multiple arch docs exist → **MINOR ISSUE**
-- [ ] Scan for suspicious specifics without citations:
-  - API endpoints, schema details, business rules, tech choices
-  - [ ] Likely invented details found → **MAJOR ISSUE**
+**내용 품질 검증:**
+- [ ] 아키텍처 지침이 구체적임 (일반적인 "아키텍처 문서 따르기" 아님) → 일반적이면 → **주요 문제**
+- [ ] 참조 부분섹션에서 인용 수 계산하기
+  - [ ] 인용 없음 → **주요 문제**
+  - [ ] < 3개 인용 및 여러 아치 문서 존재 → **경미한 문제**
+- [ ] 인용 없이 의심스러운 특정 사항 스캔하기:
+  - API 끝점, 스키마 세부정보, 비즈니스 규칙, 기술 선택
+  - [ ] 발명된 세부정보 발견 가능 → **주요 문제**
 
-### 7. Story Structure Check
+### 7. 스토리 구조 확인
 
-- [ ] Status = "drafted" → If not → **MAJOR ISSUE**
-- [ ] Story section has "As a / I want / so that" format → If malformed → **MAJOR ISSUE**
-- [ ] Dev Agent Record has required sections:
+- [ ] 상태 = "drafted" → 아니면 → **주요 문제**
+- [ ] 스토리 섹션이 "As a / I want / so that" 형식을 가짐 → 잘못된 형식이면 → **주요 문제**
+- [ ] 개발 에이전트 기록이 필요한 섹션을 가짐:
   - Context Reference, Agent Model Used, Debug Log References, Completion Notes List, File List
-  - [ ] Missing sections → **MAJOR ISSUE**
-- [ ] Change Log initialized → If missing → **MINOR ISSUE**
-- [ ] File in correct location: {story_dir}/{{story_key}}.md → If not → **MAJOR ISSUE**
+  - [ ] 누락된 섹션 → **주요 문제**
+- [ ] 변경 로그 초기화됨 → 누락되면 → **경미한 문제**
+- [ ] 파일이 올바른 위치: {story_dir}/{{story_key}}.md → 아니면 → **주요 문제**
 
-### 8. Unresolved Review Items Alert
+### 8. 미해결 검토 항목 경고
 
-**CRITICAL CHECK for incomplete review items from previous story:**
+**이전 스토리의 미완료 검토 항목에 대한 중대한 확인:**
 
-- [ ] If previous story has "Senior Developer Review (AI)" section:
-  - [ ] Count unchecked [ ] items in "Action Items"
-  - [ ] Count unchecked [ ] items in "Review Follow-ups (AI)"
-  - [ ] If unchecked items > 0:
-    - [ ] Check current story "Learnings from Previous Story" mentions these
-    - [ ] If NOT mentioned → **CRITICAL ISSUE** with details:
-      - List all unchecked items with severity
-      - Note: "These may represent epic-wide concerns"
-      - Required: Add to Learnings section with note about pending items
+- [ ] 이전 스토리에 "수석 개발자 검토 (AI)" 섹션이 있으면:
+  - [ ] "액션 항목"에서 체크되지 않은 [ ] 항목 계산하기
+  - [ ] "검토 추가 작업 (AI)"에서 체크되지 않은 [ ] 항목 계산하기
+  - [ ] 체크되지 않은 항목 > 0이면:
+    - [ ] 현재 스토리 "이전 스토리에서 배운 교훈"에서 이것을 언급하는지 확인하기
+    - [ ] 언급하지 않으면 → **중대한 문제** 세부정보:
+      - 심각도와 함께 체크되지 않은 모든 항목 나열하기
+      - 메모: "이것들은 에픽 전체 관심사를 나타낼 수 있음"
+      - 필요: 보류 중인 항목에 대한 메모와 함께 학습 섹션에 추가하기
 
-## Validation Report Generation
+## 검증 보고서 생성
 
-**Calculate severity counts:**
-- Critical: {{critical_count}}
-- Major: {{major_count}}
-- Minor: {{minor_count}}
+**심각도 수 계산:**
+- 중대: {{critical_count}}
+- 주요: {{major_count}}
+- 경미: {{minor_count}}
 
-**Determine outcome:**
-- Critical > 0 OR Major > 3 → **FAIL**
-- Major ≤ 3 and Critical = 0 → **PASS with issues**
-- All = 0 → **PASS**
+**결과 결정:**
+- 중대 > 0 또는 주요 > 3 → **실패**
+- 주요 ≤ 3 및 중대 = 0 → **문제와 함께 통과**
+- 모두 = 0 → **통과**
 
-**Generate report:**
+**보고서 생성:**
 ```
 
-# Story Quality Validation Report
+# 스토리 품질 검증 보고서
 
-Story: {{story_key}} - {{story_title}}
-Outcome: {{outcome}} (Critical: {{critical_count}}, Major: {{major_count}}, Minor: {{minor_count}})
+스토리: {{story_key}} - {{story_title}}
+결과: {{outcome}} (중대: {{critical_count}}, 주요: {{major_count}}, 경미: {{minor_count}})
 
-## Critical Issues (Blockers)
+## 중대한 문제 (차단)
 
-{{list_each_with_description_and_evidence}}
+{{각 설명 및 증거와 함께 나열}}
 
-## Major Issues (Should Fix)
+## 주요 문제 (수정 필요)
 
-{{list_each_with_description_and_evidence}}
+{{각 설명 및 증거와 함께 나열}}
 
-## Minor Issues (Nice to Have)
+## 경미한 문제 (있으면 좋음)
 
-{{list_each_with_description}}
+{{각 설명과 함께 나열}}
 
-## Successes
+## 성공사항
 
-{{list_what_was_done_well}}
+{{잘 수행된 것 나열}}
 
 ```
 
-## User Alert and Remediation
+## 사용자 경고 및 수정
 
-**If FAIL:**
-- Show issues summary and top 3 issues
-- Offer options: (1) Auto-improve story, (2) Show detailed findings, (3) Fix manually, (4) Accept as-is
-- If option 1: Re-load source docs, regenerate affected sections, re-run validation
+**실패인 경우:**
+- 문제 요약 및 상위 3개 문제 표시
+- 옵션 제시: (1) 자동 개선 스토리, (2) 상세 결과 표시, (3) 수동 수정, (4) 현재대로 수락
+- 옵션 1인 경우: 소스 문서 다시 로드, 영향받은 섹션 재생성, 검증 다시 실행
 
-**If PASS with issues:**
-- Show issues list
-- Ask: "Improve story? (y/n)"
-- If yes: Enhance story with missing items
+**문제와 함께 통과인 경우:**
+- 문제 목록 표시
+- 질문: "스토리를 개선하시겠습니까? (y/n)"
+- 예인 경우: 누락된 항목으로 스토리 향상
 
-**If PASS:**
-- Confirm: All quality standards met
-- List successes
-- Ready for story-context generation
+**통과인 경우:**
+- 확인: 모든 품질 표준 충족
+- 성공사항 나열
+- story-context 생성 준비 완료
 
 </validation-checklist>
 ```
 
-## Quick Reference
+## 빠른 참조
 
-**Validation runs in fresh context and checks:**
+**검증은 신선한 컨텍스트에서 실행되고 확인:**
 
-1. ✅ Previous story continuity captured (files, notes, **unresolved review items**)
-2. ✅ All relevant source docs discovered and cited
-3. ✅ ACs match tech spec/epics exactly
-4. ✅ Tasks cover all ACs with testing
-5. ✅ Dev Notes have specific guidance with citations (not generic)
-6. ✅ Structure and metadata complete
+1. ✅ 이전 스토리 연속성 캡처됨 (파일, 메모, **미해결 검토 항목**)
+2. ✅ 모든 관련 소스 문서 발견 및 인용됨
+3. ✅ 수용 기준이 tech spec/에픽과 정확히 일치함
+4. ✅ 작업이 테스트와 함께 모든 수용 기준 포함
+5. ✅ 개발 메모에 인용과 함께 구체적 지침 (일반적이지 않음)
+6. ✅ 구조 및 메타데이터 완성됨
 
-**Severity Levels:**
+**심각도 수준:**
 
-- **CRITICAL** = Missing previous story reference, missing tech spec cite, unresolved review items not called out, story not in epics
-- **MAJOR** = Missing arch docs, missing files from previous story, vague Dev Notes, ACs don't match source, no testing subtasks
-- **MINOR** = Vague citations, orphan tasks, missing Change Log
+- **중대** = 이전 스토리 참조 누락, tech spec 인용 누락, 미해결 검토 항목 호출 없음, 에픽에 스토리 없음
+- **주요** = 아치 문서 누락, 이전 스토리의 파일 누락, 모호한 개발 메모, 수용 기준이 출처와 일치하지 않음, 테스트 부작업 없음
+- **경미** = 모호한 인용, 고아 작업, 변경 로그 누락
 
-**Outcome Triggers:**
+**결과 트리거:**
 
-- **FAIL** = Any critical OR >3 major issues
-- **PASS with issues** = ≤3 major issues, no critical
-- **PASS** = All checks passed
+- **실패** = 중대 또는 주요 > 3개
+- **문제와 함께 통과** = 주요 ≤ 3개, 중대 없음
+- **통과** = 모든 확인 통과
