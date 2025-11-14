@@ -1,145 +1,145 @@
-# {{project_name}} UX Design Specification
+# {{project_name}} UX 디자인 사양
 
-_Created on {{date}} by {{user_name}}_
-_Generated using BMad Method - Create UX Design Workflow v1.0_
+_{{date}}에 {{user_name}}이 생성함_
+_BMad Method 사용 - UX 디자인 생성 워크플로우 v1.0_
 
 ---
 
-## Executive Summary
+## 요약
 
 {{project_vision}}
 
 ---
 
-## 1. Design System Foundation
+## 1. 디자인 시스템 기초
 
-### 1.1 Design System Choice
+### 1.1 디자인 시스템 선택
 
 {{design_system_decision}}
 
 ---
 
-## 2. Core User Experience
+## 2. 핵심 사용자 경험
 
-### 2.1 Defining Experience
+### 2.1 정의하는 경험
 
 {{core_experience}}
 
-### 2.2 Novel UX Patterns
+### 2.2 새로운 UX 패턴
 
 {{novel_ux_patterns}}
 
 ---
 
-## 3. Visual Foundation
+## 3. 시각적 기초
 
-### 3.1 Color System
+### 3.1 색상 시스템
 
 {{visual_foundation}}
 
-**Interactive Visualizations:**
+**대화형 시각화:**
 
-- Color Theme Explorer: [ux-color-themes.html](./ux-color-themes.html)
+- 색상 테마 탐색기: [ux-color-themes.html](./ux-color-themes.html)
 
 ---
 
-## 4. Design Direction
+## 4. 디자인 방향
 
-### 4.1 Chosen Design Approach
+### 4.1 선택된 디자인 접근 방식
 
 {{design_direction_decision}}
 
-**Interactive Mockups:**
+**대화형 목업:**
 
-- Design Direction Showcase: [ux-design-directions.html](./ux-design-directions.html)
+- 디자인 방향 쇼케이스: [ux-design-directions.html](./ux-design-directions.html)
 
 ---
 
-## 5. User Journey Flows
+## 5. 사용자 여정 흐름
 
-### 5.1 Critical User Paths
+### 5.1 중요한 사용자 경로
 
 {{user_journey_flows}}
 
 ---
 
-## 6. Component Library
+## 6. 컴포넌트 라이브러리
 
-### 6.1 Component Strategy
+### 6.1 컴포넌트 전략
 
 {{component_library_strategy}}
 
 ---
 
-## 7. UX Pattern Decisions
+## 7. UX 패턴 결정
 
-### 7.1 Consistency Rules
+### 7.1 일관성 규칙
 
 {{ux_pattern_decisions}}
 
 ---
 
-## 8. Responsive Design & Accessibility
+## 8. 반응형 디자인 및 접근성
 
-### 8.1 Responsive Strategy
+### 8.1 반응형 전략
 
 {{responsive_accessibility_strategy}}
 
 ---
 
-## 9. Implementation Guidance
+## 9. 구현 지침
 
-### 9.1 Completion Summary
+### 9.1 완료 요약
 
 {{completion_summary}}
 
 ---
 
-## Appendix
+## 부록
 
-### Related Documents
+### 관련 문서
 
-- Product Requirements: `{{prd_file}}`
-- Product Brief: `{{brief_file}}`
-- Brainstorming: `{{brainstorm_file}}`
+- 제품 요구 사항: `{{prd_file}}`
+- 제품 개요: `{{brief_file}}`
+- 브레인스토밍: `{{brainstorm_file}}`
 
-### Core Interactive Deliverables
+### 핵심 대화형 산출물
 
-This UX Design Specification was created through visual collaboration:
+이 UX 디자인 사양은 시각적 협력을 통해 작성되었습니다:
 
-- **Color Theme Visualizer**: {{color_themes_html}}
-  - Interactive HTML showing all color theme options explored
-  - Live UI component examples in each theme
-  - Side-by-side comparison and semantic color usage
+- **색상 테마 시각화 도구**: {{color_themes_html}}
+  - 탐색된 모든 색상 테마 옵션을 보여주는 대화형 HTML
+  - 각 테마의 라이브 UI 컴포넌트 예시
+  - 나란히 비교 및 의미론적 색상 사용법
 
-- **Design Direction Mockups**: {{design_directions_html}}
-  - Interactive HTML with 6-8 complete design approaches
-  - Full-screen mockups of key screens
-  - Design philosophy and rationale for each direction
+- **디자인 방향 목업**: {{design_directions_html}}
+  - 6-8가지 완전한 디자인 접근 방식의 대화형 HTML
+  - 주요 화면의 전체 화면 목업
+  - 각 방향의 디자인 철학 및 근거
 
-### Optional Enhancement Deliverables
+### 선택적 개선 산출물
 
-_This section will be populated if additional UX artifacts are generated through follow-up workflows._
+_추가 UX 아티팩트가 후속 워크플로우를 통해 생성되는 경우 이 섹션을 채웁니다._
 
-<!-- Additional deliverables added here by other workflows -->
+<!-- 다른 워크플로우에 의해 추가된 산출물은 여기에 추가됩니다 -->
 
-### Next Steps & Follow-Up Workflows
+### 다음 단계 및 후속 워크플로우
 
-This UX Design Specification can serve as input to:
+이 UX 디자인 사양은 다음의 입력으로 사용될 수 있습니다:
 
-- **Wireframe Generation Workflow** - Create detailed wireframes from user flows
-- **Figma Design Workflow** - Generate Figma files via MCP integration
-- **Interactive Prototype Workflow** - Build clickable HTML prototypes
-- **Component Showcase Workflow** - Create interactive component library
-- **AI Frontend Prompt Workflow** - Generate prompts for v0, Lovable, Bolt, etc.
-- **Solution Architecture Workflow** - Define technical architecture with UX context
+- **와이어프레임 생성 워크플로우** - 사용자 흐름에서 상세 와이어프레임 생성
+- **Figma 디자인 워크플로우** - MCP 통합을 통해 Figma 파일 생성
+- **대화형 프로토타입 워크플로우** - 클릭 가능한 HTML 프로토타입 구축
+- **컴포넌트 쇼케이스 워크플로우** - 대화형 컴포넌트 라이브러리 생성
+- **AI 프론트엔드 프롬프트 워크플로우** - v0, Lovable, Bolt 등을 위한 프롬프트 생성
+- **솔루션 아키텍처 워크플로우** - UX 컨텍스트로 기술 아키텍처 정의
 
-### Version History
+### 버전 히스토리
 
-| Date     | Version | Changes                         | Author        |
-| -------- | ------- | ------------------------------- | ------------- |
-| {{date}} | 1.0     | Initial UX Design Specification | {{user_name}} |
+| 날짜     | 버전 | 변경 사항                   | 작성자        |
+| -------- | ---- | --------------------------  | ------------- |
+| {{date}} | 1.0  | 초기 UX 디자인 사양         | {{user_name}} |
 
 ---
 
-_This UX Design Specification was created through collaborative design facilitation, not template generation. All decisions were made with user input and are documented with rationale._
+_이 UX 디자인 사양은 템플릿 생성이 아닌 협력적 디자인 촉진을 통해 작성되었습니다. 모든 결정은 사용자 입력으로 이루어졌으며 근거와 함께 기록되었습니다._

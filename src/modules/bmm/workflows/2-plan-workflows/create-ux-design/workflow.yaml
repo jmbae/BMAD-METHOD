@@ -1,6 +1,6 @@
 # Create UX Design Workflow Configuration
 name: create-ux-design
-description: "Collaborative UX design facilitation workflow that creates exceptional user experiences through visual exploration and informed decision-making. Unlike template-driven approaches, this workflow facilitates discovery, generates visual options, and collaboratively designs the UX with the user at every step."
+description: "협력적 UX 디자인 촉진 워크플로우로 시각적 탐색과 정보 기반 의사결정을 통해 뛰어난 사용자 경험을 만들어냅니다. 템플릿 기반 접근 방식과 달리 이 워크플로우는 발견 과정을 촉진하고 시각적 옵션을 생성하며 모든 단계에서 사용자와 협력하여 UX를 설계합니다."
 author: "BMad"
 
 # Critical variables from config
@@ -61,7 +61,7 @@ standalone: true
 # Web bundle configuration for standalone deployment
 web_bundle:
   name: "create-ux-design"
-  description: "Collaborative UX design facilitation workflow that creates exceptional user experiences through visual exploration and informed decision-making. Unlike template-driven approaches, this workflow facilitates discovery, generates visual options, and collaboratively designs the UX with the user at every step."
+  description: "협력적 UX 디자인 촉진 워크플로우로 시각적 탐색과 정보 기반 의사결정을 통해 뛰어난 사용자 경험을 만들어냅니다. 템플릿 기반 접근 방식과 달리 이 워크플로우는 발견 과정을 촉진하고 시각적 옵션을 생성하며 모든 단계에서 사용자와 협력하여 UX를 설계합니다."
   author: "BMad"
 
   # Core workflow files ({bmad_folder}/-relative paths)

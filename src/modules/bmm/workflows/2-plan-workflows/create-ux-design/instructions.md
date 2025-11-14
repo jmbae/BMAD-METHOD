@@ -1,23 +1,23 @@
-# Create UX Design Workflow Instructions
+# UX 디자인 생성 워크플로우 지침
 
 <workflow name="create-ux-design">
 
 <critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
 <critical>You MUST have already loaded and processed: {installed_path}/workflow.yaml</critical>
-<critical>This workflow uses ADAPTIVE FACILITATION - adjust your communication style based on {user_skill_level}</critical>
-<critical>The goal is COLLABORATIVE UX DESIGN through visual exploration, not content generation</critical>
-<critical>Communicate all responses in {communication_language} and tailor to {user_skill_level}</critical>
-<critical>Generate all documents in {document_output_language}</critical>
-<critical>SAVE PROGRESS after each major step - use <template-output> tags throughout</critical>
-<critical>DOCUMENT OUTPUT: Professional, specific, actionable UX design decisions WITH RATIONALE. User skill level ({user_skill_level}) affects conversation style ONLY, not document content.</critical>
-<critical>Input documents specified in workflow.yaml input_file_patterns - workflow engine handles fuzzy matching, whole vs sharded document discovery automatically</critical>
+<critical>이 워크플로우는 적응형 촉진을 사용합니다 - {user_skill_level}에 따라 의사소통 스타일을 조정하세요</critical>
+<critical>목표는 컨텐츠 생성이 아닌 시각적 탐색을 통한 협력적 UX 디자인입니다</critical>
+<critical>모든 응답을 {communication_language}로 소통하고 {user_skill_level}에 맞게 조정하세요</critical>
+<critical>모든 문서를 {document_output_language}로 생성하세요</critical>
+<critical>각 주요 단계 후 진행 상황을 저장하세요 - 전체적으로 <template-output> 태그를 사용하세요</critical>
+<critical>문서 출력: 전문적이고 구체적이며 실행 가능한 UX 디자인 결정과 근거를 제시하세요. 사용자 기술 수준({user_skill_level})은 대화 스타일에만 영향을 미칩니다. 문서 내용에는 영향을 주지 않습니다.</critical>
+<critical>입력 문서는 workflow.yaml의 input_file_patterns에 지정되어 있습니다 - 워크플로우 엔진이 퍼지 매칭, 전체 문서 vs 분할 문서 발견을 자동으로 처리합니다</critical>
 
-<step n="0" goal="Validate workflow readiness" tag="workflow-status">
+<step n="0" goal="워크플로우 준비 상태 검증" tag="workflow-status">
 <action>Check if {output_folder}/bmm-workflow-status.yaml exists</action>
 
 <check if="status file not found">
-  <output>No workflow status file found. Create UX Design can run standalone or as part of BMM planning workflow.</output>
-  <output>For standalone use, we'll gather requirements as we go. For integrated use, run `workflow-init` first for better context.</output>
+  <output>워크플로우 상태 파일을 찾을 수 없습니다. UX 디자인 생성은 독립 실행형으로 또는 BMM 계획 워크플로우의 일부로 실행할 수 있습니다.</output>
+  <output>독립 실행형 사용의 경우 필요에 따라 요구 사항을 수집합니다. 통합 사용의 경우 더 나은 컨텍스트를 위해 먼저 `workflow-init`을 실행하세요.</output>
   <action>Set standalone_mode = true</action>
 </check>
 
@@ -51,8 +51,8 @@
 </check>
 </step>
 
-<step n="1a" goal="Confirm project understanding or gather basic context">
-  <critical>A UX designer must understand the WHY before designing the HOW</critical>
+<step n="1a" goal="프로젝트 이해 확인 또는 기본 컨텍스트 수집">
+  <critical>UX 디자이너는 설계하기 전에 왜(WHY)를 먼저 이해해야 합니다</critical>
 
 <action>Attempt to load context documents using fuzzy matching: - PRD: {prd_file} - Product Brief: {brief_file} - Brainstorming: {brainstorm_file}
 </action>
@@ -68,77 +68,77 @@
       - Competitive landscape references
     </action>
 
-    <output>I've loaded your project documentation. Let me confirm what I'm seeing:
+    <output>프로젝트 문서를 로드했습니다. 확인해 드리겠습니다:
 
-**Project:** {{project_summary_from_docs}}
-**Target Users:** {{user_summary_from_docs}}</output>
+**프로젝트:** {{project_summary_from_docs}}
+**대상 사용자:** {{user_summary_from_docs}}</output>
 
-    <ask>Does this match your understanding? Any corrections or additions?</ask>
+    <ask>이것이 당신의 이해와 맞습니까? 수정하거나 추가할 사항이 있습니까?</ask>
 
   </check>
 
   <check if="no_documents_found">
-    <ask>Let's start by understanding what you're building.
+    <ask>무엇을 만들고 있는지 먼저 이해해 봅시다.
 
-**What are you building?** (1-2 sentences about the project)
+**무엇을 만들고 있습니까?** (프로젝트에 대해 1-2문장으로)
 
-**Who is this for?** Describe your ideal user.</ask>
+**누구를 위해 만듭니까?** 이상적인 사용자를 설명하세요.</ask>
 </check>
 
 <template-output>project_and_users_confirmed</template-output>
 </step>
 
-<step n="1b" goal="Understand core experience and platform">
-  <critical>Now we discover the ONE thing that defines this experience</critical>
+<step n="1b" goal="핵심 경험과 플랫폼 이해">
+  <critical>이제 이 경험을 정의하는 한 가지를 발견합니다</critical>
 
-<ask>Now let's dig into the experience itself.
+<ask>이제 경험 자체를 자세히 살펴봅시다.
 
-**What's the core experience?**
+**핵심 경험은 무엇입니까?**
 
-- What's the ONE thing users will do most?
-- What should be absolutely effortless?
-- Which user action is most critical to get right?
+- 사용자들이 가장 많이 할 한 가지는 무엇입니까?
+- 무엇이 절대적으로 쉬워야 합니까?
+- 어떤 사용자 작업을 올바르게 하는 것이 가장 중요합니까?
 
-**Platform:**
-Where will users experience this? (Web, mobile app, desktop, multiple platforms)</ask>
+**플랫폼:**
+사용자들은 이것을 어디서 경험하게 됩니까? (웹, 모바일 앱, 데스크톱, 여러 플랫폼)</ask>
 
 <template-output>core_experience_and_platform</template-output>
 </step>
 
-<step n="1c" goal="Discover the desired emotional response">
-  <critical>Emotion drives behavior - this shapes everything</critical>
+<step n="1c" goal="원하는 감정적 반응 발견">
+  <critical>감정이 행동을 유도합니다 - 이것이 모든 것을 형성합니다</critical>
 
-<ask>This is crucial - **what should users FEEL when using this?**
+<ask>이것은 중요합니다 - **사용자가 이것을 사용할 때 무엇을 느껴야 합니까?**
 
-Not what they'll do, but what emotion or state they should experience:
+그들이 무엇을 할지가 아니라 그들이 경험해야 할 감정이나 상태:
 
-- Empowered and in control?
-- Delighted and surprised?
-- Efficient and productive?
-- Creative and inspired?
-- Calm and focused?
-- Connected and engaged?
-- Something else?
+- 권능감과 통제감?
+- 기쁨과 놀라움?
+- 효율성과 생산성?
+- 창의성과 영감?
+- 침착함과 집중력?
+- 연결감과 참여감?
+- 그 외 다른 것?
 
-Really think about the emotional response you want. What feeling would make them tell a friend about this?</ask>
+당신이 원하는 감정적 반응에 대해 정말 생각해 보세요. 그들이 친구에게 이것을 말하게 할 느낌은 무엇입니까?</ask>
 
 <template-output>desired_emotional_response</template-output>
 </step>
 
-<step n="1d" goal="Gather inspiration and analyze UX patterns">
-  <critical>Learn from what users already love</critical>
+<step n="1d" goal="영감 수집 및 UX 패턴 분석">
+  <critical>사용자들이 이미 사랑하는 것에서 배웁니다</critical>
 
-<ask>**Inspiration time!**
+<ask>**영감을 얻을 시간입니다!**
 
-Name 2-3 apps your users already love and USE regularly.
+사용자들이 이미 사랑하고 정기적으로 사용하는 2-3개의 앱을 이름 지어 보세요.
 
-Feel free to share:
+자유롭게 공유하세요:
 
-- App names (I'll look them up to see current UX)
-- Screenshots (if you have examples of what you like)
-- Links to products or demos
+- 앱 이름 (현재 UX를 확인하기 위해 찾아보겠습니다)
+- 스크린샷 (마음에 드는 예시가 있는 경우)
+- 제품 또는 데모 링크
 
-For each one, what do they do well from a UX perspective? What makes the experience compelling?</ask>
+각각에 대해 UX 관점에서 무엇을 잘 합니까? 경험을 매력적으로 만드는 것은 무엇입니까?</ask>
 
 <action>For each app mentioned:
 <WebSearch>{{app_name}} current interface UX design 2025</WebSearch>
@@ -154,8 +154,8 @@ For each one, what do they do well from a UX perspective? What makes the experie
 <template-output>inspiration_analysis</template-output>
 </step>
 
-<step n="1e" goal="Synthesize understanding and set facilitation mode">
-  <critical>Now analyze complexity and set the right facilitation approach</critical>
+<step n="1e" goal="이해 종합 및 촉진 모드 설정">
+  <critical>이제 복잡성을 분석하고 올바른 촉진 접근 방식을 설정합니다</critical>
 
 <action>Analyze project for UX complexity indicators: - Number of distinct user roles or personas - Number of primary user journeys - Interaction complexity (simple CRUD vs rich interactions) - Platform requirements (single vs multi-platform) - Real-time collaboration needs - Content creation vs consumption - Novel interaction patterns
 </action>
@@ -207,9 +207,9 @@ This helps me understand both what we're building and the experience we're aimin
 <template-output>project_vision</template-output>
 </step>
 
-<step n="2" goal="Discover and evaluate design systems">
-  <critical>Modern design systems make many good UX decisions by default</critical>
-  <critical>Like starter templates for code, design systems provide proven patterns</critical>
+<step n="2" goal="디자인 시스템 발견 및 평가">
+  <critical>현대적 디자인 시스템은 기본적으로 많은 좋은 UX 결정을 내립니다</critical>
+  <critical>코드 스타터 템플릿처럼 디자인 시스템은 검증된 패턴을 제공합니다</critical>
 
 <action>Based on platform and tech stack (if known from PRD), identify design system options:
 
@@ -297,26 +297,26 @@ Or tell me:
   <template-output>design_system_decision</template-output>
   </step>
 
-<step n="3a" goal="Identify the defining experience">
-  <critical>Every great app has a defining experience - identify it first</critical>
+<step n="3a" goal="정의하는 경험 식별">
+  <critical>모든 훌륭한 앱은 정의하는 경험이 있습니다 - 먼저 식별하세요</critical>
 
 <action>Based on PRD/brief analysis, identify the core user experience: - What is the primary action users will repeat? - What makes this app unique vs. competitors? - What should be delightfully easy?
 </action>
 
-<ask>Let's identify your app's defining experience - the core interaction that, if we nail it, everything else follows.
+<ask>앱의 정의하는 경험을 식별해 봅시다 - 이것을 잘 만들면 나머지는 자연스럽게 따릅니다.
 
-When someone describes your app to a friend, what would they say?
+누군가 친구에게 당신의 앱을 설명한다면 무엇이라고 할까요?
 
-**Examples:**
+**예시:**
 
-- "It's the app where you swipe to match with people" (Tinder)
-- "You can share photos that disappear" (Snapchat)
-- "It's like having a conversation with AI" (ChatGPT)
-- "Capture and share moments" (Instagram)
-- "Freeform content blocks" (Notion)
-- "Real-time collaborative canvas" (Figma)
+- "사람들과 매칭하기 위해 스와이프하는 앱입니다" (Tinder)
+- "사라지는 사진을 공유할 수 있습니다" (Snapchat)
+- "AI와 대화하는 것 같습니다" (ChatGPT)
+- "순간을 캡처하고 공유합니다" (Instagram)
+- "자유형식 콘텐츠 블록" (Notion)
+- "실시간 협력 캔버스" (Figma)
 
-**What's yours?** What's the ONE experience that defines your app?</ask>
+**당신의 앱은?** 당신의 앱을 정의하는 한 가지 경험은 무엇입니까?</ask>
 
 <action>Analyze if this core experience has established UX patterns:
 
@@ -424,15 +424,15 @@ These principles will guide every UX decision from here forward.</output>
 <template-output>core_experience_principles</template-output>
 </step>
 
-<step n="4" goal="Discover visual foundation through color theme exploration">
-  <critical>Visual design isn't decoration - it communicates brand and guides attention</critical>
-  <critical>SHOW options, don't just describe them - generate HTML visualizations</critical>
-  <critical>Use color psychology principles: blue=trust, red=energy, green=growth/calm, purple=creativity, etc.</critical>
+<step n="4" goal="색상 테마 탐색을 통해 시각적 기초 발견">
+  <critical>시각적 디자인은 장식이 아닙니다 - 브랜드를 전달하고 주의를 유도합니다</critical>
+  <critical>옵션을 보여 주세요. 단순히 설명하지 마세요 - HTML 시각화를 생성하세요</critical>
+  <critical>색상 심리학 원칙 사용: 파란색=신뢰, 빨간색=에너지, 녹색=성장/침착함, 보라색=창의성 등</critical>
 
-<ask>Do you have existing brand guidelines or a specific color palette in mind? (y/n)
+<ask>기존 브랜드 지침이나 특정 색상 팔레트가 있습니까? (y/n)
 
-If yes: Share your brand colors, or provide a link to brand guidelines.
-If no: I'll generate theme options based on your project's personality.
+예인 경우: 브랜드 색상을 공유하거나 브랜드 지침 링크를 제공하세요.
+아니오인 경우: 프로젝트의 성격을 기반으로 테마 옵션을 생성하겠습니다.
 </ask>
 
   <check if="existing_brand == true">
@@ -562,10 +562,10 @@ What speaks to you?
 <template-output>visual_foundation</template-output>
 </step>
 
-<step n="5" goal="Generate design direction mockups for visual decision-making">
-  <critical>This is the game-changer - SHOW actual design directions, don't just discuss them</critical>
-  <critical>Users make better decisions when they SEE options, not imagine them</critical>
-  <critical>Consider platform norms: desktop apps often use sidebar nav, mobile apps use bottom nav or tabs</critical>
+<step n="5" goal="시각적 의사결정을 위한 디자인 방향 목업 생성">
+  <critical>이것이 게임 체인저입니다 - 실제 디자인 방향을 보여 주세요. 단순히 논의하지 마세요</critical>
+  <critical>사용자는 옵션을 상상할 때가 아니라 볼 때 더 나은 결정을 내립니다</critical>
+  <critical>플랫폼 규범을 고려하세요: 데스크톱 앱은 종종 사이드바 네비게이션을 사용하고, 모바일 앱은 하단 네비게이션이나 탭을 사용합니다</critical>
 
 <action>Based on PRD and core experience, identify 2-3 key screens to mock up:
 
@@ -729,9 +729,9 @@ What speaks to you?
 <template-output>design_direction_decision</template-output>
 </step>
 
-<step n="6" goal="Collaborative user journey design">
-  <critical>User journeys are conversations, not just flowcharts</critical>
-  <critical>Design WITH the user, exploring options for each key flow</critical>
+<step n="6" goal="협력적 사용자 여정 설계">
+  <critical>사용자 여정은 대화이지 단순한 흐름도가 아닙니다</critical>
+  <critical>사용자와 함께 설계하고 각 주요 흐름의 옵션을 탐색하세요</critical>
 
 <action>Extract critical user journeys from PRD: - Primary user tasks - Conversion flows - Onboarding sequence - Content creation workflows - Any complex multi-step processes
 </action>
@@ -890,10 +890,10 @@ Component: {{custom_component_name}}
 <template-output>component_library_strategy</template-output>
 </step>
 
-<step n="8" goal="Define UX pattern decisions for consistency">
-  <critical>These are implementation patterns for UX - ensure consistency across the app</critical>
-  <critical>Like the architecture workflow's implementation patterns, but for user experience</critical>
-  <critical>These decisions prevent "it works differently on every page" confusion</critical>
+<step n="8" goal="일관성을 위한 UX 패턴 결정 정의">
+  <critical>이것들은 UX를 위한 구현 패턴입니다 - 앱 전체에서 일관성을 보장하세요</critical>
+  <critical>아키텍처 워크플로우의 구현 패턴과 같지만 사용자 경험을 위한 것입니다</critical>
+  <critical>이러한 결정은 "매 페이지마다 다르게 작동합니다"라는 혼동을 방지합니다</critical>
 
 <action>Based on chosen components and journeys, identify UX consistency decisions needed:
 
@@ -996,8 +996,8 @@ For each one, do you want to:
 <template-output>ux_pattern_decisions</template-output>
 </step>
 
-<step n="9" goal="Responsive and accessibility strategy">
-  <critical>Responsive design isn't just "make it smaller" - it's adapting the experience</critical>
+<step n="9" goal="반응형 및 접근성 전략">
+  <critical>반응형 디자인은 단순히 "더 작게 만드는 것"이 아닙니다 - 경험을 적응시키는 것입니다</critical>
 
 <action>Based on platform requirements from PRD and chosen design direction:</action>
 
