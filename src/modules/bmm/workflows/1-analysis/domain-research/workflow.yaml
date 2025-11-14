@@ -1,6 +1,6 @@
 # Domain Research Workflow Configuration
 name: domain-research
-description: "Collaborative exploration of domain-specific requirements, regulations, and patterns for complex projects"
+description: "복잡한 프로젝트를 위한 도메인 특화 요구사항, 규정, 패턴의 협력적 탐색"
 author: "BMad"
 
 # Critical variables from config
@@ -28,7 +28,7 @@ standalone: true
 # Web bundle configuration for standalone deployment
 web_bundle:
   name: "domain-research"
-  description: "Collaborative exploration of domain-specific requirements, regulations, and patterns for complex projects"
+  description: "복잡한 프로젝트를 위한 도메인 특화 요구사항, 규정, 패턴의 협력적 탐색"
   author: "BMad"
 
   # Core workflow files ({bmad_folder}/-relative paths)

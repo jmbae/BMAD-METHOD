@@ -1,422 +1,422 @@
-# Domain Research - Collaborative Domain Exploration
+# 도메인 연구 - 협력적 도메인 탐색
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {installed_path}/workflow.yaml</critical>
-<critical>This is COLLABORATIVE RESEARCH - engage the user as a partner, not just a data source</critical>
-<critical>The goal is PRACTICAL UNDERSTANDING that directly informs requirements and architecture</critical>
-<critical>Communicate all responses in {communication_language} and adapt deeply to {user_skill_level}</critical>
-<critical>Generate all documents in {document_output_language}</critical>
-<critical>LIVING DOCUMENT: Write to domain-brief.md continuously as you discover - never wait until the end</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {installed_path}/workflow.yaml</critical>
+<critical>이것은 협력적 연구입니다 - 사용자를 데이터 소스가 아닌 파트너로 참여시키세요</critical>
+<critical>목표는 요구사항과 아키텍처에 직접 정보를 제공하는 실용적 이해입니다</critical>
+<critical>모든 응답을 {communication_language}로 전달하고 {user_skill_level}에 깊이 적응하세요</critical>
+<critical>모든 문서를 {document_output_language}로 생성하세요</critical>
+<critical>살아있는 문서: 발견하는 대로 지속적으로 domain-brief.md에 작성하세요 - 절대 끝까지 기다리지 마세요</critical>
 
 <workflow>
 
-<step n="0" goal="Set research context">
-<action>Welcome {user_name} to collaborative domain research
+<step n="0" goal="연구 컨텍스트 설정">
+<action>{user_name}님을 협력적 도메인 연구에 환영합니다
 
-Check for context:
+컨텍스트 확인:
 
-- Was this triggered from PRD workflow?
-- Is there a workflow-status.yaml with project context?
-- Did user provide initial domain/project description?
+- PRD 워크플로우에서 트리거되었나요?
+- 프로젝트 컨텍스트가 있는 workflow-status.yaml이 있나요?
+- 사용자가 초기 도메인/프로젝트 설명을 제공했나요?
 
-If context exists, reflect it back:
-"I understand you're building [description]. Let's explore the [domain] aspects together to ensure we capture all critical requirements."
+컨텍스트가 존재하면 반영합니다:
+"[설명]을 구축하고 계신다는 것을 이해합니다. 모든 중요한 요구사항을 포착할 수 있도록 [도메인] 측면을 함께 탐색해 봅시다."
 
-If no context:
-"Let's explore your project's domain together. Tell me about what you're building and what makes it unique or complex."</action>
+컨텍스트가 없는 경우:
+"프로젝트의 도메인을 함께 탐색해 봅시다. 무엇을 구축하고 있는지, 무엇이 독특하거나 복잡한지 말씀해 주세요."</action>
 </step>
 
-<step n="1" goal="Domain detection and scoping">
-<action>Through conversation, identify the domain and its complexity
+<step n="1" goal="도메인 감지 및 범위 설정">
+<action>대화를 통해 도메인과 그 복잡성을 식별합니다
 
-Listen for domain signals and explore:
+도메인 신호를 듣고 탐색합니다:
 
-- "Is this in a regulated industry?"
-- "Are there safety or compliance concerns?"
-- "What could go wrong if this fails?"
-- "Who are the stakeholders beyond direct users?"
-- "Are there industry standards we need to follow?"
+- "이것은 규제된 산업에 있나요?"
+- "안전이나 규정 준수 문제가 있나요?"
+- "이것이 실패하면 무엇이 잘못될 수 있나요?"
+- "직접 사용자 외의 이해관계자는 누구인가요?"
+- "따라야 할 산업 표준이 있나요?"
 
-Based on responses, identify primary domain(s):
+응답을 기반으로 주요 도메인을 식별합니다:
 
-- Healthcare/Medical
-- Financial Services
-- Government/Public Sector
-- Education
-- Aerospace/Defense
-- Automotive
-- Energy/Utilities
-- Legal
-- Insurance
-- Scientific/Research
-- Other specialized domain
+- 의료/헬스케어
+- 금융 서비스
+- 정부/공공 부문
+- 교육
+- 항공우주/국방
+- 자동차
+- 에너지/유틸리티
+- 법률
+- 보험
+- 과학/연구
+- 기타 전문 도메인
 
-Share your understanding:
-"Based on our discussion, this appears to be a [domain] project with [key characteristics]. The main areas we should research are:
+이해한 내용을 공유합니다:
+"논의를 바탕으로, 이것은 [주요 특성]을 가진 [도메인] 프로젝트로 보입니다. 연구해야 할 주요 영역은 다음과 같습니다:
 
-- [Area 1]
-- [Area 2]
-- [Area 3]
+- [영역 1]
+- [영역 2]
+- [영역 3]
 
-What concerns you most about building in this space?"</action>
+이 분야에서 구축하는 것에 대해 가장 걱정되는 것은 무엇인가요?"</action>
 
 <template-output>domain_overview</template-output>
 </step>
 
-<step n="2" goal="Collaborative concern mapping">
-<action>Work WITH the user to identify critical concerns
+<step n="2" goal="협력적 관심사 매핑">
+<action>사용자와 함께 중요한 관심사를 식별합니다
 
-"Let's map out the important considerations together. I'll share what I typically see in [domain], and you tell me what applies to your case."
+"중요한 고려 사항을 함께 매핑해 봅시다. [도메인]에서 일반적으로 보는 것을 공유하면, 귀하의 경우에 적용되는 것을 말씀해 주세요."
 
-For detected domain, explore relevant areas:
+감지된 도메인에 대해 관련 영역을 탐색합니다:
 
-HEALTHCARE:
-"In healthcare software, teams often worry about:
+헬스케어:
+"헬스케어 소프트웨어에서 팀들은 종종 다음에 대해 걱정합니다:
 
-- FDA approval pathways (510k, De Novo, PMA)
-- HIPAA compliance for patient data
-- Clinical validation requirements
-- Integration with hospital systems (HL7, FHIR, DICOM)
-- Patient safety and liability
+- FDA 승인 경로 (510k, De Novo, PMA)
+- 환자 데이터에 대한 HIPAA 준수
+- 임상 검증 요구사항
+- 병원 시스템과의 통합 (HL7, FHIR, DICOM)
+- 환자 안전 및 책임
 
-Which of these apply to you? What else concerns you?"
+이 중 어느 것이 귀하에게 적용되나요? 다른 관심사는 무엇인가요?"
 
-FINTECH:
-"Financial software typically deals with:
+핀테크:
+"금융 소프트웨어는 일반적으로 다음을 다룹니다:
 
-- KYC/AML requirements
-- Payment processing regulations (PCI DSS)
-- Regional compliance (US, EU, specific countries?)
-- Fraud prevention
-- Audit trails and reporting
+- KYC/AML 요구사항
+- 결제 처리 규정 (PCI DSS)
+- 지역별 규정 준수 (미국, EU, 특정 국가?)
+- 사기 방지
+- 감사 추적 및 보고
 
-What's your situation with these? Any specific regions?"
+이러한 것들에 대한 귀하의 상황은 어떤가요? 특정 지역이 있나요?"
 
-AEROSPACE:
-"Aerospace software often requires:
+항공우주:
+"항공우주 소프트웨어는 종종 다음을 요구합니다:
 
-- DO-178C certification levels
-- Safety analysis (FMEA, FTA)
-- Simulation validation
-- Real-time performance guarantees
-- Export control (ITAR)
+- DO-178C 인증 레벨
+- 안전 분석 (FMEA, FTA)
+- 시뮬레이션 검증
+- 실시간 성능 보장
+- 수출 통제 (ITAR)
 
-Which are relevant for your project?"
+귀하의 프로젝트에 관련된 것은 무엇인가요?"
 
-[Continue for other domains...]
+[다른 도메인에 대해 계속...]
 
-Document concerns as the user shares them
-Ask follow-up questions to understand depth:
+사용자가 공유하는 대로 관심사를 문서화합니다
+깊이를 이해하기 위한 후속 질문을 합니다:
 
-- "How critical is this requirement?"
-- "Is this a must-have for launch or can it come later?"
-- "Do you have expertise here or need guidance?"</action>
+- "이 요구사항은 얼마나 중요한가요?"
+- "이것은 출시를 위한 필수 사항인가요, 아니면 나중에 올 수 있나요?"
+- "여기에 전문 지식이 있나요, 아니면 지침이 필요한가요?"</action>
 
 <template-output>concern_mapping</template-output>
 </step>
 
-<step n="3" goal="Research key requirements together">
-<action>Conduct research WITH the user watching and contributing
+<step n="3" goal="주요 요구사항을 함께 연구">
+<action>사용자가 지켜보고 기여하는 가운데 연구를 수행합니다
 
-"Let me research the current requirements for [specific concern]. You can guide me toward what's most relevant."
+"[특정 관심사]에 대한 현재 요구사항을 연구해 보겠습니다. 가장 관련성이 높은 것으로 저를 안내해 주세요."
 
 <WebSearch>{specific_requirement} requirements {date}</WebSearch>
 
-Share findings immediately:
-"Here's what I found about [requirement]:
+즉시 결과를 공유합니다:
+"[요구사항]에 대해 찾은 내용은 다음과 같습니다:
 
-- [Key point 1]
-- [Key point 2]
-- [Key point 3]
+- [핵심 포인트 1]
+- [핵심 포인트 2]
+- [핵심 포인트 3]
 
-Does this match your understanding? Anything surprising or concerning?"
+이것이 귀하의 이해와 일치하나요? 놀랍거나 우려되는 것이 있나요?"
 
-For each major concern:
+각 주요 관심사에 대해:
 
-1. Research current standards/regulations
-2. Share findings with user
-3. Get their interpretation
-4. Note practical implications
+1. 현재 표준/규정 연구
+2. 사용자와 결과 공유
+3. 그들의 해석 얻기
+4. 실질적인 의미 메모
 
-If user has expertise:
-"You seem knowledgeable about [area]. What should I know that might not be in public documentation?"
+사용자가 전문 지식을 가진 경우:
+"[영역]에 대해 잘 알고 계신 것 같습니다. 공개 문서에 없을 수 있는 것 중 제가 알아야 할 것은 무엇인가요?"
 
-If user is learning:
-"This might be new territory. Let me explain what this means practically for your development..."</action>
+사용자가 학습 중인 경우:
+"이것은 새로운 영역일 수 있습니다. 이것이 귀하의 개발에 실질적으로 의미하는 바를 설명하겠습니다..."</action>
 
 <template-output>regulatory_requirements</template-output>
 <template-output>industry_standards</template-output>
 </step>
 
-<step n="4" goal="Identify practical implications">
-<action>Translate research into practical development impacts
+<step n="4" goal="실질적인 의미 식별">
+<action>연구를 실질적인 개발 영향으로 번역합니다
 
-"Based on what we've learned, here's what this means for your project:
+"우리가 배운 것을 바탕으로, 이것이 귀하의 프로젝트에 의미하는 바는 다음과 같습니다:
 
-ARCHITECTURE IMPLICATIONS:
+아키텍처 영향:
 
-- [How this affects system design]
-- [Required components or patterns]
-- [Performance or security needs]
+- [이것이 시스템 설계에 미치는 영향]
+- [필요한 구성요소 또는 패턴]
+- [성능 또는 보안 요구사항]
 
-DEVELOPMENT IMPLICATIONS:
+개발 영향:
 
-- [Additional development effort]
-- [Special expertise needed]
-- [Testing requirements]
+- [추가 개발 노력]
+- [필요한 특수 전문 지식]
+- [테스트 요구사항]
 
-TIMELINE IMPLICATIONS:
+타임라인 영향:
 
-- [Certification/approval timelines]
-- [Validation requirements]
-- [Documentation needs]
+- [인증/승인 타임라인]
+- [검증 요구사항]
+- [문서화 필요사항]
 
-COST IMPLICATIONS:
+비용 영향:
 
-- [Compliance costs]
-- [Required tools or services]
-- [Ongoing maintenance]
+- [규정 준수 비용]
+- [필요한 도구 또는 서비스]
+- [지속적인 유지보수]
 
-Does this align with your expectations? Any surprises we should dig into?"</action>
+이것이 귀하의 기대와 일치하나요? 더 깊이 파고들어야 할 놀라운 것이 있나요?"</action>
 
 <template-output>practical_implications</template-output>
 </step>
 
-<step n="5" goal="Discover domain-specific patterns">
-<action>Explore how others solve similar problems
+<step n="5" goal="도메인 특화 패턴 발견">
+<action>다른 사람들이 유사한 문제를 어떻게 해결하는지 탐색합니다
 
-"Let's look at how successful [domain] products handle these challenges."
+"성공적인 [도메인] 제품들이 이러한 도전을 어떻게 처리하는지 살펴봅시다."
 
 <WebSearch>best {domain} software architecture patterns {date}</WebSearch>
 <WebSearch>{domain} software case studies {date}</WebSearch>
 
-Discuss patterns:
-"I found these common approaches in [domain]:
+패턴을 논의합니다:
+"[도메인]에서 다음과 같은 일반적인 접근 방식을 찾았습니다:
 
-Pattern 1: [Description]
+패턴 1: [설명]
 
-- Pros: [Benefits]
-- Cons: [Tradeoffs]
-- When to use: [Conditions]
+- 장점: [이점]
+- 단점: [트레이드오프]
+- 사용 시기: [조건]
 
-Pattern 2: [Description]
+패턴 2: [설명]
 
-- Pros: [Benefits]
-- Cons: [Tradeoffs]
-- When to use: [Conditions]
+- 장점: [이점]
+- 단점: [트레이드오프]
+- 사용 시기: [조건]
 
-Which resonates with your vision? Or are you thinking something different?"
+어느 것이 귀하의 비전과 공명하나요? 아니면 다른 것을 생각하고 있나요?"
 
-If user proposes novel approach:
-"That's interesting and different from the standard patterns. Let's explore:
+사용자가 새로운 접근 방식을 제안하는 경우:
+"흥미롭고 표준 패턴과 다릅니다. 탐색해 봅시다:
 
-- What makes your approach unique?
-- What problem does it solve that existing patterns don't?
-- What are the risks?
-- How do we validate it?"</action>
+- 귀하의 접근 방식을 무엇이 독특하게 만드나요?
+- 기존 패턴이 해결하지 못하는 어떤 문제를 해결하나요?
+- 위험은 무엇인가요?
+- 어떻게 검증하나요?"</action>
 
 <template-output>domain_patterns</template-output>
 <template-output if="novel approach">innovation_notes</template-output>
 </step>
 
-<step n="6" goal="Risk assessment and mitigation">
-<action>Collaboratively identify and address risks
+<step n="6" goal="위험 평가 및 완화">
+<action>위험을 협력적으로 식별하고 해결합니다
 
-"Every [domain] project has risks. Let's think through yours:
+"모든 [도메인] 프로젝트에는 위험이 있습니다. 귀하의 것을 생각해 봅시다:
 
-REGULATORY RISKS:
+규제 위험:
 
-- What if regulations change during development?
-- What if approval/certification takes longer?
-- What if we misinterpret requirements?
+- 개발 중 규정이 변경되면 어떻게 되나요?
+- 승인/인증이 더 오래 걸리면 어떻게 되나요?
+- 요구사항을 잘못 해석하면 어떻게 되나요?
 
-TECHNICAL RISKS:
+기술적 위험:
 
-- What if the domain requirements conflict with user experience?
-- What if performance requirements are harder than expected?
-- What if integrations are more complex?
+- 도메인 요구사항이 사용자 경험과 충돌하면 어떻게 되나요?
+- 성능 요구사항이 예상보다 어려우면 어떻게 되나요?
+- 통합이 더 복잡하면 어떻게 되나요?
 
-MARKET RISKS:
+시장 위험:
 
-- What if competitors move faster?
-- What if domain experts are hard to find?
-- What if users resist domain-mandated workflows?
+- 경쟁자가 더 빠르게 움직이면 어떻게 되나요?
+- 도메인 전문가를 찾기 어려우면 어떻게 되나요?
+- 사용자가 도메인 의무 워크플로우에 저항하면 어떻게 되나요?
 
-For each risk you're concerned about, let's identify:
+귀하가 우려하는 각 위험에 대해 다음을 식별해 봅시다:
 
-1. How likely is it?
-2. What's the impact if it happens?
-3. How can we mitigate it?
-4. What's our plan B?"</action>
+1. 얼마나 가능성이 있나요?
+2. 발생하면 영향은 무엇인가요?
+3. 어떻게 완화할 수 있나요?
+4. 플랜 B는 무엇인가요?"</action>
 
 <template-output>risk_assessment</template-output>
 </step>
 
-<step n="7" goal="Create validation strategy">
-<action>Plan how to ensure domain requirements are met
+<step n="7" goal="검증 전략 생성">
+<action>도메인 요구사항이 충족되는지 확인하는 방법을 계획합니다
 
-"Let's plan how to validate that we're meeting [domain] requirements:
+"[도메인] 요구사항을 충족하는지 검증하는 방법을 계획해 봅시다:
 
-COMPLIANCE VALIDATION:
+규정 준수 검증:
 
-- How do we verify regulatory compliance?
-- Who needs to review/approve?
-- What documentation is required?
+- 규제 준수를 어떻게 확인하나요?
+- 누가 검토/승인해야 하나요?
+- 어떤 문서가 필요한가요?
 
-TECHNICAL VALIDATION:
+기술 검증:
 
-- How do we prove the system works correctly?
-- What metrics matter?
-- What testing is required?
+- 시스템이 올바르게 작동하는지 어떻게 증명하나요?
+- 어떤 메트릭이 중요한가요?
+- 어떤 테스트가 필요한가요?
 
-DOMAIN EXPERT VALIDATION:
+도메인 전문가 검증:
 
-- Who are the domain experts to involve?
-- When should they review?
-- What are their success criteria?
+- 참여해야 할 도메인 전문가는 누구인가요?
+- 언제 검토해야 하나요?
+- 그들의 성공 기준은 무엇인가요?
 
-USER VALIDATION:
+사용자 검증:
 
-- How do we ensure it's still usable despite constraints?
-- What user testing is needed?
-- How do we balance domain requirements with UX?
+- 제약에도 불구하고 여전히 사용 가능한지 어떻게 보장하나요?
+- 어떤 사용자 테스트가 필요한가요?
+- 도메인 요구사항과 UX의 균형을 어떻게 맞추나요?
 
-What validation is most critical for your confidence?"</action>
+귀하의 신뢰를 위해 가장 중요한 검증은 무엇인가요?"</action>
 
 <template-output>validation_strategy</template-output>
 </step>
 
-<step n="8" goal="Document decision points">
-<action>Capture key decisions and rationale
+<step n="8" goal="결정 포인트 문서화">
+<action>주요 결정과 근거를 캡처합니다
 
-"Let's document the important decisions we've made:
+"우리가 내린 중요한 결정을 문서화해 봅시다:
 
-DOMAIN APPROACH:
+도메인 접근 방식:
 
-- We're choosing [approach] because [rationale]
-- We're prioritizing [requirement] over [requirement] because [reason]
-- We're deferring [requirement] to Phase 2 because [justification]
+- [근거] 때문에 [접근 방식]을 선택합니다
+- [이유] 때문에 [요구사항]을 [요구사항]보다 우선시합니다
+- [정당화] 때문에 [요구사항]을 2단계로 연기합니다
 
-COMPLIANCE STRATEGY:
+규정 준수 전략:
 
-- We'll pursue [pathway] for regulatory approval
-- We'll implement [standard] for industry compliance
-- We'll handle [requirement] by [approach]
+- 규제 승인을 위해 [경로]를 추구할 것입니다
+- 산업 준수를 위해 [표준]을 구현할 것입니다
+- [접근 방식]으로 [요구사항]을 처리할 것입니다
 
-RISK DECISIONS:
+위험 결정:
 
-- We accept [risk] because [reason]
-- We'll mitigate [risk] through [approach]
-- We'll monitor [risk] by [method]
+- [이유] 때문에 [위험]을 수용합니다
+- [접근 방식]을 통해 [위험]을 완화할 것입니다
+- [방법]으로 [위험]을 모니터링할 것입니다
 
-Any decisions you want to revisit or rationale to add?"</action>
+다시 검토하고 싶은 결정이나 추가할 근거가 있나요?"</action>
 
 <template-output>key_decisions</template-output>
 </step>
 
-<step n="9" goal="Create actionable recommendations">
-<action>Synthesize research into specific recommendations
+<step n="9" goal="실행 가능한 권장사항 생성">
+<action>연구를 구체적인 권장사항으로 종합합니다
 
-"Based on our research, here are my recommendations for your PRD and development:
+"연구를 바탕으로, PRD 및 개발에 대한 권장사항은 다음과 같습니다:
 
-MUST HAVE (Domain Critical):
+필수 (도메인 중요):
 
-1. [Specific requirement with why it's critical]
-2. [Specific requirement with why it's critical]
-3. [Specific requirement with why it's critical]
+1. [중요한 이유와 함께 구체적인 요구사항]
+2. [중요한 이유와 함께 구체적인 요구사항]
+3. [중요한 이유와 함께 구체적인 요구사항]
 
-SHOULD HAVE (Domain Important):
+권장 (도메인 중요):
 
-1. [Requirement that's important but not blocking]
-2. [Requirement that's important but not blocking]
+1. [중요하지만 차단하지 않는 요구사항]
+2. [중요하지만 차단하지 않는 요구사항]
 
-CONSIDER (Domain Nice-to-Have):
+고려 (도메인 선호):
 
-1. [Enhancement that would differentiate]
-2. [Enhancement that would differentiate]
+1. [차별화할 수 있는 개선사항]
+2. [차별화할 수 있는 개선사항]
 
-DEVELOPMENT SEQUENCE:
+개발 순서:
 
-1. First: [What to build first and why]
-2. Then: [What comes next and why]
-3. Later: [What can wait and why]
+1. 먼저: [먼저 구축할 것과 이유]
+2. 그 다음: [다음에 올 것과 이유]
+3. 나중에: [기다릴 수 있는 것과 이유]
 
-EXPERTISE NEEDED:
+필요한 전문 지식:
 
-- [Domain expert role]: For [specific areas]
-- [Technical expert role]: For [specific requirements]
+- [도메인 전문가 역할]: [특정 영역]을 위해
+- [기술 전문가 역할]: [특정 요구사항]을 위해
 
-TIMELINE CONSIDERATIONS:
+타임라인 고려사항:
 
-- Allow [time] for [process/approval]
-- Start [requirement] early because [reason]
-- [Requirement] can be parallel with development
+- [프로세스/승인]을 위해 [시간]을 허용
+- [이유] 때문에 [요구사항]을 일찍 시작
+- [요구사항]은 개발과 병렬로 진행 가능
 
-Do these recommendations feel right? What would you adjust?"</action>
+이러한 권장사항이 맞다고 느껴지나요? 무엇을 조정하시겠습니까?"</action>
 
 <template-output>recommendations</template-output>
 </step>
 
-<step n="10" goal="Package for PRD integration">
-<action>Create clear handoff to PRD workflow
+<step n="10" goal="PRD 통합을 위한 패키지">
+<action>PRD 워크플로우로의 명확한 핸드오프를 생성합니다
 
-"I've captured everything in domain-brief.md. Here's the summary for your PRD:
+"domain-brief.md에 모든 것을 캡처했습니다. PRD를 위한 요약은 다음과 같습니다:
 
-DOMAIN: {identified_domain}
-COMPLEXITY: {high|medium}
+도메인: {identified_domain}
+복잡성: {high|medium}
 
-KEY REQUIREMENTS TO INCORPORATE:
+통합할 주요 요구사항:
 
-- [Requirement 1 - critical for domain]
-- [Requirement 2 - critical for domain]
-- [Requirement 3 - important consideration]
+- [요구사항 1 - 도메인에 중요]
+- [요구사항 2 - 도메인에 중요]
+- [요구사항 3 - 중요한 고려사항]
 
-IMPACTS ON:
+영향:
 
-- Functional Requirements: [How domain affects features]
-- Non-Functional Requirements: [Performance, security, etc.]
-- Architecture: [System design considerations]
-- Development: [Process and timeline impacts]
+- 기능적 요구사항: [도메인이 기능에 미치는 영향]
+- 비기능적 요구사항: [성능, 보안 등]
+- 아키텍처: [시스템 설계 고려사항]
+- 개발: [프로세스 및 타임라인 영향]
 
-REFERENCE DOCS:
+참조 문서:
 
-- Full domain analysis: domain-brief.md
-- Regulations researched: [List with links]
-- Standards referenced: [List with links]
+- 전체 도메인 분석: domain-brief.md
+- 연구된 규정: [링크가 있는 목록]
+- 참조된 표준: [링크가 있는 목록]
 
-When you return to PRD, reference this brief for domain context.
+PRD로 돌아갈 때, 도메인 컨텍스트를 위해 이 브리프를 참조하세요.
 
-Any final questions before we wrap up the domain research?"</action>
+도메인 연구를 마무리하기 전에 마지막 질문이 있나요?"</action>
 
 <template-output>summary_for_prd</template-output>
 </step>
 
-<step n="11" goal="Close with next steps">
-<output>**✅ Domain Research Complete, {user_name}!**
+<step n="11" goal="다음 단계로 종료">
+<output>**✅ 도메인 연구 완료, {user_name}님!**
 
-We've explored the {domain} aspects of your project together and documented critical requirements.
+프로젝트의 {domain} 측면을 함께 탐색하고 중요한 요구사항을 문서화했습니다.
 
-**Created:**
+**생성됨:**
 
-- **domain-brief.md** - Complete domain analysis with requirements and recommendations
+- **domain-brief.md** - 요구사항 및 권장사항이 포함된 완전한 도메인 분석
 
-**Key Findings:**
+**주요 발견:**
 
-- Primary domain: {domain}
-- Complexity level: {complexity}
-- Critical requirements: {count} identified
-- Risks identified: {count} with mitigation strategies
+- 주요 도메인: {domain}
+- 복잡성 수준: {complexity}
+- 식별된 중요 요구사항: {count}개
+- 완화 전략이 있는 식별된 위험: {count}개
 
-**Next Steps:**
+**다음 단계:**
 
-1. Return to PRD workflow with this domain context
-2. Domain requirements will shape your functional requirements
-3. Reference domain-brief.md for detailed requirements
+1. 이 도메인 컨텍스트와 함께 PRD 워크플로우로 돌아가기
+2. 도메인 요구사항이 기능적 요구사항을 형성할 것입니다
+3. 자세한 요구사항은 domain-brief.md를 참조하세요
 
-**Remember:**
+**기억하세요:**
 {most_important_finding}
 
-The domain research will ensure your PRD captures not just what to build, but HOW to build it correctly for {domain}.
+도메인 연구는 PRD가 무엇을 구축할지뿐만 아니라 {domain}에 맞게 올바르게 구축하는 방법도 캡처하도록 보장할 것입니다.
 </output>
 </step>
 

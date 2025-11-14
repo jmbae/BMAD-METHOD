@@ -1,180 +1,180 @@
-# Domain Brief - {project_name}
+# 도메인 브리프 - {project_name}
 
-Generated: {date}
-Domain: {primary_domain}
-Complexity: {complexity_level}
+생성일: {date}
+도메인: {primary_domain}
+복잡성: {complexity_level}
 
-## Executive Summary
+## 요약
 
 {brief_overview_of_domain_research_findings}
 
-## Domain Overview
+## 도메인 개요
 
-### Industry Context
+### 산업 컨텍스트
 
 {domain_overview}
 
-### Regulatory Landscape
+### 규제 환경
 
 {regulatory_environment}
 
-### Key Stakeholders
+### 주요 이해관계자
 
 {stakeholder_analysis}
 
-## Critical Concerns
+## 중요한 관심사
 
-### Compliance Requirements
+### 규정 준수 요구사항
 
 {concern_mapping}
 
-### Technical Constraints
+### 기술적 제약사항
 
 {technical_limitations_from_domain}
 
-### Safety/Risk Considerations
+### 안전/위험 고려사항
 
 {safety_risk_factors}
 
-## Regulatory Requirements
+## 규제 요구사항
 
 {regulatory_requirements}
 
-## Industry Standards
+## 산업 표준
 
 {industry_standards}
 
-## Practical Implications
+## 실질적인 의미
 
-### Architecture Impact
+### 아키텍처 영향
 
 {architecture_implications}
 
-### Development Impact
+### 개발 영향
 
 {development_implications}
 
-### Timeline Impact
+### 타임라인 영향
 
 {timeline_implications}
 
-### Cost Impact
+### 비용 영향
 
 {cost_implications}
 
-## Domain Patterns
+## 도메인 패턴
 
-### Established Patterns
+### 확립된 패턴
 
 {domain_patterns}
 
-### Innovation Opportunities
+### 혁신 기회
 
 {innovation_notes}
 
-## Risk Assessment
+## 위험 평가
 
-### Identified Risks
+### 식별된 위험
 
 {risk_assessment}
 
-### Mitigation Strategies
+### 완화 전략
 
 {mitigation_approaches}
 
-## Validation Strategy
+## 검증 전략
 
-### Compliance Validation
+### 규정 준수 검증
 
 {compliance_validation_approach}
 
-### Technical Validation
+### 기술 검증
 
 {technical_validation_approach}
 
-### Domain Expert Validation
+### 도메인 전문가 검증
 
 {expert_validation_approach}
 
-## Key Decisions
+## 주요 결정
 
 {key_decisions}
 
-## Recommendations
+## 권장사항
 
-### Must Have (Critical)
+### 필수 (중요)
 
 {critical_requirements}
 
-### Should Have (Important)
+### 권장 (중요)
 
 {important_requirements}
 
-### Consider (Nice-to-Have)
+### 고려 (선호)
 
 {optional_enhancements}
 
-### Development Sequence
+### 개발 순서
 
 {recommended_sequence}
 
-### Required Expertise
+### 필요한 전문 지식
 
 {expertise_needed}
 
-## PRD Integration Guide
+## PRD 통합 가이드
 
-### Summary for PRD
+### PRD를 위한 요약
 
 {summary_for_prd}
 
-### Requirements to Incorporate
+### 통합할 요구사항
 
 - {requirement_1}
 - {requirement_2}
 - {requirement_3}
 
-### Architecture Considerations
+### 아키텍처 고려사항
 
 - {architecture_consideration_1}
 - {architecture_consideration_2}
 
-### Development Considerations
+### 개발 고려사항
 
 - {development_consideration_1}
 - {development_consideration_2}
 
-## References
+## 참조
 
-### Regulations Researched
+### 연구된 규정
 
 - {regulation_1_with_link}
 - {regulation_2_with_link}
 
-### Standards Referenced
+### 참조된 표준
 
 - {standard_1_with_link}
 - {standard_2_with_link}
 
-### Additional Resources
+### 추가 리소스
 
 - {resource_1}
 - {resource_2}
 
-## Appendix
+## 부록
 
-### Research Notes
+### 연구 노트
 
 {detailed_research_notes}
 
-### Conversation Highlights
+### 대화 하이라이트
 
 {key_discussion_points_with_user}
 
-### Open Questions
+### 미해결 질문
 
 {questions_requiring_further_research}
 
 ---
 
-_This domain brief was created through collaborative research between {user_name} and the AI facilitator. It should be referenced during PRD creation and updated as new domain insights emerge._
+_이 도메인 브리프는 {user_name}님과 AI 퍼실리테이터 간의 협력적 연구를 통해 작성되었습니다. PRD 생성 중에 참조되어야 하며 새로운 도메인 인사이트가 나타나면 업데이트되어야 합니다._
