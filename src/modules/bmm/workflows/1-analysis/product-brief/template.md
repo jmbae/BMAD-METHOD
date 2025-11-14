@@ -1,66 +1,66 @@
-# Product Brief: {{project_name}}
+# 제품 브리프: {{project_name}}
 
-**Date:** {{date}}
-**Author:** {{user_name}}
-**Context:** {{context_type}}
+**날짜:** {{date}}
+**작성자:** {{user_name}}
+**컨텍스트:** {{context_type}}
 
 ---
 
-## Executive Summary
+## 요약
 
 {{executive_summary}}
 
 ---
 
-## Core Vision
+## 핵심 비전
 
-### Problem Statement
+### 문제 정의
 
 {{problem_statement}}
 
 {{#if problem_impact}}
 
-### Problem Impact
+### 문제 영향
 
 {{problem_impact}}
 {{/if}}
 
 {{#if existing_solutions_gaps}}
 
-### Why Existing Solutions Fall Short
+### 기존 솔루션이 부족한 이유
 
 {{existing_solutions_gaps}}
 {{/if}}
 
-### Proposed Solution
+### 제안된 솔루션
 
 {{proposed_solution}}
 
 {{#if key_differentiators}}
 
-### Key Differentiators
+### 주요 차별화 요소
 
 {{key_differentiators}}
 {{/if}}
 
 ---
 
-## Target Users
+## 대상 사용자
 
-### Primary Users
+### 주요 사용자
 
 {{primary_user_segment}}
 
 {{#if secondary_user_segment}}
 
-### Secondary Users
+### 보조 사용자
 
 {{secondary_user_segment}}
 {{/if}}
 
 {{#if user_journey}}
 
-### User Journey
+### 사용자 여정
 
 {{user_journey}}
 {{/if}}
@@ -69,20 +69,20 @@
 
 {{#if success_metrics}}
 
-## Success Metrics
+## 성공 메트릭
 
 {{success_metrics}}
 
 {{#if business_objectives}}
 
-### Business Objectives
+### 비즈니스 목표
 
 {{business_objectives}}
 {{/if}}
 
 {{#if key_performance_indicators}}
 
-### Key Performance Indicators
+### 핵심 성과 지표
 
 {{key_performance_indicators}}
 {{/if}}
@@ -90,29 +90,29 @@
 
 ---
 
-## MVP Scope
+## MVP 범위
 
-### Core Features
+### 핵심 기능
 
 {{core_features}}
 
 {{#if out_of_scope}}
 
-### Out of Scope for MVP
+### MVP 범위 외
 
 {{out_of_scope}}
 {{/if}}
 
 {{#if mvp_success_criteria}}
 
-### MVP Success Criteria
+### MVP 성공 기준
 
 {{mvp_success_criteria}}
 {{/if}}
 
 {{#if future_vision_features}}
 
-### Future Vision
+### 미래 비전
 
 {{future_vision_features}}
 {{/if}}
@@ -121,61 +121,61 @@
 
 {{#if market_analysis}}
 
-## Market Context
+## 시장 컨텍스트
 
 {{market_analysis}}
 {{/if}}
 
 {{#if financial_considerations}}
 
-## Financial Considerations
+## 재정 고려사항
 
 {{financial_considerations}}
 {{/if}}
 
 {{#if technical_preferences}}
 
-## Technical Preferences
+## 기술적 선호도
 
 {{technical_preferences}}
 {{/if}}
 
 {{#if organizational_context}}
 
-## Organizational Context
+## 조직 컨텍스트
 
 {{organizational_context}}
 {{/if}}
 
 {{#if risks_and_assumptions}}
 
-## Risks and Assumptions
+## 위험 및 가정
 
 {{risks_and_assumptions}}
 {{/if}}
 
 {{#if timeline_constraints}}
 
-## Timeline
+## 타임라인
 
 {{timeline_constraints}}
 {{/if}}
 
 {{#if supporting_materials}}
 
-## Supporting Materials
+## 지원 자료
 
 {{supporting_materials}}
 {{/if}}
 
 ---
 
-_This Product Brief captures the vision and requirements for {{project_name}}._
+_이 제품 브리프는 {{project_name}}에 대한 비전과 요구사항을 캡처합니다._
 
-_It was created through collaborative discovery and reflects the unique needs of this {{context_type}} project._
+_협력적 발견을 통해 생성되었으며 이 {{context_type}} 프로젝트의 고유한 요구를 반영합니다._
 
 {{#if next_workflow}}
-_Next: {{next_workflow}} will transform this brief into detailed planning artifacts._
+_다음: {{next_workflow}}가 이 브리프를 자세한 계획 아티팩트로 변환합니다._
 {{else}}
-_Next: Use the PRD workflow to create detailed product requirements from this brief._
+_다음: PRD 워크플로우를 사용하여 이 브리프에서 자세한 제품 요구사항을 생성합니다._
 {{/if}}

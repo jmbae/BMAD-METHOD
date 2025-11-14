@@ -1,115 +1,115 @@
-# Product Brief Validation Checklist
+# 제품 브리프 검증 체크리스트
 
-## Document Structure
+## 문서 구조
 
-- [ ] All required sections are present (Executive Summary through Appendices)
-- [ ] No placeholder text remains (e.g., [TODO], [NEEDS CONFIRMATION], {{variable}})
-- [ ] Document follows the standard brief template format
-- [ ] Sections are properly numbered and formatted with headers
-- [ ] Cross-references between sections are accurate
+- [ ] 모든 필수 섹션이 존재 (요약부터 부록까지)
+- [ ] 플레이스홀더 텍스트가 남아있지 않음 (예: [TODO], [NEEDS CONFIRMATION], {{variable}})
+- [ ] 문서가 표준 브리프 템플릿 형식을 따름
+- [ ] 섹션이 제목으로 적절히 번호가 매겨지고 포맷됨
+- [ ] 섹션 간 교차 참조가 정확함
 
-## Executive Summary Quality
+## 요약 품질
 
-- [ ] Product concept is explained in 1-2 clear sentences
-- [ ] Primary problem is clearly identified
-- [ ] Target market is specifically named (not generic)
-- [ ] Value proposition is compelling and differentiated
-- [ ] Summary accurately reflects the full document content
+- [ ] 제품 개념이 1-2개의 명확한 문장으로 설명됨
+- [ ] 주요 문제가 명확히 식별됨
+- [ ] 대상 시장이 구체적으로 명명됨 (일반적이지 않음)
+- [ ] 가치 제안이 설득력 있고 차별화됨
+- [ ] 요약이 전체 문서 내용을 정확히 반영
 
-## Problem Statement
+## 문제 정의
 
-- [ ] Current state pain points are specific and measurable
-- [ ] Impact is quantified where possible (time, money, opportunities)
-- [ ] Explanation of why existing solutions fall short is provided
-- [ ] Urgency for solving the problem now is justified
-- [ ] Problem is validated with evidence or data points
+- [ ] 현재 상태 문제점이 구체적이고 측정 가능함
+- [ ] 영향이 가능한 경우 정량화됨 (시간, 돈, 기회)
+- [ ] 기존 솔루션이 부족한 이유에 대한 설명 제공
+- [ ] 지금 문제를 해결해야 하는 긴급성이 정당화됨
+- [ ] 문제가 증거나 데이터 포인트로 검증됨
 
-## Solution Definition
+## 솔루션 정의
 
-- [ ] Core approach is clearly explained without implementation details
-- [ ] Key differentiators from existing solutions are identified
-- [ ] Explanation of why this will succeed is compelling
-- [ ] Solution aligns directly with stated problems
-- [ ] Vision paints a clear picture of the user experience
+- [ ] 핵심 접근 방식이 구현 세부사항 없이 명확히 설명됨
+- [ ] 기존 솔루션과의 주요 차별화 요소가 식별됨
+- [ ] 왜 이것이 성공할 것인지에 대한 설명이 설득력 있음
+- [ ] 솔루션이 명시된 문제와 직접 연결됨
+- [ ] 비전이 사용자 경험의 명확한 그림을 그림
 
-## Target Users
+## 대상 사용자
 
-- [ ] Primary user segment has specific demographic/firmographic profile
-- [ ] User behaviors and current workflows are documented
-- [ ] Specific pain points are tied to user segments
-- [ ] User goals are clearly articulated
-- [ ] Secondary segment (if applicable) is equally detailed
-- [ ] Avoids generic personas like "busy professionals"
+- [ ] 주요 사용자 세그먼트가 구체적인 인구통계/기업통계 프로필을 가짐
+- [ ] 사용자 행동 및 현재 워크플로우가 문서화됨
+- [ ] 구체적인 문제점이 사용자 세그먼트와 연결됨
+- [ ] 사용자 목표가 명확히 표현됨
+- [ ] 보조 세그먼트 (해당하는 경우)가 동일하게 자세함
+- [ ] "바쁜 전문가"와 같은 일반적인 페르소나를 피함
 
-## Goals and Metrics
+## 목표 및 메트릭
 
-- [ ] Business objectives include measurable outcomes with targets
-- [ ] User success metrics focus on behaviors, not features
-- [ ] 3-5 KPIs are defined with clear definitions
-- [ ] All goals follow SMART criteria (Specific, Measurable, Achievable, Relevant, Time-bound)
-- [ ] Success metrics align with problem statement
+- [ ] 비즈니스 목표가 목표가 있는 측정 가능한 결과를 포함
+- [ ] 사용자 성공 메트릭이 기능이 아닌 행동에 초점
+- [ ] 명확한 정의가 있는 3-5개의 KPI 정의
+- [ ] 모든 목표가 SMART 기준을 따름 (구체적, 측정 가능, 달성 가능, 관련성, 시간 제한)
+- [ ] 성공 메트릭이 문제 정의와 일치
 
-## MVP Scope
+## MVP 범위
 
-- [ ] Core features list contains only true must-haves
-- [ ] Each core feature includes rationale for why it's essential
-- [ ] Out of scope section explicitly lists deferred features
-- [ ] MVP success criteria are specific and measurable
-- [ ] Scope is genuinely minimal and viable
-- [ ] No feature creep evident in "must-have" list
+- [ ] 핵심 기능 목록이 진정한 필수 사항만 포함
+- [ ] 각 핵심 기능이 왜 필수인지에 대한 근거 포함
+- [ ] 범위 외 섹션이 연기된 기능을 명시적으로 나열
+- [ ] MVP 성공 기준이 구체적이고 측정 가능
+- [ ] 범위가 진정으로 최소이고 실행 가능
+- [ ] "필수" 목록에 범위 크립이 명백하지 않음
 
-## Technical Considerations
+## 기술 고려사항
 
-- [ ] Target platforms are specified (web/mobile/desktop)
-- [ ] Browser/OS support requirements are documented
-- [ ] Performance requirements are defined if applicable
-- [ ] Accessibility requirements are noted
-- [ ] Technology preferences are marked as preferences, not decisions
-- [ ] Integration requirements with existing systems are identified
+- [ ] 대상 플랫폼이 지정됨 (웹/모바일/데스크톱)
+- [ ] 브라우저/OS 지원 요구사항이 문서화됨
+- [ ] 해당하는 경우 성능 요구사항이 정의됨
+- [ ] 접근성 요구사항이 명시됨
+- [ ] 기술 선호도가 결정이 아닌 선호도로 표시됨
+- [ ] 기존 시스템과의 통합 요구사항이 식별됨
 
-## Constraints and Assumptions
+## 제약 및 가정
 
-- [ ] Budget constraints are documented if known
-- [ ] Timeline or deadline pressures are specified
-- [ ] Team/resource limitations are acknowledged
-- [ ] Technical constraints are clearly stated
-- [ ] Key assumptions are listed and testable
-- [ ] Assumptions will be validated during development
+- [ ] 알려진 경우 예산 제약이 문서화됨
+- [ ] 타임라인 또는 마감 압박이 지정됨
+- [ ] 팀/리소스 제한이 인정됨
+- [ ] 기술적 제약이 명확히 명시됨
+- [ ] 주요 가정이 나열되고 테스트 가능
+- [ ] 가정이 개발 중에 검증될 것임
 
-## Risk Assessment (if included)
+## 위험 평가 (포함된 경우)
 
-- [ ] Key risks include potential impact descriptions
-- [ ] Open questions are specific and answerable
-- [ ] Research areas are identified with clear objectives
-- [ ] Risk mitigation strategies are suggested where applicable
+- [ ] 주요 위험이 잠재적 영향 설명 포함
+- [ ] 미해결 질문이 구체적이고 답변 가능
+- [ ] 연구 영역이 명확한 목표로 식별됨
+- [ ] 해당하는 경우 위험 완화 전략이 제안됨
 
-## Overall Quality
+## 전반적인 품질
 
-- [ ] Language is clear and free of jargon
-- [ ] Terminology is used consistently throughout
-- [ ] Document is ready for handoff to Product Manager
-- [ ] All [PM-TODO] items are clearly marked if present
-- [ ] References and source documents are properly cited
+- [ ] 언어가 명확하고 전문 용어가 없음
+- [ ] 용어가 전반에 걸쳐 일관되게 사용됨
+- [ ] 문서가 제품 관리자에게 핸드오프 준비됨
+- [ ] 존재하는 경우 모든 [PM-TODO] 항목이 명확히 표시됨
+- [ ] 참조 및 소스 문서가 적절히 인용됨
 
-## Completeness Check
+## 완전성 확인
 
-- [ ] Document provides sufficient detail for PRD creation
-- [ ] All user inputs have been incorporated
-- [ ] Market research findings are reflected if provided
-- [ ] Competitive analysis insights are included if available
-- [ ] Brief aligns with overall product strategy
+- [ ] 문서가 PRD 생성을 위한 충분한 세부사항 제공
+- [ ] 모든 사용자 입력이 통합됨
+- [ ] 제공된 경우 시장 조사 결과가 반영됨
+- [ ] 사용 가능한 경우 경쟁 분석 인사이트가 포함됨
+- [ ] 브리프가 전체 제품 전략과 일치
 
-## Final Validation
+## 최종 검증
 
-### Critical Issues Found:
+### 발견된 중요한 문제:
 
-- [ ] None identified
+- [ ] 식별된 문제 없음
 
-### Minor Issues to Address:
+### 해결할 사소한 문제:
 
-- [ ] List any minor issues here
+- [ ] 여기에 사소한 문제 나열
 
-### Ready for PM Handoff:
+### PM 핸드오프 준비:
 
-- [ ] Yes, brief is complete and validated
-- [ ] No, requires additional work (specify above)
+- [ ] 예, 브리프가 완료되고 검증됨
+- [ ] 아니요, 추가 작업 필요 (위에 지정)

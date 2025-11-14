@@ -1,6 +1,6 @@
 # Product Brief - Interactive Workflow Configuration
 name: product-brief
-description: "Interactive product brief creation workflow that guides users through defining their product vision with multiple input sources and conversational collaboration"
+description: "여러 입력 소스와 대화형 협업을 통해 사용자가 제품 비전을 정의하도록 안내하는 인터랙티브 제품 브리프 생성 워크플로우"
 author: "BMad"
 
 # Critical variables from config
@@ -46,7 +46,7 @@ standalone: true
 
 web_bundle:
   name: "product-brief"
-  description: "Interactive product brief creation workflow that guides users through defining their product vision with multiple input sources and conversational collaboration"
+  description: "여러 입력 소스와 대화형 협업을 통해 사용자가 제품 비전을 정의하도록 안내하는 인터랙티브 제품 브리프 생성 워크플로우"
   author: "BMad"
   instructions: "{bmad_folder}/bmm/workflows/1-analysis/product-brief/instructions.md"
   validation: "{bmad_folder}/bmm/workflows/1-analysis/product-brief/checklist.md"
