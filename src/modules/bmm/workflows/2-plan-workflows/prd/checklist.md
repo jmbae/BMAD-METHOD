@@ -1,346 +1,346 @@
-# PRD + Epics + Stories Validation Checklist
+# PRD + Epic + Story 검증 체크리스트
 
-**Purpose**: Comprehensive validation that PRD, epics, and stories form a complete, implementable product plan.
+**목적**: PRD, Epic, Story가 완전하고 구현 가능한 제품 계획을 형성하는지 종합적으로 검증합니다.
 
-**Scope**: Validates the complete planning output (PRD.md + epics.md) for Levels 2-4 software projects
+**범위**: Level 2-4 소프트웨어 프로젝트의 전체 계획 산출물(PRD.md + epics.md) 검증
 
-**Expected Outputs**:
+**예상 산출물**:
 
-- PRD.md with complete requirements
-- epics.md with detailed epic and story breakdown
-- Updated bmm-workflow-status.yaml
-
----
-
-## 1. PRD Document Completeness
-
-### Core Sections Present
-
-- [ ] Executive Summary with vision alignment
-- [ ] Product magic essence clearly articulated
-- [ ] Project classification (type, domain, complexity)
-- [ ] Success criteria defined
-- [ ] Product scope (MVP, Growth, Vision) clearly delineated
-- [ ] Functional requirements comprehensive and numbered
-- [ ] Non-functional requirements (when applicable)
-- [ ] References section with source documents
-
-### Project-Specific Sections
-
-- [ ] **If complex domain:** Domain context and considerations documented
-- [ ] **If innovation:** Innovation patterns and validation approach documented
-- [ ] **If API/Backend:** Endpoint specification and authentication model included
-- [ ] **If Mobile:** Platform requirements and device features documented
-- [ ] **If SaaS B2B:** Tenant model and permission matrix included
-- [ ] **If UI exists:** UX principles and key interactions documented
-
-### Quality Checks
-
-- [ ] No unfilled template variables ({{variable}})
-- [ ] All variables properly populated with meaningful content
-- [ ] Product magic woven throughout (not just stated once)
-- [ ] Language is clear, specific, and measurable
-- [ ] Project type correctly identified and sections match
-- [ ] Domain complexity appropriately addressed
+- 완전한 요구사항을 포함한 PRD.md
+- 상세한 Epic 및 Story 분해가 포함된 epics.md
+- 업데이트된 bmm-workflow-status.yaml
 
 ---
 
-## 2. Functional Requirements Quality
+## 1. PRD 문서 완성도
 
-### FR Format and Structure
+### 핵심 섹션 존재 여부
 
-- [ ] Each FR has unique identifier (FR-001, FR-002, etc.)
-- [ ] FRs describe WHAT capabilities, not HOW to implement
-- [ ] FRs are specific and measurable
-- [ ] FRs are testable and verifiable
-- [ ] FRs focus on user/business value
-- [ ] No technical implementation details in FRs (those belong in architecture)
+- [ ] Executive Summary와 비전 정렬
+- [ ] 제품의 핵심 가치(Product magic) 명확히 표현
+- [ ] 프로젝트 분류(유형, 도메인, 복잡도)
+- [ ] 성공 기준 정의
+- [ ] 제품 범위(MVP, Growth, Vision) 명확히 구분
+- [ ] 기능 요구사항 포괄적이고 번호 지정
+- [ ] 비기능 요구사항(해당하는 경우)
+- [ ] 원본 문서를 포함한 참고자료 섹션
 
-### FR Completeness
+### 프로젝트별 섹션
 
-- [ ] All MVP scope features have corresponding FRs
-- [ ] Growth features documented (even if deferred)
-- [ ] Vision features captured for future reference
-- [ ] Domain-mandated requirements included
-- [ ] Innovation requirements captured with validation needs
-- [ ] Project-type specific requirements complete
+- [ ] **복잡한 도메인인 경우:** 도메인 컨텍스트 및 고려사항 문서화
+- [ ] **혁신 사항 있는 경우:** 혁신 패턴 및 검증 방식 문서화
+- [ ] **API/Backend인 경우:** 엔드포인트 명세 및 인증 모델 포함
+- [ ] **Mobile인 경우:** 플랫폼 요구사항 및 디바이스 기능 문서화
+- [ ] **SaaS B2B인 경우:** 테넌트 모델 및 권한 매트릭스 포함
+- [ ] **UI 존재하는 경우:** UX 원칙 및 주요 상호작용 문서화
 
-### FR Organization
+### 품질 검사
 
-- [ ] FRs organized by capability/feature area (not by tech stack)
-- [ ] Related FRs grouped logically
-- [ ] Dependencies between FRs noted when critical
-- [ ] Priority/phase indicated (MVP vs Growth vs Vision)
-
----
-
-## 3. Epics Document Completeness
-
-### Required Files
-
-- [ ] epics.md exists in output folder
-- [ ] Epic list in PRD.md matches epics in epics.md (titles and count)
-- [ ] All epics have detailed breakdown sections
-
-### Epic Quality
-
-- [ ] Each epic has clear goal and value proposition
-- [ ] Each epic includes complete story breakdown
-- [ ] Stories follow proper user story format: "As a [role], I want [goal], so that [benefit]"
-- [ ] Each story has numbered acceptance criteria
-- [ ] Prerequisites/dependencies explicitly stated per story
-- [ ] Stories are AI-agent sized (completable in 2-4 hour session)
+- [ ] 채워지지 않은 템플릿 변수 없음({{variable}})
+- [ ] 모든 변수가 의미 있는 내용으로 적절히 채워짐
+- [ ] 제품의 핵심 가치가 전체에 반영됨(한 번만 명시되지 않음)
+- [ ] 언어가 명확하고 구체적이며 측정 가능함
+- [ ] 프로젝트 유형이 올바르게 식별되고 섹션과 일치
+- [ ] 도메인 복잡도가 적절하게 다루어짐
 
 ---
 
-## 4. FR Coverage Validation (CRITICAL)
+## 2. 기능 요구사항 품질
 
-### Complete Traceability
+### FR 형식 및 구조
 
-- [ ] **Every FR from PRD.md is covered by at least one story in epics.md**
-- [ ] Each story references relevant FR numbers
-- [ ] No orphaned FRs (requirements without stories)
-- [ ] No orphaned stories (stories without FR connection)
-- [ ] Coverage matrix verified (can trace FR → Epic → Stories)
+- [ ] 각 FR이 고유한 식별자(FR-001, FR-002 등) 보유
+- [ ] FR이 HOW가 아닌 WHAT 기능을 설명
+- [ ] FR이 구체적이고 측정 가능
+- [ ] FR이 테스트 가능하고 검증 가능
+- [ ] FR이 사용자/비즈니스 가치에 초점
+- [ ] FR에 기술적 구현 세부사항 없음(아키텍처에 속함)
 
-### Coverage Quality
+### FR 완성도
 
-- [ ] Stories sufficiently decompose FRs into implementable units
-- [ ] Complex FRs broken into multiple stories appropriately
-- [ ] Simple FRs have appropriately scoped single stories
-- [ ] Non-functional requirements reflected in story acceptance criteria
-- [ ] Domain requirements embedded in relevant stories
+- [ ] MVP 범위의 모든 기능이 해당하는 FR을 가짐
+- [ ] Growth 기능 문서화(연기된 경우에도)
+- [ ] Vision 기능이 미래 참고용으로 포착됨
+- [ ] 도메인 필수 요구사항 포함
+- [ ] 혁신 요구사항이 검증 필요성과 함께 포착됨
+- [ ] 프로젝트 유형별 요구사항 완전
 
----
+### FR 조직화
 
-## 5. Story Sequencing Validation (CRITICAL)
-
-### Epic 1 Foundation Check
-
-- [ ] **Epic 1 establishes foundational infrastructure**
-- [ ] Epic 1 delivers initial deployable functionality
-- [ ] Epic 1 creates baseline for subsequent epics
-- [ ] Exception: If adding to existing app, foundation requirement adapted appropriately
-
-### Vertical Slicing
-
-- [ ] **Each story delivers complete, testable functionality** (not horizontal layers)
-- [ ] No "build database" or "create UI" stories in isolation
-- [ ] Stories integrate across stack (data + logic + presentation when applicable)
-- [ ] Each story leaves system in working/deployable state
-
-### No Forward Dependencies
-
-- [ ] **No story depends on work from a LATER story or epic**
-- [ ] Stories within each epic are sequentially ordered
-- [ ] Each story builds only on previous work
-- [ ] Dependencies flow backward only (can reference earlier stories)
-- [ ] Parallel tracks clearly indicated if stories are independent
-
-### Value Delivery Path
-
-- [ ] Each epic delivers significant end-to-end value
-- [ ] Epic sequence shows logical product evolution
-- [ ] User can see value after each epic completion
-- [ ] MVP scope clearly achieved by end of designated epics
+- [ ] FR이 기술 스택이 아닌 기능/기능 영역별로 조직화
+- [ ] 관련 FR이 논리적으로 그룹화
+- [ ] FR 간 의존성이 중요한 경우 주석 처리
+- [ ] 우선순위/단계 표시(MVP vs Growth vs Vision)
 
 ---
 
-## 6. Scope Management
+## 3. Epic 문서 완성도
 
-### MVP Discipline
+### 필수 파일
 
-- [ ] MVP scope is genuinely minimal and viable
-- [ ] Core features list contains only true must-haves
-- [ ] Each MVP feature has clear rationale for inclusion
-- [ ] No obvious scope creep in "must-have" list
+- [ ] epics.md가 출력 폴더에 존재
+- [ ] PRD.md의 Epic 목록이 epics.md의 Epic과 일치(제목 및 개수)
+- [ ] 모든 Epic이 상세 분해 섹션 보유
 
-### Future Work Captured
+### Epic 품질
 
-- [ ] Growth features documented for post-MVP
-- [ ] Vision features captured to maintain long-term direction
-- [ ] Out-of-scope items explicitly listed
-- [ ] Deferred features have clear reasoning for deferral
-
-### Clear Boundaries
-
-- [ ] Stories marked as MVP vs Growth vs Vision
-- [ ] Epic sequencing aligns with MVP → Growth progression
-- [ ] No confusion about what's in vs out of initial scope
+- [ ] 각 Epic이 명확한 목표 및 가치 제안 포함
+- [ ] 각 Epic이 완전한 Story 분해 포함
+- [ ] Story가 올바른 형식을 따름: "As a [역할], I want [목표], so that [이점]"
+- [ ] 각 Story가 번호가 매겨진 수용 기준 포함
+- [ ] Story당 전제조건/의존성이 명시적으로 명시됨
+- [ ] Story가 AI 에이전트 크기(2-4시간 세션에서 완료 가능)
 
 ---
 
-## 7. Research and Context Integration
+## 4. FR 커버리지 검증 (중요)
 
-### Source Document Integration
+### 완전한 추적성
 
-- [ ] **If product brief exists:** Key insights incorporated into PRD
-- [ ] **If domain brief exists:** Domain requirements reflected in FRs and stories
-- [ ] **If research documents exist:** Research findings inform requirements
-- [ ] **If competitive analysis exists:** Differentiation strategy clear in PRD
-- [ ] All source documents referenced in PRD References section
+- [ ] **PRD.md의 모든 FR이 epics.md의 최소 하나의 Story로 커버됨**
+- [ ] 각 Story가 관련 FR 번호 참조
+- [ ] 고아 FR 없음(Story 없는 요구사항)
+- [ ] 고아 Story 없음(FR 연결 없는 Story)
+- [ ] 커버리지 매트릭스 검증됨(FR → Epic → Stories로 추적 가능)
 
-### Research Continuity to Architecture
+### 커버리지 품질
 
-- [ ] Domain complexity considerations documented for architects
-- [ ] Technical constraints from research captured
-- [ ] Regulatory/compliance requirements clearly stated
-- [ ] Integration requirements with existing systems documented
-- [ ] Performance/scale requirements informed by research data
-
-### Information Completeness for Next Phase
-
-- [ ] PRD provides sufficient context for architecture decisions
-- [ ] Epics provide sufficient detail for technical design
-- [ ] Stories have enough acceptance criteria for implementation
-- [ ] Non-obvious business rules documented
-- [ ] Edge cases and special scenarios captured
+- [ ] Story가 FR을 구현 가능한 단위로 충분히 분해
+- [ ] 복잡한 FR이 여러 Story로 적절하게 분해됨
+- [ ] 단순 FR이 적절하게 범위가 지정된 단일 Story 보유
+- [ ] 비기능 요구사항이 Story 수용 기준에 반영됨
+- [ ] 도메인 요구사항이 관련 Story에 포함됨
 
 ---
 
-## 8. Cross-Document Consistency
+## 5. Story 시퀀싱 검증 (중요)
 
-### Terminology Consistency
+### Epic 1 기초 확인
 
-- [ ] Same terms used across PRD and epics for concepts
-- [ ] Feature names consistent between documents
-- [ ] Epic titles match between PRD and epics.md
-- [ ] No contradictions between PRD and epics
+- [ ] **Epic 1이 기초적인 인프라 구축**
+- [ ] Epic 1이 초기 배포 가능한 기능 제공
+- [ ] Epic 1이 후속 Epic의 기초선 생성
+- [ ] 예외: 기존 앱에 추가하는 경우 기초 요구사항이 적절하게 조정됨
 
-### Alignment Checks
+### 수직 슬라이싱
 
-- [ ] Success metrics in PRD align with story outcomes
-- [ ] Product magic articulated in PRD reflected in epic goals
-- [ ] Technical preferences in PRD align with story implementation hints
-- [ ] Scope boundaries consistent across all documents
+- [ ] **각 Story가 완전하고 테스트 가능한 기능 제공**(수평 레이어 아님)
+- [ ] "데이터베이스 구축" 또는 "UI 생성" Story가 독립적으로 없음
+- [ ] Story가 스택 전체에 통합됨(해당하는 경우 데이터 + 로직 + 프레젠테이션)
+- [ ] 각 Story가 시스템을 작동/배포 가능한 상태로 남김
 
----
+### 순방향 의존성 없음
 
-## 9. Readiness for Implementation
+- [ ] **Story가 나중 Story나 Epic의 작업에 의존하지 않음**
+- [ ] 각 Epic 내 Story가 순차적으로 정렬됨
+- [ ] 각 Story가 이전 작업에만 기반함
+- [ ] 의존성이 역방향으로만 흐름(이전 Story 참조 가능)
+- [ ] Story가 독립적인 경우 병렬 트랙이 명확하게 표시됨
 
-### Architecture Readiness (Next Phase)
+### 가치 제공 경로
 
-- [ ] PRD provides sufficient context for architecture workflow
-- [ ] Technical constraints and preferences documented
-- [ ] Integration points identified
-- [ ] Performance/scale requirements specified
-- [ ] Security and compliance needs clear
-
-### Development Readiness
-
-- [ ] Stories are specific enough to estimate
-- [ ] Acceptance criteria are testable
-- [ ] Technical unknowns identified and flagged
-- [ ] Dependencies on external systems documented
-- [ ] Data requirements specified
-
-### Track-Appropriate Detail
-
-**If BMad Method:**
-
-- [ ] PRD supports full architecture workflow
-- [ ] Epic structure supports phased delivery
-- [ ] Scope appropriate for product/platform development
-- [ ] Clear value delivery through epic sequence
-
-**If Enterprise Method:**
-
-- [ ] PRD addresses enterprise requirements (security, compliance, multi-tenancy)
-- [ ] Epic structure supports extended planning phases
-- [ ] Scope includes security, devops, and test strategy considerations
-- [ ] Clear value delivery with enterprise gates
+- [ ] 각 Epic이 중요한 종단간 가치 제공
+- [ ] Epic 시퀀스가 논리적인 제품 진화를 보여줌
+- [ ] 사용자가 각 Epic 완료 후 가치 확인 가능
+- [ ] MVP 범위가 지정된 Epic 완료 시점에 명확하게 달성됨
 
 ---
 
-## 10. Quality and Polish
+## 6. 범위 관리
 
-### Writing Quality
+### MVP 규율
 
-- [ ] Language is clear and free of jargon (or jargon is defined)
-- [ ] Sentences are concise and specific
-- [ ] No vague statements ("should be fast", "user-friendly")
-- [ ] Measurable criteria used throughout
-- [ ] Professional tone appropriate for stakeholder review
+- [ ] MVP 범위가 진정으로 최소이면서도 실행 가능
+- [ ] 핵심 기능 목록에 진정한 필수 기능만 포함
+- [ ] 각 MVP 기능이 포함에 대한 명확한 근거 보유
+- [ ] "필수" 목록에서 명백한 범위 확대 없음
 
-### Document Structure
+### 향후 작업 포착
 
-- [ ] Sections flow logically
-- [ ] Headers and numbering consistent
-- [ ] Cross-references accurate (FR numbers, section references)
-- [ ] Formatting consistent throughout
-- [ ] Tables/lists formatted properly
+- [ ] MVP 이후를 위한 Growth 기능 문서화
+- [ ] 장기 방향 유지를 위한 Vision 기능 포착
+- [ ] 범위 외 항목이 명시적으로 나열됨
+- [ ] 연기된 기능이 연기의 명확한 근거 보유
 
-### Completeness Indicators
+### 명확한 경계
 
-- [ ] No [TODO] or [TBD] markers remain
-- [ ] No placeholder text
-- [ ] All sections have substantive content
-- [ ] Optional sections either complete or omitted (not half-done)
+- [ ] Story가 MVP vs Growth vs Vision으로 표시됨
+- [ ] Epic 시퀀싱이 MVP → Growth 진행과 정렬됨
+- [ ] 초기 범위에 포함/불포함되는 항목에 대한 혼동 없음
 
 ---
 
-## Critical Failures (Auto-Fail)
+## 7. 연구 및 컨텍스트 통합
 
-If ANY of these are true, validation FAILS:
+### 원본 문서 통합
 
-- [ ] ❌ **No epics.md file exists** (two-file output required)
-- [ ] ❌ **Epic 1 doesn't establish foundation** (violates core sequencing principle)
-- [ ] ❌ **Stories have forward dependencies** (breaks sequential implementation)
-- [ ] ❌ **Stories not vertically sliced** (horizontal layers block value delivery)
-- [ ] ❌ **Epics don't cover all FRs** (orphaned requirements)
-- [ ] ❌ **FRs contain technical implementation details** (should be in architecture)
-- [ ] ❌ **No FR traceability to stories** (can't validate coverage)
-- [ ] ❌ **Template variables unfilled** (incomplete document)
+- [ ] **제품 브리프가 있는 경우:** 주요 인사이트가 PRD에 통합됨
+- [ ] **도메인 브리프가 있는 경우:** 도메인 요구사항이 FR 및 Story에 반영됨
+- [ ] **연구 문서가 있는 경우:** 연구 결과가 요구사항에 반영됨
+- [ ] **경쟁 분석이 있는 경우:** 차별화 전략이 PRD에서 명확함
+- [ ] 모든 원본 문서가 PRD 참고자료 섹션에서 참조됨
 
----
+### 아키텍처로의 연구 연속성
 
-## Validation Summary
+- [ ] 도메인 복잡도 고려사항이 아키텍트를 위해 문서화됨
+- [ ] 연구의 기술적 제약이 포착됨
+- [ ] 규제/규정 준수 요구사항이 명확하게 명시됨
+- [ ] 기존 시스템과의 통합 요구사항이 문서화됨
+- [ ] 성능/확장 요구사항이 연구 데이터에 의해 정보화됨
 
-- **Pass Rate ≥ 95%:** ✅ EXCELLENT - Ready for architecture phase
-- **Pass Rate 85-94%:** ⚠️ GOOD - Minor fixes needed
-- **Pass Rate 70-84%:** ⚠️ FAIR - Important issues to address
-- **Pass Rate < 70%:** ❌ POOR - Significant rework required
+### 다음 단계를 위한 정보 완성도
 
-### Critical Issue Threshold
-
-- **0 Critical Failures:** Proceed to fixes
-- **1+ Critical Failures:** STOP - Must fix critical issues first
-
----
-
-## Validation Execution Notes
-
-**When validating:**
-
-1. **Load ALL documents - whole or sharded (but not both of each) for example epics.md vs epics/\*.md:**
-   - PRD.md (required)
-   - epics.md (required)
-   - product-brief.md (if exists)
-   - domain-brief.md (if exists)
-   - research documents (if referenced)
-
-2. **Validate in order:**
-   - Check critical failures first (immediate stop if any found)
-   - Verify PRD completeness
-   - Verify epics completeness
-   - Cross-reference FR coverage (most important)
-   - Check sequencing (second most important)
-   - Validate research integration
-   - Check polish and quality
-
-3. **Report findings:**
-   - List critical failures prominently
-   - Group issues by severity
-   - Provide specific line numbers/sections
-   - Suggest concrete fixes
-   - Highlight what's working well
-
-4. **Provide actionable next steps:**
-   - If validation passes: "Ready for architecture workflow"
-   - If minor issues: "Fix [X] items then re-validate"
-   - If major issues: "Rework [sections] then re-validate"
-   - If critical failures: "Must fix critical items before proceeding"
+- [ ] PRD가 아키텍처 의사결정을 위해 충분한 컨텍스트 제공
+- [ ] Epic이 기술 설계를 위해 충분한 세부사항 제공
+- [ ] Story가 구현을 위해 충분한 수용 기준 보유
+- [ ] 명백하지 않은 비즈니스 규칙이 문서화됨
+- [ ] 예외 케이스 및 특수 시나리오가 포착됨
 
 ---
 
-**Remember:** This validation ensures the entire planning phase is complete and the implementation phase has everything needed to succeed. Be thorough but fair - the goal is quality, not perfection.
+## 8. 문서 간 일관성
+
+### 용어 일관성
+
+- [ ] PRD 및 Epic 전체에서 개념에 동일한 용어 사용
+- [ ] 문서 간 기능명이 일관성 있음
+- [ ] Epic 제목이 PRD와 epics.md 간 일치
+- [ ] PRD와 Epic 간 모순 없음
+
+### 정렬 확인
+
+- [ ] PRD의 성공 메트릭이 Story 결과와 정렬됨
+- [ ] PRD에서 표현된 제품 핵심 가치가 Epic 목표에 반영됨
+- [ ] PRD의 기술적 선호도가 Story 구현 힌트와 정렬됨
+- [ ] 범위 경계가 모든 문서에서 일관성 있음
+
+---
+
+## 9. 구현 준비도
+
+### 아키텍처 준비도(다음 단계)
+
+- [ ] PRD가 아키텍처 워크플로우를 위한 충분한 컨텍스트 제공
+- [ ] 기술적 제약 및 선호도가 문서화됨
+- [ ] 통합 지점이 식별됨
+- [ ] 성능/확장 요구사항이 명시됨
+- [ ] 보안 및 규정 준수 필요사항이 명확함
+
+### 개발 준비도
+
+- [ ] Story가 추정을 위해 구체적임
+- [ ] 수용 기준이 테스트 가능함
+- [ ] 기술적 미지수가 식별되고 플래그 처리됨
+- [ ] 외부 시스템의 의존성이 문서화됨
+- [ ] 데이터 요구사항이 명시됨
+
+### 추적 방법에 적절한 상세도
+
+**BMad Method인 경우:**
+
+- [ ] PRD가 전체 아키텍처 워크플로우 지원
+- [ ] Epic 구조가 단계적 제공 지원
+- [ ] 범위가 제품/플랫폼 개발에 적절함
+- [ ] Epic 시퀀스를 통한 명확한 가치 제공
+
+**Enterprise Method인 경우:**
+
+- [ ] PRD가 엔터프라이즈 요구사항(보안, 규정 준수, 다중 테넌시) 다룸
+- [ ] Epic 구조가 확장된 계획 단계 지원
+- [ ] 범위에 보안, DevOps, 테스트 전략 고려사항 포함
+- [ ] 엔터프라이즈 게이트를 포함한 명확한 가치 제공
+
+---
+
+## 10. 품질 및 마무리
+
+### 작성 품질
+
+- [ ] 언어가 명확하고 전문용어 없음(또는 정의됨)
+- [ ] 문장이 간결하고 구체적
+- [ ] 모호한 표현 없음("빨라야 함", "사용자 친화적")
+- [ ] 전체에 측정 가능한 기준 사용
+- [ ] 이해관계자 검토에 적절한 전문적 톤
+
+### 문서 구조
+
+- [ ] 섹션이 논리적으로 흐름
+- [ ] 제목 및 번호 매김이 일관성 있음
+- [ ] 교차 참조가 정확함(FR 번호, 섹션 참조)
+- [ ] 형식이 전체에서 일관성 있음
+- [ ] 표/목록이 적절하게 형식화됨
+
+### 완성도 지표
+
+- [ ] [TODO] 또는 [TBD] 마커 없음
+- [ ] 플레이스홀더 텍스트 없음
+- [ ] 모든 섹션이 의미 있는 내용 포함
+- [ ] 선택 섹션이 완료되거나 생략됨(절반 완료 아님)
+
+---
+
+## 중요 실패 기준(자동 실패)
+
+다음 중 ANY가 참이면 검증 실패:
+
+- [ ] ❌ **epics.md 파일이 없음**(2파일 출력 필수)
+- [ ] ❌ **Epic 1이 기초를 구축하지 않음**(핵심 시퀀싱 원칙 위반)
+- [ ] ❌ **Story가 순방향 의존성 포함**(순차 구현 중단)
+- [ ] ❌ **Story가 수직으로 슬라이싱되지 않음**(수평 레이어가 가치 제공 차단)
+- [ ] ❌ **Epic이 모든 FR을 커버하지 않음**(고아 요구사항)
+- [ ] ❌ **FR이 기술적 구현 세부사항 포함**(아키텍처에 속함)
+- [ ] ❌ **FR이 Story로 추적 불가능**(커버리지 검증 불가)
+- [ ] ❌ **템플릿 변수 미충전**(불완전한 문서)
+
+---
+
+## 검증 요약
+
+- **합격률 ≥ 95%:** ✅ 탁월함 - 아키텍처 단계 준비 완료
+- **합격률 85-94%:** ⚠️ 양호 - 사소한 수정 필요
+- **합격률 70-84%:** ⚠️ 보통 - 중요한 문제 해결 필요
+- **합격률 < 70%:** ❌ 부족 - 상당한 수정 작업 필요
+
+### 중요 문제 임계값
+
+- **0개 중요 실패:** 수정 진행
+- **1개 이상 중요 실패:** 중지 - 먼저 중요 문제 수정 필수
+
+---
+
+## 검증 실행 주의사항
+
+**검증할 때:**
+
+1. **ALL 문서 로드 - 전체 또는 분할(각 파일별로는 하나만) 예: epics.md vs epics/\*.md:**
+   - PRD.md(필수)
+   - epics.md(필수)
+   - product-brief.md(있는 경우)
+   - domain-brief.md(있는 경우)
+   - 연구 문서(참조된 경우)
+
+2. **순서대로 검증:**
+   - 중요 실패 기준 먼저 확인(발견 시 즉시 중지)
+   - PRD 완성도 검증
+   - Epic 완성도 검증
+   - FR 커버리지 상호 참조(가장 중요)
+   - 시퀀싱 확인(두 번째로 중요)
+   - 연구 통합 검증
+   - 마무리 및 품질 확인
+
+3. **결과 보고:**
+   - 중요 실패 기준을 눈에 띄게 나열
+   - 심각도별로 문제 그룹화
+   - 특정 줄 번호/섹션 제공
+   - 구체적인 수정 제안
+   - 잘 작동하는 항목 강조
+
+4. **실행 가능한 다음 단계 제공:**
+   - 검증 통과: "아키텍처 워크플로우 준비 완료"
+   - 사소한 문제: "[X]개 항목 수정 후 재검증"
+   - 주요 문제: "[섹션] 수정 후 재검증"
+   - 중요 실패: "진행 전 중요 항목 수정 필수"
+
+---
+
+**기억하기:** 이 검증은 계획 단계 전체가 완료되고 구현 단계에 성공에 필요한 모든 것이 있는지 확인합니다. 철저하지만 공정하게 - 목표는 품질이지 완벽함이 아닙니다.
