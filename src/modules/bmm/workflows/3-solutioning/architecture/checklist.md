@@ -1,240 +1,240 @@
-# Architecture Document Validation Checklist
+# 아키텍처 문서 검증 체크리스트
 
-**Purpose**: Validate the architecture document itself is complete, implementable, and provides clear guidance for AI agents.
+**목적**: 아키텍처 문서 자체가 완전하고 구현 가능하며 AI 에이전트에게 명확한 지침을 제공하는지 검증합니다.
 
-**Note**: This checklist validates the ARCHITECTURE DOCUMENT only. For cross-workflow validation (PRD → Architecture → Stories alignment), use the solutioning-gate-check workflow.
-
----
-
-## 1. Decision Completeness
-
-### All Decisions Made
-
-- [ ] Every critical decision category has been resolved
-- [ ] All important decision categories addressed
-- [ ] No placeholder text like "TBD", "[choose]", or "{TODO}" remains
-- [ ] Optional decisions either resolved or explicitly deferred with rationale
-
-### Decision Coverage
-
-- [ ] Data persistence approach decided
-- [ ] API pattern chosen
-- [ ] Authentication/authorization strategy defined
-- [ ] Deployment target selected
-- [ ] All functional requirements have architectural support
+**참고**: 이 체크리스트는 아키텍처 문서만 검증합니다. 워크플로우 간 검증(PRD → 아키텍처 → 스토리 정렬)은 solutioning-gate-check 워크플로우를 사용하세요.
 
 ---
 
-## 2. Version Specificity
+## 1. 의사결정 완전성
 
-### Technology Versions
+### 모든 의사결정 완료
 
-- [ ] Every technology choice includes a specific version number
-- [ ] Version numbers are current (verified via WebSearch, not hardcoded)
-- [ ] Compatible versions selected (e.g., Node.js version supports chosen packages)
-- [ ] Verification dates noted for version checks
+- [ ] 모든 중요한 의사결정 카테고리가 해결됨
+- [ ] 모든 중요한 의사결정 카테고리 처리됨
+- [ ] "TBD", "[choose]" 또는 "{TODO}"와 같은 플레이스홀더 텍스트가 남아있지 않음
+- [ ] 선택적 의사결정이 해결되거나 근거와 함께 명시적으로 연기됨
 
-### Version Verification Process
+### 의사결정 커버리지
 
-- [ ] WebSearch used during workflow to verify current versions
-- [ ] No hardcoded versions from decision catalog trusted without verification
-- [ ] LTS vs. latest versions considered and documented
-- [ ] Breaking changes between versions noted if relevant
-
----
-
-## 3. Starter Template Integration (if applicable)
-
-### Template Selection
-
-- [ ] Starter template chosen (or "from scratch" decision documented)
-- [ ] Project initialization command documented with exact flags
-- [ ] Starter template version is current and specified
-- [ ] Command search term provided for verification
-
-### Starter-Provided Decisions
-
-- [ ] Decisions provided by starter marked as "PROVIDED BY STARTER"
-- [ ] List of what starter provides is complete
-- [ ] Remaining decisions (not covered by starter) clearly identified
-- [ ] No duplicate decisions that starter already makes
+- [ ] 데이터 지속성 접근 방식 결정됨
+- [ ] API 패턴 선택됨
+- [ ] 인증/권한 부여 전략 정의됨
+- [ ] 배포 대상 선택됨
+- [ ] 모든 기능 요구사항에 아키텍처 지원이 있음
 
 ---
 
-## 4. Novel Pattern Design (if applicable)
+## 2. 버전 명시성
 
-### Pattern Detection
+### 기술 버전
 
-- [ ] All unique/novel concepts from PRD identified
-- [ ] Patterns that don't have standard solutions documented
-- [ ] Multi-epic workflows requiring custom design captured
+- [ ] 모든 기술 선택에 특정 버전 번호가 포함됨
+- [ ] 버전 번호가 최신임(하드코딩이 아닌 WebSearch를 통해 확인됨)
+- [ ] 호환되는 버전 선택됨(예: Node.js 버전이 선택한 패키지를 지원함)
+- [ ] 버전 확인을 위한 검증 날짜 기록됨
 
-### Pattern Documentation Quality
+### 버전 검증 프로세스
 
-- [ ] Pattern name and purpose clearly defined
-- [ ] Component interactions specified
-- [ ] Data flow documented (with sequence diagrams if complex)
-- [ ] Implementation guide provided for agents
-- [ ] Edge cases and failure modes considered
-- [ ] States and transitions clearly defined
-
-### Pattern Implementability
-
-- [ ] Pattern is implementable by AI agents with provided guidance
-- [ ] No ambiguous decisions that could be interpreted differently
-- [ ] Clear boundaries between components
-- [ ] Explicit integration points with standard patterns
+- [ ] 워크플로우 중 현재 버전을 확인하기 위해 WebSearch 사용됨
+- [ ] 검증 없이 의사결정 카탈로그의 하드코딩된 버전을 신뢰하지 않음
+- [ ] LTS vs 최신 버전이 고려되고 문서화됨
+- [ ] 관련된 경우 버전 간의 주요 변경 사항이 기록됨
 
 ---
 
-## 5. Implementation Patterns
+## 3. 스타터 템플릿 통합 (해당하는 경우)
 
-### Pattern Categories Coverage
+### 템플릿 선택
 
-- [ ] **Naming Patterns**: API routes, database tables, components, files
-- [ ] **Structure Patterns**: Test organization, component organization, shared utilities
-- [ ] **Format Patterns**: API responses, error formats, date handling
-- [ ] **Communication Patterns**: Events, state updates, inter-component messaging
-- [ ] **Lifecycle Patterns**: Loading states, error recovery, retry logic
-- [ ] **Location Patterns**: URL structure, asset organization, config placement
-- [ ] **Consistency Patterns**: UI date formats, logging, user-facing errors
+- [ ] 스타터 템플릿 선택됨(또는 "처음부터" 의사결정이 문서화됨)
+- [ ] 정확한 플래그를 포함한 프로젝트 초기화 명령이 문서화됨
+- [ ] 스타터 템플릿 버전이 최신이고 지정됨
+- [ ] 확인을 위한 명령 검색어가 제공됨
 
-### Pattern Quality
+### 스타터가 제공하는 의사결정
 
-- [ ] Each pattern has concrete examples
-- [ ] Conventions are unambiguous (agents can't interpret differently)
-- [ ] Patterns cover all technologies in the stack
-- [ ] No gaps where agents would have to guess
-- [ ] Implementation patterns don't conflict with each other
+- [ ] 스타터가 제공하는 의사결정이 "스타터가 제공"으로 표시됨
+- [ ] 스타터가 제공하는 것의 목록이 완전함
+- [ ] 나머지 의사결정(스타터가 다루지 않음)이 명확히 식별됨
+- [ ] 스타터가 이미 하는 중복 의사결정이 없음
 
 ---
 
-## 6. Technology Compatibility
+## 4. 신규 패턴 디자인 (해당하는 경우)
 
-### Stack Coherence
+### 패턴 감지
 
-- [ ] Database choice compatible with ORM choice
-- [ ] Frontend framework compatible with deployment target
-- [ ] Authentication solution works with chosen frontend/backend
-- [ ] All API patterns consistent (not mixing REST and GraphQL for same data)
-- [ ] Starter template compatible with additional choices
+- [ ] PRD의 모든 고유/신규 개념이 식별됨
+- [ ] 표준 솔루션이 없는 패턴이 문서화됨
+- [ ] 사용자 정의 디자인이 필요한 다중 에픽 워크플로우가 캡처됨
 
-### Integration Compatibility
+### 패턴 문서화 품질
 
-- [ ] Third-party services compatible with chosen stack
-- [ ] Real-time solutions (if any) work with deployment target
-- [ ] File storage solution integrates with framework
-- [ ] Background job system compatible with infrastructure
+- [ ] 패턴 이름과 목적이 명확히 정의됨
+- [ ] 컴포넌트 상호작용이 지정됨
+- [ ] 데이터 흐름이 문서화됨(복잡한 경우 시퀀스 다이어그램 포함)
+- [ ] 에이전트를 위한 구현 가이드가 제공됨
+- [ ] 엣지 케이스 및 실패 모드가 고려됨
+- [ ] 상태 및 전환이 명확히 정의됨
 
----
+### 패턴 구현 가능성
 
-## 7. Document Structure
-
-### Required Sections Present
-
-- [ ] Executive summary exists (2-3 sentences maximum)
-- [ ] Project initialization section (if using starter template)
-- [ ] Decision summary table with ALL required columns:
-  - Category
-  - Decision
-  - Version
-  - Rationale
-- [ ] Project structure section shows complete source tree
-- [ ] Implementation patterns section comprehensive
-- [ ] Novel patterns section (if applicable)
-
-### Document Quality
-
-- [ ] Source tree reflects actual technology decisions (not generic)
-- [ ] Technical language used consistently
-- [ ] Tables used instead of prose where appropriate
-- [ ] No unnecessary explanations or justifications
-- [ ] Focused on WHAT and HOW, not WHY (rationale is brief)
+- [ ] 제공된 지침으로 AI 에이전트가 패턴을 구현할 수 있음
+- [ ] 다르게 해석될 수 있는 모호한 의사결정이 없음
+- [ ] 컴포넌트 간의 명확한 경계
+- [ ] 표준 패턴과의 명시적 통합 포인트
 
 ---
 
-## 8. AI Agent Clarity
+## 5. 구현 패턴
 
-### Clear Guidance for Agents
+### 패턴 카테고리 커버리지
 
-- [ ] No ambiguous decisions that agents could interpret differently
-- [ ] Clear boundaries between components/modules
-- [ ] Explicit file organization patterns
-- [ ] Defined patterns for common operations (CRUD, auth checks, etc.)
-- [ ] Novel patterns have clear implementation guidance
-- [ ] Document provides clear constraints for agents
-- [ ] No conflicting guidance present
+- [ ] **명명 패턴**: API 경로, 데이터베이스 테이블, 컴포넌트, 파일
+- [ ] **구조 패턴**: 테스트 조직, 컴포넌트 조직, 공유 유틸리티
+- [ ] **형식 패턴**: API 응답, 오류 형식, 날짜 처리
+- [ ] **통신 패턴**: 이벤트, 상태 업데이트, 컴포넌트 간 메시징
+- [ ] **수명 주기 패턴**: 로딩 상태, 오류 복구, 재시도 로직
+- [ ] **위치 패턴**: URL 구조, 자산 조직, 구성 배치
+- [ ] **일관성 패턴**: UI 날짜 형식, 로깅, 사용자 대면 오류
 
-### Implementation Readiness
+### 패턴 품질
 
-- [ ] Sufficient detail for agents to implement without guessing
-- [ ] File paths and naming conventions explicit
-- [ ] Integration points clearly defined
-- [ ] Error handling patterns specified
-- [ ] Testing patterns documented
-
----
-
-## 9. Practical Considerations
-
-### Technology Viability
-
-- [ ] Chosen stack has good documentation and community support
-- [ ] Development environment can be set up with specified versions
-- [ ] No experimental or alpha technologies for critical path
-- [ ] Deployment target supports all chosen technologies
-- [ ] Starter template (if used) is stable and well-maintained
-
-### Scalability
-
-- [ ] Architecture can handle expected user load
-- [ ] Data model supports expected growth
-- [ ] Caching strategy defined if performance is critical
-- [ ] Background job processing defined if async work needed
-- [ ] Novel patterns scalable for production use
+- [ ] 각 패턴에 구체적인 예시가 있음
+- [ ] 규칙이 명확함(에이전트가 다르게 해석할 수 없음)
+- [ ] 패턴이 스택의 모든 기술을 다룸
+- [ ] 에이전트가 추측해야 하는 격차가 없음
+- [ ] 구현 패턴이 서로 충돌하지 않음
 
 ---
 
-## 10. Common Issues to Check
+## 6. 기술 호환성
 
-### Beginner Protection
+### 스택 일관성
 
-- [ ] Not overengineered for actual requirements
-- [ ] Standard patterns used where possible (starter templates leveraged)
-- [ ] Complex technologies justified by specific needs
-- [ ] Maintenance complexity appropriate for team size
+- [ ] 데이터베이스 선택이 ORM 선택과 호환됨
+- [ ] 프론트엔드 프레임워크가 배포 대상과 호환됨
+- [ ] 인증 솔루션이 선택한 프론트엔드/백엔드와 작동함
+- [ ] 모든 API 패턴이 일관됨(동일한 데이터에 대해 REST와 GraphQL을 혼합하지 않음)
+- [ ] 스타터 템플릿이 추가 선택과 호환됨
 
-### Expert Validation
+### 통합 호환성
 
-- [ ] No obvious anti-patterns present
-- [ ] Performance bottlenecks addressed
-- [ ] Security best practices followed
-- [ ] Future migration paths not blocked
-- [ ] Novel patterns follow architectural principles
-
----
-
-## Validation Summary
-
-### Document Quality Score
-
-- Architecture Completeness: [Complete / Mostly Complete / Partial / Incomplete]
-- Version Specificity: [All Verified / Most Verified / Some Missing / Many Missing]
-- Pattern Clarity: [Crystal Clear / Clear / Somewhat Ambiguous / Ambiguous]
-- AI Agent Readiness: [Ready / Mostly Ready / Needs Work / Not Ready]
-
-### Critical Issues Found
-
-<!-- replace with list of critical issues found, or N/A -->
-
-### Recommended Actions Before Implementation
-
-<!-- replace with list of recommended actions, or N/A -->
+- [ ] 타사 서비스가 선택한 스택과 호환됨
+- [ ] 실시간 솔루션(있는 경우)이 배포 대상과 작동함
+- [ ] 파일 저장소 솔루션이 프레임워크와 통합됨
+- [ ] 백그라운드 작업 시스템이 인프라와 호환됨
 
 ---
 
-**Next Step**: Run the **solutioning-gate-check** workflow to validate alignment between PRD, UX, Architecture, and Stories before beginning implementation.
+## 7. 문서 구조
+
+### 필수 섹션 존재
+
+- [ ] 개요가 존재함(최대 2-3문장)
+- [ ] 프로젝트 초기화 섹션(스타터 템플릿 사용하는 경우)
+- [ ] 모든 필수 컬럼이 있는 의사결정 요약 표:
+  - 카테고리
+  - 의사결정
+  - 버전
+  - 근거
+- [ ] 프로젝트 구조 섹션이 완전한 소스 트리를 보여줌
+- [ ] 구현 패턴 섹션이 포괄적임
+- [ ] 신규 패턴 섹션(해당하는 경우)
+
+### 문서 품질
+
+- [ ] 소스 트리가 실제 기술 의사결정을 반영함(일반적이지 않음)
+- [ ] 기술 언어가 일관되게 사용됨
+- [ ] 적절한 경우 산문 대신 표가 사용됨
+- [ ] 불필요한 설명이나 정당화가 없음
+- [ ] 무엇을 어떻게 하는지에 초점(근거는 간략함)
 
 ---
 
-_This checklist validates architecture document quality only. Use solutioning-gate-check for comprehensive readiness validation._
+## 8. AI 에이전트 명확성
+
+### 에이전트를 위한 명확한 지침
+
+- [ ] 에이전트가 다르게 해석할 수 있는 모호한 의사결정이 없음
+- [ ] 컴포넌트/모듈 간의 명확한 경계
+- [ ] 명시적 파일 조직 패턴
+- [ ] 일반적인 작업에 대한 정의된 패턴(CRUD, 인증 확인 등)
+- [ ] 신규 패턴에 명확한 구현 지침이 있음
+- [ ] 문서가 에이전트에게 명확한 제약을 제공함
+- [ ] 충돌하는 지침이 없음
+
+### 구현 준비
+
+- [ ] 에이전트가 추측 없이 구현하기에 충분한 세부 정보
+- [ ] 파일 경로 및 명명 규칙이 명시적임
+- [ ] 통합 포인트가 명확히 정의됨
+- [ ] 오류 처리 패턴이 지정됨
+- [ ] 테스팅 패턴이 문서화됨
+
+---
+
+## 9. 실용적 고려사항
+
+### 기술 실행 가능성
+
+- [ ] 선택한 스택에 좋은 문서와 커뮤니티 지원이 있음
+- [ ] 지정된 버전으로 개발 환경을 설정할 수 있음
+- [ ] 중요 경로에 실험적이거나 알파 기술이 없음
+- [ ] 배포 대상이 선택한 모든 기술을 지원함
+- [ ] 스타터 템플릿(사용하는 경우)이 안정적이고 잘 유지관리됨
+
+### 확장성
+
+- [ ] 아키텍처가 예상 사용자 부하를 처리할 수 있음
+- [ ] 데이터 모델이 예상 성장을 지원함
+- [ ] 성능이 중요한 경우 캐싱 전략이 정의됨
+- [ ] 비동기 작업이 필요한 경우 백그라운드 작업 처리가 정의됨
+- [ ] 신규 패턴이 프로덕션 사용에 확장 가능함
+
+---
+
+## 10. 확인할 일반적인 문제
+
+### 초보자 보호
+
+- [ ] 실제 요구사항에 비해 과도하게 엔지니어링되지 않음
+- [ ] 가능한 경우 표준 패턴 사용(스타터 템플릿 활용)
+- [ ] 복잡한 기술이 특정 필요에 의해 정당화됨
+- [ ] 유지 관리 복잡성이 팀 규모에 적합함
+
+### 전문가 검증
+
+- [ ] 명백한 안티패턴이 없음
+- [ ] 성능 병목 현상이 해결됨
+- [ ] 보안 모범 사례가 준수됨
+- [ ] 향후 마이그레이션 경로가 차단되지 않음
+- [ ] 신규 패턴이 아키텍처 원칙을 따름
+
+---
+
+## 검증 요약
+
+### 문서 품질 점수
+
+- 아키텍처 완전성: [완전 / 대부분 완전 / 부분적 / 불완전]
+- 버전 명시성: [모두 확인됨 / 대부분 확인됨 / 일부 누락 / 많이 누락]
+- 패턴 명확성: [매우 명확 / 명확 / 다소 모호 / 모호]
+- AI 에이전트 준비: [준비됨 / 대부분 준비됨 / 작업 필요 / 준비 안됨]
+
+### 발견된 중요한 문제
+
+<!-- 발견된 중요한 문제 목록으로 교체하거나 N/A -->
+
+### 구현 전 권장 조치
+
+<!-- 권장 조치 목록으로 교체하거나 N/A -->
+
+---
+
+**다음 단계**: 구현을 시작하기 전에 PRD, UX, 아키텍처 및 스토리 간의 정렬을 검증하기 위해 **solutioning-gate-check** 워크플로우를 실행하세요.
+
+---
+
+_이 체크리스트는 아키텍처 문서 품질만 검증합니다. 포괄적인 준비 검증을 위해 solutioning-gate-check를 사용하세요._

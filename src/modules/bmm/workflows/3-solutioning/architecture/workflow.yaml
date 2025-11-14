@@ -1,6 +1,6 @@
 # Architecture Workflow Configuration
 name: architecture
-description: "Collaborative architectural decision facilitation for AI-agent consistency. Replaces template-driven architecture with intelligent, adaptive conversation that produces a decision-focused architecture document optimized for preventing agent conflicts."
+description: "AI 에이전트 일관성을 위한 협업 아키텍처 의사결정 촉진. 템플릿 기반 아키텍처를 지능형 적응형 대화로 대체하여 에이전트 충돌을 방지하도록 최적화된 의사결정 중심 아키텍처 문서를 생성합니다."
 author: "BMad"
 
 # Critical variables
@@ -46,7 +46,7 @@ standalone: true
 # Web bundle configuration for standalone deployment
 web_bundle:
   name: "architecture"
-  description: "Collaborative architectural decision facilitation for AI-agent consistency. Replaces template-driven architecture with intelligent, adaptive conversation that produces a decision-focused architecture document optimized for preventing agent conflicts."
+  description: "AI 에이전트 일관성을 위한 협업 아키텍처 의사결정 촉진. 템플릿 기반 아키텍처를 지능형 적응형 대화로 대체하여 에이전트 충돌을 방지하도록 최적화된 의사결정 중심 아키텍처 문서를 생성합니다."
   author: "BMad"
 
   # Core workflow files ({bmad_folder}/-relative paths)
