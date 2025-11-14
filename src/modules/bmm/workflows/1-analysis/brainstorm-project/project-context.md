@@ -1,25 +1,25 @@
-# Project Brainstorming Context
+# 프로젝트 브레인스토밍 맥락
 
-This context guide provides project-specific considerations for brainstorming sessions focused on software and product development.
+이 맥락 가이드는 소프트웨어 및 제품 개발에 초점을 맞춘 브레인스토밍 세션에 대한 프로젝트별 고려사항을 제공합니다.
 
-## Session Focus Areas
+## 세션 집중 영역
 
-When brainstorming for projects, consider exploring:
+프로젝트에 대한 브레인스토밍 시 다음을 탐색하는 것을 고려하세요:
 
-- **User Problems and Pain Points** - What challenges do users face?
-- **Feature Ideas and Capabilities** - What could the product do?
-- **Technical Approaches** - How might we build it?
-- **User Experience** - How will users interact with it?
-- **Business Model and Value** - How does it create value?
-- **Market Differentiation** - What makes it unique?
-- **Technical Risks and Challenges** - What could go wrong?
-- **Success Metrics** - How will we measure success?
+- **사용자 문제 및 고충점** - 사용자가 직면하는 과제는 무엇인가?
+- **기능 아이디어 및 역량** - 제품이 무엇을 할 수 있는가?
+- **기술적 접근 방식** - 어떻게 구축할 수 있는가?
+- **사용자 경험** - 사용자가 어떻게 상호작용할 것인가?
+- **비즈니스 모델 및 가치** - 어떻게 가치를 창출하는가?
+- **시장 차별화** - 무엇이 독특하게 만드는가?
+- **기술적 리스크 및 과제** - 무엇이 잘못될 수 있는가?
+- **성공 지표** - 성공을 어떻게 측정할 것인가?
 
-## Integration with Project Workflow
+## 프로젝트 워크플로우와의 통합
 
-Brainstorming sessions typically feed into:
+브레인스토밍 세션은 일반적으로 다음으로 이어집니다:
 
-- **Product Briefs** - Initial product vision and strategy
-- **PRDs** - Detailed requirements documents
-- **Technical Specifications** - Architecture and implementation plans
-- **Research Activities** - Areas requiring further investigation
+- **제품 브리프** - 초기 제품 비전 및 전략
+- **PRD** - 상세 요구사항 문서
+- **기술 사양** - 아키텍처 및 구현 계획
+- **연구 활동** - 추가 조사가 필요한 영역

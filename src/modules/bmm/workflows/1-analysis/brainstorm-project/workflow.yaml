@@ -1,6 +1,6 @@
-# Brainstorm Project Workflow Configuration
+# 프로젝트 브레인스토밍 워크플로우 설정
 name: "brainstorm-project"
-description: "Facilitate project brainstorming sessions by orchestrating the CIS brainstorming workflow with project-specific context and guidance."
+description: "프로젝트별 맥락과 가이드를 제공하여 CIS 브레인스토밍 워크플로우를 조율하고 프로젝트 브레인스토밍 세션을 촉진합니다."
 author: "BMad"
 
 # Critical variables from config
@@ -27,7 +27,7 @@ standalone: true
 
 web_bundle:
   name: "brainstorm-project"
-  description: "Facilitate project brainstorming sessions by orchestrating the CIS brainstorming workflow with project-specific context and guidance."
+  description: "프로젝트별 맥락과 가이드를 제공하여 CIS 브레인스토밍 워크플로우를 조율하고 프로젝트 브레인스토밍 세션을 촉진합니다."
   author: "BMad"
   instructions: "{bmad_folder}/bmm/workflows/1-analysis/brainstorm-project/instructions.md"
   template: false
