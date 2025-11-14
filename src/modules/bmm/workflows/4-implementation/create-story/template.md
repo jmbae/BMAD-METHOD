@@ -10,7 +10,7 @@ so that {{benefit}}.
 
 ## Acceptance Criteria
 
-1. [Add acceptance criteria from epics/PRD]
+1. [에픽/PRD에서 수락 기준 추가]
 
 ## Tasks / Subtasks
 
@@ -21,24 +21,24 @@ so that {{benefit}}.
 
 ## Dev Notes
 
-- Relevant architecture patterns and constraints
-- Source tree components to touch
-- Testing standards summary
+- 관련 아키텍처 패턴 및 제약 사항
+- 수정할 소스 트리 컴포넌트
+- 테스트 표준 요약
 
 ### Project Structure Notes
 
-- Alignment with unified project structure (paths, modules, naming)
-- Detected conflicts or variances (with rationale)
+- unified project structure와의 정렬 (경로, 모듈, 명명)
+- 감지된 충돌 또는 차이 (근거 포함)
 
 ### References
 
-- Cite all technical details with source paths and sections, e.g. [Source: docs/<file>.md#Section]
+- 소스 경로 및 섹션으로 모든 기술적 세부사항 인용, 예: [Source: docs/<file>.md#Section]
 
 ## Dev Agent Record
 
 ### Context Reference
 
-<!-- Path(s) to story context XML will be added here by context workflow -->
+<!-- 스토리 컨텍스트 XML에 대한 경로가 컨텍스트 워크플로우에 의해 여기에 추가됩니다 -->
 
 ### Agent Model Used
 
