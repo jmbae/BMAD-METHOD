@@ -1,6 +1,6 @@
 # Epic and Story Decomposition Workflow
 name: create-epics-and-stories
-description: "Transform PRD requirements into bite-sized stories organized in epics for 200k context dev agents"
+description: "PRD 요구사항을 에픽으로 구성된 작은 스토리로 변환 (200k 컨텍스트 개발 에이전트용)"
 author: "BMad"
 
 # Critical variables from config
@@ -46,7 +46,7 @@ standalone: true
 
 web_bundle:
   name: "create-epics-and-stories"
-  description: "Transform PRD requirements into bite-sized stories organized in epics for 200k context dev agents"
+  description: "PRD 요구사항을 에픽으로 구성된 작은 스토리로 변환 (200k 컨텍스트 개발 에이전트용)"
   author: "BMad"
   instructions: "{bmad_folder}/bmm/workflows/2-plan-workflows/prd/create-epics-and-stories/instructions.md"
   template: "{bmad_folder}/bmm/workflows/2-plan-workflows/prd/create-epics-and-stories/epics-template.md"
