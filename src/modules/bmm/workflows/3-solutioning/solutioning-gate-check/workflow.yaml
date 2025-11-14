@@ -1,6 +1,6 @@
-# Implementation Ready Check - Workflow Configuration
+# 구현 준비 확인 - 워크플로우 구성
 name: solutioning-gate-check
-description: "Systematically validate that all planning and solutioning phases are complete and properly aligned before transitioning to Phase 4 implementation. Ensures PRD, architecture, and stories are cohesive with no gaps or contradictions."
+description: "4단계 구현으로 전환하기 전에 모든 기획 및 솔루션 작업 단계가 완료되고 올바르게 정렬되었는지 체계적으로 검증합니다. PRD, 아키텍처 및 스토리가 격차나 모순 없이 일관성을 갖추도록 보장합니다."
 author: "BMad Builder"
 
 # Critical variables from config

@@ -1,217 +1,217 @@
-# Implementation Ready Check - Workflow Instructions
+# 구현 준비 확인 - 워크플로우 지침
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project-root}/{bmad_folder}/bmm/workflows/3-solutioning/solutioning-gate-check/workflow.yaml</critical>
-<critical>Communicate all findings and analysis in {communication_language} throughout the assessment</critical>
-<critical>Input documents specified in workflow.yaml input_file_patterns - workflow engine handles fuzzy matching, whole vs sharded document discovery automatically</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>이미 로드하고 처리했어야 합니다: {project-root}/{bmad_folder}/bmm/workflows/3-solutioning/solutioning-gate-check/workflow.yaml</critical>
+<critical>모든 발견 사항과 분석을 평가 전반에 걸쳐 {communication_language}로 전달하세요</critical>
+<critical>입력 문서는 workflow.yaml의 input_file_patterns에 지정됨 - 워크플로우 엔진이 퍼지 매칭, 전체 문서 vs 샤딩 문서 검색을 자동으로 처리합니다</critical>
 
 <workflow>
 
-<step n="0" goal="Validate workflow readiness" tag="workflow-status">
-<action>Check if {workflow_status_file} exists</action>
+<step n="0" goal="워크플로우 준비 상태 검증" tag="workflow-status">
+<action>{workflow_status_file}이 존재하는지 확인</action>
 
-<check if="status file not found">
-  <output>No workflow status file found. Implementation Ready Check can run standalone or as part of BMM workflow path.</output>
-  <output>**Recommended:** Run `workflow-init` first for project context tracking and workflow sequencing.</output>
-  <ask>Continue in standalone mode or exit to run workflow-init? (continue/exit)</ask>
+<check if="상태 파일을 찾을 수 없음">
+  <output>워크플로우 상태 파일을 찾을 수 없습니다. 구현 준비 확인은 독립 실행 모드 또는 BMM 워크플로우 경로의 일부로 실행할 수 있습니다.</output>
+  <output>**권장:** 프로젝트 컨텍스트 추적 및 워크플로우 시퀀싱을 위해 먼저 `workflow-init`을 실행하세요.</output>
+  <ask>독립 실행 모드로 계속하거나 종료하여 workflow-init을 실행하시겠습니까? (continue/exit)</ask>
   <check if="continue">
-    <action>Set standalone_mode = true</action>
+    <action>standalone_mode = true로 설정</action>
   </check>
   <check if="exit">
-    <action>Exit workflow</action>
+    <action>워크플로우 종료</action>
   </check>
 </check>
 
-<check if="status file found">
-  <action>Load the FULL file:  {workflow_status_file}</action>
-  <action>Parse workflow_status section</action>
-  <action>Check status of "solutioning-gate-check" workflow</action>
-  <action>Get {selected_track} (quick-flow, bmad-method, or enterprise-bmad-method)</action>
-  <action>Find first non-completed workflow (next expected workflow)</action>
+<check if="상태 파일 발견">
+  <action>전체 파일 로드:  {workflow_status_file}</action>
+  <action>workflow_status 섹션 파싱</action>
+  <action>"solutioning-gate-check" 워크플로우 상태 확인</action>
+  <action>{selected_track} 가져오기 (quick-flow, bmad-method 또는 enterprise-bmad-method)</action>
+  <action>완료되지 않은 첫 번째 워크플로우 찾기(다음 예상 워크플로우)</action>
 
-<action>Based on the selected_track, understand what artifacts should exist: - quick-flow: Tech spec and simple stories in an epic only (no PRD, minimal solutioning) - bmad-method and enterprise-bmad-method: PRD, tech spec, epics/stories, architecture, possible UX artifacts</action>
+<action>selected_track을 기반으로 어떤 아티팩트가 존재해야 하는지 이해: - quick-flow: 기술 사양 및 에픽 내 간단한 스토리만 (PRD 없음, 최소 솔루션 작업) - bmad-method 및 enterprise-bmad-method: PRD, 기술 사양, 에픽/스토리, 아키텍처, 가능한 UX 아티팩트</action>
 
-  <check if="solutioning-gate-check status is file path (already completed)">
-    <output>⚠️ Gate check already completed: {{solutioning-gate-check status}}</output>
-    <ask>Re-running will create a new validation report. Continue? (y/n)</ask>
+  <check if="solutioning-gate-check 상태가 파일 경로임(이미 완료됨)">
+    <output>⚠️ 게이트 체크가 이미 완료됨: {{solutioning-gate-check status}}</output>
+    <ask>재실행하면 새 검증 보고서를 생성합니다. 계속하시겠습니까? (y/n)</ask>
     <check if="n">
-      <output>Exiting. Use workflow-status to see your next step.</output>
-      <action>Exit workflow</action>
+      <output>종료합니다. workflow-status를 사용하여 다음 단계를 확인하세요.</output>
+      <action>워크플로우 종료</action>
     </check>
   </check>
 
-  <check if="solutioning-gate-check is not the next expected workflow">
-    <output>⚠️ Next expected workflow: {{next_workflow}}. Gate check is out of sequence.</output>
-    <ask>Continue with gate check anyway? (y/n)</ask>
+  <check if="solutioning-gate-check가 다음 예상 워크플로우가 아님">
+    <output>⚠️ 다음 예상 워크플로우: {{next_workflow}}. 게이트 체크가 순서를 벗어났습니다.</output>
+    <ask>그래도 게이트 체크를 계속하시겠습니까? (y/n)</ask>
     <check if="n">
-      <output>Exiting. Run {{next_workflow}} instead.</output>
-      <action>Exit workflow</action>
+      <output>종료합니다. 대신 {{next_workflow}}를 실행하세요.</output>
+      <action>워크플로우 종료</action>
     </check>
   </check>
 
-<action>Set standalone_mode = false</action>
+<action>standalone_mode = false로 설정</action>
 </check>
 
 <template-output>project_context</template-output>
 </step>
 
-<step n="1" goal="Discover and inventory project artifacts">
-<action>Search the {output_folder} for relevant planning and solutioning documents</action>
+<step n="1" goal="프로젝트 아티팩트 검색 및 목록 작성">
+<action>{output_folder}에서 관련 기획 및 솔루션 작업 문서 검색</action>
 
-<action>Locate:
+<action>다음을 찾기:
 
-- Product Requirements Document (PRD)
-- Architecture
-- Epic and story breakdowns
-- UX Design artifacts if the active path includes UX workflow
-- Any supplementary planning documents
+- 제품 요구사항 문서 (PRD)
+- 아키텍처
+- 에픽 및 스토리 분석
+- 활성 경로에 UX 워크플로우가 포함된 경우 UX 디자인 아티팩트
+- 추가 기획 문서
   </action>
 
-<action>Create an inventory of found documents with:
+<action>다음을 포함하여 발견된 문서 목록 생성:
 
-- Document type and purpose
-- File path and last modified date
-- Brief description of what each contains
-- Any missing expected documents flagged as potential issues
+- 문서 유형 및 목적
+- 파일 경로 및 마지막 수정 날짜
+- 각 문서에 포함된 내용에 대한 간략한 설명
+- 누락된 예상 문서를 잠재적 문제로 플래그 지정
   </action>
 
 <template-output>document_inventory</template-output>
 </step>
 
-<step n="2" goal="Deep analysis of core planning documents">
-<action>Load and thoroughly analyze each discovered document to extract:
-  - Core requirements and success criteria
-  - Architectural decisions and constraints
-  - Technical implementation approaches
-  - User stories and acceptance criteria
-  - Dependencies and sequencing requirements
-  - Any assumptions or risks documented
+<step n="2" goal="핵심 기획 문서의 심층 분석">
+<action>각 발견된 문서를 로드하고 철저히 분석하여 다음을 추출:
+  - 핵심 요구사항 및 성공 기준
+  - 아키텍처 의사결정 및 제약
+  - 기술 구현 접근 방식
+  - 사용자 스토리 및 수락 기준
+  - 의존성 및 순서 지정 요구사항
+  - 문서화된 가정 또는 위험
 </action>
 
-<action>For PRD analysis, focus on:
+<action>PRD 분석의 경우 다음에 초점:
 
-- User requirements and use cases
-- Functional and non-functional requirements
-- Success metrics and acceptance criteria
-- Scope boundaries and explicitly excluded items
-- Priority levels for different features
+- 사용자 요구사항 및 사용 사례
+- 기능적 및 비기능적 요구사항
+- 성공 메트릭 및 수락 기준
+- 범위 경계 및 명시적으로 제외된 항목
+- 다양한 기능의 우선순위 수준
   </action>
 
-<action>For Architecture/Tech Spec analysis, focus on:
+<action>아키텍처/기술 사양 분석의 경우 다음에 초점:
 
-- System design decisions and rationale
-- Technology stack and framework choices
-- Integration points and APIs
-- Data models and storage decisions
-- Security and performance considerations
-- Any architectural constraints that might affect story implementation
+- 시스템 디자인 의사결정 및 근거
+- 기술 스택 및 프레임워크 선택
+- 통합 포인트 및 API
+- 데이터 모델 및 저장소 의사결정
+- 보안 및 성능 고려사항
+- 스토리 구현에 영향을 미칠 수 있는 아키텍처 제약
   </action>
 
-<action>For Epic/Story analysis, focus on:
+<action>에픽/스토리 분석의 경우 다음에 초점:
 
-- Coverage of PRD requirements
-- Story sequencing and dependencies
-- Acceptance criteria completeness
-- Technical tasks within stories
-- Estimated complexity and effort indicators
+- PRD 요구사항 커버리지
+- 스토리 순서 지정 및 의존성
+- 수락 기준 완전성
+- 스토리 내 기술 작업
+- 예상 복잡도 및 노력 지표
   </action>
 
 <template-output>document_analysis</template-output>
 </step>
 
-<step n="3" goal="Cross-reference validation and alignment check">
+<step n="3" goal="상호 참조 검증 및 정렬 확인">
 
-<action>PRD ↔ Architecture Alignment:
+<action>PRD ↔ 아키텍처 정렬:
 
-- Verify every PRD requirement has corresponding architectural support
-- Check that architectural decisions don't contradict PRD constraints
-- Identify any architectural additions beyond PRD scope (potential gold-plating)
-- Ensure non-functional requirements from PRD are addressed in architecture document
-- If using new architecture workflow: verify implementation patterns are defined
+- 모든 PRD 요구사항에 해당하는 아키텍처 지원이 있는지 확인
+- 아키텍처 의사결정이 PRD 제약과 모순되지 않는지 확인
+- PRD 범위를 벗어난 아키텍처 추가 식별(잠재적 골드 플레이팅)
+- PRD의 비기능적 요구사항이 아키텍처 문서에서 다뤄지는지 확인
+- 새로운 아키텍처 워크플로우를 사용하는 경우: 구현 패턴이 정의되어 있는지 확인
   </action>
 
-<action>PRD ↔ Stories Coverage:
+<action>PRD ↔ 스토리 커버리지:
 
-- Map each PRD requirement to implementing stories
-- Identify any PRD requirements without story coverage
-- Find stories that don't trace back to PRD requirements
-- Validate that story acceptance criteria align with PRD success criteria
+- 각 PRD 요구사항을 구현하는 스토리에 매핑
+- 스토리 커버리지가 없는 PRD 요구사항 식별
+- PRD 요구사항으로 역추적되지 않는 스토리 찾기
+- 스토리 수락 기준이 PRD 성공 기준과 일치하는지 검증
   </action>
 
-<action>Architecture ↔ Stories Implementation Check:
+<action>아키텍처 ↔ 스토리 구현 확인:
 
-- Verify architectural decisions are reflected in relevant stories
-- Check that story technical tasks align with architectural approach
-- Identify any stories that might violate architectural constraints
-- Ensure infrastructure and setup stories exist for architectural components
+- 아키텍처 의사결정이 관련 스토리에 반영되는지 확인
+- 스토리 기술 작업이 아키텍처 접근 방식과 일치하는지 확인
+- 아키텍처 제약을 위반할 수 있는 스토리 식별
+- 아키텍처 컴포넌트에 대한 인프라 및 설정 스토리가 존재하는지 확인
   </action>
 
 <template-output>alignment_validation</template-output>
 </step>
 
-<step n="4" goal="Gap and risk analysis">
-<action>Identify and categorize all gaps, risks, and potential issues discovered during validation</action>
+<step n="4" goal="격차 및 위험 분석">
+<action>검증 중 발견된 모든 격차, 위험 및 잠재적 문제를 식별하고 분류</action>
 
-<action>Check for Critical Gaps:
+<action>중요한 격차 확인:
 
-- Missing stories for core requirements
-- Unaddressed architectural concerns
-- Absent infrastructure or setup stories for greenfield projects
-- Missing error handling or edge case coverage
-- Security or compliance requirements not addressed
+- 핵심 요구사항에 대한 누락된 스토리
+- 다뤄지지 않은 아키텍처 관심사
+- 그린필드 프로젝트에 대한 인프라 또는 설정 스토리 부재
+- 누락된 오류 처리 또는 엣지 케이스 커버리지
+- 다뤄지지 않은 보안 또는 규정 준수 요구사항
   </action>
 
-<action>Identify Sequencing Issues:
+<action>순서 지정 문제 식별:
 
-- Dependencies not properly ordered
-- Stories that assume components not yet built
-- Parallel work that should be sequential
-- Missing prerequisite technical tasks
+- 의존성이 올바르게 정렬되지 않음
+- 아직 구축되지 않은 컴포넌트를 가정하는 스토리
+- 순차적이어야 하는 병렬 작업
+- 누락된 전제 조건 기술 작업
   </action>
 
-<action>Detect Potential Contradictions:
+<action>잠재적 모순 감지:
 
-- Conflicts between PRD and architecture approaches
-- Stories with conflicting technical approaches
-- Acceptance criteria that contradict requirements
-- Resource or technology conflicts
+- PRD와 아키텍처 접근 방식 간의 충돌
+- 충돌하는 기술 접근 방식을 가진 스토리
+- 요구사항과 모순되는 수락 기준
+- 리소스 또는 기술 충돌
   </action>
 
-<action>Find Gold-Plating and Scope Creep:
+<action>골드 플레이팅 및 범위 증가 찾기:
 
-- Features in architecture not required by PRD
-- Stories implementing beyond requirements
-- Technical complexity beyond project needs
-- Over-engineering indicators
+- PRD에서 요구하지 않는 아키텍처의 기능
+- 요구사항을 넘어 구현하는 스토리
+- 프로젝트 필요를 넘어선 기술 복잡성
+- 과도한 엔지니어링 지표
   </action>
 
-<action>Check Testability Review (if test-design exists in Phase 3):
+<action>테스트 가능성 검토 확인(3단계에 test-design이 있는 경우):
 
-**Note:** test-design is recommended for BMad Method, required for Enterprise Method
+**참고:** test-design은 BMad 메소드에 권장되고 엔터프라이즈 메소드에 필수입니다
 
-- Check if {output_folder}/test-design-system.md exists
-- If exists: Review testability assessment (Controllability, Observability, Reliability)
-- If testability concerns documented: Flag for gate decision
-- If missing AND track is Enterprise: Flag as CRITICAL gap
-- If missing AND track is Method: Note as recommendation (not blocker)
+- {output_folder}/test-design-system.md가 존재하는지 확인
+- 존재하는 경우: 테스트 가능성 평가 검토(제어 가능성, 관찰 가능성, 신뢰성)
+- 테스트 가능성 관심사가 문서화된 경우: 게이트 의사결정을 위해 플래그 지정
+- 누락되고 트랙이 엔터프라이즈인 경우: 중요한 격차로 플래그 지정
+- 누락되고 트랙이 메소드인 경우: 권장 사항으로 표시(차단기 아님)
   </action>
 
 <template-output>gap_risk_analysis</template-output>
 </step>
 
-<step n="5" goal="UX and special concerns validation" optional="true">
-  <check if="UX artifacts exist or UX workflow in active path">
-    <action>Review UX artifacts and validate integration:
-      - Check that UX requirements are reflected in PRD
-      - Verify stories include UX implementation tasks
-      - Ensure architecture supports UX requirements (performance, responsiveness)
-      - Identify any UX concerns not addressed in stories
+<step n="5" goal="UX 및 특별 관심사 검증" optional="true">
+  <check if="UX 아티팩트가 존재하거나 활성 경로에 UX 워크플로우가 있음">
+    <action>UX 아티팩트를 검토하고 통합을 검증:
+      - UX 요구사항이 PRD에 반영되는지 확인
+      - 스토리에 UX 구현 작업이 포함되는지 확인
+      - 아키텍처가 UX 요구사항(성능, 반응성)을 지원하는지 확인
+      - 스토리에서 다뤄지지 않은 UX 관심사 식별
     </action>
 
-    <action>Validate accessibility and usability coverage:
-      - Check for accessibility requirement coverage in stories
-      - Verify responsive design considerations if applicable
-      - Ensure user flow completeness across stories
+    <action>접근성 및 사용성 커버리지 검증:
+      - 스토리의 접근성 요구사항 커버리지 확인
+      - 해당하는 경우 반응형 디자인 고려사항 확인
+      - 스토리 전반에 걸친 사용자 흐름 완전성 확인
     </action>
 
   </check>
@@ -219,75 +219,75 @@
 <template-output>ux_validation</template-output>
 </step>
 
-<step n="6" goal="Generate comprehensive readiness assessment">
-<action>Compile all findings into a structured readiness report with:
-- Executive summary of readiness status
-- Project context and validation scope
-- Document inventory and coverage assessment
-- Detailed findings organized by severity (Critical, High, Medium, Low)
-- Specific recommendations for each issue
-- Overall readiness recommendation (Ready, Ready with Conditions, Not Ready)
+<step n="6" goal="포괄적인 준비 평가 생성">
+<action>다음을 포함하는 구조화된 준비 보고서로 모든 발견 사항 컴파일:
+- 준비 상태의 개요 요약
+- 프로젝트 컨텍스트 및 검증 범위
+- 문서 목록 및 커버리지 평가
+- 심각도별로 구성된 세부 발견 사항(중요, 높음, 중간, 낮음)
+- 각 문제에 대한 구체적인 권장 사항
+- 전체 준비 권장 사항(준비됨, 조건부 준비됨, 준비 안됨)
 </action>
 
-<action>Provide actionable next steps:
+<action>실행 가능한 다음 단계 제공:
 
-- List any critical issues that must be resolved
-- Suggest specific document updates needed
-- Recommend additional stories or tasks required
-- Propose sequencing adjustments if needed
+- 해결해야 하는 중요한 문제 나열
+- 필요한 구체적인 문서 업데이트 제안
+- 필요한 추가 스토리 또는 작업 권장
+- 필요한 경우 순서 조정 제안
   </action>
 
-<action>Include positive findings:
+<action>긍정적인 발견 사항 포함:
 
-- Highlight well-aligned areas
-- Note particularly thorough documentation
-- Recognize good architectural decisions
-- Commend comprehensive story coverage where found
+- 잘 정렬된 영역 강조
+- 특히 철저한 문서화 주목
+- 좋은 아키텍처 의사결정 인정
+- 발견된 포괄적인 스토리 커버리지 칭찬
   </action>
 
 <template-output>readiness_assessment</template-output>
 </step>
 
-<step n="7" goal="Update status and complete" tag="workflow-status">
+<step n="7" goal="상태 업데이트 및 완료" tag="workflow-status">
 <check if="standalone_mode != true">
-  <action>Load the FULL file: {workflow_status_file}</action>
-  <action>Find workflow_status key "solutioning-gate-check"</action>
-  <critical>ONLY write the file path as the status value - no other text, notes, or metadata</critical>
-  <action>Update workflow_status["solutioning-gate-check"] = "{output_folder}/bmm-readiness-assessment-{{date}}.md"</action>
-  <action>Save file, preserving ALL comments and structure including STATUS DEFINITIONS</action>
+  <action>전체 파일 로드: {workflow_status_file}</action>
+  <action>workflow_status 키 "solutioning-gate-check" 찾기</action>
+  <critical>상태 값으로 파일 경로만 작성 - 다른 텍스트, 메모 또는 메타데이터 없음</critical>
+  <action>workflow_status["solutioning-gate-check"] = "{output_folder}/bmm-readiness-assessment-{{date}}.md" 업데이트</action>
+  <action>상태 정의를 포함한 모든 주석 및 구조를 보존하며 파일 저장</action>
 
-<action>Find first non-completed workflow in workflow_status (next workflow to do)</action>
-<action>Determine next agent from path file based on next workflow</action>
+<action>workflow_status에서 완료되지 않은 첫 번째 워크플로우 찾기(다음에 할 워크플로우)</action>
+<action>다음 워크플로우를 기반으로 경로 파일에서 다음 에이전트 결정</action>
 </check>
 
-<output>**✅ Implementation Ready Check Complete!**
+<output>**✅ 구현 준비 확인 완료!**
 
-**Assessment Report:**
+**평가 보고서:**
 
-- Readiness assessment saved to: {output_folder}/bmm-readiness-assessment-{{date}}.md
+- 준비 평가가 다음에 저장됨: {output_folder}/bmm-readiness-assessment-{{date}}.md
 
 {{#if standalone_mode != true}}
-**Status Updated:**
+**상태 업데이트됨:**
 
-- Progress tracking updated: solutioning-gate-check marked complete
-- Next workflow: {{next_workflow}}
+- 진행 상황 추적 업데이트됨: solutioning-gate-check가 완료로 표시됨
+- 다음 워크플로우: {{next_workflow}}
   {{else}}
-  **Note:** Running in standalone mode (no progress tracking)
+  **참고:** 독립 실행 모드로 실행 중(진행 상황 추적 없음)
   {{/if}}
 
-**Next Steps:**
+**다음 단계:**
 
 {{#if standalone_mode != true}}
 
-- **Next workflow:** {{next_workflow}} ({{next_agent}} agent)
-- Review the assessment report and address any critical issues before proceeding
+- **다음 워크플로우:** {{next_workflow}} ({{next_agent}} 에이전트)
+- 진행하기 전에 평가 보고서를 검토하고 중요한 문제를 해결하세요
 
-Check status anytime with: `workflow-status`
+언제든지 `workflow-status`로 상태 확인
 {{else}}
-Since no workflow is in progress:
+워크플로우가 진행 중이 아니므로:
 
-- Refer to the BMM workflow guide if unsure what to do next
-- Or run `workflow-init` to create a workflow path and get guided next steps
+- 다음에 무엇을 해야 할지 확실하지 않은 경우 BMM 워크플로우 가이드를 참조하세요
+- 또는 `workflow-init`을 실행하여 워크플로우 경로를 생성하고 안내된 다음 단계를 받으세요
   {{/if}}
   </output>
 
