@@ -1,5 +1,5 @@
 name: dev-story
-description: "Execute a story by implementing tasks/subtasks, writing tests, validating, and updating the story file per acceptance criteria"
+description: "태스크/서브태스크를 구현하고 테스트를 작성하며 검증하고 수락 기준에 따라 스토리 파일을 업데이트하여 스토리를 실행합니다"
 author: "BMad"
 
 # Critical variables from config
