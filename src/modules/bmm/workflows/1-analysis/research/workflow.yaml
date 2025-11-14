@@ -1,6 +1,6 @@
 # Research Workflow - Multi-Type Research System
 name: research
-description: "Adaptive research workflow supporting multiple research types: market research, deep research prompt generation, technical/architecture evaluation, competitive intelligence, user research, and domain analysis"
+description: "여러 연구 유형을 지원하는 적응형 연구 워크플로우: 시장 조사, 심층 연구 프롬프트 생성, 기술/아키텍처 평가, 경쟁 인텔리전스, 사용자 연구 및 도메인 분석"
 author: "BMad"
 
 # Critical variables from config
@@ -45,7 +45,7 @@ standalone: true
 
 web_bundle:
   name: "research"
-  description: "Adaptive research workflow supporting multiple research types: market research, deep research prompt generation, technical/architecture evaluation, competitive intelligence, user research, and domain analysis"
+  description: "여러 연구 유형을 지원하는 적응형 연구 워크플로우: 시장 조사, 심층 연구 프롬프트 생성, 기술/아키텍처 평가, 경쟁 인텔리전스, 사용자 연구 및 도메인 분석"
   author: "BMad"
   instructions: "{bmad_folder}/bmm/workflows/1-analysis/research/instructions-router.md" # Router loads specific instruction sets
   validation: "{bmad_folder}/bmm/workflows/1-analysis/research/checklist.md"
