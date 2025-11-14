@@ -74,6 +74,7 @@ Priority 2로 계속 진행: BMM Analysis & Planning 워크플로우 34개 파�
 ## 🚀 빠른 진행 옵션
 
 ### 옵션 A: 전체 자동화 번역
+
 전체 372개 파일을 한 번에 번역하려면:
 
 ```
@@ -86,6 +87,7 @@ Priority 2로 계속 진행: BMM Analysis & Planning 워크플로우 34개 파�
 **단점**: 품질 검증에 시간 필요
 
 ### 옵션 B: 모듈별 순차 진행
+
 모듈 하나씩 완성도 높게 번역:
 
 ```
@@ -96,6 +98,7 @@ CIS 모듈 전체 (26개 파일) 번역해줘 - 에이전트, 워크플로우, �
 **단점**: 전체 완료까지 시간 소요
 
 ### 옵션 C: 점진적 우선순위 기반
+
 필요한 것부터 하나씩:
 
 ```
@@ -110,6 +113,7 @@ workflow-init, prd, architecture, dev-story 워크플로우만 먼저 번역해�
 ## 📊 모듈별 번역 명령어
 
 ### BMM 모듈 완성
+
 ```
 BMM 모듈 전체 워크플로우 번역해줘:
 - Analysis workflows (16 files)
@@ -121,6 +125,7 @@ BMM 모듈 전체 워크플로우 번역해줘:
 ```
 
 ### CIS 모듈 완성
+
 ```
 CIS (Creative Intelligence Suite) 모듈 전체 번역해줘:
 - 5개 에이전트
@@ -129,6 +134,7 @@ CIS (Creative Intelligence Suite) 모듈 전체 번역해줘:
 ```
 
 ### BMGD 모듈 완성
+
 ```
 BMGD (Game Development) 모듈 전체 번역해줘:
 - 4개 게임 에이전트
@@ -137,6 +143,7 @@ BMGD (Game Development) 모듈 전체 번역해줘:
 ```
 
 ### BMB 모듈 완성
+
 ```
 BMB (BMad Builder) 모듈 전체 번역해줘:
 - bmad-builder 에이전트
@@ -165,6 +172,7 @@ BMB (BMad Builder) 모듈 전체 번역해줘:
 ## 🔍 번역 품질 체크리스트
 
 각 번역 완료 후 확인:
+
 - [ ] YAML 파일이 유효한가? (`npm run validate:schemas`)
 - [ ] 기술 용어가 일관되게 번역되었는가?
 - [ ] 에이전트 페르소나가 자연스러운가?

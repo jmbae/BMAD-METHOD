@@ -9,6 +9,7 @@
 ## 📊 작업 개요
 
 ### 주요 성과
+
 ✅ **Upstream 병합 완료** - 253개 커밋 병합
 ✅ **구조 마이그레이션 완료** - v4 → v6 구조 전환
 ✅ **핵심 에이전트 한글화 완료** - 9개 에이전트 (Core + BMM)
@@ -16,6 +17,7 @@
 ✅ **번역 추적 시스템 구축** - 진행 상황 및 가이드 문서
 
 ### 통계
+
 - **병합된 커밋**: 253개
 - **번역 완료 파일**: 11개 (3%)
 - **남은 파일**: 371개 (97%)
@@ -29,6 +31,7 @@
 ### 구조적 변화
 
 #### 디렉토리 구조
+
 ```diff
 - bmad-core/                    # 삭제됨
 -   ├── agents/
@@ -53,6 +56,7 @@
 ```
 
 #### 문서 구조
+
 ```diff
 - docs/user-guide.md            # v4 단일 가이드
 - docs/core-architecture.md
@@ -76,6 +80,7 @@
 ### 기능 변화
 
 #### 새로운 v6 기능
+
 1. **🎨 에이전트 커스터마이징 시스템**
    - `bmad/_cfg/agents/` 폴더에 커스터마이징 파일
    - 이름, 역할, 성격 변경 가능
@@ -106,6 +111,7 @@
    - v6: 19개 에이전트 (BMM 12개 + 기타 7개)
 
 #### 제거된 v4 기능
+
 - `dist/` 폴더 자동 생성 → `npm run bundle`로 수동 생성
 - `expansion-packs/` 폴더 → 모듈 시스템으로 통합
 - `common/` 폴더 → 모듈별로 분산
@@ -115,12 +121,15 @@
 ## ✅ 완료된 번역 파일 (11개)
 
 ### 핵심 문서 (1개)
+
 1. `README.md` - 프로젝트 메인 소개
 
 ### Core 모듈 (1개)
+
 2. `src/core/agents/bmad-master.agent.yaml` - BMad Master
 
 ### BMM 에이전트 (8개)
+
 3. `src/modules/bmm/agents/analyst.agent.yaml` - Mary (비즈니스 분석가)
 4. `src/modules/bmm/agents/architect.agent.yaml` - Winston (아키텍트)
 5. `src/modules/bmm/agents/dev.agent.yaml` - Amelia (개발자)
@@ -131,6 +140,7 @@
 10. `src/modules/bmm/agents/ux-designer.agent.yaml` - Sally (UX 디자이너)
 
 ### 제거된 파일 (2개)
+
 11. `HOW_TO_USE.md` - v6에서 모듈별 문서로 분산
 12. `claude.md` (소문자) - v6에서 제거
 
@@ -139,12 +149,14 @@
 ## 🎯 현재 사용 가능 상태
 
 ### ✅ 한글로 사용 가능한 기능
+
 - 모든 BMM 에이전트 로드 및 대화
 - BMad Master를 통한 전체 시스템 탐색
 - 에이전트 메뉴 (한글 설명)
 - 기본적인 워크플로우 이해
 
 ### ⚠️ 아직 영어인 부분
+
 - 워크플로우 세부 instructions
 - 템플릿 내용
 - 체크리스트
@@ -152,7 +164,9 @@
 - 상세 문서
 
 ### 💡 권장 사용 방법
+
 현재 상태에서도 충분히 사용 가능합니다:
+
 1. 한글로 번역된 에이전트와 대화
 2. 워크플로우는 영어 instructions로 진행
 3. 필요한 워크플로우가 있다면 개별 번역 요청
@@ -162,11 +176,13 @@
 ## 💾 백업 및 안전장치
 
 ### 백업 브랜치
+
 - **브랜치명**: `translation-v4-backup`
 - **내용**: v4.41.0 한글 번역 20개 파일 전체
 - **매핑 문서**: `TRANSLATION_MAPPING_V4.md`
 
 ### 롤백 방법
+
 ```bash
 # v4로 완전 복구
 git checkout translation-v4-backup
@@ -179,6 +195,7 @@ git reset --hard 012515b2  # v6 병합 전으로
 ```
 
 ### 현재 브랜치 상태
+
 ```
 main (현재 브랜치)
 ├─ 012515b2: Translation mapping 생성
@@ -194,6 +211,7 @@ main (현재 브랜치)
 ## 📋 체크리스트
 
 ### 완료된 작업
+
 - [x] v4 번역 백업 생성
 - [x] Upstream v6 병합 (253 commits)
 - [x] 구조 마이그레이션 (bmad-core/ → src/modules/)
@@ -203,6 +221,7 @@ main (현재 브랜치)
 - [x] 진행 추적 시스템 구축
 
 ### 진행 중/계획된 작업
+
 - [ ] BMM Analysis & Planning 워크플로우 (34 files)
 - [ ] BMM Implementation 워크플로우 (31 files)
 - [ ] BMM Solutioning & Testing 워크플로우 (41 files)
@@ -217,16 +236,19 @@ main (현재 브랜치)
 ## 🚀 다음 실행 명령어
 
 ### 즉시 계속하려면
+
 ```
 Priority 2로 계속 진행: BMM Analysis & Planning 워크플로우 34개 파일 번역해줘
 ```
 
 ### 다른 모듈 우선 진행
+
 ```
 CIS 모듈 전체 (26개 파일) 번역해줘
 ```
 
 ### 자동화 스크립트 생성
+
 ```
 나머지 모든 파일 (371개) 자동 번역 스크립트 만들어서 실행해줘
 ```
@@ -236,17 +258,20 @@ CIS 모듈 전체 (26개 파일) 번역해줘
 ## 📞 참고 자료
 
 ### 생성된 문서
+
 - `TRANSLATION_MAPPING_V4.md` - v4 번역 파일 목록 (20개)
 - `TRANSLATION_PROGRESS.md` - 현재 진행 상황 추적
 - `TRANSLATION_NEXT_STEPS.md` - 다음 단계 상세 가이드
 - `V6_UPGRADE_SUMMARY.md` (이 문서) - 전체 작업 요약
 
 ### 프로젝트 문서
+
 - `README.md` - 프로젝트 소개 (한글)
 - `src/modules/bmm/docs/` - BMM 모듈 문서 (영어)
 - `docs/v4-to-v6-upgrade.md` - 업그레이드 가이드 (영어)
 
 ### 지원
+
 - GitHub: [BMAD-METHOD Repository](https://github.com/bmad-code-org/BMAD-METHOD)
 - Discord: [BMadCode Community](https://discord.gg/gk8jAdXWmj)
 - YouTube: [BMadCode Channel](https://www.youtube.com/@BMadCode)
