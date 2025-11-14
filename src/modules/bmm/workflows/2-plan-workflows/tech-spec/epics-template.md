@@ -1,51 +1,51 @@
-# {{project_name}} - Epic Breakdown
+# {{project_name}} - 에픽 분해
 
-**Date:** {{date}}
-**Project Level:** {{project_level}}
+**날짜:** {{date}}
+**프로젝트 레벨:** {{project_level}}
 
 ---
 
-<!-- Repeat for each epic (N = 1, 2, 3...) -->
+<!-- 각 에픽마다 반복 (N = 1, 2, 3...) -->
 
-## Epic {{N}}: {{epic_title_N}}
+## 에픽 {{N}}: {{epic_title_N}}
 
-**Slug:** {{epic_slug_N}}
+**슬러그:** {{epic_slug_N}}
 
-### Goal
+### 목표
 
 {{epic_goal_N}}
 
-### Scope
+### 범위
 
 {{epic_scope_N}}
 
-### Success Criteria
+### 성공 기준
 
 {{epic_success_criteria_N}}
 
-### Dependencies
+### 의존성
 
 {{epic_dependencies_N}}
 
 ---
 
-## Story Map - Epic {{N}}
+## 스토리 맵 - 에픽 {{N}}
 
 {{story_map_N}}
 
 ---
 
-## Stories - Epic {{N}}
+## 스토리 - 에픽 {{N}}
 
-<!-- Repeat for each story (M = 1, 2, 3...) within epic N -->
+<!-- 에픽 N 내 각 스토리마다 반복 (M = 1, 2, 3...) -->
 
-### Story {{N}}.{{M}}: {{story_title_N_M}}
+### 스토리 {{N}}.{{M}}: {{story_title_N_M}}
 
-As a {{user_type}},
-I want {{capability}},
-So that {{value_benefit}}.
+{{user_type}}로서,
+{{capability}}을(를) 원합니다,
+그래서 {{value_benefit}}이(가) 가능합니다.
 
-**Acceptance Criteria:**
+**수락 기준:**
 
 **Given** {{precondition}}
 **When** {{action}}
@@ -53,22 +53,22 @@ So that {{value_benefit}}.
 
 **And** {{additional_criteria}}
 
-**Prerequisites:** {{dependencies_on_previous_stories}}
+**전제조건:** {{dependencies_on_previous_stories}}
 
-**Technical Notes:** {{implementation_guidance}}
+**기술 노트:** {{implementation_guidance}}
 
-**Estimated Effort:** {{story_points}} points ({{time_estimate}})
+**예상 노력:** {{story_points}} 포인트 ({{time_estimate}})
 
-<!-- End story repeat -->
-
----
-
-## Implementation Timeline - Epic {{N}}
-
-**Total Story Points:** {{total_points_N}}
-
-**Estimated Timeline:** {{estimated_timeline_N}}
+<!-- 스토리 반복 종료 -->
 
 ---
 
-<!-- End epic repeat -->
+## 구현 타임라인 - 에픽 {{N}}
+
+**총 스토리 포인트:** {{total_points_N}}
+
+**예상 타임라인:** {{estimated_timeline_N}}
+
+---
+
+<!-- 에픽 반복 종료 -->

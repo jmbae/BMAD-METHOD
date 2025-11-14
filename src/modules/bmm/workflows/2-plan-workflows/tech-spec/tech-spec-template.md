@@ -1,181 +1,181 @@
-# {{project_name}} - Technical Specification
+# {{project_name}} - 기술 사양
 
-**Author:** {{user_name}}
-**Date:** {{date}}
-**Project Level:** {{project_level}}
-**Change Type:** {{change_type}}
-**Development Context:** {{development_context}}
+**작성자:** {{user_name}}
+**날짜:** {{date}}
+**프로젝트 레벨:** {{project_level}}
+**변경 유형:** {{change_type}}
+**개발 컨텍스트:** {{development_context}}
 
 ---
 
-## Context
+## 컨텍스트
 
-### Available Documents
+### 사용 가능한 문서
 
 {{loaded_documents_summary}}
 
-### Project Stack
+### 프로젝트 스택
 
 {{project_stack_summary}}
 
-### Existing Codebase Structure
+### 기존 코드베이스 구조
 
 {{existing_structure_summary}}
 
 ---
 
-## The Change
+## 변경 사항
 
-### Problem Statement
+### 문제 정의
 
 {{problem_statement}}
 
-### Proposed Solution
+### 제안된 솔루션
 
 {{solution_overview}}
 
-### Scope
+### 범위
 
-**In Scope:**
+**범위 내:**
 
 {{scope_in}}
 
-**Out of Scope:**
+**범위 외:**
 
 {{scope_out}}
 
 ---
 
-## Implementation Details
+## 구현 세부사항
 
-### Source Tree Changes
+### 소스 트리 변경사항
 
 {{source_tree_changes}}
 
-### Technical Approach
+### 기술적 접근 방식
 
 {{technical_approach}}
 
-### Existing Patterns to Follow
+### 따라야 할 기존 패턴
 
 {{existing_patterns}}
 
-### Integration Points
+### 통합 지점
 
 {{integration_points}}
 
 ---
 
-## Development Context
+## 개발 컨텍스트
 
-### Relevant Existing Code
+### 관련 기존 코드
 
 {{existing_code_references}}
 
-### Dependencies
+### 의존성
 
-**Framework/Libraries:**
+**프레임워크/라이브러리:**
 
 {{framework_dependencies}}
 
-**Internal Modules:**
+**내부 모듈:**
 
 {{internal_dependencies}}
 
-### Configuration Changes
+### 설정 변경
 
 {{configuration_changes}}
 
-### Existing Conventions (Brownfield)
+### 기존 컨벤션 (브라운필드)
 
 {{existing_conventions}}
 
-### Test Framework & Standards
+### 테스트 프레임워크 및 표준
 
 {{test_framework_info}}
 
 ---
 
-## Implementation Stack
+## 구현 스택
 
 {{implementation_stack}}
 
 ---
 
-## Technical Details
+## 기술 세부사항
 
 {{technical_details}}
 
 ---
 
-## Development Setup
+## 개발 환경 설정
 
 {{development_setup}}
 
 ---
 
-## Implementation Guide
+## 구현 가이드
 
-### Setup Steps
+### 설정 단계
 
 {{setup_steps}}
 
-### Implementation Steps
+### 구현 단계
 
 {{implementation_steps}}
 
-### Testing Strategy
+### 테스트 전략
 
 {{testing_strategy}}
 
-### Acceptance Criteria
+### 수락 기준
 
 {{acceptance_criteria}}
 
 ---
 
-## Developer Resources
+## 개발자 리소스
 
-### File Paths Reference
+### 파일 경로 참조
 
 {{file_paths_complete}}
 
-### Key Code Locations
+### 주요 코드 위치
 
 {{key_code_locations}}
 
-### Testing Locations
+### 테스트 위치
 
 {{testing_locations}}
 
-### Documentation to Update
+### 업데이트할 문서
 
 {{documentation_updates}}
 
 ---
 
-## UX/UI Considerations
+## UX/UI 고려사항
 
 {{ux_ui_considerations}}
 
 ---
 
-## Testing Approach
+## 테스트 접근 방식
 
 {{testing_approach}}
 
 ---
 
-## Deployment Strategy
+## 배포 전략
 
-### Deployment Steps
+### 배포 단계
 
 {{deployment_steps}}
 
-### Rollback Plan
+### 롤백 계획
 
 {{rollback_plan}}
 
-### Monitoring
+### 모니터링
 
 {{monitoring_approach}}

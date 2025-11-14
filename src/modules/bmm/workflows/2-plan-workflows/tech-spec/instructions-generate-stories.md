@@ -1,114 +1,114 @@
-# Unified Epic and Story Generation
+# 통합 에픽 및 스토리 생성
 
 <workflow>
 
-<critical>This generates epic + stories for ALL quick-flow projects</critical>
-<critical>Always generates: epics.md + story files (1-5 stories based on {{story_count}})</critical>
-<critical>Runs AFTER tech-spec.md completion</critical>
-<critical>Story format MUST match create-story template for compatibility with story-context and dev-story workflows</critical>
+<critical>모든 퀵 플로우 프로젝트에 대해 에픽 + 스토리를 생성합니다</critical>
+<critical>항상 생성: epics.md + 스토리 파일들 ({{story_count}}에 따라 1-5개 스토리)</critical>
+<critical>tech-spec.md 완료 후 실행됩니다</critical>
+<critical>스토리 형식은 story-context 및 dev-story 워크플로우와의 호환성을 위해 create-story 템플릿과 일치해야 합니다</critical>
 
-<step n="1" goal="Load tech spec and extract implementation context">
+<step n="1" goal="기술 사양 로드 및 구현 컨텍스트 추출">
 
-<action>Read the completed tech-spec.md file from {default_output_file}</action>
-<action>Load bmm-workflow-status.yaml from {workflow-status} (if exists)</action>
-<action>Get story_count from workflow variables (1-5)</action>
-<action>Ensure {sprint_artifacts} directory exists</action>
+<action>완료된 tech-spec.md 파일을 {default_output_file}에서 읽기</action>
+<action>{workflow-status}에서 bmm-workflow-status.yaml 로드 (존재하는 경우)</action>
+<action>워크플로우 변수에서 story_count 가져오기 (1-5)</action>
+<action>{sprint_artifacts} 디렉토리가 존재하는지 확인</action>
 
-<action>Extract from tech-spec structure:
+<action>tech-spec 구조에서 추출:
 
-**From "The Change" section:**
+**"변경 사항" 섹션에서:**
 
-- Problem statement and solution overview
-- Scope (in/out)
+- 문제 정의 및 솔루션 개요
+- 범위 (내/외)
 
-**From "Implementation Details" section:**
+**"구현 세부사항" 섹션에서:**
 
-- Source tree changes
-- Technical approach
-- Integration points
+- 소스 트리 변경사항
+- 기술적 접근 방식
+- 통합 지점
 
-**From "Implementation Guide" section:**
+**"구현 가이드" 섹션에서:**
 
-- Implementation steps
-- Testing strategy
-- Acceptance criteria
-- Time estimates
+- 구현 단계
+- 테스트 전략
+- 수락 기준
+- 시간 추정
 
-**From "Development Context" section:**
+**"개발 컨텍스트" 섹션에서:**
 
-- Framework dependencies with versions
-- Existing code references
-- Internal dependencies
+- 버전이 포함된 프레임워크 의존성
+- 기존 코드 참조
+- 내부 의존성
 
-**From "Developer Resources" section:**
+**"개발자 리소스" 섹션에서:**
 
-- File paths
-- Key code locations
-- Testing locations
+- 파일 경로
+- 주요 코드 위치
+- 테스트 위치
 
-Use this rich context to generate comprehensive, implementation-ready epic and stories.
+이 풍부한 컨텍스트를 사용하여 포괄적이고 구현 준비가 된 에픽과 스토리를 생성합니다.
 </action>
 
 </step>
 
-<step n="2" goal="Generate epic slug and structure">
+<step n="2" goal="에픽 슬러그 및 구조 생성">
 
-<action>Create epic based on the overall feature/change from tech-spec</action>
+<action>tech-spec의 전체 기능/변경사항을 기반으로 에픽 생성</action>
 
-<action>Derive epic slug from the feature name:
+<action>기능 이름에서 에픽 슬러그 파생:
 
-- Use 2-3 words max
-- Kebab-case format
-- User-focused, not implementation-focused
+- 최대 2-3단어 사용
+- 케밥 케이스 형식
+- 사용자 중심, 구현 중심 아님
 
-Examples:
+예시:
 
-- "OAuth Integration" → "oauth-integration"
-- "Fix Login Bug" → "login-fix"
-- "User Profile Page" → "user-profile"
+- "OAuth 통합" → "oauth-integration"
+- "로그인 버그 수정" → "login-fix"
+- "사용자 프로필 페이지" → "user-profile"
   </action>
 
-<action>Store as {{epic_slug}} - this will be used for all story filenames</action>
+<action>{{epic_slug}}로 저장 - 모든 스토리 파일 이름에 사용됩니다</action>
 
-<action>Adapt epic detail to story count:
+<action>스토리 수에 따라 에픽 세부사항 조정:
 
-**For single story (story_count == 1):**
+**단일 스토리의 경우 (story_count == 1):**
 
-- Epic is minimal - just enough structure
-- Goal: Brief statement of what's being accomplished
-- Scope: High-level boundary
-- Success criteria: Core outcomes
+- 에픽은 최소한 - 충분한 구조만
+- 목표: 달성하려는 것에 대한 간략한 진술
+- 범위: 고수준 경계
+- 성공 기준: 핵심 결과
 
-**For multiple stories (story_count > 1):**
+**여러 스토리의 경우 (story_count > 1):**
 
-- Epic is detailed - full breakdown
-- Goal: Comprehensive purpose and value statement
-- Scope: Clear boundaries with in/out examples
-- Success criteria: Measurable, testable outcomes
-- Story map: Visual representation of epic → stories
-- Implementation sequence: Logical ordering with dependencies
+- 에픽은 상세함 - 완전한 분해
+- 목표: 포괄적인 목적 및 가치 진술
+- 범위: 내/외 예시가 있는 명확한 경계
+- 성공 기준: 측정 가능하고 테스트 가능한 결과
+- 스토리 맵: 에픽 → 스토리의 시각적 표현
+- 구현 순서: 의존성을 포함한 논리적 순서
   </action>
 
 </step>
 
-<step n="3" goal="Generate epic document">
+<step n="3" goal="에픽 문서 생성">
 
-<action>Initialize {epics_file} using {epics_template}</action>
+<action>{epics_template}을 사용하여 {epics_file} 초기화</action>
 
-<action>Populate epic metadata from tech-spec context:
+<action>tech-spec 컨텍스트에서 에픽 메타데이터 채우기:
 
-**Epic Title:** User-facing outcome (not implementation detail)
+**에픽 제목:** 사용자 대면 결과 (구현 세부사항이 아님)
 
-- Good: "OAuth Integration", "Login Bug Fix", "Icon Reliability"
-- Bad: "Update recommendedLibraries.ts", "Refactor auth service"
+- 좋음: "OAuth 통합", "로그인 버그 수정", "아이콘 안정성"
+- 나쁨: "recommendedLibraries.ts 업데이트", "auth 서비스 리팩토링"
 
-**Epic Goal:** Why this matters to users/business
+**에픽 목표:** 사용자/비즈니스에 중요한 이유
 
-**Epic Scope:** Clear boundaries from tech-spec scope section
+**에픽 범위:** tech-spec 범위 섹션의 명확한 경계
 
-**Epic Success Criteria:** Measurable outcomes from tech-spec acceptance criteria
+**에픽 성공 기준:** tech-spec 수락 기준의 측정 가능한 결과
 
-**Dependencies:** From tech-spec integration points and dependencies
+**의존성:** tech-spec 통합 지점 및 의존성에서
 </action>
 
 <template-output file="{epics_file}">project_name</template-output>
@@ -122,141 +122,141 @@ Examples:
 
 </step>
 
-<step n="4" goal="Intelligently break down into stories">
+<step n="4" goal="스토리로 지능적으로 분해">
 
-<action>Analyze tech-spec implementation steps and create story breakdown
+<action>tech-spec 구현 단계를 분석하고 스토리 분해 생성
 
-**For story_count == 1:**
+**story_count == 1의 경우:**
 
-- Create single comprehensive story covering all implementation
-- Title: Focused on the deliverable outcome
-- Tasks: Map directly to tech-spec implementation steps
-- Estimated points: Typically 1-5 points
+- 모든 구현을 포함하는 단일 포괄적인 스토리 생성
+- 제목: 제공 가능한 결과에 초점
+- 작업: tech-spec 구현 단계에 직접 매핑
+- 예상 포인트: 일반적으로 1-5포인트
 
-**For story_count > 1:**
+**story_count > 1의 경우:**
 
-- Break implementation into logical story boundaries
-- Each story must be:
-  - Independently valuable (delivers working functionality)
-  - Testable (has clear acceptance criteria)
-  - Sequentially ordered (no forward dependencies)
-  - Right-sized (prefer 2-4 stories over many tiny ones)
+- 구현을 논리적 스토리 경계로 분해
+- 각 스토리는 다음을 충족해야 합니다:
+  - 독립적으로 가치 있음 (작동하는 기능 제공)
+  - 테스트 가능 (명확한 수락 기준 있음)
+  - 순차적으로 순서가 정해짐 (순방향 의존성 없음)
+  - 적절한 크기 (많은 작은 것보다 2-4개 스토리 선호)
 
-**Story Sequencing Rules (CRITICAL):**
+**스토리 순서 규칙 (중요):**
 
-1. Foundation → Build → Test → Polish
-2. Database → API → UI
-3. Backend → Frontend
-4. Core → Enhancement
-5. NO story can depend on a later story!
+1. 기초 → 구축 → 테스트 → 다듬기
+2. 데이터베이스 → API → UI
+3. 백엔드 → 프론트엔드
+4. 핵심 → 개선
+5. 어떤 스토리도 이후 스토리에 의존할 수 없습니다!
 
-Validate sequence: Each story N should only depend on stories 1...N-1
+순서 검증: 각 스토리 N은 스토리 1...N-1에만 의존해야 합니다
 </action>
 
-<action>For each story position (1 to {{story_count}}):
+<action>각 스토리 위치에 대해 (1부터 {{story_count}}까지):
 
-1. **Determine story scope from tech-spec tasks**
-   - Group related implementation steps
-   - Ensure story leaves system in working state
+1. **tech-spec 작업에서 스토리 범위 결정**
+   - 관련 구현 단계 그룹화
+   - 스토리가 시스템을 작동 상태로 유지하는지 확인
 
-2. **Create story title**
-   - User-focused deliverable
-   - Active, clear language
-   - Good: "OAuth Backend Integration", "OAuth UI Components"
-   - Bad: "Write some OAuth code", "Update files"
+2. **스토리 제목 생성**
+   - 사용자 중심 제공물
+   - 능동적이고 명확한 언어
+   - 좋음: "OAuth 백엔드 통합", "OAuth UI 컴포넌트"
+   - 나쁨: "OAuth 코드 작성", "파일 업데이트"
 
-3. **Extract acceptance criteria**
-   - From tech-spec testing strategy and acceptance criteria
-   - Must be numbered (AC #1, AC #2, etc.)
-   - Must be specific and testable
-   - Use Given/When/Then format when applicable
+3. **수락 기준 추출**
+   - tech-spec 테스트 전략 및 수락 기준에서
+   - 번호가 매겨져야 함 (AC #1, AC #2 등)
+   - 구체적이고 테스트 가능해야 함
+   - 해당하는 경우 Given/When/Then 형식 사용
 
-4. **Map tasks to implementation steps**
-   - Break down tech-spec implementation steps for this story
-   - Create checkbox list
-   - Reference AC numbers: (AC: #1), (AC: #2)
+4. **작업을 구현 단계에 매핑**
+   - 이 스토리에 대한 tech-spec 구현 단계 분해
+   - 체크박스 목록 생성
+   - AC 번호 참조: (AC: #1), (AC: #2)
 
-5. **Estimate story points**
-   - 1 point = < 1 day (2-4 hours)
-   - 2 points = 1-2 days
-   - 3 points = 2-3 days
-   - 5 points = 3-5 days
-   - Total across all stories should align with tech-spec estimates
+5. **스토리 포인트 추정**
+   - 1포인트 = < 1일 (2-4시간)
+   - 2포인트 = 1-2일
+   - 3포인트 = 2-3일
+   - 5포인트 = 3-5일
+   - 모든 스토리의 총합은 tech-spec 추정과 일치해야 함
      </action>
 
 </step>
 
-<step n="5" goal="Generate story files">
+<step n="5" goal="스토리 파일 생성">
 
 <for-each story="1 to story_count">
-  <action>Set story_filename = "story-{{epic_slug}}-{{n}}.md"</action>
-  <action>Set story_path = "{sprint_artifacts}/{{story_filename}}"</action>
+  <action>story_filename = "story-{{epic_slug}}-{{n}}.md"로 설정</action>
+  <action>story_path = "{sprint_artifacts}/{{story_filename}}"로 설정</action>
 
-<action>Create story file using {user_story_template}</action>
+<action>{user_story_template}을 사용하여 스토리 파일 생성</action>
 
-<action>Populate story with:
+<action>스토리를 다음으로 채우기:
 
-**Story Header:**
+**스토리 헤더:**
 
-- N.M format (where N is always 1 for quick-flow, M is story number)
-- Title: User-focused deliverable
-- Status: Draft
+- N.M 형식 (N은 퀵 플로우의 경우 항상 1, M은 스토리 번호)
+- 제목: 사용자 중심 제공물
+- 상태: Draft
 
-**User Story:**
+**사용자 스토리:**
 
-- As a [role] (developer, user, admin, system, etc.)
-- I want [capability/change]
-- So that [benefit/value]
+- [역할]로서 (개발자, 사용자, 관리자, 시스템 등)
+- [기능/변경사항]을(를) 원합니다
+- 그래서 [이점/가치]이(가) 가능합니다
 
-**Acceptance Criteria:**
+**수락 기준:**
 
-- Numbered list (AC #1, AC #2, ...)
-- Specific, measurable, testable
-- Derived from tech-spec testing strategy and acceptance criteria
-- Cover all success conditions for this story
+- 번호가 매겨진 목록 (AC #1, AC #2, ...)
+- 구체적이고, 측정 가능하며, 테스트 가능
+- tech-spec 테스트 전략 및 수락 기준에서 파생
+- 이 스토리의 모든 성공 조건 커버
 
-**Tasks/Subtasks:**
+**작업/하위 작업:**
 
-- Checkbox list mapped to tech-spec implementation steps
-- Each task references AC numbers: (AC: #1)
-- Include explicit testing tasks
+- tech-spec 구현 단계에 매핑된 체크박스 목록
+- 각 작업은 AC 번호 참조: (AC: #1)
+- 명시적인 테스트 작업 포함
 
-**Technical Summary:**
+**기술 요약:**
 
-- High-level approach for this story
-- Key technical decisions
-- Files/modules involved
+- 이 스토리에 대한 고수준 접근 방식
+- 주요 기술적 결정
+- 관련된 파일/모듈
 
-**Project Structure Notes:**
+**프로젝트 구조 노트:**
 
-- files_to_modify: From tech-spec "Developer Resources → File Paths"
-- test_locations: From tech-spec "Developer Resources → Testing Locations"
-- story_points: Estimated effort
-- dependencies: Prerequisites (other stories, systems, data)
+- files_to_modify: tech-spec "개발자 리소스 → 파일 경로"에서
+- test_locations: tech-spec "개발자 리소스 → 테스트 위치"에서
+- story_points: 예상 노력
+- dependencies: 전제조건 (다른 스토리, 시스템, 데이터)
 
-**Key Code References:**
+**주요 코드 참조:**
 
-- From tech-spec "Development Context → Relevant Existing Code"
-- From tech-spec "Developer Resources → Key Code Locations"
-- Specific file:line references when available
+- tech-spec "개발 컨텍스트 → 관련 기존 코드"에서
+- tech-spec "개발자 리소스 → 주요 코드 위치"에서
+- 가능한 경우 특정 파일:줄 참조
 
-**Context References:**
+**컨텍스트 참조:**
 
-- Link to tech-spec.md (primary context document)
-- Note: Tech-spec contains brownfield analysis, framework versions, patterns, etc.
+- tech-spec.md에 링크 (주요 컨텍스트 문서)
+- 노트: 기술 사양에는 브라운필드 분석, 프레임워크 버전, 패턴 등이 포함됨
 
-**Dev Agent Record:**
+**Dev 에이전트 기록:**
 
-- Empty sections (populated during dev-story execution)
-- Agent Model Used
-- Debug Log References
-- Completion Notes
-- Files Modified
-- Test Results
+- 빈 섹션 (dev-story 실행 중 채워짐)
+- 사용된 에이전트 모델
+- 디버그 로그 참조
+- 완료 노트
+- 수정된 파일
+- 테스트 결과
 
-**Review Notes:**
+**리뷰 노트:**
 
-- Empty section (populated during code review)
+- 빈 섹션 (코드 리뷰 중 채워짐)
   </action>
 
 <template-output file="{{story_path}}">story_number</template-output>
@@ -277,45 +277,45 @@ Validate sequence: Each story N should only depend on stories 1...N-1
 
 </step>
 
-<step n="6" goal="Generate story map and finalize epic" if="story_count > 1">
+<step n="6" goal="스토리 맵 생성 및 에픽 완성" if="story_count > 1">
 
-<action>Create visual story map showing epic → stories hierarchy
+<action>에픽 → 스토리 계층을 보여주는 시각적 스토리 맵 생성
 
-Include:
+포함:
 
-- Epic title at top
-- Stories listed with point estimates
-- Dependencies noted
-- Sequence validation confirmation
+- 상단에 에픽 제목
+- 포인트 추정과 함께 나열된 스토리
+- 의존성 표시
+- 순서 검증 확인
 
-Example:
+예시:
 
 ```
-Epic: OAuth Integration (8 points)
-├── Story 1.1: OAuth Backend (3 points)
-│   Dependencies: None
+에픽: OAuth 통합 (8포인트)
+├── 스토리 1.1: OAuth 백엔드 (3포인트)
+│   의존성: 없음
 │
-├── Story 1.2: OAuth UI Components (3 points)
-│   Dependencies: Story 1.1
+├── 스토리 1.2: OAuth UI 컴포넌트 (3포인트)
+│   의존성: 스토리 1.1
 │
-└── Story 1.3: OAuth Testing & Polish (2 points)
-    Dependencies: Stories 1.1, 1.2
+└── 스토리 1.3: OAuth 테스트 및 다듬기 (2포인트)
+    의존성: 스토리 1.1, 1.2
 ```
 
 </action>
 
-<action>Calculate totals:
+<action>총합 계산:
 
-- Total story points across all stories
-- Estimated timeline (typically 1-2 points per day)
+- 모든 스토리의 총 스토리 포인트
+- 예상 타임라인 (일반적으로 하루에 1-2포인트)
   </action>
 
-<action>Append to {epics_file}:
+<action>{epics_file}에 추가:
 
-- Story summaries
-- Story map visual
-- Implementation sequence
-- Total points and timeline
+- 스토리 요약
+- 스토리 맵 시각화
+- 구현 순서
+- 총 포인트 및 타임라인
   </action>
 
 <template-output file="{epics_file}">story_map</template-output>
@@ -326,107 +326,107 @@ Epic: OAuth Integration (8 points)
 
 </step>
 
-<step n="7" goal="Validate story quality">
+<step n="7" goal="스토리 품질 검증">
 
-<critical>Always run validation - NOT optional!</critical>
+<critical>항상 검증 실행 - 선택 사항이 아닙니다!</critical>
 
-<action>Validate all stories against quality standards:
+<action>품질 표준에 대해 모든 스토리 검증:
 
-**Story Sequence Validation (CRITICAL):**
+**스토리 순서 검증 (중요):**
 
-- For each story N, verify it doesn't depend on story N+1 or later
-- Check: Can stories be implemented in order 1→2→3→...?
-- If sequence invalid: Identify problem, propose reordering, ask user to confirm
+- 각 스토리 N에 대해 스토리 N+1 이상에 의존하지 않는지 확인
+- 확인: 스토리를 1→2→3→... 순서로 구현할 수 있습니까?
+- 순서가 유효하지 않은 경우: 문제 식별, 재정렬 제안, 사용자 확인 요청
 
-**Acceptance Criteria Quality:**
+**수락 기준 품질:**
 
-- All AC are numbered (AC #1, AC #2, ...)
-- Each AC is specific and testable (no "works well", "is good", "performs fast")
-- AC use Given/When/Then or equivalent structure
-- All success conditions are covered
+- 모든 AC가 번호가 매겨짐 (AC #1, AC #2, ...)
+- 각 AC가 구체적이고 테스트 가능 ("잘 작동", "좋음", "빠르게 수행" 없음)
+- AC가 Given/When/Then 또는 동등한 구조 사용
+- 모든 성공 조건이 커버됨
 
-**Story Completeness:**
+**스토리 완전성:**
 
-- All stories map to tech-spec implementation steps
-- Story points align with tech-spec time estimates
-- Dependencies are clearly documented
-- Each story has testable AC
-- Files and locations reference tech-spec developer resources
+- 모든 스토리가 tech-spec 구현 단계에 매핑됨
+- 스토리 포인트가 tech-spec 시간 추정과 일치
+- 의존성이 명확하게 문서화됨
+- 각 스토리에 테스트 가능한 AC 있음
+- 파일과 위치가 tech-spec 개발자 리소스를 참조함
 
-**Template Compliance:**
+**템플릿 준수:**
 
-- All required sections present
-- Dev Agent Record sections exist (even if empty)
-- Context references link to tech-spec.md
-- Story numbering follows N.M format
+- 모든 필수 섹션 존재
+- Dev 에이전트 기록 섹션 존재 (비어 있어도)
+- 컨텍스트 참조가 tech-spec.md에 링크됨
+- 스토리 번호가 N.M 형식을 따름
   </action>
 
 <check if="validation issues found">
-  <output>⚠️ **Story Validation Issues:**
+  <output>⚠️ **스토리 검증 문제:**
 
 {{issues_list}}
 
-**Recommended Fixes:**
+**권장 수정:**
 {{fixes}}
 
-Shall I fix these automatically? (yes/no)</output>
+자동으로 수정할까요? (예/아니오)</output>
 
-<ask>Apply fixes? (yes/no)</ask>
+<ask>수정 적용? (예/아니오)</ask>
 
   <check if="yes">
-    <action>Apply fixes (reorder stories, rewrite vague AC, add missing details)</action>
-    <action>Re-validate</action>
-    <output>✅ Validation passed after fixes!</output>
+    <action>수정 적용 (스토리 재정렬, 모호한 AC 재작성, 누락된 세부사항 추가)</action>
+    <action>재검증</action>
+    <output>✅ 수정 후 검증 통과!</output>
   </check>
 </check>
 
 <check if="validation passes">
-  <output>✅ **Story Validation Passed!**
+  <output>✅ **스토리 검증 통과!**
 
-**Quality Scores:**
+**품질 점수:**
 
-- Sequence: ✅ Valid (no forward dependencies)
-- AC Quality: ✅ All specific and testable
-- Completeness: ✅ All tech spec tasks covered
-- Template Compliance: ✅ All sections present
+- 순서: ✅ 유효 (순방향 의존성 없음)
+- AC 품질: ✅ 모두 구체적이고 테스트 가능
+- 완전성: ✅ 모든 tech spec 작업 커버됨
+- 템플릿 준수: ✅ 모든 섹션 존재
 
-Stories are implementation-ready!</output>
+스토리가 구현 준비 완료!</output>
 </check>
 
 </step>
 
-<step n="8" goal="Update workflow status and finalize">
+<step n="8" goal="워크플로우 상태 업데이트 및 완료">
 
-<action>Update bmm-workflow-status.yaml (if exists):
+<action>bmm-workflow-status.yaml 업데이트 (존재하는 경우):
 
-- Mark tech-spec as complete
-- Initialize story sequence tracking
-- Set first story as TODO
-- Track epic slug and story count
+- tech-spec을 완료로 표시
+- 스토리 순서 추적 초기화
+- 첫 번째 스토리를 TODO로 설정
+- 에픽 슬러그 및 스토리 수 추적
   </action>
 
-<output>**✅ Epic and Stories Generated!**
+<output>**✅ 에픽 및 스토리 생성 완료!**
 
-**Epic:** {{epic_title}} ({{epic_slug}})
-**Total Stories:** {{story_count}}
-{{#if story_count > 1}}**Total Points:** {{total_points}}
-**Estimated Timeline:** {{estimated_timeline}}{{/if}}
+**에픽:** {{epic_title}} ({{epic_slug}})
+**총 스토리:** {{story_count}}
+{{#if story_count > 1}}**총 포인트:** {{total_points}}
+**예상 타임라인:** {{estimated_timeline}}{{/if}}
 
-**Files Created:**
+**생성된 파일:**
 
-- `{epics_file}` - Epic structure{{#if story_count == 1}} (minimal){{/if}}
+- `{epics_file}` - 에픽 구조{{#if story_count == 1}} (최소한){{/if}}
 - `{sprint_artifacts}/story-{{epic_slug}}-1.md`{{#if story_count > 1}}
 - `{sprint_artifacts}/story-{{epic_slug}}-2.md`{{/if}}{{#if story_count > 2}}
-- Through story-{{epic_slug}}-{{story_count}}.md{{/if}}
+- story-{{epic_slug}}-{{story_count}}.md까지{{/if}}
 
-**What's Next:**
-All stories reference tech-spec.md as primary context. You can proceed directly to development with the DEV agent!
+**다음 단계:**
+모든 스토리가 tech-spec.md를 주요 컨텍스트로 참조합니다. DEV 에이전트로 바로 개발을 진행할 수 있습니다!
 
-Story files are ready for:
+스토리 파일은 다음을 위해 준비되었습니다:
 
-- Direct implementation (dev-story workflow)
-- Optional context generation (story-context workflow for complex cases)
-- Sprint planning organization (sprint-planning workflow for multi-story coordination)
+- 직접 구현 (dev-story 워크플로우)
+- 선택적 컨텍스트 생성 (복잡한 경우 story-context 워크플로우)
+- 스프린트 계획 조직 (멀티 스토리 조정을 위한 sprint-planning 워크플로우)
   </output>
 
 </step>

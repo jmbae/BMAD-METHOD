@@ -1,217 +1,217 @@
-# Tech-Spec Workflow Validation Checklist
+# Tech-Spec 워크플로우 검증 체크리스트
 
-**Purpose**: Validate tech-spec workflow outputs are context-rich, definitive, complete, and implementation-ready.
+**목적**: tech-spec 워크플로우 출력물이 컨텍스트가 풍부하고, 명확하며, 완전하고, 구현 준비가 되었는지 검증합니다.
 
-**Scope**: Quick-flow software projects (1-5 stories)
+**범위**: 퀵 플로우 소프트웨어 프로젝트 (1-5개 스토리)
 
-**Expected Outputs**: tech-spec.md + epics.md + story files (1-5 stories)
+**예상 출력물**: tech-spec.md + epics.md + 스토리 파일들 (1-5개 스토리)
 
-**New Standard**: Tech-spec should be comprehensive enough to replace story-context for most quick-flow projects
-
----
-
-## 1. Output Files Exist
-
-- [ ] tech-spec.md created in output folder
-- [ ] epics.md created (minimal for 1 story, detailed for multiple)
-- [ ] Story file(s) created in sprint_artifacts
-  - Naming convention: story-{epic-slug}-N.md (where N = 1 to story_count)
-  - 1 story: story-{epic-slug}-1.md
-  - Multiple stories: story-{epic-slug}-1.md through story-{epic-slug}-N.md
-- [ ] bmm-workflow-status.yaml updated (if not standalone mode)
-- [ ] No unfilled {{template_variables}} in any files
+**새로운 표준**: 기술 사양은 대부분의 퀵 플로우 프로젝트에서 story-context를 대체할 수 있을 만큼 포괄적이어야 합니다
 
 ---
 
-## 2. Context Gathering (NEW - CRITICAL)
+## 1. 출력 파일 존재
 
-### Document Discovery
-
-- [ ] **Existing documents loaded**: Product brief, research docs found and incorporated (if they exist)
-- [ ] **Document-project output**: Checked for {output_folder}/docs/index.md (brownfield codebase map)
-- [ ] **Sharded documents**: If sharded versions found, ALL sections loaded and synthesized
-- [ ] **Context summary**: loaded_documents_summary lists all sources used
-
-### Project Stack Detection
-
-- [ ] **Setup files identified**: package.json, requirements.txt, or equivalent found and parsed
-- [ ] **Framework detected**: Exact framework name and version captured (e.g., "Express 4.18.2")
-- [ ] **Dependencies extracted**: All production dependencies with specific versions
-- [ ] **Dev tools identified**: TypeScript, Jest, ESLint, pytest, etc. with versions
-- [ ] **Scripts documented**: Available npm/pip/etc scripts identified
-- [ ] **Stack summary**: project_stack_summary is complete and accurate
-
-### Brownfield Analysis (if applicable)
-
-- [ ] **Directory structure**: Main code directories identified and documented
-- [ ] **Code patterns**: Dominant patterns identified (class-based, functional, MVC, etc.)
-- [ ] **Naming conventions**: Existing conventions documented (camelCase, snake_case, etc.)
-- [ ] **Key modules**: Important existing modules/services identified
-- [ ] **Testing patterns**: Test framework and patterns documented
-- [ ] **Structure summary**: existing_structure_summary is comprehensive
+- [ ] tech-spec.md가 출력 폴더에 생성됨
+- [ ] epics.md가 생성됨 (1개 스토리는 최소한으로, 여러 개는 상세하게)
+- [ ] 스토리 파일들이 sprint_artifacts에 생성됨
+  - 명명 규칙: story-{epic-slug}-N.md (N = 1부터 story_count까지)
+  - 1개 스토리: story-{epic-slug}-1.md
+  - 여러 스토리: story-{epic-slug}-1.md부터 story-{epic-slug}-N.md까지
+- [ ] bmm-workflow-status.yaml 업데이트됨 (standalone 모드가 아닌 경우)
+- [ ] 모든 파일에 채워지지 않은 {{template_variables}}가 없음
 
 ---
 
-## 3. Tech-Spec Definitiveness (CRITICAL)
+## 2. 컨텍스트 수집 (새로운 기능 - 중요)
 
-### No Ambiguity Allowed
+### 문서 발견
 
-- [ ] **Zero "or" statements**: NO "use X or Y", "either A or B", "options include"
-- [ ] **Specific versions**: All frameworks, libraries, tools have EXACT versions
-  - ✅ GOOD: "Python 3.11", "React 18.2.0", "winston v3.8.2 (from package.json)"
-  - ❌ BAD: "Python 2 or 3", "React 18+", "a logger like pino or winston"
-- [ ] **Definitive decisions**: Every technical choice is final, not a proposal
-- [ ] **Stack-aligned**: Decisions reference detected project stack
+- [ ] **기존 문서 로드됨**: 프로덕트 브리프, 리서치 문서가 발견되고 통합됨 (존재하는 경우)
+- [ ] **document-project 출력**: {output_folder}/docs/index.md 확인됨 (브라운필드 코드베이스 맵)
+- [ ] **분할된 문서**: 분할된 버전이 발견된 경우, 모든 섹션이 로드되고 통합됨
+- [ ] **컨텍스트 요약**: loaded_documents_summary가 사용된 모든 소스를 나열함
 
-### Implementation Clarity
+### 프로젝트 스택 감지
 
-- [ ] **Source tree changes**: EXACT file paths with CREATE/MODIFY/DELETE actions
-  - ✅ GOOD: "src/services/UserService.ts - MODIFY - Add validateEmail() method"
-  - ❌ BAD: "Update some files in the services folder"
-- [ ] **Technical approach**: Describes SPECIFIC implementation using detected stack
-- [ ] **Existing patterns**: Documents brownfield patterns to follow (if applicable)
-- [ ] **Integration points**: Specific modules, APIs, services identified
+- [ ] **설정 파일 식별됨**: package.json, requirements.txt 또는 동등한 파일이 발견되고 파싱됨
+- [ ] **프레임워크 감지됨**: 정확한 프레임워크 이름과 버전이 캡처됨 (예: "Express 4.18.2")
+- [ ] **의존성 추출됨**: 특정 버전을 포함한 모든 프로덕션 의존성
+- [ ] **개발 도구 식별됨**: TypeScript, Jest, ESLint, pytest 등과 버전
+- [ ] **스크립트 문서화됨**: 사용 가능한 npm/pip/기타 스크립트가 식별됨
+- [ ] **스택 요약**: project_stack_summary가 완전하고 정확함
 
----
+### 브라운필드 분석 (해당하는 경우)
 
-## 4. Context-Rich Content (NEW)
-
-### Context Section
-
-- [ ] **Available Documents**: Lists all loaded documents
-- [ ] **Project Stack**: Complete framework and dependency information
-- [ ] **Existing Codebase Structure**: Brownfield analysis or greenfield notation
-
-### The Change Section
-
-- [ ] **Problem Statement**: Clear, specific problem definition
-- [ ] **Proposed Solution**: Concrete solution approach
-- [ ] **Scope In/Out**: Clear boundaries defined
-
-### Development Context Section
-
-- [ ] **Relevant Existing Code**: References to specific files and line numbers (brownfield)
-- [ ] **Framework Dependencies**: Complete list with exact versions from project
-- [ ] **Internal Dependencies**: Internal modules listed
-- [ ] **Configuration Changes**: Specific config file updates identified
-
-### Developer Resources Section
-
-- [ ] **File Paths Reference**: Complete list of all files involved
-- [ ] **Key Code Locations**: Functions, classes, modules with file:line references
-- [ ] **Testing Locations**: Specific test directories and patterns
-- [ ] **Documentation Updates**: Docs that need updating identified
+- [ ] **디렉토리 구조**: 주요 코드 디렉토리가 식별되고 문서화됨
+- [ ] **코드 패턴**: 주요 패턴이 식별됨 (클래스 기반, 함수형, MVC 등)
+- [ ] **명명 규칙**: 기존 규칙이 문서화됨 (camelCase, snake_case 등)
+- [ ] **주요 모듈**: 중요한 기존 모듈/서비스가 식별됨
+- [ ] **테스트 패턴**: 테스트 프레임워크와 패턴이 문서화됨
+- [ ] **구조 요약**: existing_structure_summary가 포괄적임
 
 ---
 
-## 5. Story Quality
+## 3. Tech-Spec 명확성 (중요)
 
-### Story Format
+### 모호성 불허
 
-- [ ] All stories use "As a [role], I want [capability], so that [benefit]" format
-- [ ] Each story has numbered acceptance criteria
-- [ ] Tasks reference AC numbers: (AC: #1), (AC: #2)
-- [ ] Dev Notes section links to tech-spec.md
+- [ ] **"또는" 문장 없음**: "X 또는 Y 사용", "A 또는 B 중 하나", "옵션에는 다음이 포함됨" 등이 없음
+- [ ] **특정 버전**: 모든 프레임워크, 라이브러리, 도구에 정확한 버전이 있음
+  - ✅ 좋음: "Python 3.11", "React 18.2.0", "winston v3.8.2 (package.json에서)"
+  - ❌ 나쁨: "Python 2 또는 3", "React 18+", "pino 또는 winston 같은 로거"
+- [ ] **명확한 결정**: 모든 기술적 선택이 최종적이며 제안이 아님
+- [ ] **스택 정렬**: 결정이 감지된 프로젝트 스택을 참조함
 
-### Story Context Integration (NEW)
+### 구현 명확성
 
-- [ ] **Tech-Spec Reference**: Story explicitly references tech-spec.md as primary context
-- [ ] **Dev Agent Record**: Includes all required sections (Context Reference, Agent Model, etc.)
-- [ ] **Test Results section**: Placeholder ready for dev execution
-- [ ] **Review Notes section**: Placeholder ready for code review
-
-### Story Sequencing (If Level 1)
-
-- [ ] **Vertical slices**: Each story delivers complete, testable functionality
-- [ ] **Sequential ordering**: Stories in logical progression
-- [ ] **No forward dependencies**: No story depends on later work
-- [ ] Each story leaves system in working state
-
-### Coverage
-
-- [ ] Story acceptance criteria derived from tech-spec
-- [ ] Story tasks map to tech-spec implementation guide
-- [ ] Files in stories match tech-spec source tree
-- [ ] Key code references align with tech-spec Developer Resources
+- [ ] **소스 트리 변경사항**: CREATE/MODIFY/DELETE 작업과 함께 정확한 파일 경로
+  - ✅ 좋음: "src/services/UserService.ts - MODIFY - validateEmail() 메서드 추가"
+  - ❌ 나쁨: "서비스 폴더의 일부 파일 업데이트"
+- [ ] **기술적 접근 방식**: 감지된 스택을 사용하는 특정 구현을 설명함
+- [ ] **기존 패턴**: 따라야 할 브라운필드 패턴을 문서화함 (해당하는 경우)
+- [ ] **통합 지점**: 특정 모듈, API, 서비스가 식별됨
 
 ---
 
-## 6. Epic Quality (All Projects)
+## 4. 컨텍스트가 풍부한 내용 (새로운 기능)
 
-- [ ] **Epic title**: User-focused outcome (not implementation detail)
-- [ ] **Epic slug**: Clean kebab-case slug (2-3 words)
-- [ ] **Epic goal**: Clear purpose and value statement
-- [ ] **Epic scope**: Boundaries clearly defined
-- [ ] **Success criteria**: Measurable outcomes
-- [ ] **Story map** (if multiple stories): Visual representation of epic → stories
-- [ ] **Implementation sequence** (if multiple stories): Logical story ordering with dependencies
-- [ ] **Tech-spec reference**: Links back to tech-spec.md
-- [ ] **Detail level appropriate**: Minimal for 1 story, detailed for multiple
+### 컨텍스트 섹션
 
----
+- [ ] **사용 가능한 문서**: 로드된 모든 문서를 나열함
+- [ ] **프로젝트 스택**: 완전한 프레임워크 및 의존성 정보
+- [ ] **기존 코드베이스 구조**: 브라운필드 분석 또는 그린필드 표기
 
-## 7. Workflow Status Integration
+### 변경 사항 섹션
 
-- [ ] bmm-workflow-status.yaml updated (if exists)
-- [ ] Current phase reflects tech-spec completion
-- [ ] Progress percentage updated appropriately
-- [ ] Next workflow clearly identified
+- [ ] **문제 정의**: 명확하고 구체적인 문제 정의
+- [ ] **제안된 솔루션**: 구체적인 솔루션 접근 방식
+- [ ] **범위 내/외**: 명확한 경계가 정의됨
 
----
+### 개발 컨텍스트 섹션
 
-## 8. Implementation Readiness (NEW - ENHANCED)
+- [ ] **관련 기존 코드**: 특정 파일 및 줄 번호에 대한 참조 (브라운필드)
+- [ ] **프레임워크 의존성**: 프로젝트의 정확한 버전을 포함한 완전한 목록
+- [ ] **내부 의존성**: 내부 모듈이 나열됨
+- [ ] **설정 변경**: 특정 설정 파일 업데이트가 식별됨
 
-### Can Developer Start Immediately?
+### 개발자 리소스 섹션
 
-- [ ] **All context available**: Brownfield analysis + stack details + existing patterns
-- [ ] **No research needed**: Developer doesn't need to hunt for framework versions or patterns
-- [ ] **Specific file paths**: Developer knows exactly which files to create/modify
-- [ ] **Code references**: Can find similar code to reference (brownfield)
-- [ ] **Testing clear**: Knows what to test and how
-- [ ] **Deployment documented**: Knows how to deploy and rollback
-
-### Tech-Spec Replaces Story-Context?
-
-- [ ] **Comprehensive enough**: Contains all info typically in story-context XML
-- [ ] **Brownfield analysis**: If applicable, includes codebase reconnaissance
-- [ ] **Framework specifics**: Exact versions and usage patterns
-- [ ] **Pattern guidance**: Shows examples of existing patterns to follow
+- [ ] **파일 경로 참조**: 관련된 모든 파일의 완전한 목록
+- [ ] **주요 코드 위치**: 파일:줄 참조를 포함한 함수, 클래스, 모듈
+- [ ] **테스트 위치**: 특정 테스트 디렉토리 및 패턴
+- [ ] **문서 업데이트**: 업데이트가 필요한 문서가 식별됨
 
 ---
 
-## 9. Critical Failures (Auto-Fail)
+## 5. 스토리 품질
 
-- [ ] ❌ **Non-definitive technical decisions** (any "option A or B" or vague choices)
-- [ ] ❌ **Missing versions** (framework/library without specific version)
-- [ ] ❌ **Context not gathered** (didn't check for document-project, setup files, etc.)
-- [ ] ❌ **Stack mismatch** (decisions don't align with detected project stack)
-- [ ] ❌ **Stories don't match template** (missing Dev Agent Record sections)
-- [ ] ❌ **Missing tech-spec sections** (required section missing from enhanced template)
-- [ ] ❌ **Stories have forward dependencies** (would break sequential implementation)
-- [ ] ❌ **Vague source tree** (file changes not specific with actions)
-- [ ] ❌ **No brownfield analysis** (when document-project output exists but wasn't used)
+### 스토리 형식
 
----
+- [ ] 모든 스토리가 "[역할]로서, [기능]을(를) 원합니다, 그래서 [이점]이(가) 가능합니다" 형식을 사용함
+- [ ] 각 스토리에 번호가 매겨진 수락 기준이 있음
+- [ ] 작업이 AC 번호를 참조함: (AC: #1), (AC: #2)
+- [ ] Dev 노트 섹션이 tech-spec.md에 링크됨
 
-## Validation Notes
+### 스토리 컨텍스트 통합 (새로운 기능)
 
-**Document any findings:**
+- [ ] **기술 사양 참조**: 스토리가 tech-spec.md를 주요 컨텍스트로 명시적으로 참조함
+- [ ] **Dev 에이전트 기록**: 필요한 모든 섹션을 포함함 (컨텍스트 참조, 에이전트 모델 등)
+- [ ] **테스트 결과 섹션**: dev 실행을 위한 플레이스홀더 준비됨
+- [ ] **리뷰 노트 섹션**: 코드 리뷰를 위한 플레이스홀더 준비됨
 
-- **Context Gathering Score**: [Comprehensive / Partial / Insufficient]
-- **Definitiveness Score**: [All definitive / Some ambiguity / Significant ambiguity]
-- **Brownfield Integration**: [N/A - Greenfield / Excellent / Partial / Missing]
-- **Stack Alignment**: [Perfect / Good / Partial / None]
+### 스토리 순서 (레벨 1인 경우)
 
-## **Strengths:**
+- [ ] **수직 슬라이스**: 각 스토리가 완전하고 테스트 가능한 기능을 제공함
+- [ ] **순차적 순서**: 논리적 진행 순서의 스토리
+- [ ] **순방향 의존성 없음**: 어떤 스토리도 이후 작업에 의존하지 않음
+- [ ] 각 스토리가 시스템을 작동 상태로 유지함
 
-## **Issues to address:**
+### 커버리지
 
-## **Recommended actions:**
-
-**Ready for implementation?** [Yes / No - explain]
-
-**Can skip story-context?** [Yes - tech-spec is comprehensive / No - additional context needed / N/A]
+- [ ] 스토리 수락 기준이 tech-spec에서 파생됨
+- [ ] 스토리 작업이 tech-spec 구현 가이드에 매핑됨
+- [ ] 스토리의 파일이 tech-spec 소스 트리와 일치함
+- [ ] 주요 코드 참조가 tech-spec 개발자 리소스와 정렬됨
 
 ---
 
-_The tech-spec should be a RICH CONTEXT DOCUMENT that gives developers everything they need without requiring separate context generation._
+## 6. 에픽 품질 (모든 프로젝트)
+
+- [ ] **에픽 제목**: 사용자 중심의 결과 (구현 세부사항이 아님)
+- [ ] **에픽 슬러그**: 깔끔한 케밥 케이스 슬러그 (2-3단어)
+- [ ] **에픽 목표**: 명확한 목적 및 가치 진술
+- [ ] **에픽 범위**: 경계가 명확하게 정의됨
+- [ ] **성공 기준**: 측정 가능한 결과
+- [ ] **스토리 맵** (여러 스토리인 경우): 에픽 → 스토리의 시각적 표현
+- [ ] **구현 순서** (여러 스토리인 경우): 의존성을 포함한 논리적 스토리 순서
+- [ ] **기술 사양 참조**: tech-spec.md에 다시 링크됨
+- [ ] **적절한 세부 수준**: 1개 스토리는 최소한으로, 여러 개는 상세하게
+
+---
+
+## 7. 워크플로우 상태 통합
+
+- [ ] bmm-workflow-status.yaml 업데이트됨 (존재하는 경우)
+- [ ] 현재 단계가 tech-spec 완료를 반영함
+- [ ] 진행률 백분율이 적절하게 업데이트됨
+- [ ] 다음 워크플로우가 명확하게 식별됨
+
+---
+
+## 8. 구현 준비 (새로운 기능 - 향상됨)
+
+### 개발자가 즉시 시작할 수 있습니까?
+
+- [ ] **모든 컨텍스트 사용 가능**: 브라운필드 분석 + 스택 세부사항 + 기존 패턴
+- [ ] **리서치 불필요**: 개발자가 프레임워크 버전이나 패턴을 찾을 필요 없음
+- [ ] **특정 파일 경로**: 개발자가 생성/수정할 정확한 파일을 알고 있음
+- [ ] **코드 참조**: 참조할 유사한 코드를 찾을 수 있음 (브라운필드)
+- [ ] **테스트 명확**: 무엇을 어떻게 테스트할지 알고 있음
+- [ ] **배포 문서화됨**: 배포 및 롤백 방법을 알고 있음
+
+### Tech-Spec이 Story-Context를 대체합니까?
+
+- [ ] **충분히 포괄적**: 일반적으로 story-context XML에 있는 모든 정보를 포함함
+- [ ] **브라운필드 분석**: 해당하는 경우 코드베이스 정찰을 포함함
+- [ ] **프레임워크 세부사항**: 정확한 버전 및 사용 패턴
+- [ ] **패턴 가이드**: 따라야 할 기존 패턴의 예시를 보여줌
+
+---
+
+## 9. 중요한 실패 (자동 실패)
+
+- [ ] ❌ **명확하지 않은 기술적 결정** ("옵션 A 또는 B" 또는 모호한 선택)
+- [ ] ❌ **버전 누락** (특정 버전이 없는 프레임워크/라이브러리)
+- [ ] ❌ **컨텍스트 미수집** (document-project, 설정 파일 등을 확인하지 않음)
+- [ ] ❌ **스택 불일치** (결정이 감지된 프로젝트 스택과 정렬되지 않음)
+- [ ] ❌ **스토리가 템플릿과 일치하지 않음** (Dev 에이전트 기록 섹션 누락)
+- [ ] ❌ **tech-spec 섹션 누락** (향상된 템플릿의 필수 섹션 누락)
+- [ ] ❌ **스토리에 순방향 의존성이 있음** (순차적 구현을 방해함)
+- [ ] ❌ **모호한 소스 트리** (작업과 함께 특정하지 않은 파일 변경사항)
+- [ ] ❌ **브라운필드 분석 없음** (document-project 출력이 존재하지만 사용되지 않음)
+
+---
+
+## 검증 노트
+
+**발견 사항 문서화:**
+
+- **컨텍스트 수집 점수**: [포괄적 / 부분적 / 불충분]
+- **명확성 점수**: [모두 명확함 / 일부 모호함 / 상당한 모호함]
+- **브라운필드 통합**: [N/A - 그린필드 / 우수 / 부분적 / 누락]
+- **스택 정렬**: [완벽 / 좋음 / 부분적 / 없음]
+
+## **강점:**
+
+## **해결할 문제:**
+
+## **권장 조치:**
+
+**구현 준비 완료?** [예 / 아니오 - 설명]
+
+**story-context 건너뛸 수 있습니까?** [예 - tech-spec이 포괄적임 / 아니오 - 추가 컨텍스트 필요 / N/A]
+
+---
+
+_기술 사양은 개발자에게 별도의 컨텍스트 생성 없이 필요한 모든 것을 제공하는 풍부한 컨텍스트 문서여야 합니다._

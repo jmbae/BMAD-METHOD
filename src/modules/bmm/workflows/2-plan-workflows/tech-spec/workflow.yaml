@@ -1,6 +1,6 @@
 # Technical Specification
 name: tech-spec
-description: "Technical specification workflow for quick-flow projects. Creates focused tech spec and generates epic + stories (1 story for simple changes, 2-5 stories for features). Tech-spec only - no PRD needed."
+description: "퀵 플로우 프로젝트를 위한 기술 사양 워크플로우. 집중된 기술 사양을 생성하고 에픽 + 스토리를 생성 (단순 변경은 1개 스토리, 기능은 2-5개 스토리). 기술 사양만 필요 - PRD 불필요."
 author: "BMad"
 
 # Critical variables from config
