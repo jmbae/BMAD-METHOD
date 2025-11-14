@@ -1,299 +1,299 @@
-# Market Research Report Validation Checklist
+# 시장 조사 보고서 검증 체크리스트
 
-## 🚨 CRITICAL: Source Verification and Fact-Checking (PRIORITY)
+## 🚨 중요: 소스 검증 및 사실 확인 (우선순위)
 
-### Source Citation Completeness
+### 소스 인용 완전성
 
-- [ ] **EVERY** market size claim has at least 2 cited sources with URLs
-- [ ] **EVERY** growth rate/CAGR has cited sources with URLs
-- [ ] **EVERY** competitive data point (pricing, features, funding) has sources with URLs
-- [ ] **EVERY** customer statistic or insight has cited sources
-- [ ] **EVERY** industry trend claim has sources from {{current_year}} or recent years
-- [ ] All sources include: Name, Date, URL (clickable links)
-- [ ] No claims exist without verifiable sources
+- [ ] **모든** 시장 규모 주장이 URL과 함께 최소 2개의 인용된 소스를 가짐
+- [ ] **모든** 성장률/CAGR이 URL과 함께 인용된 소스를 가짐
+- [ ] **모든** 경쟁 데이터 포인트(가격, 기능, 펀딩)가 URL과 함께 소스를 가짐
+- [ ] **모든** 고객 통계 또는 인사이트가 인용된 소스를 가짐
+- [ ] **모든** 산업 트렌드 주장이 {{current_year}} 또는 최근 연도의 소스를 가짐
+- [ ] 모든 소스가 포함: 이름, 날짜, URL (클릭 가능한 링크)
+- [ ] 검증 가능한 소스 없이 존재하는 주장 없음
 
-### Source Quality and Credibility
+### 소스 품질 및 신뢰성
 
-- [ ] Market size sources are HIGH credibility (Gartner, Forrester, IDC, government data, industry associations)
-- [ ] NOT relying on single blog posts or unverified sources for critical data
-- [ ] Sources are recent ({{current_year}} or within 1-2 years for time-sensitive data)
-- [ ] Primary sources prioritized over secondary/tertiary sources
-- [ ] Paywalled reports are cited with proper attribution (e.g., "Gartner Market Report 2025")
+- [ ] 시장 규모 소스가 높은 신뢰성 (Gartner, Forrester, IDC, 정부 데이터, 산업 협회)
+- [ ] 중요한 데이터를 위해 단일 블로그 게시물이나 검증되지 않은 소스에 의존하지 않음
+- [ ] 소스가 최신 (시간에 민감한 데이터의 경우 {{current_year}} 또는 1-2년 이내)
+- [ ] 2차/3차 소스보다 1차 소스를 우선시
+- [ ] 유료 보고서가 적절한 출처 표시와 함께 인용됨 (예: "Gartner 시장 보고서 2025")
 
-### Multi-Source Verification (Critical Claims)
+### 다중 소스 검증 (중요한 주장)
 
-- [ ] TAM calculation verified by at least 2 independent sources
-- [ ] SAM calculation methodology is transparent and sourced
-- [ ] SOM estimates are conservative and based on comparable benchmarks
-- [ ] Market growth rates corroborated by multiple analyst reports
-- [ ] Competitive market share data verified across sources
+- [ ] TAM 계산이 최소 2개의 독립적인 소스로 검증됨
+- [ ] SAM 계산 방법론이 투명하고 소스가 있음
+- [ ] SOM 추정치가 보수적이고 비교 가능한 벤치마크를 기반으로 함
+- [ ] 시장 성장률이 여러 분석가 보고서로 확증됨
+- [ ] 경쟁 시장 점유율 데이터가 소스 간에 검증됨
 
-### Conflicting Data Resolution
+### 충돌하는 데이터 해결
 
-- [ ] Where sources conflict, ALL conflicting estimates are presented
-- [ ] Variance between sources is explained (methodology, scope differences)
-- [ ] No arbitrary selection of "convenient" numbers without noting alternatives
-- [ ] Conflicting data is flagged with confidence levels
-- [ ] User is made aware of uncertainty in conflicting claims
+- [ ] 소스가 충돌하는 경우 모든 충돌하는 추정치가 제시됨
+- [ ] 소스 간 차이가 설명됨 (방법론, 범위 차이)
+- [ ] 대안을 언급하지 않고 "편리한" 숫자를 임의로 선택하지 않음
+- [ ] 충돌하는 데이터가 신뢰도 수준으로 플래그 지정됨
+- [ ] 사용자가 충돌하는 주장의 불확실성을 인식함
 
-### Confidence Level Marking
+### 신뢰도 수준 표시
 
-- [ ] Every major claim is marked with confidence level:
-  - **[Verified - 2+ sources]** = High confidence, multiple independent sources agree
-  - **[Single source - verify]** = Medium confidence, only one source found
-  - **[Estimated - low confidence]** = Low confidence, calculated/projected without strong sources
-- [ ] Low confidence claims are clearly flagged for user to verify independently
-- [ ] Speculative/projected data is labeled as PROJECTION or FORECAST, not presented as fact
+- [ ] 모든 주요 주장이 신뢰도 수준으로 표시됨:
+  - **[검증됨 - 2개 이상의 소스]** = 높은 신뢰도, 여러 독립적인 소스가 동의
+  - **[단일 소스 - 확인 필요]** = 중간 신뢰도, 하나의 소스만 찾음
+  - **[추정 - 낮은 신뢰도]** = 낮은 신뢰도, 강력한 소스 없이 계산/투영
+- [ ] 낮은 신뢰도 주장이 사용자가 독립적으로 확인하도록 명확히 플래그 지정됨
+- [ ] 추측/투영 데이터가 사실로 제시되지 않고 투영 또는 예측으로 레이블 지정됨
 
-### Fact vs Analysis vs Speculation
+### 사실 대 분석 대 추측
 
-- [ ] Clear distinction between:
-  - **FACT:** Sourced data with citations (e.g., "Market is $5.2B [Source: Gartner 2025]")
-  - **ANALYSIS:** Interpretation of facts (e.g., "This suggests strong growth momentum")
-  - **SPECULATION:** Educated guesses (e.g., "This trend may continue if...")
-- [ ] Analysis and speculation are NOT presented as verified facts
-- [ ] Recommendations are based on sourced facts, not unsupported assumptions
+- [ ] 다음 간 명확한 구분:
+  - **사실:** 인용과 함께 소스된 데이터 (예: "시장은 $5.2B [소스: Gartner 2025]")
+  - **분석:** 사실의 해석 (예: "이것은 강력한 성장 모멘텀을 시사합니다")
+  - **추측:** 교육받은 추측 (예: "이 트렌드는 계속될 수 있습니다...")
+- [ ] 분석과 추측이 검증된 사실로 제시되지 않음
+- [ ] 권장사항이 지원되지 않는 가정이 아닌 소스된 사실을 기반으로 함
 
-### Anti-Hallucination Verification
+### 환각 방지 검증
 
-- [ ] No invented statistics or "made up" market sizes
-- [ ] All percentages, dollar amounts, and growth rates are traceable to sources
-- [ ] If data couldn't be found, report explicitly states "No verified data available for [X]"
-- [ ] No use of vague sources like "industry experts say" without naming the expert/source
-- [ ] Version numbers, dates, and specific figures match source material exactly
+- [ ] 발명된 통계 또는 "만들어진" 시장 규모 없음
+- [ ] 모든 백분율, 달러 금액 및 성장률이 소스로 추적 가능
+- [ ] 데이터를 찾을 수 없는 경우 보고서가 명시적으로 "[X]에 대한 검증된 데이터를 사용할 수 없습니다"라고 명시
+- [ ] 전문가/소스를 명명하지 않고 "업계 전문가가 말한다"와 같은 모호한 소스를 사용하지 않음
+- [ ] 버전 번호, 날짜 및 구체적인 수치가 소스 자료와 정확히 일치
 
-## Market Sizing Analysis (Source-Verified)
+## 시장 규모 분석 (소스 검증됨)
 
-### TAM Calculation Sources
+### TAM 계산 소스
 
-- [ ] TAM figure has at least 2 independent source citations
-- [ ] Calculation methodology is sourced (not invented)
-- [ ] Industry benchmarks used for sanity-check are cited
-- [ ] Growth rate assumptions are backed by sourced projections
-- [ ] Any adjustments or filters applied are justified and documented
+- [ ] TAM 수치가 최소 2개의 독립적인 소스 인용을 가짐
+- [ ] 계산 방법론이 소스됨 (발명되지 않음)
+- [ ] 정상성 확인에 사용된 산업 벤치마크가 인용됨
+- [ ] 성장률 가정이 소스된 투영으로 뒷받침됨
+- [ ] 적용된 조정이나 필터가 정당화되고 문서화됨
 
-### SAM and SOM Source Verification
+### SAM 및 SOM 소스 검증
 
-- [ ] SAM constraints are based on sourced data (addressable market scope)
-- [ ] SOM competitive assumptions cite actual competitor data
-- [ ] Market share benchmarks reference comparable companies with sources
-- [ ] Scenarios (conservative/realistic/optimistic) are justified with sourced reasoning
+- [ ] SAM 제약이 소스된 데이터를 기반으로 함 (주소 가능한 시장 범위)
+- [ ] SOM 경쟁 가정이 실제 경쟁자 데이터를 인용
+- [ ] 시장 점유율 벤치마크가 소스가 있는 비교 가능한 회사를 참조
+- [ ] 시나리오 (보수적/현실적/낙관적)가 소스된 추론으로 정당화됨
 
-## Competitive Analysis (Source-Verified)
+## 경쟁 분석 (소스 검증됨)
 
-### Competitor Data Source Verification
+### 경쟁자 데이터 소스 검증
 
-- [ ] **EVERY** competitor mentioned has source for basic company info
-- [ ] Competitor pricing data has sources (website URLs, pricing pages, reviews)
-- [ ] Funding amounts cite sources (Crunchbase, press releases, SEC filings)
-- [ ] Product features verified through sources (official website, documentation, reviews)
-- [ ] Market positioning claims are backed by sources (analyst reports, company statements)
-- [ ] Customer count/user numbers cite sources (company announcements, verified reports)
-- [ ] Recent news and developments cite article URLs with dates from {{current_year}}
+- [ ] **모든** 언급된 경쟁자가 기본 회사 정보에 대한 소스를 가짐
+- [ ] 경쟁자 가격 데이터가 소스를 가짐 (웹사이트 URL, 가격 페이지, 리뷰)
+- [ ] 펀딩 금액이 소스를 인용 (Crunchbase, 보도 자료, SEC 제출)
+- [ ] 제품 기능이 소스를 통해 검증됨 (공식 웹사이트, 문서, 리뷰)
+- [ ] 시장 포지셔닝 주장이 소스로 뒷받침됨 (분석가 보고서, 회사 성명)
+- [ ] 고객 수/사용자 수가 소스를 인용 (회사 발표, 검증된 보고서)
+- [ ] 최근 뉴스 및 개발이 {{current_year}}의 날짜가 있는 기사 URL을 인용
 
-### Competitive Data Credibility
+### 경쟁 데이터 신뢰성
 
-- [ ] Company websites/official sources used for product info (highest credibility)
-- [ ] Financial data from Crunchbase, PitchBook, or SEC filings (not rumors)
-- [ ] Review sites cited for customer sentiment (G2, Capterra, TrustPilot with URLs)
-- [ ] Pricing verified from official pricing pages (with URL and date checked)
-- [ ] No assumptions about competitors without sourced evidence
+- [ ] 제품 정보를 위해 회사 웹사이트/공식 소스 사용 (최고 신뢰성)
+- [ ] Crunchbase, PitchBook 또는 SEC 제출에서 재무 데이터 (소문이 아님)
+- [ ] 고객 감정을 위해 인용된 리뷰 사이트 (G2, Capterra, TrustPilot URL 포함)
+- [ ] 공식 가격 페이지에서 검증된 가격 (URL 및 확인된 날짜 포함)
+- [ ] 소스된 증거 없이 경쟁자에 대한 가정 없음
 
-### Competitive Claims Verification
+### 경쟁 주장 검증
 
-- [ ] Market share claims cite analyst reports or verified data
-- [ ] "Leading" or "dominant" claims backed by sourced market data
-- [ ] Competitor weaknesses cited from reviews, articles, or public statements (not speculation)
-- [ ] Product comparison claims verified (feature lists from official sources)
+- [ ] 시장 점유율 주장이 분석가 보고서 또는 검증된 데이터를 인용
+- [ ] "선도적" 또는 "지배적" 주장이 소스된 시장 데이터로 뒷받침됨
+- [ ] 경쟁자 약점이 리뷰, 기사 또는 공개 성명에서 인용됨 (추측이 아님)
+- [ ] 제품 비교 주장이 검증됨 (공식 소스의 기능 목록)
 
-## Customer Intelligence (Source-Verified)
+## 고객 인텔리전스 (소스 검증됨)
 
-### Customer Data Sources
+### 고객 데이터 소스
 
-- [ ] Customer segment data cites research sources (reports, surveys, studies)
-- [ ] Demographics/firmographics backed by census data, industry reports, or studies
-- [ ] Pain points sourced from customer research, reviews, surveys (not assumed)
-- [ ] Willingness to pay backed by pricing studies, surveys, or comparable market data
-- [ ] Buying behavior sourced from research studies or industry data
-- [ ] Jobs-to-be-Done insights cite customer research or validated frameworks
+- [ ] 고객 세그먼트 데이터가 연구 소스를 인용 (보고서, 설문조사, 연구)
+- [ ] 인구통계/기업통계가 인구 조사 데이터, 산업 보고서 또는 연구로 뒷받침됨
+- [ ] 문제점이 고객 연구, 리뷰, 설문조사에서 소스됨 (가정되지 않음)
+- [ ] 지불 의향이 가격 연구, 설문조사 또는 비교 가능한 시장 데이터로 뒷받침됨
+- [ ] 구매 행동이 연구 또는 산업 데이터에서 소스됨
+- [ ] Jobs-to-be-Done 인사이트가 고객 연구 또는 검증된 프레임워크를 인용
 
-### Customer Insight Credibility
+### 고객 인사이트 신뢰성
 
-- [ ] Primary research (if conducted) documents sample size and methodology
-- [ ] Secondary research cites the original study/report with full attribution
-- [ ] Customer quotes or testimonials cite the source (interview, review site, case study)
-- [ ] Persona data based on real research findings (not fictional archetypes)
-- [ ] No invented customer statistics or behaviors without source backing
+- [ ] 1차 연구 (수행된 경우)가 샘플 크기 및 방법론을 문서화
+- [ ] 2차 연구가 전체 출처와 함께 원래 연구/보고서를 인용
+- [ ] 고객 인용 또는 추천이 소스를 인용 (인터뷰, 리뷰 사이트, 사례 연구)
+- [ ] 페르소나 데이터가 실제 연구 결과를 기반으로 함 (허구의 원형이 아님)
+- [ ] 소스 뒷받침 없이 발명된 고객 통계 또는 행동 없음
 
-### Positioning Analysis
+### 포지셔닝 분석
 
-- [ ] Market positioning map uses relevant dimensions for the industry
-- [ ] White space opportunities are clearly identified
-- [ ] Differentiation strategy is supported by competitive gaps
-- [ ] Switching costs and barriers are quantified
-- [ ] Network effects and moats are assessed
+- [ ] 시장 포지셔닝 맵이 산업에 관련된 차원을 사용
+- [ ] 화이트 스페이스 기회가 명확히 식별됨
+- [ ] 차별화 전략이 경쟁 격차로 지원됨
+- [ ] 전환 비용 및 장벽이 정량화됨
+- [ ] 네트워크 효과 및 해자가 평가됨
 
-## Industry Analysis
+## 산업 분석
 
-### Porter's Five Forces
+### Porter의 Five Forces
 
-- [ ] Each force has a clear rating (Low/Medium/High) with justification
-- [ ] Specific examples and evidence support each assessment
-- [ ] Industry-specific factors are considered (not generic template)
-- [ ] Implications for strategy are drawn from each force
-- [ ] Overall industry attractiveness conclusion is provided
+- [ ] 각 힘이 정당화와 함께 명확한 평가 (낮음/중간/높음)를 가짐
+- [ ] 구체적인 예와 증거가 각 평가를 지원
+- [ ] 산업별 요인이 고려됨 (일반 템플릿이 아님)
+- [ ] 전략에 대한 의미가 각 힘에서 도출됨
+- [ ] 전반적인 산업 매력도 결론이 제공됨
 
-### Trends and Dynamics
+### 트렌드 및 역학
 
-- [ ] At least 5 major trends are identified with evidence
-- [ ] Technology disruptions are assessed for probability and timeline
-- [ ] Regulatory changes and their impacts are documented
-- [ ] Social/cultural shifts relevant to adoption are included
-- [ ] Market maturity stage is identified with supporting indicators
+- [ ] 최소 5개의 주요 트렌드가 증거와 함께 식별됨
+- [ ] 기술 파괴가 확률 및 타임라인에 대해 평가됨
+- [ ] 규제 변경 및 그 영향이 문서화됨
+- [ ] 채택과 관련된 사회/문화적 변화가 포함됨
+- [ ] 시장 성숙도 단계가 지원 지표와 함께 식별됨
 
-## Strategic Recommendations
+## 전략적 권장사항
 
-### Go-to-Market Strategy
+### 시장 진출 전략
 
-- [ ] Target segment prioritization has clear rationale
-- [ ] Positioning statement is specific and differentiated
-- [ ] Channel strategy aligns with customer buying behavior
-- [ ] Partnership opportunities are identified with specific targets
-- [ ] Pricing strategy is justified by willingness-to-pay analysis
+- [ ] 대상 세그먼트 우선순위 지정이 명확한 근거를 가짐
+- [ ] 포지셔닝 진술이 구체적이고 차별화됨
+- [ ] 채널 전략이 고객 구매 행동과 일치
+- [ ] 파트너십 기회가 구체적인 대상과 함께 식별됨
+- [ ] 가격 전략이 지불 의향 분석으로 정당화됨
 
-### Opportunity Assessment
+### 기회 평가
 
-- [ ] Each opportunity is sized quantitatively
-- [ ] Resource requirements are estimated (time, money, people)
-- [ ] Success criteria are measurable and time-bound
-- [ ] Dependencies and prerequisites are identified
-- [ ] Quick wins vs. long-term plays are distinguished
+- [ ] 각 기회가 정량적으로 크기가 정해짐
+- [ ] 리소스 요구사항이 추정됨 (시간, 돈, 사람)
+- [ ] 성공 기준이 측정 가능하고 시간 제한됨
+- [ ] 종속성 및 전제 조건이 식별됨
+- [ ] 빠른 성과 대 장기 플레이가 구별됨
 
-### Risk Analysis
+### 위험 분석
 
-- [ ] All major risk categories are covered (market, competitive, execution, regulatory)
-- [ ] Each risk has probability and impact assessment
-- [ ] Mitigation strategies are specific and actionable
-- [ ] Early warning indicators are defined
-- [ ] Contingency plans are outlined for high-impact risks
+- [ ] 모든 주요 위험 범주가 다뤄짐 (시장, 경쟁, 실행, 규제)
+- [ ] 각 위험이 확률 및 영향 평가를 가짐
+- [ ] 완화 전략이 구체적이고 실행 가능
+- [ ] 조기 경고 지표가 정의됨
+- [ ] 고영향 위험에 대한 비상 계획이 개략적으로 설명됨
 
-## References and Source Documentation (CRITICAL)
+## 참조 및 소스 문서 (중요)
 
-### References Section Completeness
+### 참조 섹션 완전성
 
-- [ ] Report includes comprehensive "References and Sources" section
-- [ ] Sources organized by category (market size, competitive, customer, trends)
-- [ ] Every source includes: Title/Name, Publisher, Date, Full URL
-- [ ] URLs are clickable and functional (not broken links)
-- [ ] Sources are numbered or organized for easy reference
-- [ ] Inline citations throughout report reference the sources section
+- [ ] 보고서가 포괄적인 "참조 및 소스" 섹션을 포함
+- [ ] 소스가 범주별로 구성됨 (시장 규모, 경쟁, 고객, 트렌드)
+- [ ] 모든 소스가 포함: 제목/이름, 발행자, 날짜, 전체 URL
+- [ ] URL이 클릭 가능하고 기능함 (깨진 링크 아님)
+- [ ] 소스가 쉬운 참조를 위해 번호가 매겨지거나 구성됨
+- [ ] 보고서 전체의 인라인 인용이 소스 섹션을 참조
 
-### Source Quality Metrics
+### 소스 품질 메트릭
 
-- [ ] Report documents total sources cited count
-- [ ] High confidence claims (2+ sources) count is reported
-- [ ] Single source claims are identified and counted
-- [ ] Low confidence/speculative claims are flagged
-- [ ] Web searches conducted count is included (for transparency)
+- [ ] 보고서가 인용된 총 소스 수를 문서화
+- [ ] 높은 신뢰도 주장 (2개 이상의 소스) 수가 보고됨
+- [ ] 단일 소스 주장이 식별되고 계산됨
+- [ ] 낮은 신뢰도/추측 주장이 플래그 지정됨
+- [ ] 투명성을 위해 수행된 웹 검색 수가 포함됨
 
-### Source Audit Trail
+### 소스 감사 추적
 
-- [ ] For each major section, sources are listed
-- [ ] TAM/SAM/SOM calculations show source for each number
-- [ ] Competitive data shows source for each competitor profile
-- [ ] Customer insights show research sources
-- [ ] Industry trends show article/report sources with dates
+- [ ] 각 주요 섹션에 대해 소스가 나열됨
+- [ ] TAM/SAM/SOM 계산이 각 숫자에 대한 소스를 표시
+- [ ] 경쟁 데이터가 각 경쟁자 프로필에 대한 소스를 표시
+- [ ] 고객 인사이트가 연구 소스를 표시
+- [ ] 산업 트렌드가 날짜가 있는 기사/보고서 소스를 표시
 
-### Citation Format Standards
+### 인용 형식 표준
 
-- [ ] Inline citations format: [Source: Company/Publication, Year, URL] or similar
-- [ ] Consistent citation style throughout document
-- [ ] No vague citations like "according to sources" without specifics
-- [ ] URLs are complete (not truncated)
-- [ ] Accessed/verified dates included for web sources
+- [ ] 인라인 인용 형식: [소스: 회사/출판물, 연도, URL] 또는 유사
+- [ ] 문서 전체에 걸쳐 일관된 인용 스타일
+- [ ] "소스에 따르면"과 같은 모호한 인용 없이 구체적
+- [ ] URL이 완전함 (잘리지 않음)
+- [ ] 웹 소스에 대한 액세스/검증 날짜 포함
 
-## Document Quality
+## 문서 품질
 
-### Anti-Hallucination Final Check
+### 환각 방지 최종 확인
 
-- [ ] Read through entire report - does anything "feel" invented or too convenient?
-- [ ] Spot-check 5-10 random claims - can you find the cited source?
-- [ ] Check suspicious round numbers - are they actually from sources?
-- [ ] Verify any "shocking" statistics have strong sources
-- [ ] Cross-check key market size claims against multiple cited sources
+- [ ] 전체 보고서를 읽습니다 - 발명되거나 너무 편리한 것이 "느껴지나요"?
+- [ ] 무작위 주장 5-10개를 스팟 체크 - 인용된 소스를 찾을 수 있나요?
+- [ ] 의심스러운 반올림 숫자 확인 - 실제로 소스에서 온 것인가요?
+- [ ] "충격적인" 통계가 강력한 소스를 가지고 있는지 확인
+- [ ] 여러 인용된 소스에 대해 주요 시장 규모 주장을 교차 확인
 
-### Structure and Completeness
+### 구조 및 완전성
 
-- [ ] Executive summary captures all key insights
-- [ ] No placeholder text remains (all {{variables}} are replaced)
-- [ ] References section is complete and properly formatted
-- [ ] Source quality assessment included
-- [ ] Document ready for fact-checking by third party
+- [ ] 요약이 모든 주요 인사이트를 캡처
+- [ ] 플레이스홀더 텍스트가 남아있지 않음 (모든 {{variables}}가 대체됨)
+- [ ] 참조 섹션이 완전하고 적절히 포맷됨
+- [ ] 소스 품질 평가가 포함됨
+- [ ] 문서가 제3자의 사실 확인 준비됨
 
-## Research Completeness
+## 연구 완전성
 
-### Coverage Check
+### 커버리지 확인
 
-- [ ] All workflow steps were completed (none skipped without justification)
-- [ ] Optional analyses were considered and included where valuable
-- [ ] Web research was conducted for current market intelligence
-- [ ] Financial projections align with market size analysis
-- [ ] Implementation roadmap provides clear next steps
+- [ ] 모든 워크플로우 단계가 완료됨 (정당화 없이 건너뛴 것이 없음)
+- [ ] 선택적 분석이 고려되고 가치가 있는 경우 포함됨
+- [ ] 현재 시장 인텔리전스를 위해 웹 연구가 수행됨
+- [ ] 재무 투영이 시장 규모 분석과 일치
+- [ ] 구현 로드맵이 명확한 다음 단계를 제공
 
-### Validation
+### 검증
 
-- [ ] Key findings are triangulated across multiple sources
-- [ ] Surprising insights are double-checked for accuracy
-- [ ] Calculations are verified for mathematical accuracy
-- [ ] Conclusions logically follow from the analysis
-- [ ] Recommendations are actionable and specific
+- [ ] 주요 발견이 여러 소스에 걸쳐 삼각 측량됨
+- [ ] 놀라운 인사이트가 정확성을 위해 이중 확인됨
+- [ ] 계산이 수학적 정확성을 위해 검증됨
+- [ ] 결론이 분석에서 논리적으로 따름
+- [ ] 권장사항이 실행 가능하고 구체적
 
-## Final Quality Assurance
+## 최종 품질 보증
 
-### Ready for Decision-Making
+### 의사 결정 준비
 
-- [ ] Research answers all initial objectives
-- [ ] Sufficient detail for investment decisions
-- [ ] Clear go/no-go recommendation provided
-- [ ] Success metrics are defined
-- [ ] Follow-up research needs are identified
+- [ ] 연구가 모든 초기 목표에 답변
+- [ ] 투자 결정을 위한 충분한 세부사항
+- [ ] 명확한 진행/중단 권장사항 제공
+- [ ] 성공 메트릭이 정의됨
+- [ ] 후속 연구 필요가 식별됨
 
-### Document Meta
+### 문서 메타
 
-- [ ] Research date is current
-- [ ] Confidence levels are indicated for key assertions
-- [ ] Next review date is set
-- [ ] Distribution list is appropriate
-- [ ] Confidentiality classification is marked
+- [ ] 연구 날짜가 현재
+- [ ] 주요 주장에 대한 신뢰도 수준이 표시됨
+- [ ] 다음 검토 날짜가 설정됨
+- [ ] 배포 목록이 적절
+- [ ] 기밀성 분류가 표시됨
 
 ---
 
-## Issues Found
+## 발견된 문제
 
-### Critical Issues
+### 중요한 문제
 
-_List any critical gaps or errors that must be addressed:_
+_해결해야 할 중요한 격차 또는 오류 나열:_
 
-- [ ] Issue 1: [Description]
-- [ ] Issue 2: [Description]
+- [ ] 문제 1: [설명]
+- [ ] 문제 2: [설명]
 
-### Minor Issues
+### 사소한 문제
 
-_List minor improvements that would enhance the report:_
+_보고서를 개선할 사소한 개선사항 나열:_
 
-- [ ] Issue 1: [Description]
-- [ ] Issue 2: [Description]
+- [ ] 문제 1: [설명]
+- [ ] 문제 2: [설명]
 
-### Additional Research Needed
+### 추가 연구 필요
 
-_List areas requiring further investigation:_
+_추가 조사가 필요한 영역 나열:_
 
-- [ ] Topic 1: [Description]
-- [ ] Topic 2: [Description]
+- [ ] 주제 1: [설명]
+- [ ] 주제 2: [설명]
 
 ---
 
-**Validation Complete:** ☐ Yes ☐ No
-**Ready for Distribution:** ☐ Yes ☐ No
-**Reviewer:** {reviewer}
-**Date:** {date}
+**검증 완료:** ☐ 예 ☐ 아니요
+**배포 준비:** ☐ 예 ☐ 아니요
+**검토자:** {reviewer}
+**날짜:** {date}
