@@ -1,6 +1,6 @@
 # Story Ready Workflow (SM Agent)
 name: story-ready
-description: "Marks a drafted story as ready for development and moves it from TODO → IN PROGRESS in the status file. Simple status-update workflow with no searching required."
+description: "작성된 스토리를 개발 준비 상태로 표시하고 상태 파일에서 TODO → IN PROGRESS로 이동합니다. 검색이 필요 없는 간단한 상태 업데이트 워크플로우입니다."
 author: "BMad"
 
 # Critical variables from config
