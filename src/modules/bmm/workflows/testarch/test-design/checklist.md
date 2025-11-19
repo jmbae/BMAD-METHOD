@@ -1,4 +1,4 @@
-# Test Design and Risk Assessment - Validation Checklist
+# 테스트 설계 및 위험 평가 - 검증 체크리스트
 
 ## Prerequisites
 

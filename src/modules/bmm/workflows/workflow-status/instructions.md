@@ -1,9 +1,9 @@
-# Workflow Status Check - Multi-Mode Service
+# 워크플로우 상태 확인 - 다중 모드 서비스
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project-root}/{bmad_folder}/bmm/workflows/workflow-status/workflow.yaml</critical>
-<critical>This workflow operates in multiple modes: interactive (default), validate, data, init-check, update</critical>
-<critical>Other workflows can call this as a service to avoid duplicating status logic</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {project-root}/{bmad_folder}/bmm/workflows/workflow-status/workflow.yaml</critical>
+<critical>이 워크플로우는 여러 모드로 작동합니다: interactive (기본값), validate, data, init-check, update</critical>
+<critical>다른 워크플로우들이 상태 로직을 중복하지 않기 위해 이것을 서비스로 호출할 수 있습니다</critical>
 
 <workflow>
 

@@ -1,4 +1,4 @@
-# Story Context Assembly Checklist
+# 스토리 컨텍스트 조립 체크리스트
 
 ```xml
 <checklist id="{bmad_folder}/bmm/workflows/4-implementation/story-context/checklist">

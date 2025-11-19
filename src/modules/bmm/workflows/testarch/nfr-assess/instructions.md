@@ -1,8 +1,8 @@
-# Non-Functional Requirements Assessment - Instructions v4.0
+# 비기능 요구사항 평가 - 지침 v4.0
 
-**Workflow:** `testarch-nfr`
-**Purpose:** Assess non-functional requirements (performance, security, reliability, maintainability) before release with evidence-based validation
-**Agent:** Test Architect (TEA)
+**워크플로우:** `testarch-nfr`
+**목적:** 릴리스 전 증거 기반 검증을 통한 비기능 요구사항 (성능, 보안, 신뢰성, 유지보수성) 평가
+**에이전트:** 테스트 아키텍트 (TEA)
 **Format:** Pure Markdown v4.0 (no XML blocks)
 
 ---

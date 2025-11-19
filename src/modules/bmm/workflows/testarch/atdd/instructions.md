@@ -1,9 +1,9 @@
 <!-- Powered by BMAD-CORE™ -->
 
-# Acceptance Test-Driven Development (ATDD)
+# 인수 테스트 주도 개발 (ATDD)
 
-**Workflow ID**: `{bmad_folder}/bmm/testarch/atdd`
-**Version**: 4.0 (BMad v6)
+**워크플로우 ID**: `{bmad_folder}/bmm/testarch/atdd`
+**버전**: 4.0 (BMad v6)
 
 ---
 

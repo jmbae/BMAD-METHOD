@@ -1,6 +1,6 @@
 # Test Architect workflow: nfr-assess
 name: testarch-nfr
-description: "Assess non-functional requirements (performance, security, reliability, maintainability) before release with evidence-based validation"
+description: "릴리스 전 증거 기반 검증을 통한 비기능 요구사항 (성능, 보안, 신뢰성, 유지보수성) 평가"
 author: "BMad"
 
 # Critical variables from config

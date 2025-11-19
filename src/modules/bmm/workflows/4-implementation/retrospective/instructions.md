@@ -1,12 +1,12 @@
-# Retrospective - Epic Completion Review Instructions
+# 회고 - 에픽 완료 검토 지침
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project-root}/{bmad_folder}/bmm/workflows/4-implementation/retrospective/workflow.yaml</critical>
-<critical>Communicate all responses in {communication_language} and language MUST be tailored to {user_skill_level}</critical>
-<critical>Generate all documents in {document_output_language}</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {project-root}/{bmad_folder}/bmm/workflows/4-implementation/retrospective/workflow.yaml</critical>
+<critical>모든 응답을 {communication_language}로 통신하며 언어는 반드시 {user_skill_level}에 맞춰져야 합니다</critical>
+<critical>모든 문서를 {document_output_language}로 생성합니다</critical>
 
 <critical>
-DOCUMENT OUTPUT: Retrospective analysis. Concise insights, lessons learned, action items. User skill level ({user_skill_level}) affects conversation style ONLY, not retrospective content.
+문서 출력: 회고 분석. 간결한 통찰력, 배운 교훈, 실행 항목. 사용자 숙련도 ({user_skill_level})는 대화 스타일에만 영향을 주며 회고 내용에는 영향을 주지 않습니다.
 
 FACILITATION NOTES:
 

@@ -1,4 +1,4 @@
-# Story {{epic_num}}.{{story_num}}: {{story_title}}
+# 스토리 {{epic_num}}.{{story_num}}: {{story_title}}
 
 Status: drafted
 

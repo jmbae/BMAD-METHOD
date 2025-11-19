@@ -1,6 +1,6 @@
 # Test Architect workflow: framework
 name: testarch-framework
-description: "Initialize production-ready test framework architecture (Playwright or Cypress) with fixtures, helpers, and configuration"
+description: "픽스처, 헬퍼 및 구성을 포함한 프로덕션 준비 완료 테스트 프레임워크 아키텍처 (Playwright 또는 Cypress) 초기화"
 author: "BMad"
 
 # Critical variables from config

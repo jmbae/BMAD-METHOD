@@ -1,6 +1,6 @@
 # Review Story Workflow
 name: code-review
-description: "Perform a Senior Developer code review on a completed story flagged Ready for Review, leveraging story-context, epic tech-spec, repo docs, MCP servers for latest best-practices, and web search as fallback. Appends structured review notes to the story."
+description: "검토 준비 완료로 표시된 완료된 스토리에 대해 시니어 개발자 코드 검토 수행. story-context, epic tech-spec, repo docs, 최신 모범 사례를 위한 MCP 서버 활용 및 웹 검색을 대체 수단으로 사용. 구조화된 검토 노트를 스토리에 추가."
 author: "BMad"
 
 # Critical variables from config

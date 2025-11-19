@@ -1,11 +1,11 @@
-# Correct Course - Sprint Change Management Instructions
+# 진로 수정 - 스프린트 변경 관리 지침
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project-root}/{bmad_folder}/bmm/workflows/4-implementation/correct-course/workflow.yaml</critical>
-<critical>Communicate all responses in {communication_language} and language MUST be tailored to {user_skill_level}</critical>
-<critical>Generate all documents in {document_output_language}</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {project-root}/{bmad_folder}/bmm/workflows/4-implementation/correct-course/workflow.yaml</critical>
+<critical>모든 응답을 {communication_language}로 통신하며 언어는 반드시 {user_skill_level}에 맞춰져야 합니다</critical>
+<critical>모든 문서를 {document_output_language}로 생성합니다</critical>
 
-<critical>DOCUMENT OUTPUT: Updated epics, stories, or PRD sections. Clear, actionable changes. User skill level ({user_skill_level}) affects conversation style ONLY, not document updates.</critical>
+<critical>문서 출력: 업데이트된 에픽, 스토리 또는 PRD 섹션. 명확하고 실행 가능한 변경사항. 사용자 숙련도 ({user_skill_level})는 대화 스타일에만 영향을 주며 문서 업데이트에는 영향을 주지 않습니다.</critical>
 
 <workflow>
 

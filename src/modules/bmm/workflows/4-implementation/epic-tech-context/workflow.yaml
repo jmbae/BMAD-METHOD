@@ -1,5 +1,5 @@
 name: epic-tech-context
-description: "Generate a comprehensive Technical Specification from PRD and Architecture with acceptance criteria and traceability mapping"
+description: "PRD 및 아키텍처에서 인수 기준 및 추적성 매핑을 포함한 포괄적인 기술 사양 생성"
 author: "BMAD BMM"
 
 # Critical variables

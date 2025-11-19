@@ -1,4 +1,4 @@
-# Market Research Report: {{product_name}}
+# 시장 조사 보고서: {{product_name}}
 
 **Date:** {{date}}
 **Prepared by:** {{user_name}}

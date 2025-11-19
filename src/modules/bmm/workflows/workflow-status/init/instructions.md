@@ -1,9 +1,9 @@
-# Workflow Init - Project Setup Instructions
+# 워크플로우 초기화 - 프로젝트 설정 지침
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: workflow-init/workflow.yaml</critical>
-<critical>Communicate in {communication_language} with {user_name}</critical>
-<critical>This workflow handles BOTH new projects AND legacy projects being migrated to BMad Method</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: workflow-init/workflow.yaml</critical>
+<critical>{user_name}과 {communication_language}로 통신합니다</critical>
+<critical>이 워크플로우는 새 프로젝트와 BMad Method로 마이그레이션되는 레거시 프로젝트 모두를 처리합니다</critical>
 
 <workflow>
 

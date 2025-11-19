@@ -1,4 +1,4 @@
-# {{project_name}} - Source Tree Analysis
+# {{project_name}} - 소스 트리 분석
 
 **Date:** {{date}}
 

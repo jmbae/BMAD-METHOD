@@ -1,4 +1,4 @@
-# Test Quality Review: {test_filename}
+# 테스트 품질 검토: {test_filename}
 
 **Quality Score**: {score}/100 ({grade} - {assessment})
 **Review Date**: {YYYY-MM-DD}

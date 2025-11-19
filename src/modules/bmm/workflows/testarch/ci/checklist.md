@@ -1,4 +1,4 @@
-# CI/CD Pipeline Setup - Validation Checklist
+# CI/CD 파이프라인 설정 - 검증 체크리스트
 
 ## Prerequisites
 

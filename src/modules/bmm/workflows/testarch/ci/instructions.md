@@ -1,9 +1,9 @@
 <!-- Powered by BMAD-CORE™ -->
 
-# CI/CD Pipeline Setup
+# CI/CD 파이프라인 설정
 
-**Workflow ID**: `{bmad_folder}/bmm/testarch/ci`
-**Version**: 4.0 (BMad v6)
+**워크플로우 ID**: `{bmad_folder}/bmm/testarch/ci`
+**버전**: 4.0 (BMad v6)
 
 ---
 

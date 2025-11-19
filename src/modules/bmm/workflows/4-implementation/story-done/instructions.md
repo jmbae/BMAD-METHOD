@@ -1,13 +1,13 @@
-# Story Approved Workflow Instructions (DEV Agent)
+# 스토리 승인됨 워크플로우 지침 (DEV 에이전트)
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {installed_path}/workflow.yaml</critical>
-<critical>Communicate all responses in {communication_language}</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {installed_path}/workflow.yaml</critical>
+<critical>모든 응답을 {communication_language}로 통신합니다</critical>
 
 <workflow>
 
-<critical>This workflow is run by DEV agent AFTER user confirms a story is approved (Definition of Done is complete)</critical>
-<critical>Workflow: Update story file status to Done</critical>
+<critical>이 워크플로우는 사용자가 스토리가 승인되었음을 확인한 후 (완료 정의가 완료됨) DEV 에이전트에 의해 실행됩니다</critical>
+<critical>워크플로우: 스토리 파일 상태를 Done으로 업데이트</critical>
 
 <step n="1" goal="Find reviewed story to mark done" tag="sprint-status">
 

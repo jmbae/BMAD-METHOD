@@ -1,4 +1,4 @@
-# ATDD Workflow Validation Checklist
+# ATDD 워크플로우 검증 체크리스트
 
 Use this checklist to validate that the ATDD workflow has been executed correctly and all deliverables meet quality standards.
 

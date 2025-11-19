@@ -1,9 +1,9 @@
 <!-- Powered by BMAD-CORE™ -->
 
-# Test Automation Expansion
+# 테스트 자동화 확장
 
-**Workflow ID**: `{bmad_folder}/bmm/testarch/automate`
-**Version**: 4.0 (BMad v6)
+**워크플로우 ID**: `{bmad_folder}/bmm/testarch/automate`
+**버전**: 4.0 (BMad v6)
 
 ---
 

@@ -1,4 +1,4 @@
-# Requirements Traceability & Gate Decision - Validation Checklist
+# 요구사항 추적성 & 게이트 결정 - 검증 체크리스트
 
 **Workflow:** `testarch-trace`
 **Purpose:** Ensure complete traceability matrix with actionable gap analysis AND make deployment readiness decision (PASS/CONCERNS/FAIL/WAIVED)

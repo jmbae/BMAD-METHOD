@@ -1,6 +1,6 @@
 # Test Architect workflow: atdd
 name: testarch-atdd
-description: "Generate failing acceptance tests before implementation using TDD red-green-refactor cycle"
+description: "TDD red-green-refactor 사이클을 사용하여 구현 전 실패하는 인수 테스트 생성"
 author: "BMad"
 
 # Critical variables from config

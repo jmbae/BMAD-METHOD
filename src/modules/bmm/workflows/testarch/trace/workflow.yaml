@@ -1,6 +1,6 @@
 # Test Architect workflow: trace (enhanced with gate decision)
 name: testarch-trace
-description: "Generate requirements-to-tests traceability matrix, analyze coverage, and make quality gate decision (PASS/CONCERNS/FAIL/WAIVED)"
+description: "요구사항-테스트 추적성 매트릭스 생성, 커버리지 분석 및 품질 게이트 결정 (PASS/CONCERNS/FAIL/WAIVED)"
 author: "BMad"
 
 # Critical variables from config

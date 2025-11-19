@@ -1,4 +1,4 @@
-# Epic Technical Specification: {{epic_title}}
+# 에픽 기술 사양: {{epic_title}}
 
 Date: {{date}}
 Author: {{user_name}}

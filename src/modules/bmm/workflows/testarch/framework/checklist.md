@@ -1,52 +1,52 @@
-# Test Framework Setup - Validation Checklist
+# 테스트 프레임워크 설정 - 검증 체크리스트
 
-This checklist ensures the framework workflow completes successfully and all deliverables meet quality standards.
-
----
-
-## Prerequisites
-
-Before starting the workflow:
-
-- [ ] Project root contains valid `package.json`
-- [ ] No existing modern E2E framework detected (`playwright.config.*`, `cypress.config.*`)
-- [ ] Project type identifiable (React, Vue, Angular, Next.js, Node, etc.)
-- [ ] Bundler identifiable (Vite, Webpack, Rollup, esbuild) or not applicable
-- [ ] User has write permissions to create directories and files
+이 체크리스트는 프레임워크 워크플로우가 성공적으로 완료되고 모든 산출물이 품질 기준을 충족하는지 확인합니다.
 
 ---
 
-## Process Steps
+## 전제 조건
 
-### Step 1: Preflight Checks
+워크플로우 시작 전:
 
-- [ ] package.json successfully read and parsed
-- [ ] Project type extracted correctly
-- [ ] Bundler identified (or marked as N/A for backend projects)
-- [ ] No framework conflicts detected
-- [ ] Architecture documents located (if available)
+- [ ] 프로젝트 루트에 유효한 `package.json` 포함
+- [ ] 기존 최신 E2E 프레임워크 감지되지 않음 (`playwright.config.*`, `cypress.config.*`)
+- [ ] 프로젝트 유형 식별 가능 (React, Vue, Angular, Next.js, Node 등)
+- [ ] 번들러 식별 가능 (Vite, Webpack, Rollup, esbuild) 또는 해당 없음
+- [ ] 사용자가 디렉토리 및 파일 생성 권한 보유
 
-### Step 2: Framework Selection
+---
 
-- [ ] Framework auto-detection logic executed
-- [ ] Framework choice justified (Playwright vs Cypress)
-- [ ] Framework preference respected (if explicitly set)
-- [ ] User notified of framework selection and rationale
+## 프로세스 단계
 
-### Step 3: Directory Structure
+### 단계 1: 사전 검사
 
-- [ ] `tests/` root directory created
-- [ ] `tests/e2e/` directory created (or user's preferred structure)
-- [ ] `tests/support/` directory created (critical pattern)
-- [ ] `tests/support/fixtures/` directory created
-- [ ] `tests/support/fixtures/factories/` directory created
-- [ ] `tests/support/helpers/` directory created
-- [ ] `tests/support/page-objects/` directory created (if applicable)
-- [ ] All directories have correct permissions
+- [ ] package.json 성공적으로 읽기 및 파싱
+- [ ] 프로젝트 유형 올바르게 추출
+- [ ] 번들러 식별 (또는 백엔드 프로젝트의 경우 N/A로 표시)
+- [ ] 프레임워크 충돌 감지되지 않음
+- [ ] 아키텍처 문서 위치 확인 (사용 가능한 경우)
 
-**Note**: Test organization is flexible (e2e/, api/, integration/). The **support/** folder is the key pattern.
+### 단계 2: 프레임워크 선택
 
-### Step 4: Configuration Files
+- [ ] 프레임워크 자동 감지 로직 실행
+- [ ] 프레임워크 선택 정당화됨 (Playwright vs Cypress)
+- [ ] 프레임워크 선호도 존중됨 (명시적으로 설정된 경우)
+- [ ] 사용자에게 프레임워크 선택 및 근거 통지
+
+### 단계 3: 디렉토리 구조
+
+- [ ] `tests/` 루트 디렉토리 생성
+- [ ] `tests/e2e/` 디렉토리 생성 (또는 사용자 선호 구조)
+- [ ] `tests/support/` 디렉토리 생성 (중요 패턴)
+- [ ] `tests/support/fixtures/` 디렉토리 생성
+- [ ] `tests/support/fixtures/factories/` 디렉토리 생성
+- [ ] `tests/support/helpers/` 디렉토리 생성
+- [ ] `tests/support/page-objects/` 디렉토리 생성 (해당하는 경우)
+- [ ] 모든 디렉토리가 올바른 권한 보유
+
+**참고**: 테스트 구성은 유연합니다 (e2e/, api/, integration/). **support/** 폴더가 핵심 패턴입니다.
+
+### 단계 4: 구성 파일
 
 - [ ] Framework config file created (`playwright.config.ts` or `cypress.config.ts`)
 - [ ] Config file uses TypeScript (if `use_typescript: true`)

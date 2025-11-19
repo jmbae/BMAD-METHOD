@@ -1,4 +1,4 @@
-# Test Design: Epic {epic_num} - {epic_title}
+# 테스트 설계: 에픽 {epic_num} - {epic_title}
 
 **Date:** {date}
 **Author:** {user_name}

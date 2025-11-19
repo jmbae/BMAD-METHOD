@@ -1,4 +1,4 @@
-# {{project_name}} Documentation Index
+# {{project_name}} 문서 색인
 
 **Type:** {{repository_type}}{{#if is_multi_part}} with {{parts_count}} parts{{/if}}
 **Primary Language:** {{primary_language}}

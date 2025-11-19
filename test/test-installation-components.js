@@ -81,7 +81,7 @@ async function runTests() {
 
       assert(compiled.includes('<menu>'), 'Compiled agent contains <menu> tag');
 
-      assert(compiled.includes('Product Manager'), 'Compiled agent contains agent title');
+      assert(compiled.includes('제품 관리자') || compiled.includes('Product Manager'), 'Compiled agent contains agent title');
 
       // Cleanup
       await fs.remove(tempOutput);

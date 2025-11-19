@@ -1,4 +1,4 @@
-# Tech Spec Validation Checklist
+# 기술 사양 검증 체크리스트
 
 ```xml
 <checklist id="{bmad_folder}/bmm/workflows/4-implementation/epic-tech-context/checklist">

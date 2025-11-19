@@ -1,6 +1,6 @@
 # Retrospective - Epic Completion Review Workflow
 name: "retrospective"
-description: "Run after epic completion to review overall success, extract lessons learned, and explore if new information emerged that might impact the next epic"
+description: "에픽 완료 후 전체 성공 검토, 배운 교훈 추출 및 다음 에픽에 영향을 줄 수 있는 새로운 정보가 나타났는지 탐색"
 author: "BMad"
 
 config_source: "{project-root}/{bmad_folder}/bmm/config.yaml"

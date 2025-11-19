@@ -1,4 +1,4 @@
-# {{project_name}} - Project Overview
+# {{project_name}} - 프로젝트 개요
 
 **Date:** {{date}}
 **Type:** {{project_type}}

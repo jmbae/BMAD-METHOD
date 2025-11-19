@@ -1,4 +1,4 @@
-# Document Project Workflow - Validation Checklist
+# 프로젝트 문서화 워크플로우 - 검증 체크리스트
 
 ## Scan Level and Resumability (v1.2.0)
 

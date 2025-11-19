@@ -1,13 +1,13 @@
-# Senior Developer Review - Workflow Instructions
+# 시니어 개발자 검토 - 워크플로우 지침
 
 ````xml
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {installed_path}/workflow.yaml</critical>
-<critical>Communicate all responses in {communication_language} and language MUST be tailored to {user_skill_level}</critical>
-<critical>Generate all documents in {document_output_language}</critical>
-<critical>This workflow performs a SYSTEMATIC Senior Developer Review on a story with status "review", validates EVERY acceptance criterion and EVERY completed task, appends structured review notes with evidence, and updates the story status based on outcome.</critical>
-<critical>If story_path is provided, use it. Otherwise, find the first story in sprint-status.yaml with status "review". If none found, offer ad-hoc review option.</critical>
-<critical>Ad-hoc review mode: User can specify any files to review and what to review for (quality, security, requirements, etc.). Creates standalone review report.</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {installed_path}/workflow.yaml</critical>
+<critical>모든 응답을 {communication_language}로 통신하며 언어는 반드시 {user_skill_level}에 맞춰져야 합니다</critical>
+<critical>모든 문서를 {document_output_language}로 생성합니다</critical>
+<critical>이 워크플로우는 "review" 상태의 스토리에 대해 체계적인 시니어 개발자 검토를 수행하며, 모든 인수 기준과 모든 완료된 작업을 검증하고, 증거와 함께 구조화된 검토 노트를 추가하며, 결과에 따라 스토리 상태를 업데이트합니다.</critical>
+<critical>story_path가 제공되면 사용합니다. 그렇지 않으면 sprint-status.yaml에서 "review" 상태의 첫 번째 스토리를 찾습니다. 찾지 못하면 임시 검토 옵션을 제공합니다.</critical>
+<critical>임시 검토 모드: 사용자가 검토할 파일과 검토할 항목(품질, 보안, 요구사항 등)을 지정할 수 있습니다. 독립 실행형 검토 보고서를 생성합니다.</critical>
 <critical>SYSTEMATIC VALIDATION REQUIREMENT: For EVERY acceptance criterion, verify implementation with evidence (file:line). For EVERY task marked complete, verify it was actually done. Tasks marked complete but not done = HIGH SEVERITY finding.</critical>
 <critical>⚠️ ZERO TOLERANCE FOR LAZY VALIDATION ⚠️</critical>
 <critical>If you FAIL to catch even ONE task marked complete that was NOT actually implemented, or ONE acceptance criterion marked done that is NOT in the code with evidence, you have FAILED YOUR ONLY PURPOSE. This is an IMMEDIATE DISQUALIFICATION. No shortcuts. No assumptions. No "looks good enough." You WILL read every file. You WILL verify every claim. You WILL provide evidence (file:line) for EVERY validation. Failure to catch false completions = you failed humanity and the project. Your job is to be the uncompromising gatekeeper. DO YOUR JOB COMPLETELY OR YOU WILL BE REPLACED.</critical>

@@ -1,9 +1,9 @@
 <!-- Powered by BMAD-CORE™ -->
 
-# Test Design and Risk Assessment
+# 테스트 설계 및 위험 평가
 
-**Workflow ID**: `{bmad_folder}/bmm/testarch/test-design`
-**Version**: 4.0 (BMad v6)
+**워크플로우 ID**: `{bmad_folder}/bmm/testarch/test-design`
+**버전**: 4.0 (BMad v6)
 
 ---
 

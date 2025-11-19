@@ -1,8 +1,8 @@
-# Test Architect Workflow: Requirements Traceability & Quality Gate Decision
+# 테스트 아키텍트 워크플로우: 요구사항 추적성 & 품질 게이트 결정
 
-**Workflow:** `testarch-trace`
-**Purpose:** Generate requirements-to-tests traceability matrix, analyze coverage gaps, and make quality gate decisions (PASS/CONCERNS/FAIL/WAIVED)
-**Agent:** Test Architect (TEA)
+**워크플로우:** `testarch-trace`
+**목적:** 요구사항-테스트 추적성 매트릭스 생성, 커버리지 격차 분석 및 품질 게이트 결정 (PASS/CONCERNS/FAIL/WAIVED)
+**에이전트:** 테스트 아키텍트 (TEA)
 **Format:** Pure Markdown v4.0 (no XML blocks)
 
 ---

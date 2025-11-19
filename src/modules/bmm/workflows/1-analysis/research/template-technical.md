@@ -1,4 +1,4 @@
-# Technical Research Report: {{technical_question}}
+# 기술 조사 보고서: {{technical_question}}
 
 **Date:** {{date}}
 **Prepared by:** {{user_name}}

@@ -1,8 +1,8 @@
-# Test Quality Review - Instructions v4.0
+# 테스트 품질 검토 - 지침 v4.0
 
-**Workflow:** `testarch-test-review`
-**Purpose:** Review test quality using TEA's comprehensive knowledge base and validate against best practices for maintainability, determinism, isolation, and flakiness prevention
-**Agent:** Test Architect (TEA)
+**워크플로우:** `testarch-test-review`
+**목적:** TEA의 포괄적인 지식 베이스를 사용하여 테스트 품질 검토 및 유지보수성, 결정성, 격리성, 불안정성 방지에 대한 모범 사례 검증
+**에이전트:** 테스트 아키텍트 (TEA)
 **Format:** Pure Markdown v4.0 (no XML blocks)
 
 ---

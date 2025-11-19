@@ -1,4 +1,4 @@
-# Senior Developer Review - Validation Checklist
+# 시니어 개발자 검토 - 검증 체크리스트
 
 - [ ] Story file loaded from `{{story_path}}`
 - [ ] Story Status verified as one of: {{allow_status_values}}

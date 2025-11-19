@@ -1,4 +1,4 @@
-# {{target_name}} - Deep Dive Documentation
+# {{target_name}} - 심층 분석 문서
 
 **Generated:** {{date}}
 **Scope:** {{target_path}}

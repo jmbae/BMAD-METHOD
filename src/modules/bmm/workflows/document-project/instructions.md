@@ -1,12 +1,12 @@
-# Document Project Workflow Router
+# 프로젝트 문서화 워크플로우 라우터
 
-<critical>The workflow execution engine is governed by: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
-<critical>You MUST have already loaded and processed: {project-root}/{bmad_folder}/bmm/workflows/document-project/workflow.yaml</critical>
-<critical>Communicate all responses in {communication_language}</critical>
+<critical>워크플로우 실행 엔진은 다음에 의해 관리됩니다: {project-root}/{bmad_folder}/core/tasks/workflow.xml</critical>
+<critical>다음을 이미 로드하고 처리했어야 합니다: {project-root}/{bmad_folder}/bmm/workflows/document-project/workflow.yaml</critical>
+<critical>모든 응답을 {communication_language}로 통신합니다</critical>
 
 <workflow>
 
-<critical>This router determines workflow mode and delegates to specialized sub-workflows</critical>
+<critical>이 라우터는 워크플로우 모드를 결정하고 특화된 하위 워크플로우에 위임합니다</critical>
 
 <step n="1" goal="Validate workflow and get project info">
 

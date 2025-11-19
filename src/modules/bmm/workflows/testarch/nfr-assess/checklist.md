@@ -1,4 +1,4 @@
-# Non-Functional Requirements Assessment - Validation Checklist
+# 비기능 요구사항 평가 - 검증 체크리스트
 
 **Workflow:** `testarch-nfr`
 **Purpose:** Ensure comprehensive and evidence-based NFR assessment with actionable recommendations

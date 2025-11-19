@@ -1,9 +1,9 @@
 <!-- Powered by BMAD-CORE™ -->
 
-# Test Framework Setup
+# 테스트 프레임워크 설정
 
-**Workflow ID**: `{bmad_folder}/bmm/testarch/framework`
-**Version**: 4.0 (BMad v6)
+**워크플로우 ID**: `{bmad_folder}/bmm/testarch/framework`
+**버전**: 4.0 (BMad v6)
 
 ---
 

@@ -1,4 +1,4 @@
-# Automate Workflow Validation Checklist
+# 테스트 자동화 워크플로우 검증 체크리스트
 
 Use this checklist to validate that the automate workflow has been executed correctly and all deliverables meet quality standards.
 

@@ -1,4 +1,4 @@
-# NFR Assessment - {FEATURE_NAME}
+# NFR 평가 - {FEATURE_NAME}
 
 **Date:** {DATE}
 **Story:** {STORY_ID} (if applicable)

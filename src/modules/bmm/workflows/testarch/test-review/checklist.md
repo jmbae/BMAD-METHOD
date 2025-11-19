@@ -1,4 +1,4 @@
-# Test Quality Review - Validation Checklist
+# 테스트 품질 검토 - 검증 체크리스트
 
 Use this checklist to validate that the test quality review workflow completed successfully and all quality criteria were properly evaluated.
 

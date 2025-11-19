@@ -1,4 +1,4 @@
-# Traceability Matrix & Gate Decision - Story {STORY_ID}
+# 추적성 매트릭스 & 게이트 결정 - 스토리 {STORY_ID}
 
 **Story:** {STORY_TITLE}
 **Date:** {DATE}

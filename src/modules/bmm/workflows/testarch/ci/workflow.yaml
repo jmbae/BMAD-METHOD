@@ -1,6 +1,6 @@
 # Test Architect workflow: ci
 name: testarch-ci
-description: "Scaffold CI/CD quality pipeline with test execution, burn-in loops, and artifact collection"
+description: "테스트 실행, 번인 루프 및 아티팩트 수집을 포함한 CI/CD 품질 파이프라인 스캐폴딩"
 author: "BMad"
 
 # Critical variables from config

@@ -1,6 +1,6 @@
 # Test Architect workflow: test-review
 name: testarch-test-review
-description: "Review test quality using comprehensive knowledge base and best practices validation"
+description: "포괄적인 지식 베이스와 모범 사례 검증을 사용한 테스트 품질 검토"
 author: "BMad"
 
 # Critical variables from config

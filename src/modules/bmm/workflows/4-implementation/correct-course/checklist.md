@@ -1,4 +1,4 @@
-# Change Navigation Checklist
+# 변경사항 탐색 체크리스트
 
 <critical>This checklist is executed as part of: {project-root}/{bmad_folder}/bmm/workflows/4-implementation/correct-course/workflow.yaml</critical>
 <critical>Work through each section systematically with the user, recording findings and impacts</critical>

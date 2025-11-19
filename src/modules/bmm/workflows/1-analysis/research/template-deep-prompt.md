@@ -1,4 +1,4 @@
-# Deep Research Prompt
+# 심층 조사 프롬프트
 
 **Generated:** {{date}}
 **Created by:** {{user_name}}

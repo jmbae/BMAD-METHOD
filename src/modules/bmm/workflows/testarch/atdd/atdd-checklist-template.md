@@ -1,4 +1,4 @@
-# ATDD Checklist - Epic {epic_num}, Story {story_num}: {story_title}
+# ATDD 체크리스트 - 에픽 {epic_num}, 스토리 {story_num}: {story_title}
 
 **Date:** {date}
 **Author:** {user_name}

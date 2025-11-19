@@ -1,6 +1,6 @@
 # Test Architect workflow: automate
 name: testarch-automate
-description: "Expand test automation coverage after implementation or analyze existing codebase to generate comprehensive test suite"
+description: "구현 후 테스트 자동화 커버리지 확장 또는 기존 코드베이스 분석하여 포괄적인 테스트 스위트 생성"
 author: "BMad"
 
 # Critical variables from config
